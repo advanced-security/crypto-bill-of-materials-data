@@ -20,7 +20,7 @@ jobs:
           minimumLanguageBytes: 2000
           analyzeDependencies: true
   run-pqc-action:
-    name: PQC - ${{ fromJson(matrix.repository)[0] }} - ${{ fromJson(matrix.repository)[1] }}
+    name: ${{ fromJson(matrix.repository)[0] }} - ${{ fromJson(matrix.repository)[1] }}
     runs-on: ubuntu-latest
     needs: build-matrix
     continue-on-error: true
@@ -34,7 +34,7 @@ jobs:
           repositoryNameWithOwner: ${{ fromJson(matrix.repository)[0] }}
           language: ${{ fromJson(matrix.repository)[1] }}
   add-workflow-summary:
-    name: PQC Action results
+    name: Analysis results
     runs-on: ubuntu-latest
     needs: run-pqc-action
     steps:
