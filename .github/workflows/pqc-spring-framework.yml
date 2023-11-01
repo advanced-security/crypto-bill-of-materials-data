@@ -20,7 +20,7 @@ jobs:
           minimumLanguageBytes: 2000
           analyzeDependencies: true
   run-pqc-action:
-    name: PQC
+    name: PQC - ${{ fromJson(matrix.repository)[0] }} - ${{ fromJson(matrix.repository)[1] }}
     runs-on: ubuntu-latest
     needs: build-matrix
     continue-on-error: true
@@ -30,7 +30,6 @@ jobs:
         repository: ${{ fromJSON(needs.build-matrix.outputs.repositories) }}
     steps:
       - uses: pre-quantum-research/pqc-action/analyze@main
-        name: ${{ fromJson(matrix.repository)[0] }} - ${{ fromJson(matrix.repository)[1] }}
         with:
           repositoryNameWithOwner: ${{ fromJson(matrix.repository)[0] }}
           language: ${{ fromJson(matrix.repository)[1] }}
