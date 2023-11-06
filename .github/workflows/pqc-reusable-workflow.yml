@@ -6,6 +6,10 @@ on:
       repositoryNameWithOwner:
         type: string
         required: true
+      analyzeDependencies:
+        type: string
+        required: false
+        default: true
 
 jobs:
   build-matrix:
@@ -19,7 +23,7 @@ jobs:
         with:
           repositoryNameWithOwner: ${{ inputs.repositoryNameWithOwner }}
           minimumLanguageBytes: 2000
-          analyzeDependencies: true
+          analyzeDependencies: ${{ inputs.analyzeDependencies }}
   run-pqc-action:
     name: ${{ fromJson(matrix.repository)[0] }} - ${{ fromJson(matrix.repository)[1] }}
     runs-on: ubuntu-latest
@@ -32,10 +36,10 @@ jobs:
     steps:
       - uses: pre-quantum-research/pqc-action/analyze@main
         with:
-          repositoryNameWithOwner: ${{ fromJson(matrix.repository)[0] }}
-          language: ${{ fromJson(matrix.repository)[1] }}
+          repositoryNameWithOwner: ${{ fromJson(matrix.repository).nameWithOwner }}
+          language: ${{ fromJson(matrix.repository).language }}
           createCodeQLDatabaseIfRequired: true
-          requestGitHubAnalysis: true
+          requestGitHubAnalysis: ${{ fromJson(matrix.repository).isDependency }}
           actionsTokensAppId: ${{ secrets.ACTIONS_TOKENS_APP_ID }}
           actionsTokensPrivateKey: ${{ secrets.ACTIONS_TOKENS_PRIVATE_KEY }}
   add-workflow-summary:
