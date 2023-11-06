@@ -36,6 +36,8 @@ jobs:
           language: ${{ fromJson(matrix.repository)[1] }}
           createCodeQLDatabaseIfRequired: false
           requestGitHubAnalysis: true
+          actionsTokensAppId: ${{ secrets.ACTIONS_TOKENS_APP_ID }}
+          actionsTokensPrivateKey: ${{ secrets.ACTIONS_TOKENS_PRIVATE_KEY }}
   add-workflow-summary:
     name: PQC results
     runs-on: ubuntu-latest
