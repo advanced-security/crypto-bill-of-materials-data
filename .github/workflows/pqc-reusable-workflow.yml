@@ -44,9 +44,7 @@ jobs:
           actionsTokensAppId: ${{ secrets.ACTIONS_TOKENS_APP_ID }}
           actionsTokensPrivateKey: ${{ secrets.ACTIONS_TOKENS_PRIVATE_KEY }}
       - run: |
-          cd ${{ github.workspace }}/pqc-results
-          mv * ../data/
-          cd ${{ github.workspace }}
+          cp -rl ${{ github.workspace }}/pqc-results/* /data/
           git config --global user.name 'PQC Data Action'
           git config --global user.email 'pre-quantum-research@users.noreply.github.com'
           git add ./data
