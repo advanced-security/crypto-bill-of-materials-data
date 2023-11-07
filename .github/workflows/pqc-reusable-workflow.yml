@@ -39,7 +39,7 @@ jobs:
           repositoryNameWithOwner: ${{ fromJson(matrix.repository).nameWithOwner }}
           language: ${{ fromJson(matrix.repository).language }}
           createCodeQLDatabaseIfRequired: true
-          requestGitHubAnalysis: ${{ fromJson(matrix.repository).isDependency }}
+          requestGitHubAnalysis: ${{ fromJson(matrix.repository).visibility == 'PUBLIC' }}
           actionsTokensAppId: ${{ secrets.ACTIONS_TOKENS_APP_ID }}
           actionsTokensPrivateKey: ${{ secrets.ACTIONS_TOKENS_PRIVATE_KEY }}
   add-workflow-summary:
