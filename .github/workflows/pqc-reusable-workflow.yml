@@ -46,6 +46,9 @@ jobs:
       - run: |
           cd ${{ github.workspace }}/pqc-results
           mv * ../data/
+          git add ./data
+          git commit -m "${{ fromJson(matrix.repository).nameWithOwner }}/${{ fromJson(matrix.repository).language }}"
+          git push
   add-workflow-summary:
     name: PQC results
     runs-on: ubuntu-latest
