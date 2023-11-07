@@ -46,6 +46,7 @@ jobs:
       - run: |
           cd ${{ github.workspace }}/pqc-results
           mv * ../data/
+          cd ${{ github.workspace }}
           git add ./data
           git commit -m "${{ fromJson(matrix.repository).nameWithOwner }}/${{ fromJson(matrix.repository).language }}"
           git push
