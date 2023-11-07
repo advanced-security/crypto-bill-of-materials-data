@@ -1,0 +1,21 @@
+name: Run PQC on Kotlin C++
+
+on:
+  workflow_dispatch:
+
+jobs:
+  kotlin-cpp:
+    name: jetbrains/kotlin - cpp
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup C++
+        uses: aminya/setup-cpp@v1
+      - uses: pre-quantum-research/pqc-action/analyze@main
+        with:
+          repositoryNameWithOwner: jetbrains/kotlin
+          language: cpp
+          createCodeQLDatabaseIfRequired: true
+          requestGitHubAnalysis: false
+          actionsTokensAppId: ${{ secrets.ACTIONS_TOKENS_APP_ID }}
+          actionsTokensPrivateKey: ${{ secrets.ACTIONS_TOKENS_PRIVATE_KEY }}
+      - uses: pre-quantum-research/pqc-action/workflow-summary@main    
