@@ -43,6 +43,15 @@ jobs:
           requestGitHubAnalysis: false
           actionsTokensAppId: ${{ secrets.ACTIONS_TOKENS_APP_ID }}
           actionsTokensPrivateKey: ${{ secrets.ACTIONS_TOKENS_PRIVATE_KEY }}
+  commit-data:
+    name: Commit data back to repo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v3
+        with:
+          name: pqc-results
+          path: ${{ github.workspace }}/pqc-results
       - run: |
           cp -rl ${{ github.workspace }}/pqc-results/* /data/
           git config --global user.name 'PQC Data Action'
