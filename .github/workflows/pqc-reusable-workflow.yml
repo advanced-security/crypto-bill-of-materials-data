@@ -7,7 +7,11 @@ on:
         type: string
         required: true
       analyzeDependencies:
-        type: string
+        type: boolean
+        required: false
+        default: false
+      requestGitHubAnalysis:
+        type: boolean
         required: false
         default: false
 
@@ -40,7 +44,7 @@ jobs:
           repositoryNameWithOwner: ${{ fromJson(matrix.repository).nameWithOwner }}
           language: ${{ fromJson(matrix.repository).language }}
           createCodeQLDatabaseIfRequired: true
-          requestGitHubAnalysis: false
+          requestGitHubAnalysis: ${{ inputs.requestGitHubAnalysis }}
           actionsTokensAppId: ${{ secrets.ACTIONS_TOKENS_APP_ID }}
           actionsTokensPrivateKey: ${{ secrets.ACTIONS_TOKENS_PRIVATE_KEY }}
   commit-data:
