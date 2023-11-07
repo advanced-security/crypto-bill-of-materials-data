@@ -7,13 +7,13 @@ on:
 
 jobs:
   run-pqc-action:
-    name: ${{ github.context.client_payload.repositoryNameWithOwner }} - ${{ github.context.client_payload.language }}
+    name: ${{ github.event.client_payload.repositoryNameWithOwner }} - ${{ github.event.client_payload.language }}
     runs-on: ubuntu-latest
     steps:
       - uses: pre-quantum-research/pqc-action/analyze@main
         with:
-          repositoryNameWithOwner: ${{ github.context.client_payload.repositoryNameWithOwner }}
-          language: ${{ github.context.client_payload.language }}
+          repositoryNameWithOwner: ${{ github.event.client_payload.repositoryNameWithOwner }}
+          language: ${{ github.event.client_payload.language }}
           createCodeQLDatabaseIfRequired: true
           actionsTokensAppId: ${{ secrets.ACTIONS_TOKENS_APP_ID }}
           actionsTokensPrivateKey: ${{ secrets.ACTIONS_TOKENS_PRIVATE_KEY }}
