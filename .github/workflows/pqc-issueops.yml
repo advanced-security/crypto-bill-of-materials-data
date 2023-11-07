@@ -1,0 +1,29 @@
+name: Attempt to run PQC on analysis request
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  setup-env:
+    runs-on: ubuntu-latest
+    outputs:
+      repositoryNameWithOwner: ${{ steps.get-issue-details.outputs.repositoryNameWithOwner }}
+      label: ${{ steps.get-issue-details.outputs.label }}
+    steps:
+      - id: get-issue-details
+        run: |
+          LABEL=${{ github.event.client_payload.issue.labels[0].name }}
+          echo "label=${LABEL}" >> "$GITHUB_OUTPUT"
+          if [[ ${LABEL} -eq "analysis-requested" ]]; then
+            ISSUE_TITLE=${{ github.event.client_payload.issue.title }}
+            echo "repositoryNameWithOwner=${ISSUE_TITLE%/*}" >> "$GITHUB_OUTPUT"
+          fi
+  analysis-request:
+    uses: ./.github/workflows/pqc-reusable-workflow.yml
+    needs: setup-env
+    if: needs.setup-env.outputs.label == 'analysis-requested'
+    with:
+      repositoryNameWithOwner: ${{ needs.setup-env.outputs.repositoryNameWithOwner }}
+    secrets: inherit
