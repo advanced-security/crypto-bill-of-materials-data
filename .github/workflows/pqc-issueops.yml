@@ -28,6 +28,7 @@ jobs:
           name: pqc-results
           path: ${{ github.workspace }}/pqc-results
       - run: |
+          git pull
           rsync -ai ./pqc-results/ ./data/
           git config --global user.name 'PQC Data Action'
           git config --global user.email 'pre-quantum-research@users.noreply.github.com'
