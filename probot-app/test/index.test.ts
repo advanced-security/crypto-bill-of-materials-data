@@ -41,7 +41,7 @@ describe("My Probot app", () => {
       .reply(200, {
         token: "test",
         permissions: {
-          issues: "write",
+          contents: "write",
         },
       })
 
