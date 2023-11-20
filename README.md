@@ -1,4 +1,4 @@
-# crypto-bill-of-materials-data
+# Crypto Bill of Material Data
 This repository stores data generated using [advanced-security/cbom-action](https://github.com/advanced-security/cbom-action)
 
 ## License 
