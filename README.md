@@ -1,9 +1,5 @@
 # crypto-bill-of-materials-data
-Generate a Crypto Bill of Materials using CodeQL
-
-## Background 
-
-## Requirements
+This repository stores data generated using [advanced-security/cbom-action](https://github.com/advanced-security/cbom-action)
 
 ## License 
 
@@ -12,7 +8,3 @@ This project is licensed under the terms of the MIT open source license. Please 
 ## Maintainers 
 
 See [CODEOWNERS](./CODEOWNERS)
-
-## Support
-
-## Acknowledgement
