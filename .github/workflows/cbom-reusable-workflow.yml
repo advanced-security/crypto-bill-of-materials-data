@@ -55,6 +55,7 @@ jobs:
           name: cbom-results
           path: ${{ github.workspace }}/cbom-results
       - run: |
+          # Commit data to new branch and create PR
           git switch -c "${{ inputs.repositoryNameWithOwner }}"
           rsync -ai ./cbom-results/ ./data/
           git config --global user.name 'CBOM Data Action'
@@ -63,6 +64,7 @@ jobs:
           git commit -m "${{ inputs.repositoryNameWithOwner }}"
           git push --set-upstream origin "${{ inputs.repositoryNameWithOwner }}"
           gh pr create --head --fill --reviewer @ctcampbell
+        shell: bash -ex {0}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   add-workflow-summary:
