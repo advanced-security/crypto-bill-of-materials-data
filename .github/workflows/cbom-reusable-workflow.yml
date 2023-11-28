@@ -65,7 +65,7 @@ jobs:
           git add ./data
           git commit -m "${{ inputs.repositoryNameWithOwner }}"
           git push --set-upstream origin "${BRANCH_NAME}"
-          gh pr create --fill --reviewer ctcampbell
+          gh pr create --title "${BRANCH_NAME}" --fill --reviewer ctcampbell
         shell: bash -ex {0}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
