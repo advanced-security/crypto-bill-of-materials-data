@@ -55,12 +55,16 @@ jobs:
           name: cbom-results
           path: ${{ github.workspace }}/cbom-results
       - run: |
+          git switch -c "${{ inputs.repositoryNameWithOwner }}"
           rsync -ai ./cbom-results/ ./data/
           git config --global user.name 'CBOM Data Action'
           git config --global user.email 'advanced-security@users.noreply.github.com'
           git add ./data
           git commit -m "${{ inputs.repositoryNameWithOwner }}"
           git push
+          gh pr create --head --fill --reviewer @ctcampbell
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   add-workflow-summary:
     name: CBOM results
     runs-on: ubuntu-latest
