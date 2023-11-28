@@ -14,15 +14,15 @@ jobs:
       - id: build-matrix
         run: |
           set -ex
-          REPOS=$(jq -c '.python_2000_all[:250]')
-          echo "repositories=${REPOS}"  >> "$GITHUB_OUTPUT"
+          REPOS=$(cat pqc.json | jq -c '.python_2000_all[:250] | tostring')
+          echo "repositories=${REPOS}" >> "$GITHUB_OUTPUT"
   top250:
     uses: ./.github/workflows/cbom-reusable-workflow.yml
     needs: build-matrix
     strategy:
       fail-fast: false
       matrix:
-        repository: ${{ needs.build-matrix.outputs.repositories }}
+        repository: ${{ fromJSON(needs.build-matrix.outputs.repositories) }}
     with:
         repositoryNameWithOwner: ${{ matrix.repository }}
     secrets: inherit
