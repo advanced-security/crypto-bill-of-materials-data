@@ -1,0 +1,28 @@
+name: Run CBOM on top 250 Python repos
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-matrix:
+    name: Build analysis matrix
+    runs-on: ubuntu-latest
+    outputs:
+      repositories: ${{ steps.build-matrix.outputs.repositories }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: build-matrix
+        run: |
+          set -ex
+          REPOS=$(jq -c '.python_2000_all[:250]')
+          echo "repositories=REPOS"  >> "$GITHUB_OUTPUT"
+  top250:
+    uses: ./.github/workflows/cbom-reusable-workflow.yml
+    needs: build-matrix
+    strategy:
+      fail-fast: false
+      matrix:
+        repository: ${{ needs.build-matrix.outputs.repositories }}
+    with:
+        repositoryNameWithOwner: ${{ matrix.repository }}
+    secrets: inherit
