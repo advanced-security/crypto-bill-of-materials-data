@@ -15,7 +15,7 @@ jobs:
         run: |
           set -ex
           REPOS=$(jq -c '.python_2000_all[:250]')
-          echo "repositories=REPOS"  >> "$GITHUB_OUTPUT"
+          echo "repositories=${REPOS}"  >> "$GITHUB_OUTPUT"
   top250:
     uses: ./.github/workflows/cbom-reusable-workflow.yml
     needs: build-matrix
