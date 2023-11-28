@@ -56,7 +56,7 @@ jobs:
           path: ${{ github.workspace }}/cbom-results
       - run: |
           # Commit data to new branch and create PR
-          git switch -c "${{ inputs.repositoryNameWithOwner }}"
+          git switch -c "${{ inputs.repositoryNameWithOwner }}-${{ github.run_id }}-${{ github.run_attempt }}"
           rsync -ai ./cbom-results/ ./data/
           git config --global user.name 'CBOM Data Action'
           git config --global user.email 'advanced-security@users.noreply.github.com'
