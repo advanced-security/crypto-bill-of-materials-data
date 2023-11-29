@@ -1,0 +1,1249 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.15.2",
+        "notifications" : [ {
+          "id" : "py/baseline/expected-extracted-files",
+          "name" : "py/baseline/expected-extracted-files",
+          "shortDescription" : {
+            "text" : "Expected extracted files"
+          },
+          "fullDescription" : {
+            "text" : "Files appearing in the source archive that are expected to be extracted."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true
+          },
+          "properties" : {
+            "tags" : [ "expected-extracted-files", "telemetry" ]
+          }
+        } ],
+        "rules" : [ {
+          "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "name" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "shortDescription" : {
+            "text" : "Unknown Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+            "kind" : "problem",
+            "name" : "Unknown Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "shortDescription" : {
+            "text" : "All Cryptographic Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+            "kind" : "problem",
+            "name" : "All Cryptographic Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Symmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with symmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with symmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Symmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/iv-sources",
+          "name" : "py/quantum-readiness/cbom/iv-sources",
+          "shortDescription" : {
+            "text" : "Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/iv-sources",
+            "kind" : "problem",
+            "name" : "Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "shortDescription" : {
+            "text" : "All Asymmetric Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "description" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+            "kind" : "problem",
+            "name" : "All Asymmetric Algorithms",
+            "preci" : "cbom\n       cryptography",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-exchange",
+          "name" : "py/quantum-readiness/cbom/key-exchange",
+          "shortDescription" : {
+            "text" : "Key Exchange Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-exchange",
+            "kind" : "problem",
+            "name" : "Key Exchange Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/hash-algorithms",
+          "name" : "py/quantum-readiness/cbom/hash-algorithms",
+          "shortDescription" : {
+            "text" : "Hash Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/hash-algorithms",
+            "kind" : "problem",
+            "name" : "Hash Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Symmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Symmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "name" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "shortDescription" : {
+            "text" : "Known asymmetric key source generation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all known potential sources for asymmetric key generation while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all known potential sources for asymmetric key generation while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+            "kind" : "problem",
+            "name" : "Known asymmetric key source generation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Asymmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with asymmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with asymmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Asymmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-derivation",
+          "name" : "py/quantum-readiness/cbom/key-derivation",
+          "shortDescription" : {
+            "text" : "Key Derivation Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key derivation using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key derivation using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-derivation",
+            "kind" : "problem",
+            "name" : "Key Derivation Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/signing-algorithms",
+          "name" : "py/quantum-readiness/cbom/signing-algorithms",
+          "shortDescription" : {
+            "text" : "Signing Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of signing algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of signing algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/signing-algorithms",
+            "kind" : "problem",
+            "name" : "Signing Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Authenticated Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of authenticated encryption schemes using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of authenticated encryption schemes using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Authenticated Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Asymmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Asymmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "name" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "shortDescription" : {
+            "text" : "Block cipher mode of operation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential block cipher modes of operations using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential block cipher modes of operations using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+            "kind" : "problem",
+            "name" : "Block cipher mode of operation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "name" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "shortDescription" : {
+            "text" : "Elliptic Curve Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of elliptic curve algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of elliptic curve algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+            "kind" : "problem",
+            "name" : "Elliptic Curve Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql/python-queries",
+        "semanticVersion" : "0.9.2+78fcbd07d654881d9d3395efc0ea371c392529de",
+        "locations" : [ {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.2/x64/codeql/qlpacks/codeql/python-queries/0.9.2/",
+          "description" : {
+            "text" : "The QL pack root directory."
+          }
+        }, {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.2/x64/codeql/qlpacks/codeql/python-queries/0.9.2/qlpack.yml",
+          "description" : {
+            "text" : "The QL pack definition file."
+          }
+        } ]
+      } ]
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "www/tests/test_hashlib.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 5,
+            "endColumn" : 16
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 5,
+            "snippet" : {
+              "text" : "import hashlib\n\nm = hashlib.md5()\n\nm.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "937a6c5cee5a5d0c:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 11,
+            "startColumn" : 8,
+            "endColumn" : 19
+          },
+          "contextRegion" : {
+            "startLine" : 9,
+            "endLine" : 13,
+            "snippet" : {
+              "text" : "assert m.hexdigest() == \"175a023e6f75d81e2ecdcdc75d96e6fe\"\n\nassert hashlib.md5(b\"hashlib test\").hexdigest() == \"c8fead1ad6206097c6073cdf20f49f93\"\n\ns = hashlib.sha1()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "446b6d1d1729fbf4:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 5,
+            "endColumn" : 17
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "assert hashlib.md5(b\"hashlib test\").hexdigest() == \"c8fead1ad6206097c6073cdf20f49f93\"\n\ns = hashlib.sha1()\n\ns.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e1b29f7ea1b6691:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 8,
+            "endColumn" : 20
+          },
+          "contextRegion" : {
+            "startLine" : 18,
+            "endLine" : 22,
+            "snippet" : {
+              "text" : "assert s.hexdigest() == \"495de82a4dc645e0261a2fc13578b022e8b656c3\"\n\nassert hashlib.sha1(b\"hashlib test\").hexdigest() == \"971734764c3b925866f5808118e3551ecaddd141\"\n\ns = hashlib.sha224()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "22c41092bf0e2824:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA224"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 5,
+            "endColumn" : 19
+          },
+          "contextRegion" : {
+            "startLine" : 20,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "assert hashlib.sha1(b\"hashlib test\").hexdigest() == \"971734764c3b925866f5808118e3551ecaddd141\"\n\ns = hashlib.sha224()\n\ns.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "128f4ebd2f96d526:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA224"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 30,
+            "startColumn" : 8,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 28,
+            "endLine" : 32,
+            "snippet" : {
+              "text" : "assert s.hexdigest() == \"73017dacc069943877bbad34212c324c88fff7e78bfb39e813bcdcc6\"\n\nassert hashlib.sha224(b\"hashlib test\").hexdigest() == \"00ce77e227b3adc10010f8c72719c757eaaa00b860e58eb0e214941b\"\n\ns = hashlib.sha256()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4759b00624dc55c5:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 32,
+            "startColumn" : 5,
+            "endColumn" : 19
+          },
+          "contextRegion" : {
+            "startLine" : 30,
+            "endLine" : 34,
+            "snippet" : {
+              "text" : "assert hashlib.sha224(b\"hashlib test\").hexdigest() == \"00ce77e227b3adc10010f8c72719c757eaaa00b860e58eb0e214941b\"\n\ns = hashlib.sha256()\n\ns.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7d85f92fdee6bbb1:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 40,
+            "startColumn" : 8,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 38,
+            "endLine" : 42,
+            "snippet" : {
+              "text" : "assert s.hexdigest() == \"2e73337520cfbf212c04fff08b688427158a3d5207475231933ace7642bdada8\"\n\nassert hashlib.sha256(b\"hashlib test\").hexdigest() == \"31ae86e4c84f0b65f48c16494ae22443d0d0e3880ffd30ff743e5a2f30e75806\"\n\ns = hashlib.sha384()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "192164d63b972365:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 42,
+            "startColumn" : 5,
+            "endColumn" : 19
+          },
+          "contextRegion" : {
+            "startLine" : 40,
+            "endLine" : 44,
+            "snippet" : {
+              "text" : "assert hashlib.sha256(b\"hashlib test\").hexdigest() == \"31ae86e4c84f0b65f48c16494ae22443d0d0e3880ffd30ff743e5a2f30e75806\"\n\ns = hashlib.sha384()\n\ns.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ad6197ff3aef3d47:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 8,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "assert s.hexdigest() == \"964e1b4e3702da95abee44fe2661f442265555500cadd9d415191b3f39a90e8d39f323433c8e8642de666821fb3e20bb\"\n\nassert hashlib.sha384(b\"hashlib test\").hexdigest() == \\\n    \"3e9467feebd795db667ae804bb7b1bfc0725f2b96bbb7648fbbc515bcc0963b1c22bc762abb43fddfc6f876d52c6c597\"\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8f95e2ae54d021ad:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 5,
+            "endColumn" : 19
+          },
+          "contextRegion" : {
+            "startLine" : 51,
+            "endLine" : 55,
+            "snippet" : {
+              "text" : "    \"3e9467feebd795db667ae804bb7b1bfc0725f2b96bbb7648fbbc515bcc0963b1c22bc762abb43fddfc6f876d52c6c597\"\n\ns = hashlib.sha512()\n\ns.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "62e429b70d611078:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 61,
+            "startColumn" : 8,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 59,
+            "endLine" : 63,
+            "snippet" : {
+              "text" : "assert s.hexdigest() == \"9f14aecd5a945a6f81a1f8a11633aa428e2a404e39fea50c385a46d2637ee339c2c130101070245ae3164a4ca4e55bfe2089ebdc76885744a585eb232fede803\"\n\nassert hashlib.sha512(b\"hashlib test\").hexdigest() == \\\n    \"6f2c547d3681c2369a05916a5fcce16c0aed6fd7356362d9e188d64efd29c3cbc6837b61ffb7bac43b1c4161005e570762fb740af99671d366b39babde3daef5\"\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "34ecde43fd8ec8ca:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 5,
+            "endColumn" : 16
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 5,
+            "snippet" : {
+              "text" : "import hashlib\n\nm = hashlib.md5()\n\nm.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "937a6c5cee5a5d0c:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 11,
+            "startColumn" : 8,
+            "endColumn" : 19
+          },
+          "contextRegion" : {
+            "startLine" : 9,
+            "endLine" : 13,
+            "snippet" : {
+              "text" : "assert m.hexdigest() == \"175a023e6f75d81e2ecdcdc75d96e6fe\"\n\nassert hashlib.md5(b\"hashlib test\").hexdigest() == \"c8fead1ad6206097c6073cdf20f49f93\"\n\ns = hashlib.sha1()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "446b6d1d1729fbf4:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 5,
+            "endColumn" : 17
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "assert hashlib.md5(b\"hashlib test\").hexdigest() == \"c8fead1ad6206097c6073cdf20f49f93\"\n\ns = hashlib.sha1()\n\ns.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e1b29f7ea1b6691:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 8,
+            "endColumn" : 20
+          },
+          "contextRegion" : {
+            "startLine" : 18,
+            "endLine" : 22,
+            "snippet" : {
+              "text" : "assert s.hexdigest() == \"495de82a4dc645e0261a2fc13578b022e8b656c3\"\n\nassert hashlib.sha1(b\"hashlib test\").hexdigest() == \"971734764c3b925866f5808118e3551ecaddd141\"\n\ns = hashlib.sha224()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "22c41092bf0e2824:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA224"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 5,
+            "endColumn" : 19
+          },
+          "contextRegion" : {
+            "startLine" : 20,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "assert hashlib.sha1(b\"hashlib test\").hexdigest() == \"971734764c3b925866f5808118e3551ecaddd141\"\n\ns = hashlib.sha224()\n\ns.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "128f4ebd2f96d526:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA224"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 30,
+            "startColumn" : 8,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 28,
+            "endLine" : 32,
+            "snippet" : {
+              "text" : "assert s.hexdigest() == \"73017dacc069943877bbad34212c324c88fff7e78bfb39e813bcdcc6\"\n\nassert hashlib.sha224(b\"hashlib test\").hexdigest() == \"00ce77e227b3adc10010f8c72719c757eaaa00b860e58eb0e214941b\"\n\ns = hashlib.sha256()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4759b00624dc55c5:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 32,
+            "startColumn" : 5,
+            "endColumn" : 19
+          },
+          "contextRegion" : {
+            "startLine" : 30,
+            "endLine" : 34,
+            "snippet" : {
+              "text" : "assert hashlib.sha224(b\"hashlib test\").hexdigest() == \"00ce77e227b3adc10010f8c72719c757eaaa00b860e58eb0e214941b\"\n\ns = hashlib.sha256()\n\ns.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7d85f92fdee6bbb1:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 40,
+            "startColumn" : 8,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 38,
+            "endLine" : 42,
+            "snippet" : {
+              "text" : "assert s.hexdigest() == \"2e73337520cfbf212c04fff08b688427158a3d5207475231933ace7642bdada8\"\n\nassert hashlib.sha256(b\"hashlib test\").hexdigest() == \"31ae86e4c84f0b65f48c16494ae22443d0d0e3880ffd30ff743e5a2f30e75806\"\n\ns = hashlib.sha384()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "192164d63b972365:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 42,
+            "startColumn" : 5,
+            "endColumn" : 19
+          },
+          "contextRegion" : {
+            "startLine" : 40,
+            "endLine" : 44,
+            "snippet" : {
+              "text" : "assert hashlib.sha256(b\"hashlib test\").hexdigest() == \"31ae86e4c84f0b65f48c16494ae22443d0d0e3880ffd30ff743e5a2f30e75806\"\n\ns = hashlib.sha384()\n\ns.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ad6197ff3aef3d47:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 8,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "assert s.hexdigest() == \"964e1b4e3702da95abee44fe2661f442265555500cadd9d415191b3f39a90e8d39f323433c8e8642de666821fb3e20bb\"\n\nassert hashlib.sha384(b\"hashlib test\").hexdigest() == \\\n    \"3e9467feebd795db667ae804bb7b1bfc0725f2b96bbb7648fbbc515bcc0963b1c22bc762abb43fddfc6f876d52c6c597\"\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8f95e2ae54d021ad:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 5,
+            "endColumn" : 19
+          },
+          "contextRegion" : {
+            "startLine" : 51,
+            "endLine" : 55,
+            "snippet" : {
+              "text" : "    \"3e9467feebd795db667ae804bb7b1bfc0725f2b96bbb7648fbbc515bcc0963b1c22bc762abb43fddfc6f876d52c6c597\"\n\ns = hashlib.sha512()\n\ns.update(b\"hashlib test\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "62e429b70d611078:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "www/tests/test_hashlib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 61,
+            "startColumn" : 8,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 59,
+            "endLine" : 63,
+            "snippet" : {
+              "text" : "assert s.hexdigest() == \"9f14aecd5a945a6f81a1f8a11633aa428e2a404e39fea50c385a46d2637ee339c2c130101070245ae3164a4ca4e55bfe2089ebdc76885744a585eb232fede803\"\n\nassert hashlib.sha512(b\"hashlib test\").hexdigest() == \\\n    \"6f2c547d3681c2369a05916a5fcce16c0aed6fd7356362d9e188d64efd29c3cbc6837b61ffb7bac43b1c4161005e570762fb740af99671d366b39babde3daef5\"\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "34ecde43fd8ec8ca:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    } ],
+    "automationDetails" : {
+      "id" : "CBOM:brython-dev/brython/python/"
+    },
+    "columnKind" : "unicodeCodePoints",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
