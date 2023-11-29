@@ -6,10 +6,10 @@ on:
       - labeled
 
 jobs:
-  enable-auto-merge:
+  enable-auto-rebase-merge:
     if: github.event.label.name == 'auto-rebase-merge'
     runs-on: ubuntu-latest
     steps:
-      - run: gh pr merge --merge --rebase --squash --auto ${{ github.event.number }}
+      - run: gh pr merge --rebase --auto ${{ github.event.number }}
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
