@@ -1,0 +1,3813 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.15.2",
+        "notifications" : [ {
+          "id" : "py/baseline/expected-extracted-files",
+          "name" : "py/baseline/expected-extracted-files",
+          "shortDescription" : {
+            "text" : "Expected extracted files"
+          },
+          "fullDescription" : {
+            "text" : "Files appearing in the source archive that are expected to be extracted."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true
+          },
+          "properties" : {
+            "tags" : [ "expected-extracted-files", "telemetry" ]
+          }
+        } ],
+        "rules" : [ {
+          "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "name" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "shortDescription" : {
+            "text" : "Unknown Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+            "kind" : "problem",
+            "name" : "Unknown Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "shortDescription" : {
+            "text" : "All Cryptographic Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+            "kind" : "problem",
+            "name" : "All Cryptographic Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Symmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with symmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with symmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Symmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/iv-sources",
+          "name" : "py/quantum-readiness/cbom/iv-sources",
+          "shortDescription" : {
+            "text" : "Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/iv-sources",
+            "kind" : "problem",
+            "name" : "Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "shortDescription" : {
+            "text" : "All Asymmetric Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "description" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+            "kind" : "problem",
+            "name" : "All Asymmetric Algorithms",
+            "preci" : "cbom\n       cryptography",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-exchange",
+          "name" : "py/quantum-readiness/cbom/key-exchange",
+          "shortDescription" : {
+            "text" : "Key Exchange Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-exchange",
+            "kind" : "problem",
+            "name" : "Key Exchange Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/hash-algorithms",
+          "name" : "py/quantum-readiness/cbom/hash-algorithms",
+          "shortDescription" : {
+            "text" : "Hash Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/hash-algorithms",
+            "kind" : "problem",
+            "name" : "Hash Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Symmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Symmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "name" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "shortDescription" : {
+            "text" : "Known asymmetric key source generation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all known potential sources for asymmetric key generation while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all known potential sources for asymmetric key generation while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+            "kind" : "problem",
+            "name" : "Known asymmetric key source generation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Asymmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with asymmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with asymmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Asymmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-derivation",
+          "name" : "py/quantum-readiness/cbom/key-derivation",
+          "shortDescription" : {
+            "text" : "Key Derivation Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key derivation using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key derivation using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-derivation",
+            "kind" : "problem",
+            "name" : "Key Derivation Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/signing-algorithms",
+          "name" : "py/quantum-readiness/cbom/signing-algorithms",
+          "shortDescription" : {
+            "text" : "Signing Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of signing algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of signing algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/signing-algorithms",
+            "kind" : "problem",
+            "name" : "Signing Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Authenticated Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of authenticated encryption schemes using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of authenticated encryption schemes using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Authenticated Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Asymmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Asymmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "name" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "shortDescription" : {
+            "text" : "Block cipher mode of operation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential block cipher modes of operations using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential block cipher modes of operations using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+            "kind" : "problem",
+            "name" : "Block cipher mode of operation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "name" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "shortDescription" : {
+            "text" : "Elliptic Curve Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of elliptic curve algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of elliptic curve algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+            "kind" : "problem",
+            "name" : "Elliptic Curve Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql/python-queries",
+        "semanticVersion" : "0.9.2+78fcbd07d654881d9d3395efc0ea371c392529de",
+        "locations" : [ {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.2/x64/codeql/qlpacks/codeql/python-queries/0.9.2/",
+          "description" : {
+            "text" : "The QL pack root directory."
+          }
+        }, {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.2/x64/codeql/qlpacks/codeql/python-queries/0.9.2/qlpack.yml",
+          "description" : {
+            "text" : "The QL pack definition file."
+          }
+        } ]
+      } ]
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster_tests/definitions_tests/auto_materialize_tests/asset_daemon_scenario.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/libraries/dagster-fivetran/dagster_fivetran/asset_defs.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/libraries/dagster-dbt/dagster_dbt/asset_defs.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/libraries/dagster-airbyte/dagster_airbyte/asset_defs.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 3
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/libraries/dagster-dbt/dagster_dbt/asset_utils.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 4
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/definitions/assets.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 5
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/definitions/cacheable_assets.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 6
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/types/config_schema.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 7
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/definitions/data_version.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 8
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster-test/dagster_test/toys/user_computed_data_versions/external_system.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 9
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_config/field_utils.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 10
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/execution/plan/inputs.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 11
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/libraries/dagster-k8s/dagster_k8s/job.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 12
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/storage/local_compute_log_manager.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 13
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/definitions/multi_dimensional_partitions.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 14
+      }
+    }, {
+      "location" : {
+        "uri" : "examples/docs_snippets/docs_snippets/guides/dagster/asset_versioning_and_caching/observable_source_asset_path_with_io_managers.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 15
+      }
+    }, {
+      "location" : {
+        "uri" : "examples/docs_snippets/docs_snippets/guides/dagster/asset_versioning_and_caching/observable_source_asset_path_with_non_argument_deps.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 16
+      }
+    }, {
+      "location" : {
+        "uri" : "examples/docs_snippets/docs_snippets/concepts/assets/observable_source_assets.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 17
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/libraries/dagster-gcp/dagster_gcp/bigquery/ops.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 18
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/definitions/partition.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 19
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/libraries/dagster-airbyte/dagster_airbyte/resources.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 20
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/execution/context/system.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 21
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/telemetry.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 22
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster_tests/asset_defs_tests/test_assets_job.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 23
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster_tests/core_tests/runtime_types_tests/config_schema_tests/test_config_schema.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 24
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster_tests/core_tests/instance_tests/test_instance_data_versions.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 25
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster_tests/core_tests/test_resolve_versions.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 26
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 27
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 28
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster_tests/asset_defs_tests/test_unresolved_asset_job.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 29
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/definitions/time_window_partitions.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 30
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster-test/dagster_test/toys/external_execution/numbers_example/util.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 31
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_serdes/utils.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 32
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/libraries/dagster-aws/dagster_aws/ecs/utils.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 33
+      }
+    }, {
+      "location" : {
+        "uri" : "python_modules/dagster/dagster/_core/definitions/version_strategy.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 34
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/definitions_tests/auto_materialize_tests/asset_daemon_scenario.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 77,
+            "startColumn" : 33,
+            "endColumn" : 44
+          },
+          "contextRegion" : {
+            "startLine" : 75,
+            "endLine" : 79,
+            "snippet" : {
+              "text" : "    \"\"\"\n    attribute_name = (\n        f\"_asset_daemon_target_{hashlib.md5(str(scenario_state.asset_specs).encode()).hexdigest()}\"\n    )\n    globals()[attribute_name] = Definitions(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "669e07f65fcf6a79:1",
+        "primaryLocationStartColumnFingerprint" : "24"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-fivetran/dagster_fivetran/asset_defs.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 352,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 350,
+            "endLine" : 354,
+            "snippet" : {
+              "text" : "        self._poll_timeout = poll_timeout\n\n        contents = hashlib.sha1()\n        contents.update(\",\".join(key_prefix).encode(\"utf-8\"))\n        if connector_filter:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f2c16c25cf2b79c1:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-dbt/dagster_dbt/asset_defs.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 433,
+            "startColumn" : 30,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 431,
+            "endLine" : 435,
+            "snippet" : {
+              "text" : "        op_name = f\"run_dbt_{project_id}\"\n        if select != \"fqn:*\" or exclude:\n            op_name += \"_\" + hashlib.md5(select.encode() + exclude.encode()).hexdigest()[-5:]\n\n    check_outs_by_output_name: Mapping[str, Out] = {}\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bf73414cda96794c:1",
+        "primaryLocationStartColumnFingerprint" : "17"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-airbyte/dagster_airbyte/asset_defs.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 550,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 548,
+            "endLine" : 552,
+            "snippet" : {
+              "text" : "        )\n\n        contents = hashlib.sha1()  # so that hexdigest is 40, not 64 bytes\n        contents.update(\",\".join(key_prefix).encode(\"utf-8\"))\n        contents.update(str(create_assets_for_normalization_tables).encode(\"utf-8\"))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "42098f929b2f5aeb:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-dbt/dagster_dbt/asset_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 556,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 554,
+            "endLine" : 558,
+            "snippet" : {
+              "text" : "\ndef default_code_version_fn(dbt_resource_props: Mapping[str, Any]) -> str:\n    return hashlib.sha1(\n        (dbt_resource_props.get(\"raw_sql\") or dbt_resource_props.get(\"raw_code\", \"\")).encode(\n            \"utf-8\"\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ec20271788d58378:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/assets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 1351,
+            "startColumn" : 16,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1349,
+            "endLine" : 1353,
+            "snippet" : {
+              "text" : "    def unique_id(self) -> str:\n        \"\"\"A unique identifier for the AssetsDefinition that's stable across processes.\"\"\"\n        return hashlib.md5((json.dumps(sorted(self.keys))).encode(\"utf-8\")).hexdigest()\n\n    def with_resources(self, resource_defs: Mapping[str, ResourceDefinition]) -> \"AssetsDefinition\":\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "af3d589d3dcc9473:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/cacheable_assets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 291,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 289,
+            "endLine" : 293,
+            "snippet" : {
+              "text" : "    def _get_hash(self) -> str:\n        \"\"\"Generate a stable hash of the various prefix/group mappings.\"\"\"\n        contents = hashlib.sha1()\n        if self._output_asset_key_replacements:\n            contents.update(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d84a9d2865661262:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/cacheable_assets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 387,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 385,
+            "endLine" : 389,
+            "snippet" : {
+              "text" : "    def _get_hash(self) -> str:\n        \"\"\"Generate a stable hash of the resource_defs, including the key, config, fn implementation, and description.\"\"\"\n        contents = hashlib.sha1()\n        contents.update(\n            _map_to_hashable(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1f031dc3b6a8cb27:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/types/config_schema.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 113,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 111,
+            "endLine" : 115,
+            "snippet" : {
+              "text" : "            return None  # Sentinel value for no version provided.\n        else:\n            return hashlib.sha1(version.encode(\"utf-8\")).hexdigest()\n\n    def construct_from_config_value(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3ecfa8f73145701b:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/data_version.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 4,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 2,
+            "endLine" : 6,
+            "snippet" : {
+              "text" : "from collections import OrderedDict\nfrom enum import Enum\nfrom hashlib import sha256\nfrom typing import (\n    TYPE_CHECKING,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1c964389f7dfe38c:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster-test/dagster_test/toys/user_computed_data_versions/external_system.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 4,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 2,
+            "endLine" : 6,
+            "snippet" : {
+              "text" : "import os\nfrom dataclasses import asdict, dataclass\nfrom hashlib import sha256\nfrom time import sleep\nfrom typing import AbstractSet, Any, Mapping, Optional, Union\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d205b8d83633124f:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_config/field_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 77,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 75,
+            "endLine" : 79,
+            "snippet" : {
+              "text" : "\ndef compute_fields_hash(fields, description, field_aliases=None):\n    m = hashlib.sha1()  # so that hexdigest is 40, not 64 bytes\n    if description:\n        _add_hash(m, \":description: \" + description)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4b3f4ac46ba711a1:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/execution/plan/inputs.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 91,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 89,
+            "endLine" : 93,
+            "snippet" : {
+              "text" : "    str_lst = cast(List[str], lst)\n    unhashed = \"\".join(sorted(str_lst))\n    return hashlib.sha1(unhashed.encode(\"utf-8\")).hexdigest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "458d7a4f13e5cf63:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-k8s/dagster_k8s/job.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 895,
+            "startColumn" : 17,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 893,
+            "endLine" : 897,
+            "snippet" : {
+              "text" : "\n    # Creates 32-bit signed int, so could be negative\n    name_hash = hashlib.md5((input_1 + input_2).encode(\"utf-8\"))\n\n    return name_hash.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1799f89bfc8c0d24:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/storage/local_compute_log_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 228,
+            "startColumn" : 39,
+            "endColumn" : 50
+          },
+          "contextRegion" : {
+            "startLine" : 226,
+            "endLine" : 230,
+            "snippet" : {
+              "text" : "            filename = f\"{filename}.partial\"\n        if len(filename) > MAX_FILENAME_LENGTH:\n            filename = \"{}.{}\".format(hashlib.md5(filebase.encode(\"utf-8\")).hexdigest(), extension)\n        return os.path.join(self._base_dir, *namespace, filename)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "418ab4cea2f2a9ec:1",
+        "primaryLocationStartColumnFingerprint" : "26"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/multi_dimensional_partitions.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 223,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 221,
+            "endLine" : 225,
+            "snippet" : {
+              "text" : "        self, dynamic_partitions_store: Optional[DynamicPartitionsStore] = None\n    ) -> str:\n        return hashlib.sha1(\n            str(\n                {\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cf0b48e75f9180d0:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "examples/docs_snippets/docs_snippets/guides/dagster/asset_versioning_and_caching/observable_source_asset_path_with_io_managers.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 2,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 4,
+            "snippet" : {
+              "text" : "import os\nfrom hashlib import sha256\nfrom typing import Any\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3936c9b36bb107b7:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "examples/docs_snippets/docs_snippets/guides/dagster/asset_versioning_and_caching/observable_source_asset_path_with_non_argument_deps.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 1,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 3,
+            "snippet" : {
+              "text" : "from hashlib import sha256\n\nfrom dagster import (\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "520d2bf284f0ad02:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "examples/docs_snippets/docs_snippets/concepts/assets/observable_source_assets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 17
+          },
+          "region" : {
+            "startLine" : 7,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 5,
+            "endLine" : 9,
+            "snippet" : {
+              "text" : "# ruff: isort: split\n# start_plain\nfrom hashlib import sha256\n\nfrom dagster import DataVersion, observable_source_asset\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "21cc5ba3db22276b:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-gcp/dagster_gcp/bigquery/ops.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 48,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 46,
+            "endLine" : 50,
+            "snippet" : {
+              "text" : "    \"\"\"\n    sql_queries = check.list_param(sql_queries, \"sql queries\", of_type=str)\n    m = hashlib.sha1()\n    for query in sql_queries:\n        m.update(query.encode(\"utf-8\"))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "525cf68fa14e366b:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/partition.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 241,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 239,
+            "endLine" : 243,
+            "snippet" : {
+              "text" : "        self, dynamic_partitions_store: Optional[DynamicPartitionsStore] = None\n    ) -> str:\n        return hashlib.sha1(\n            json.dumps(\n                self.get_partition_keys(dynamic_partitions_store=dynamic_partitions_store)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b93d2a1799cbe531:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-airbyte/dagster_airbyte/resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 403,
+            "startColumn" : 15,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 401,
+            "endLine" : 405,
+            "snippet" : {
+              "text" : "            return self.make_request(endpoint, data)\n        data_json = json.dumps(data, sort_keys=True)\n        sha = hashlib.sha1()\n        sha.update(endpoint.encode(\"utf-8\"))\n        sha.update(data_json.encode(\"utf-8\"))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a0bd60b11f3ed044:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/execution/context/system.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 8,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 6,
+            "endLine" : 10,
+            "snippet" : {
+              "text" : "from abc import ABC, abstractmethod\nfrom dataclasses import dataclass\nfrom hashlib import sha256\nfrom typing import (\n    TYPE_CHECKING,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1e636205e59b5eb0:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/telemetry.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 458,
+            "startColumn" : 12,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 456,
+            "endLine" : 460,
+            "snippet" : {
+              "text" : "\ndef hash_name(name: str) -> str:\n    return hashlib.sha256(name.encode(\"utf-8\")).hexdigest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "25fd1b4c7baa9013:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/asset_defs_tests/test_assets_job.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 23
+          },
+          "region" : {
+            "startLine" : 2561,
+            "startColumn" : 27,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 2559,
+            "endLine" : 2563,
+            "snippet" : {
+              "text" : "                    node_def_name += (\n                        \"_subset_\"\n                        + hashlib.md5(\n                            (str(list(sorted(selected_keys_for_node)))).encode()\n                        ).hexdigest()[-5:]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d084f6c9079e44f7:1",
+        "primaryLocationStartColumnFingerprint" : "2"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/core_tests/runtime_types_tests/config_schema_tests/test_config_schema.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 24
+          },
+          "region" : {
+            "startLine" : 51,
+            "startColumn" : 61,
+            "endColumn" : 73
+          },
+          "contextRegion" : {
+            "startLine" : 49,
+            "endLine" : 51,
+            "snippet" : {
+              "text" : "\n    assert _foo.loader_version == \"5\"\n    assert _foo.compute_loaded_input_version(dict_param) == hashlib.sha1(b\"542\").hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bd5c68a1be993ec8:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/core_tests/instance_tests/test_instance_data_versions.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 25
+          },
+          "region" : {
+            "startLine" : 2,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 4,
+            "snippet" : {
+              "text" : "import time\nfrom hashlib import sha256\nfrom typing import Any, Union\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "df6888880699aeea:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/core_tests/test_resolve_versions.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 26
+          },
+          "region" : {
+            "startLine" : 58,
+            "startColumn" : 36,
+            "endColumn" : 48
+          },
+          "contextRegion" : {
+            "startLine" : 56,
+            "endLine" : 60,
+            "snippet" : {
+              "text" : "\ndef test_join_and_hash():\n    assert join_and_hash(\"foo\") == hashlib.sha1(b\"foo\").hexdigest()\n\n    assert join_and_hash(\"foo\", None, \"bar\") is None\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7bb07b78477819e9:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/core_tests/test_resolve_versions.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 26
+          },
+          "region" : {
+            "startLine" : 62,
+            "startColumn" : 43,
+            "endColumn" : 55
+          },
+          "contextRegion" : {
+            "startLine" : 60,
+            "endLine" : 64,
+            "snippet" : {
+              "text" : "    assert join_and_hash(\"foo\", None, \"bar\") is None\n\n    assert join_and_hash(\"foo\", \"bar\") == hashlib.sha1(b\"barfoo\").hexdigest()\n\n    assert join_and_hash(\"foo\", \"bar\", \"zab\") == join_and_hash(\"zab\", \"bar\", \"foo\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "30e69194d942e74d:1",
+        "primaryLocationStartColumnFingerprint" : "38"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 23,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 21,
+            "endLine" : 25,
+            "snippet" : {
+              "text" : "def generate_ssh_key():\n    # generate private/public key pair\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n\n    # get private key in PEM container format\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae0e75d227f14:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 23,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 21,
+            "endLine" : 25,
+            "snippet" : {
+              "text" : "def generate_ssh_key():\n    # generate private/public key pair\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n\n    # get private key in PEM container format\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae0e75d227f14:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 8,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 6,
+            "endLine" : 10,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nfrom dagster import Field\nfrom dagster._core.definitions.decorators import op\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d1ff0a344f94e0f1:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 7,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 5,
+            "endLine" : 9,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nfrom dagster import op\nfrom dagster._utils.test import wrap_op_in_graph_and_execute\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "88b81f2fa50c2f62:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 5,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "\nFAKE_PRIVATE_RSA_KEY = (\n    rsa.generate_private_key(public_exponent=65537, key_size=1024, backend=default_backend())\n    .private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a92bbe9255cc87e6:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 5,
+            "endColumn" : 94
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "\nFAKE_PRIVATE_RSA_KEY = (\n    rsa.generate_private_key(public_exponent=65537, key_size=1024, backend=default_backend())\n    .private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a92bbe9255cc87e6:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/asset_defs_tests/test_unresolved_asset_job.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 29
+          },
+          "region" : {
+            "startLine" : 434,
+            "startColumn" : 27,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 432,
+            "endLine" : 436,
+            "snippet" : {
+              "text" : "                    node_def_name += (\n                        \"_subset_\"\n                        + hashlib.md5(\n                            (str(list(sorted(selected_keys_for_node)))).encode()\n                        ).hexdigest()[-5:]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d084f6c9079e44f7:1",
+        "primaryLocationStartColumnFingerprint" : "2"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/time_window_partitions.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 30
+          },
+          "region" : {
+            "startLine" : 934,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 932,
+            "endLine" : 936,
+            "snippet" : {
+              "text" : "        self, dynamic_partitions_store: Optional[DynamicPartitionsStore] = None\n    ) -> str:\n        return hashlib.sha1(self.__repr__().encode(\"utf-8\")).hexdigest()\n\n    def has_partition_key(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3451c26440ed9d89:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster-test/dagster_test/toys/external_execution/numbers_example/util.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 31
+          },
+          "region" : {
+            "startLine" : 18,
+            "startColumn" : 12,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 16,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "\ndef compute_data_version(value: int):\n    return hashlib.sha256(str(value).encode(\"utf-8\")).hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7f242877bdbc726c:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_serdes/utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 32
+          },
+          "region" : {
+            "startLine" : 14,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 12,
+            "endLine" : 16,
+            "snippet" : {
+              "text" : "\ndef hash_str(in_str: str) -> str:\n    m = hashlib.sha1()  # so that hexdigest is 40, not 64 bytes\n    m.update(in_str.encode(\"utf-8\"))\n    return m.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c371a4d52743031a:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-aws/dagster_aws/ecs/utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 33
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "\ndef _get_family_hash(name):\n    m = hashlib.sha1()\n    m.update(name.encode(\"utf-8\"))\n    name_hash = m.hexdigest()[:8]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b4a8922272184d3:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/version_strategy.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 89,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 87,
+            "endLine" : 91,
+            "snippet" : {
+              "text" : "    def _get_source_hash(self, fn):\n        code_as_str = inspect.getsource(fn)\n        return hashlib.sha1(code_as_str.encode(\"utf-8\")).hexdigest()\n\n    @public\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c49a14b69763c06e:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 23,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 21,
+            "endLine" : 25,
+            "snippet" : {
+              "text" : "def generate_ssh_key():\n    # generate private/public key pair\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n\n    # get private key in PEM container format\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae0e75d227f14:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 23,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 21,
+            "endLine" : 25,
+            "snippet" : {
+              "text" : "def generate_ssh_key():\n    # generate private/public key pair\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n\n    # get private key in PEM container format\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae0e75d227f14:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 8,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 6,
+            "endLine" : 10,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nfrom dagster import Field\nfrom dagster._core.definitions.decorators import op\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d1ff0a344f94e0f1:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 7,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 5,
+            "endLine" : 9,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nfrom dagster import op\nfrom dagster._utils.test import wrap_op_in_graph_and_execute\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "88b81f2fa50c2f62:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 5,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "\nFAKE_PRIVATE_RSA_KEY = (\n    rsa.generate_private_key(public_exponent=65537, key_size=1024, backend=default_backend())\n    .private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a92bbe9255cc87e6:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 5,
+            "endColumn" : 94
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "\nFAKE_PRIVATE_RSA_KEY = (\n    rsa.generate_private_key(public_exponent=65537, key_size=1024, backend=default_backend())\n    .private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a92bbe9255cc87e6:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/definitions_tests/auto_materialize_tests/asset_daemon_scenario.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 77,
+            "startColumn" : 33,
+            "endColumn" : 44
+          },
+          "contextRegion" : {
+            "startLine" : 75,
+            "endLine" : 79,
+            "snippet" : {
+              "text" : "    \"\"\"\n    attribute_name = (\n        f\"_asset_daemon_target_{hashlib.md5(str(scenario_state.asset_specs).encode()).hexdigest()}\"\n    )\n    globals()[attribute_name] = Definitions(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "669e07f65fcf6a79:1",
+        "primaryLocationStartColumnFingerprint" : "24"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-fivetran/dagster_fivetran/asset_defs.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 352,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 350,
+            "endLine" : 354,
+            "snippet" : {
+              "text" : "        self._poll_timeout = poll_timeout\n\n        contents = hashlib.sha1()\n        contents.update(\",\".join(key_prefix).encode(\"utf-8\"))\n        if connector_filter:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f2c16c25cf2b79c1:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-dbt/dagster_dbt/asset_defs.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 433,
+            "startColumn" : 30,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 431,
+            "endLine" : 435,
+            "snippet" : {
+              "text" : "        op_name = f\"run_dbt_{project_id}\"\n        if select != \"fqn:*\" or exclude:\n            op_name += \"_\" + hashlib.md5(select.encode() + exclude.encode()).hexdigest()[-5:]\n\n    check_outs_by_output_name: Mapping[str, Out] = {}\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bf73414cda96794c:1",
+        "primaryLocationStartColumnFingerprint" : "17"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-airbyte/dagster_airbyte/asset_defs.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 550,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 548,
+            "endLine" : 552,
+            "snippet" : {
+              "text" : "        )\n\n        contents = hashlib.sha1()  # so that hexdigest is 40, not 64 bytes\n        contents.update(\",\".join(key_prefix).encode(\"utf-8\"))\n        contents.update(str(create_assets_for_normalization_tables).encode(\"utf-8\"))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "42098f929b2f5aeb:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-dbt/dagster_dbt/asset_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 556,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 554,
+            "endLine" : 558,
+            "snippet" : {
+              "text" : "\ndef default_code_version_fn(dbt_resource_props: Mapping[str, Any]) -> str:\n    return hashlib.sha1(\n        (dbt_resource_props.get(\"raw_sql\") or dbt_resource_props.get(\"raw_code\", \"\")).encode(\n            \"utf-8\"\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ec20271788d58378:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/assets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 1351,
+            "startColumn" : 16,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1349,
+            "endLine" : 1353,
+            "snippet" : {
+              "text" : "    def unique_id(self) -> str:\n        \"\"\"A unique identifier for the AssetsDefinition that's stable across processes.\"\"\"\n        return hashlib.md5((json.dumps(sorted(self.keys))).encode(\"utf-8\")).hexdigest()\n\n    def with_resources(self, resource_defs: Mapping[str, ResourceDefinition]) -> \"AssetsDefinition\":\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "af3d589d3dcc9473:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/cacheable_assets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 291,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 289,
+            "endLine" : 293,
+            "snippet" : {
+              "text" : "    def _get_hash(self) -> str:\n        \"\"\"Generate a stable hash of the various prefix/group mappings.\"\"\"\n        contents = hashlib.sha1()\n        if self._output_asset_key_replacements:\n            contents.update(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d84a9d2865661262:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/cacheable_assets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 387,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 385,
+            "endLine" : 389,
+            "snippet" : {
+              "text" : "    def _get_hash(self) -> str:\n        \"\"\"Generate a stable hash of the resource_defs, including the key, config, fn implementation, and description.\"\"\"\n        contents = hashlib.sha1()\n        contents.update(\n            _map_to_hashable(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1f031dc3b6a8cb27:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/types/config_schema.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 113,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 111,
+            "endLine" : 115,
+            "snippet" : {
+              "text" : "            return None  # Sentinel value for no version provided.\n        else:\n            return hashlib.sha1(version.encode(\"utf-8\")).hexdigest()\n\n    def construct_from_config_value(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3ecfa8f73145701b:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/data_version.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 4,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 2,
+            "endLine" : 6,
+            "snippet" : {
+              "text" : "from collections import OrderedDict\nfrom enum import Enum\nfrom hashlib import sha256\nfrom typing import (\n    TYPE_CHECKING,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1c964389f7dfe38c:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster-test/dagster_test/toys/user_computed_data_versions/external_system.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 4,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 2,
+            "endLine" : 6,
+            "snippet" : {
+              "text" : "import os\nfrom dataclasses import asdict, dataclass\nfrom hashlib import sha256\nfrom time import sleep\nfrom typing import AbstractSet, Any, Mapping, Optional, Union\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d205b8d83633124f:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_config/field_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 77,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 75,
+            "endLine" : 79,
+            "snippet" : {
+              "text" : "\ndef compute_fields_hash(fields, description, field_aliases=None):\n    m = hashlib.sha1()  # so that hexdigest is 40, not 64 bytes\n    if description:\n        _add_hash(m, \":description: \" + description)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4b3f4ac46ba711a1:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/execution/plan/inputs.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 91,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 89,
+            "endLine" : 93,
+            "snippet" : {
+              "text" : "    str_lst = cast(List[str], lst)\n    unhashed = \"\".join(sorted(str_lst))\n    return hashlib.sha1(unhashed.encode(\"utf-8\")).hexdigest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "458d7a4f13e5cf63:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-k8s/dagster_k8s/job.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 895,
+            "startColumn" : 17,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 893,
+            "endLine" : 897,
+            "snippet" : {
+              "text" : "\n    # Creates 32-bit signed int, so could be negative\n    name_hash = hashlib.md5((input_1 + input_2).encode(\"utf-8\"))\n\n    return name_hash.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1799f89bfc8c0d24:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/storage/local_compute_log_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 228,
+            "startColumn" : 39,
+            "endColumn" : 50
+          },
+          "contextRegion" : {
+            "startLine" : 226,
+            "endLine" : 230,
+            "snippet" : {
+              "text" : "            filename = f\"{filename}.partial\"\n        if len(filename) > MAX_FILENAME_LENGTH:\n            filename = \"{}.{}\".format(hashlib.md5(filebase.encode(\"utf-8\")).hexdigest(), extension)\n        return os.path.join(self._base_dir, *namespace, filename)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "418ab4cea2f2a9ec:1",
+        "primaryLocationStartColumnFingerprint" : "26"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/multi_dimensional_partitions.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 223,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 221,
+            "endLine" : 225,
+            "snippet" : {
+              "text" : "        self, dynamic_partitions_store: Optional[DynamicPartitionsStore] = None\n    ) -> str:\n        return hashlib.sha1(\n            str(\n                {\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cf0b48e75f9180d0:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "examples/docs_snippets/docs_snippets/guides/dagster/asset_versioning_and_caching/observable_source_asset_path_with_io_managers.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 2,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 4,
+            "snippet" : {
+              "text" : "import os\nfrom hashlib import sha256\nfrom typing import Any\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3936c9b36bb107b7:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "examples/docs_snippets/docs_snippets/guides/dagster/asset_versioning_and_caching/observable_source_asset_path_with_non_argument_deps.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 1,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 3,
+            "snippet" : {
+              "text" : "from hashlib import sha256\n\nfrom dagster import (\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "520d2bf284f0ad02:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "examples/docs_snippets/docs_snippets/concepts/assets/observable_source_assets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 17
+          },
+          "region" : {
+            "startLine" : 7,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 5,
+            "endLine" : 9,
+            "snippet" : {
+              "text" : "# ruff: isort: split\n# start_plain\nfrom hashlib import sha256\n\nfrom dagster import DataVersion, observable_source_asset\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "21cc5ba3db22276b:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-gcp/dagster_gcp/bigquery/ops.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 48,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 46,
+            "endLine" : 50,
+            "snippet" : {
+              "text" : "    \"\"\"\n    sql_queries = check.list_param(sql_queries, \"sql queries\", of_type=str)\n    m = hashlib.sha1()\n    for query in sql_queries:\n        m.update(query.encode(\"utf-8\"))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "525cf68fa14e366b:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/partition.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 241,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 239,
+            "endLine" : 243,
+            "snippet" : {
+              "text" : "        self, dynamic_partitions_store: Optional[DynamicPartitionsStore] = None\n    ) -> str:\n        return hashlib.sha1(\n            json.dumps(\n                self.get_partition_keys(dynamic_partitions_store=dynamic_partitions_store)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b93d2a1799cbe531:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-airbyte/dagster_airbyte/resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 403,
+            "startColumn" : 15,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 401,
+            "endLine" : 405,
+            "snippet" : {
+              "text" : "            return self.make_request(endpoint, data)\n        data_json = json.dumps(data, sort_keys=True)\n        sha = hashlib.sha1()\n        sha.update(endpoint.encode(\"utf-8\"))\n        sha.update(data_json.encode(\"utf-8\"))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a0bd60b11f3ed044:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/execution/context/system.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 8,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 6,
+            "endLine" : 10,
+            "snippet" : {
+              "text" : "from abc import ABC, abstractmethod\nfrom dataclasses import dataclass\nfrom hashlib import sha256\nfrom typing import (\n    TYPE_CHECKING,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1e636205e59b5eb0:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/telemetry.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 458,
+            "startColumn" : 12,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 456,
+            "endLine" : 460,
+            "snippet" : {
+              "text" : "\ndef hash_name(name: str) -> str:\n    return hashlib.sha256(name.encode(\"utf-8\")).hexdigest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "25fd1b4c7baa9013:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/asset_defs_tests/test_assets_job.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 23
+          },
+          "region" : {
+            "startLine" : 2561,
+            "startColumn" : 27,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 2559,
+            "endLine" : 2563,
+            "snippet" : {
+              "text" : "                    node_def_name += (\n                        \"_subset_\"\n                        + hashlib.md5(\n                            (str(list(sorted(selected_keys_for_node)))).encode()\n                        ).hexdigest()[-5:]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d084f6c9079e44f7:1",
+        "primaryLocationStartColumnFingerprint" : "2"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/core_tests/runtime_types_tests/config_schema_tests/test_config_schema.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 24
+          },
+          "region" : {
+            "startLine" : 51,
+            "startColumn" : 61,
+            "endColumn" : 73
+          },
+          "contextRegion" : {
+            "startLine" : 49,
+            "endLine" : 51,
+            "snippet" : {
+              "text" : "\n    assert _foo.loader_version == \"5\"\n    assert _foo.compute_loaded_input_version(dict_param) == hashlib.sha1(b\"542\").hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bd5c68a1be993ec8:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/core_tests/instance_tests/test_instance_data_versions.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 25
+          },
+          "region" : {
+            "startLine" : 2,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 4,
+            "snippet" : {
+              "text" : "import time\nfrom hashlib import sha256\nfrom typing import Any, Union\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "df6888880699aeea:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/core_tests/test_resolve_versions.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 26
+          },
+          "region" : {
+            "startLine" : 58,
+            "startColumn" : 36,
+            "endColumn" : 48
+          },
+          "contextRegion" : {
+            "startLine" : 56,
+            "endLine" : 60,
+            "snippet" : {
+              "text" : "\ndef test_join_and_hash():\n    assert join_and_hash(\"foo\") == hashlib.sha1(b\"foo\").hexdigest()\n\n    assert join_and_hash(\"foo\", None, \"bar\") is None\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7bb07b78477819e9:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/core_tests/test_resolve_versions.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 26
+          },
+          "region" : {
+            "startLine" : 62,
+            "startColumn" : 43,
+            "endColumn" : 55
+          },
+          "contextRegion" : {
+            "startLine" : 60,
+            "endLine" : 64,
+            "snippet" : {
+              "text" : "    assert join_and_hash(\"foo\", None, \"bar\") is None\n\n    assert join_and_hash(\"foo\", \"bar\") == hashlib.sha1(b\"barfoo\").hexdigest()\n\n    assert join_and_hash(\"foo\", \"bar\", \"zab\") == join_and_hash(\"zab\", \"bar\", \"foo\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "30e69194d942e74d:1",
+        "primaryLocationStartColumnFingerprint" : "38"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster_tests/asset_defs_tests/test_unresolved_asset_job.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 29
+          },
+          "region" : {
+            "startLine" : 434,
+            "startColumn" : 27,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 432,
+            "endLine" : 436,
+            "snippet" : {
+              "text" : "                    node_def_name += (\n                        \"_subset_\"\n                        + hashlib.md5(\n                            (str(list(sorted(selected_keys_for_node)))).encode()\n                        ).hexdigest()[-5:]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d084f6c9079e44f7:1",
+        "primaryLocationStartColumnFingerprint" : "2"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/time_window_partitions.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 30
+          },
+          "region" : {
+            "startLine" : 934,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 932,
+            "endLine" : 936,
+            "snippet" : {
+              "text" : "        self, dynamic_partitions_store: Optional[DynamicPartitionsStore] = None\n    ) -> str:\n        return hashlib.sha1(self.__repr__().encode(\"utf-8\")).hexdigest()\n\n    def has_partition_key(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3451c26440ed9d89:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster-test/dagster_test/toys/external_execution/numbers_example/util.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 31
+          },
+          "region" : {
+            "startLine" : 18,
+            "startColumn" : 12,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 16,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "\ndef compute_data_version(value: int):\n    return hashlib.sha256(str(value).encode(\"utf-8\")).hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7f242877bdbc726c:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_serdes/utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 32
+          },
+          "region" : {
+            "startLine" : 14,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 12,
+            "endLine" : 16,
+            "snippet" : {
+              "text" : "\ndef hash_str(in_str: str) -> str:\n    m = hashlib.sha1()  # so that hexdigest is 40, not 64 bytes\n    m.update(in_str.encode(\"utf-8\"))\n    return m.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c371a4d52743031a:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-aws/dagster_aws/ecs/utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 33
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "\ndef _get_family_hash(name):\n    m = hashlib.sha1()\n    m.update(name.encode(\"utf-8\"))\n    name_hash = m.hexdigest()[:8]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b4a8922272184d3:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/dagster/dagster/_core/definitions/version_strategy.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 89,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 87,
+            "endLine" : 91,
+            "snippet" : {
+              "text" : "    def _get_source_hash(self, fn):\n        code_as_str = inspect.getsource(fn)\n        return hashlib.sha1(code_as_str.encode(\"utf-8\")).hexdigest()\n\n    @public\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c49a14b69763c06e:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+      "ruleIndex" : 8,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+        "index" : 8
+      },
+      "message" : {
+        "text" : "Asymmetric key generation for algorithm RSA with key config source [ControlFlowNode for IntegerLiteral](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 23,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 21,
+            "endLine" : 25,
+            "snippet" : {
+              "text" : "def generate_ssh_key():\n    # generate private/public key pair\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n\n    # get private key in PEM container format\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae0e75d227f14:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      },
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 23,
+            "startColumn" : 95,
+            "endColumn" : 99
+          },
+          "contextRegion" : {
+            "startLine" : 21,
+            "endLine" : 25,
+            "snippet" : {
+              "text" : "def generate_ssh_key():\n    # generate private/public key pair\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n\n    # get private key in PEM container format\n"
+            }
+          }
+        },
+        "message" : {
+          "text" : "ControlFlowNode for IntegerLiteral"
+        }
+      } ]
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+      "ruleIndex" : 8,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+        "index" : 8
+      },
+      "message" : {
+        "text" : "Asymmetric key generation for algorithm RSA with key config source [ControlFlowNode for IntegerLiteral](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 5,
+            "endColumn" : 94
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "\nFAKE_PRIVATE_RSA_KEY = (\n    rsa.generate_private_key(public_exponent=65537, key_size=1024, backend=default_backend())\n    .private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a92bbe9255cc87e6:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      },
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 62,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "\nFAKE_PRIVATE_RSA_KEY = (\n    rsa.generate_private_key(public_exponent=65537, key_size=1024, backend=default_backend())\n    .private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        },
+        "message" : {
+          "text" : "ControlFlowNode for IntegerLiteral"
+        }
+      } ]
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 23,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 21,
+            "endLine" : 25,
+            "snippet" : {
+              "text" : "def generate_ssh_key():\n    # generate private/public key pair\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n\n    # get private key in PEM container format\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae0e75d227f14:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 23,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 21,
+            "endLine" : 25,
+            "snippet" : {
+              "text" : "def generate_ssh_key():\n    # generate private/public key pair\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n\n    # get private key in PEM container format\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae0e75d227f14:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-ssh/dagster_ssh_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 8,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 6,
+            "endLine" : 10,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nfrom dagster import Field\nfrom dagster._core.definitions.decorators import op\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d1ff0a344f94e0f1:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 7,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 5,
+            "endLine" : 9,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nfrom dagster import op\nfrom dagster._utils.test import wrap_op_in_graph_and_execute\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "88b81f2fa50c2f62:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 5,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "\nFAKE_PRIVATE_RSA_KEY = (\n    rsa.generate_private_key(public_exponent=65537, key_size=1024, backend=default_backend())\n    .private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a92bbe9255cc87e6:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python_modules/libraries/dagster-github/dagster_github_tests/test_resources.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 5,
+            "endColumn" : 94
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "\nFAKE_PRIVATE_RSA_KEY = (\n    rsa.generate_private_key(public_exponent=65537, key_size=1024, backend=default_backend())\n    .private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a92bbe9255cc87e6:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    } ],
+    "automationDetails" : {
+      "id" : "CBOM:dagster-io/dagster/python/"
+    },
+    "columnKind" : "unicodeCodePoints",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
