@@ -67,6 +67,7 @@ jobs:
           gh pr create \
             --title "${{ inputs.repositoryNameWithOwner }} Run #${{ github.run_id }} Attempt #${{ github.run_attempt }}" \
             --fill --label data-pr
+          gh pr merge --merge --rebase --auto 
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   add-workflow-summary:
