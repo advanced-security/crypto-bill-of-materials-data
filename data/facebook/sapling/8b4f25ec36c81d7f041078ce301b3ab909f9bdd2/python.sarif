@@ -1,0 +1,5509 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.15.2",
+        "notifications" : [ {
+          "id" : "py/baseline/expected-extracted-files",
+          "name" : "py/baseline/expected-extracted-files",
+          "shortDescription" : {
+            "text" : "Expected extracted files"
+          },
+          "fullDescription" : {
+            "text" : "Files appearing in the source archive that are expected to be extracted."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true
+          },
+          "properties" : {
+            "tags" : [ "expected-extracted-files", "telemetry" ]
+          }
+        } ],
+        "rules" : [ {
+          "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "name" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "shortDescription" : {
+            "text" : "Unknown Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+            "kind" : "problem",
+            "name" : "Unknown Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "shortDescription" : {
+            "text" : "All Cryptographic Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+            "kind" : "problem",
+            "name" : "All Cryptographic Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Symmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with symmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with symmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Symmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/iv-sources",
+          "name" : "py/quantum-readiness/cbom/iv-sources",
+          "shortDescription" : {
+            "text" : "Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/iv-sources",
+            "kind" : "problem",
+            "name" : "Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "shortDescription" : {
+            "text" : "All Asymmetric Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "description" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+            "kind" : "problem",
+            "name" : "All Asymmetric Algorithms",
+            "preci" : "cbom\n       cryptography",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-exchange",
+          "name" : "py/quantum-readiness/cbom/key-exchange",
+          "shortDescription" : {
+            "text" : "Key Exchange Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-exchange",
+            "kind" : "problem",
+            "name" : "Key Exchange Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/hash-algorithms",
+          "name" : "py/quantum-readiness/cbom/hash-algorithms",
+          "shortDescription" : {
+            "text" : "Hash Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/hash-algorithms",
+            "kind" : "problem",
+            "name" : "Hash Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Symmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Symmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "name" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "shortDescription" : {
+            "text" : "Known asymmetric key source generation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all known potential sources for asymmetric key generation while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all known potential sources for asymmetric key generation while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+            "kind" : "problem",
+            "name" : "Known asymmetric key source generation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Asymmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with asymmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with asymmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Asymmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-derivation",
+          "name" : "py/quantum-readiness/cbom/key-derivation",
+          "shortDescription" : {
+            "text" : "Key Derivation Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key derivation using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key derivation using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-derivation",
+            "kind" : "problem",
+            "name" : "Key Derivation Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/signing-algorithms",
+          "name" : "py/quantum-readiness/cbom/signing-algorithms",
+          "shortDescription" : {
+            "text" : "Signing Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of signing algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of signing algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/signing-algorithms",
+            "kind" : "problem",
+            "name" : "Signing Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Authenticated Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of authenticated encryption schemes using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of authenticated encryption schemes using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Authenticated Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Asymmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Asymmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "name" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "shortDescription" : {
+            "text" : "Block cipher mode of operation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential block cipher modes of operations using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential block cipher modes of operations using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+            "kind" : "problem",
+            "name" : "Block cipher mode of operation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "name" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "shortDescription" : {
+            "text" : "Elliptic Curve Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of elliptic curve algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of elliptic curve algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+            "kind" : "problem",
+            "name" : "Elliptic Curve Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql/python-queries",
+        "semanticVersion" : "0.9.2+78fcbd07d654881d9d3395efc0ea371c392529de",
+        "locations" : [ {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.2/x64/codeql/qlpacks/codeql/python-queries/0.9.2/",
+          "description" : {
+            "text" : "The QL pack root directory."
+          }
+        }, {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.2/x64/codeql/qlpacks/codeql/python-queries/0.9.2/qlpack.yml",
+          "description" : {
+            "text" : "The QL pack definition file."
+          }
+        } ]
+      } ]
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/treemanifest/__init__.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/lfs/__init__.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/thirdparty/attr/_make.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/blobstore.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 3
+      }
+    }, {
+      "location" : {
+        "uri" : "addons/build-tar.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 4
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/infinitepush/bundlestore.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 5
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/fs/cli/doctor/check_filesystems.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 6
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/context.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 7
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/remotefilelog/debugcommands.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 8
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/fs/py/eden/dirstate.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 9
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/eden_dirstate_serializer.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 10
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/exchange.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 11
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/tests/f",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 12
+      }
+    }, {
+      "location" : {
+        "uri" : "build/fbcode_builder/getdeps/fetcher.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 13
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/gen_version.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 14
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/git.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 15
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/hgsql.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 16
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/keepalive.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 17
+      }
+    }, {
+      "location" : {
+        "uri" : "build/fbcode_builder/getdeps/load.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 18
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/localrepo.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 19
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/contrib/long-branch-gca.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 20
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/mdiff.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 21
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/merge.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 22
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/github/mock_utils.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 23
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/patch.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 24
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/integration/readdir_test.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 25
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/repair.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 26
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/revlog.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 27
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/revlog2.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 28
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/tests/run-tests.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 29
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/slides/201904-segmented-changelog/segmented-changelog.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 30
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/setup.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 31
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/simplecache.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 32
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/simplemerge.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 33
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/sparse.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 34
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/sslutil.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 35
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/store.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 36
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/commitcloud/subscription.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 37
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/commitcloud/sync.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 38
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/tests/test-fb-ext-remotefilelog-histpack.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 39
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/integration/thrift_test.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 40
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/treemanifestserver.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 41
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/util.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 42
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/wireproto.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 43
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/scm/sapling/ext/lfs/wrapper.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 44
+      }
+    }, {
+      "location" : {
+        "uri" : "eden/integration/xattr_test.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 45
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifest/__init__.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 1461,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 1459,
+            "endLine" : 1463,
+            "snippet" : {
+              "text" : "        p1, p2 = self.historystore.getnodeinfo(name, node)[:2]\n        blob = revlog.textwithheader(rawtext, p1, p2)\n        if hashlib.sha1(blob).digest() == node:\n            bases = []\n            if deltabase != nullid:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5edaa6cb9ac7bcf3:1",
+        "primaryLocationStartColumnFingerprint" : "3"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifest/__init__.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 1775,
+            "startColumn" : 15,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1773,
+            "endLine" : 1777,
+            "snippet" : {
+              "text" : "\n    def serialize(self, value):\n        sha = hashlib.sha1(value).digest()\n        return sha + struct.pack(\"!I\", len(self.key)) + self.key + value\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b33d7281c5498efe:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifest/__init__.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 1790,
+            "startColumn" : 19,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 1788,
+            "endLine" : 1792,
+            "snippet" : {
+              "text" : "            )\n        value = raw[24 + keylen :]\n        realsha = hashlib.sha1(value).digest()\n        if sha != realsha:\n            raise IOError(\"invalid content for the key in the cache: %s\" % key)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5946f4c0812abc82:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/lfs/__init__.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 226,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 224,
+            "endLine" : 228,
+            "snippet" : {
+              "text" : "\n    data = ui.fin.read()\n    oid = hashlib.sha256(data).hexdigest()\n    longoid = \"sha256:%s\" % oid\n    size = len(data)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b3c3ab1110f3f933:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/thirdparty/attr/_make.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 555,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 553,
+            "endLine" : 557,
+            "snippet" : {
+              "text" : "\n    # We cache the generated init methods for the same kinds of attributes.\n    sha1 = hashlib.sha1()\n    sha1.update(repr(attrs).encode(\"utf-8\"))\n    unique_filename = \"<attrs generated init {0}>\".format(sha1.hexdigest())\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6491628a2a0d8938:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/blobstore.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 29,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 27,
+            "endLine" : 31,
+            "snippet" : {
+              "text" : "    def write(self, oid, data):\n        \"\"\"Write blob to local blobstore.\"\"\"\n        contentsha256 = hashlib.sha256(data).hexdigest()\n        if contentsha256 != oid:\n            raise error.Abort(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7f99eec9c1719c02:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "addons/build-tar.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 27,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 25,
+            "endLine" : 29,
+            "snippet" : {
+              "text" : "# used to detect if files are changed.\ndef hash_path_contents(paths: List[str]):\n    h = hashlib.sha1()\n    sorted_paths = sorted(paths)\n    for path in sorted_paths:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9db631e2061f44be:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/infinitepush/bundlestore.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 44,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 42,
+            "endLine" : 46,
+            "snippet" : {
+              "text" : "\n    def write(self, data):\n        filename = hashlib.sha1(data).hexdigest()\n        dirpath = self._dirpath(filename)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6873812a5ff9ac2e:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/fs/cli/doctor/check_filesystems.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 662,
+            "startColumn" : 14,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 660,
+            "endLine" : 664,
+            "snippet" : {
+              "text" : "\ndef _compute_file_sha1(path: Path) -> bytes:\n    hasher = hashlib.sha1()\n    with open(path, \"rb\") as f:\n        while True:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b16cd351381b5f78:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/context.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 891,
+            "startColumn" : 16,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 889,
+            "endLine" : 893,
+            "snippet" : {
+              "text" : "                [(self.path(), self.filenode())]\n            )[0][1]\n        return hashlib.sha256(self.data()).digest()\n\n    def isbinary(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2c9ae5b9288829db:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/context.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 2148,
+            "startColumn" : 16,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 2146,
+            "endLine" : 2150,
+            "snippet" : {
+              "text" : "\n    def content_sha256(self):\n        return hashlib.sha256(self.data()).digest()\n\n    def renamed(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4b65d86dd659b7c7:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/context.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 3262,
+            "startColumn" : 16,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 3260,
+            "endLine" : 3264,
+            "snippet" : {
+              "text" : "\n    def content_sha256(self):\n        return hashlib.sha256(self.data()).digest()\n\n    def remove(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e73adcea405d54bb:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/remotefilelog/debugcommands.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 59,
+            "startColumn" : 15,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 57,
+            "endLine" : 61,
+            "snippet" : {
+              "text" : "def buildtemprevlog(repo, file):\n    # get filename key\n    filekey = hashlib.sha1(file).hexdigest()\n    filedir = os.path.join(repo.path, \"store/data\", filekey)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "66399cfbed6b0cc3:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/remotefilelog/debugcommands.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 434,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 432,
+            "endLine" : 436,
+            "snippet" : {
+              "text" : "                hashformatter(node),\n                hashformatter(deltabasenode),\n                hashlib.sha1(delta).hexdigest(),\n                len(delta),\n            )\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9a93fc9f9af2505f:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/fs/py/eden/dirstate.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 64,
+            "endLine" : 68,
+            "snippet" : {
+              "text" : "    #   - Because we use SHA-256 as the hash algorithm for the checksum, the\n    #     remaining 32 bytes are used for the hash.\n    sha = hashlib.sha256()\n\n    def hashing_write(data: bytes) -> None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9fff39cc391dfd32:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/fs/py/eden/dirstate.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 105,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 103,
+            "endLine" : 107,
+            "snippet" : {
+              "text" : "    copymap = {}\n\n    sha = hashlib.sha256()\n\n    def hashing_read(num):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2d6951a1ee6c4f83:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/eden_dirstate_serializer.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 64,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 62,
+            "endLine" : 66,
+            "snippet" : {
+              "text" : "    #   - Because we use SHA-256 as the hash algorithm for the checksum, the\n    #     remaining 32 bytes are used for the hash.\n    sha = hashlib.sha256()\n\n    def hashing_write(data: bytes) -> None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9fff39cc391dfd32:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/exchange.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 2153,
+            "startColumn" : 18,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 2151,
+            "endLine" : 2155,
+            "snippet" : {
+              "text" : "    \"\"\"\n    heads = repo.heads()\n    heads_hash = hashlib.sha1(b\"\".join(sorted(heads))).digest()\n    if not (\n        their_heads == [b\"force\"]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a469f9258f03ea46:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/tests/f",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 97,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 95,
+            "endLine" : 99,
+            "snippet" : {
+              "text" : "            facts.append(\"md5=%s\" % h.hexdigest()[: opts.bytes])\n        if opts.sha1 and content is not None:\n            h = hashlib.sha1(content)\n            facts.append(\"sha1=%s\" % h.hexdigest()[: opts.bytes])\n        if isstdin:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "236eb2ec82405215:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/tests/f",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 94,
+            "startColumn" : 17,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 92,
+            "endLine" : 96,
+            "snippet" : {
+              "text" : "                    facts.append(\"older than %s\" % opts.newer)\n        if opts.md5 and content is not None:\n            h = hashlib.md5(content)\n            facts.append(\"md5=%s\" % h.hexdigest()[: opts.bytes])\n        if opts.sha1 and content is not None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3a7685b75b5257ba:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "build/fbcode_builder/getdeps/fetcher.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 199,
+            "startColumn" : 20,
+            "endColumn" : 34
+          },
+          "contextRegion" : {
+            "startLine" : 197,
+            "endLine" : 201,
+            "snippet" : {
+              "text" : "    def hash(self) -> str:\n        if self.packages_are_installed():\n            return hashlib.sha256(self.installed).hexdigest()\n        else:\n            return \"0\" * 40\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8ec0793c0d7af109:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "build/fbcode_builder/getdeps/fetcher.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 749,
+            "startColumn" : 13,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 747,
+            "endLine" : 751,
+            "snippet" : {
+              "text" : "\n    def _verify_hash(self) -> None:\n        h = hashlib.sha256()\n        with open(self.file_name, \"rb\") as f:\n            while True:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e2ac2fcb996b42e7:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/gen_version.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 47,
+            "startColumn" : 39,
+            "endColumn" : 51
+          },
+          "contextRegion" : {
+            "startLine" : 45,
+            "endLine" : 49,
+            "snippet" : {
+              "text" : "    version = \"%s_%s\" % (MAIN_VERSION, sub_version)\n    versionb = version.encode(\"ascii\")\n    versionhash = struct.unpack(\">Q\", hashlib.sha1(versionb).digest()[:8])[0]\n\n    if args.output_path.endswith(\"py\"):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3d41058607644503:1",
+        "primaryLocationStartColumnFingerprint" : "34"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/git.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 768,
+            "startColumn" : 21,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 766,
+            "endLine" : 770,
+            "snippet" : {
+              "text" : "        <parent repo>/.hg/store/gitmodules/<escaped submodule name>\n        \"\"\"\n        urldigest = hashlib.sha1(self.url.encode(\"utf-8\")).hexdigest()\n        repopath = self.gitmodulesvfs.join(\"gitmodules\", urldigest)\n        ident = identity.sniffdir(repopath)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e50666b5d3f391dd:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/git.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 1007,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 1005,
+            "endLine" : 1009,
+            "snippet" : {
+              "text" : "    \"\"\"(bytes, bytes) -> bytes. obtain git SHA1 hash\"\"\"\n    # git blob format: kind + \" \" + str(size) + \"\\0\" + text\n    return hashlib.sha1(b\"%s %d\\0%s\" % (kind, len(text), text)).digest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "62634fdfeba24d69:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/hgsql.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 922,
+            "startColumn" : 23,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 920,
+            "endLine" : 924,
+            "snippet" : {
+              "text" : "                if k != \"tip\":\n                    v = hex(v)\n                sha = hashlib.sha1(encodeutf8(\"%s%s%s\" % (sha, k, v))).hexdigest()\n            return sha\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "42dce10db7662408:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/hgsql.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 946,
+            "startColumn" : 24,
+            "endColumn" : 36
+          },
+          "contextRegion" : {
+            "startLine" : 944,
+            "endLine" : 948,
+            "snippet" : {
+              "text" : "            # is it a new repo with empty references?\n            if sqlresults == [[]]:\n                return hashlib.sha1(encodeutf8(\"%s%s\" % (\"tip\", -1))).hexdigest()\n            # sqlresults looks like [[('59237a7416a6a1764ea088f0bc1189ea58d5b592',)]]\n            sqlsynchash = sqlresults[0][0][0]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9c445b1741eaae91:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/keepalive.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 17
+          },
+          "region" : {
+            "startLine" : 638,
+            "startColumn" : 11,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 636,
+            "endLine" : 640,
+            "snippet" : {
+              "text" : "\ndef continuity(url):\n    md5 = hashlib.md5\n    format = \"%25s: %s\"\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3a0d1240e676b90:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "build/fbcode_builder/getdeps/load.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 270,
+            "startColumn" : 18,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 268,
+            "endLine" : 272,
+            "snippet" : {
+              "text" : "        ctx = self.ctx_gen.get_context(manifest.name)\n\n        hasher = hashlib.sha256()\n        # Some environmental and configuration things matter\n        env = {}\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d6387f4cc118a3b0:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/localrepo.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 1777,
+            "startColumn" : 18,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 1775,
+            "endLine" : 1779,
+            "snippet" : {
+              "text" : "\n        idbase = b\"%.40f#%f\" % (random.random(), time.time())\n        ha = hex(hashlib.sha1(idbase).digest())\n        txnid = \"TXN:\" + ha\n        self.hook(\"pretxnopen\", throw=True, txnname=desc, txnid=txnid)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9f2daf9a1f6e0e0e:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/contrib/long-branch-gca.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 75,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 73,
+            "endLine" : 77,
+            "snippet" : {
+              "text" : "            pnode = nodes[prev + 1]\n            msg = hexlify(nullid) + f\"\\nuser\\n{i+1} 0\\n\\n{i+1}\".encode()\n            node = hashlib.sha1(nullid + pnode + msg).digest()\n            ddata = b\"u\" + msg\n            idata = ipack(dlen << 16, len(ddata), len(msg), i, i, prev, -1, node)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7d15e2d0446d65ff:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/mdiff.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 19,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 17,
+            "endLine" : 21,
+            "snippet" : {
+              "text" : "import struct\nimport zlib\nfrom hashlib import sha1\nfrom typing import Iterator, List, Optional, Pattern, Sized, Tuple, TYPE_CHECKING, Union\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ca360dfeb1dad3cc:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/merge.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 229,
+            "startColumn" : 24,
+            "endColumn" : 36
+          },
+          "contextRegion" : {
+            "startLine" : 227,
+            "endLine" : 231,
+            "snippet" : {
+              "text" : "            hash = nullhex\n        else:\n            hash = hex(hashlib.sha1(encodeutf8(fcl.path())).digest())\n            self._repo.localvfs.write(\"merge/\" + hash, fcl.data())\n        self._rust_ms.insert(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3821fdb057ecde4d:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/github/mock_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 23
+          },
+          "region" : {
+            "startLine" : 636,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 634,
+            "endLine" : 636,
+            "snippet" : {
+              "text" : "def gen_hash_hexdigest(s: str) -> str:\n    \"\"\"generate sha1 digit hex string for input `s`\"\"\"\n    return hashlib.sha1(s.encode()).hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1fcbbb3f19940ab8:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/patch.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 24
+          },
+          "region" : {
+            "startLine" : 3033,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 3031,
+            "endLine" : 3035,
+            "snippet" : {
+              "text" : "            text = b\"\"\n        l = len(text)\n        s = hashlib.sha1(b\"blob %d\\0\" % l)\n        s.update(text)\n        return encodeutf8(s.hexdigest())\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a7ae778575e25195:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/integration/readdir_test.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 25
+          },
+          "region" : {
+            "startLine" : 681,
+            "startColumn" : 21,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 679,
+            "endLine" : 683,
+            "snippet" : {
+              "text" : "        ifile = open(fullpath, \"rb\")\n        file_contents = ifile.read()\n        sha1_hash = hashlib.sha1(file_contents).digest()\n        ifile.close()\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ab77daa7ef0f1dd8:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/repair.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 26
+          },
+          "region" : {
+            "startLine" : 36,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 34,
+            "endLine" : 38,
+            "snippet" : {
+              "text" : "    allcommits = repo.set(\"%ln::%ln\", bases, heads)\n    allhashes = sorted(c.hex() for c in allcommits)\n    totalhash = hashlib.sha1(encodeutf8(\"\".join(allhashes))).digest()\n    name = \"%s/%s-%s-%s.hg\" % (backupdir, short(node), hex(totalhash[:4]), suffix)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "126e8f1e0c130dbf:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/revlog.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 148,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 146,
+            "endLine" : 150,
+            "snippet" : {
+              "text" : "            a = p2\n            b = p1\n        s = hashlib.sha1(a)\n        s.update(b)\n    s.update(text)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1763ce3717d9e0d9:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/revlog.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 125,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 123,
+            "endLine" : 127,
+            "snippet" : {
+              "text" : "\n\n_nullhash = hashlib.sha1(nullid)\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ee907c6539aa55c3:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/revlog2.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 458,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 456,
+            "endLine" : 460,
+            "snippet" : {
+              "text" : "        blob = textwithheader(rawtext, p1, p2)\n\n        if hashlib.sha1(blob).digest() != node:\n            assert flags != 0\n            self._store.add_arbitrary_blob(node, blob)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1d6f73d11d45fd0:1",
+        "primaryLocationStartColumnFingerprint" : "3"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/tests/run-tests.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 29
+          },
+          "region" : {
+            "startLine" : 1163,
+            "startColumn" : 25,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 1161,
+            "endLine" : 1165,
+            "snippet" : {
+              "text" : "\n        if self._watchman:\n            shortname = hashlib.sha1(_bytespath(\"%s\" % name)).hexdigest()[:6]\n            self._watchmandir = os.path.join(self._threadtmp, \"%s.watchman\" % shortname)\n            os.mkdir(self._watchmandir)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ecb94cd762671955:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/slides/201904-segmented-changelog/segmented-changelog.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 30
+          },
+          "region" : {
+            "startLine" : 341,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 339,
+            "endLine" : 343,
+            "snippet" : {
+              "text" : "    if isinstance(s, str):\n        s = s.encode(\"utf-8\")\n    h = hashlib.sha1()\n    h.update(s)\n    return h.hexdigest()[:5]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b9142c989924ca0a:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/setup.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 31
+          },
+          "region" : {
+            "startLine" : 454,
+            "startColumn" : 25,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 452,
+            "endLine" : 456,
+            "snippet" : {
+              "text" : "# connects to a compatible server.\nsapling_versionhash = str(\n    struct.unpack(\">Q\", hashlib.sha1(sapling_versionb).digest()[:8])[0]\n)\nsapling_versionhashb = sapling_versionhash.encode(\"ascii\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "171472fadebb285:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/simplecache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 32
+          },
+          "region" : {
+            "startLine" : 398,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 396,
+            "endLine" : 400,
+            "snippet" : {
+              "text" : "def checksum(key, value):\n    key = pycompat.encodeutf8(key)\n    s = hashlib.sha1(key)\n    s.update(value)\n    return pycompat.encodeutf8(node.hex(s.digest()))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1e32923312037a50:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/simplemerge.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 33
+          },
+          "region" : {
+            "startLine" : 547,
+            "startColumn" : 13,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 545,
+            "endLine" : 549,
+            "snippet" : {
+              "text" : "):\n    def automerge_cache_key(conflict_group_lines):\n        m = hashlib.sha256()\n        for lines in conflict_group_lines:\n            for line in lines:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2de64a8c498176e:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/sparse.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 1011,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 1009,
+            "endLine" : 1013,
+            "snippet" : {
+              "text" : "\n        def _cachekey(self, revs, includetemp=False):\n            sha1 = hashlib.sha1()\n            for rev in revs:\n                sha1.update(self[rev].hex().encode(\"utf8\"))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7946cf764275b365:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/sparse.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 3036,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 3034,
+            "endLine" : 3038,
+            "snippet" : {
+              "text" : "\n    def hash(self):\n        sha1 = hashlib.sha1()\n        sha1.update(_hashmatcher(self._matcher))\n        for include in sorted(self._includes):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a793029a01f6bc11:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/sparse.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 3045,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 3043,
+            "endLine" : 3047,
+            "snippet" : {
+              "text" : "class unionmatcher(matchmod.unionmatcher):\n    def hash(self):\n        sha1 = hashlib.sha1()\n        for m in self._matchers:\n            sha1.update(_hashmatcher(m))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e335a5b7dd3778a0:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/sparse.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 3089,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 3087,
+            "endLine" : 3091,
+            "snippet" : {
+              "text" : "\n    def hash(self):\n        sha1 = hashlib.sha1()\n        sha1.update(\"negate\")\n        sha1.update(_hashmatcher(self._matcher))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "733330df015b49bc:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/sparse.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 3099,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 3097,
+            "endLine" : 3101,
+            "snippet" : {
+              "text" : "        return matcher.hash()\n\n    sha1 = hashlib.sha1()\n    sha1.update(repr(matcher))\n    return sha1.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3deb39de2a88f81c:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/sslutil.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 35
+          },
+          "region" : {
+            "startLine" : 892,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 890,
+            "endLine" : 894,
+            "snippet" : {
+              "text" : "    # validate the remote cert.\n    peerfingerprints = {\n        \"sha1\": hashlib.sha1(peercert).hexdigest(),\n        \"sha256\": hashlib.sha256(peercert).hexdigest(),\n        \"sha512\": hashlib.sha512(peercert).hexdigest(),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "743539fc5a7bf762:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/sslutil.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 35
+          },
+          "region" : {
+            "startLine" : 893,
+            "startColumn" : 19,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 891,
+            "endLine" : 895,
+            "snippet" : {
+              "text" : "    peerfingerprints = {\n        \"sha1\": hashlib.sha1(peercert).hexdigest(),\n        \"sha256\": hashlib.sha256(peercert).hexdigest(),\n        \"sha512\": hashlib.sha512(peercert).hexdigest(),\n    }\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "27407c8710e8f22a:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/sslutil.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 35
+          },
+          "region" : {
+            "startLine" : 894,
+            "startColumn" : 19,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 892,
+            "endLine" : 896,
+            "snippet" : {
+              "text" : "        \"sha1\": hashlib.sha1(peercert).hexdigest(),\n        \"sha256\": hashlib.sha256(peercert).hexdigest(),\n        \"sha512\": hashlib.sha512(peercert).hexdigest(),\n    }\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d24ae23bab3679c3:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/store.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 36
+          },
+          "region" : {
+            "startLine" : 308,
+            "startColumn" : 14,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 306,
+            "endLine" : 310,
+            "snippet" : {
+              "text" : "\ndef _hashencode(path, dotencode) -> str:\n    digest = hashlib.sha1(encodeutf8(path)).hexdigest()\n    le = lowerencode(path[5:]).split(\"/\")  # skips prefix 'data/' or 'meta/'\n    parts = _auxencode(le, dotencode)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "341c61b2f76c5224:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/commitcloud/subscription.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 37
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 12,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 18,
+            "endLine" : 22,
+            "snippet" : {
+              "text" : "\ndef _uniquefilename(reporoot, reponame, workspacename):\n    hash = hashlib.sha256(\n        encodeutf8(\"\\0\".join([reporoot, reponame, workspacename]))\n    ).hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ddf46a65bc7e2f55:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/commitcloud/sync.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 38
+          },
+          "region" : {
+            "startLine" : 139,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 137,
+            "endLine" : 141,
+            "snippet" : {
+              "text" : "    for key in [\"bookmarks\", \"remotenames\", \"visibleheads\"]:\n        buf.append(ml.get(key) or b\"\")\n    return hashlib.sha1(b\"\".join(buf)).digest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "386dcd3043f52ded:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/tests/test-fb-ext-remotefilelog-histpack.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 39
+          },
+          "region" : {
+            "startLine" : 52,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 50,
+            "endLine" : 54,
+            "snippet" : {
+              "text" : "\n    def getHash(self, content):\n        return hashlib.sha1(content).digest()\n\n    def getFakeHash(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a50b9c3707984b47:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/integration/thrift_test.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 40
+          },
+          "region" : {
+            "startLine" : 169,
+            "startColumn" : 35,
+            "endColumn" : 47
+          },
+          "contextRegion" : {
+            "startLine" : 167,
+            "endLine" : 171,
+            "snippet" : {
+              "text" : "\n    def test_get_sha1(self) -> None:\n        expected_sha1_for_hello = hashlib.sha1(b\"hola\\n\").digest()\n        result_for_hello = SHA1Result(expected_sha1_for_hello)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "26ad9f05b8354e34:1",
+        "primaryLocationStartColumnFingerprint" : "26"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/integration/thrift_test.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 40
+          },
+          "region" : {
+            "startLine" : 172,
+            "startColumn" : 39,
+            "endColumn" : 51
+          },
+          "contextRegion" : {
+            "startLine" : 170,
+            "endLine" : 174,
+            "snippet" : {
+              "text" : "        result_for_hello = SHA1Result(expected_sha1_for_hello)\n\n        expected_sha1_for_adir_file = hashlib.sha1(b\"foo!\\n\").digest()\n        result_for_adir_file = SHA1Result(expected_sha1_for_adir_file)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "aadb9bd357d0592:1",
+        "primaryLocationStartColumnFingerprint" : "30"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifestserver.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 41
+          },
+          "region" : {
+            "startLine" : 2830,
+            "startColumn" : 15,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 2828,
+            "endLine" : 2832,
+            "snippet" : {
+              "text" : "\n    def serialize(self, value):\n        sha = hashlib.sha1(value).digest()\n        return sha + struct.pack(\"!I\", len(self.key)) + self.key + value\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b33d7281c5498efe:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifestserver.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 41
+          },
+          "region" : {
+            "startLine" : 2845,
+            "startColumn" : 19,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 2843,
+            "endLine" : 2847,
+            "snippet" : {
+              "text" : "            )\n        value = raw[24 + keylen :]\n        realsha = hashlib.sha1(value).digest()\n        if sha != realsha:\n            raise IOError(\"invalid content for the key in the cache: %s\" % key)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5946f4c0812abc82:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifestserver.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 41
+          },
+          "region" : {
+            "startLine" : 2859,
+            "startColumn" : 22,
+            "endColumn" : 34
+          },
+          "contextRegion" : {
+            "startLine" : 2857,
+            "endLine" : 2861,
+            "snippet" : {
+              "text" : "\n    def _key(self, name, node, category):\n        shakey = hex(hashlib.sha1(pycompat.encodeutf8(name) + node).digest())\n        return os.path.join(\n            \"trees\", \"v\" + str(self.version), category, shakey[:2], shakey[2:]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b6dded3214911b5f:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/util.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 42
+          },
+          "region" : {
+            "startLine" : 326,
+            "startColumn" : 19,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 324,
+            "endLine" : 328,
+            "snippet" : {
+              "text" : "\n\nDIGESTS = {\"md5\": hashlib.md5, \"sha1\": hashlib.sha1, \"sha512\": hashlib.sha512}\n# List of digest types from strongest to weakest\nDIGESTS_BY_STRENGTH = [\"sha512\", \"sha1\", \"md5\"]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f01204b588e2887b:1",
+        "primaryLocationStartColumnFingerprint" : "18"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/util.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 42
+          },
+          "region" : {
+            "startLine" : 326,
+            "startColumn" : 40,
+            "endColumn" : 52
+          },
+          "contextRegion" : {
+            "startLine" : 324,
+            "endLine" : 328,
+            "snippet" : {
+              "text" : "\n\nDIGESTS = {\"md5\": hashlib.md5, \"sha1\": hashlib.sha1, \"sha512\": hashlib.sha512}\n# List of digest types from strongest to weakest\nDIGESTS_BY_STRENGTH = [\"sha512\", \"sha1\", \"md5\"]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f01204b588e2887b:1",
+        "primaryLocationStartColumnFingerprint" : "39"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/util.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 42
+          },
+          "region" : {
+            "startLine" : 326,
+            "startColumn" : 64,
+            "endColumn" : 78
+          },
+          "contextRegion" : {
+            "startLine" : 324,
+            "endLine" : 328,
+            "snippet" : {
+              "text" : "\n\nDIGESTS = {\"md5\": hashlib.md5, \"sha1\": hashlib.sha1, \"sha512\": hashlib.sha512}\n# List of digest types from strongest to weakest\nDIGESTS_BY_STRENGTH = [\"sha512\", \"sha1\", \"md5\"]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f01204b588e2887b:1",
+        "primaryLocationStartColumnFingerprint" : "63"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/wireproto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 43
+          },
+          "region" : {
+            "startLine" : 449,
+            "startColumn" : 29,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 447,
+            "endLine" : 451,
+            "snippet" : {
+              "text" : "        if heads != [b\"force\"] and self.capable(\"unbundlehash\"):\n            heads = encodelist(\n                [b\"hashed\", hashlib.sha1(b\"\".join(sorted(heads))).digest()]\n            )\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3e948ab19e29d541:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/wireproto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 43
+          },
+          "region" : {
+            "startLine" : 488,
+            "startColumn" : 29,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 486,
+            "endLine" : 490,
+            "snippet" : {
+              "text" : "        if heads != [b\"force\"] and self.capable(\"unbundlehash\"):\n            heads = encodelist(\n                [b\"hashed\", hashlib.sha1(b\"\".join(sorted(heads))).digest()]\n            )\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3e948b7821caa2ec:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/lfs/wrapper.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 44
+          },
+          "region" : {
+            "startLine" : 69,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 67,
+            "endLine" : 71,
+            "snippet" : {
+              "text" : "\n    # git-lfs only supports sha256\n    oid = hashlib.sha256(text).hexdigest()\n    self.opener.lfslocalblobstore.write(oid, text)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9269af15ee126e46:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/integration/xattr_test.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 45
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 20,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "\ndef sha1(value: bytes) -> bytes:\n    return hashlib.sha1(value).hexdigest().encode(\"ascii\")\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "46c5fa789a410641:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifest/__init__.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 1461,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 1459,
+            "endLine" : 1463,
+            "snippet" : {
+              "text" : "        p1, p2 = self.historystore.getnodeinfo(name, node)[:2]\n        blob = revlog.textwithheader(rawtext, p1, p2)\n        if hashlib.sha1(blob).digest() == node:\n            bases = []\n            if deltabase != nullid:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5edaa6cb9ac7bcf3:1",
+        "primaryLocationStartColumnFingerprint" : "3"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifest/__init__.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 1775,
+            "startColumn" : 15,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1773,
+            "endLine" : 1777,
+            "snippet" : {
+              "text" : "\n    def serialize(self, value):\n        sha = hashlib.sha1(value).digest()\n        return sha + struct.pack(\"!I\", len(self.key)) + self.key + value\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b33d7281c5498efe:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifest/__init__.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 1790,
+            "startColumn" : 19,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 1788,
+            "endLine" : 1792,
+            "snippet" : {
+              "text" : "            )\n        value = raw[24 + keylen :]\n        realsha = hashlib.sha1(value).digest()\n        if sha != realsha:\n            raise IOError(\"invalid content for the key in the cache: %s\" % key)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5946f4c0812abc82:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/lfs/__init__.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 226,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 224,
+            "endLine" : 228,
+            "snippet" : {
+              "text" : "\n    data = ui.fin.read()\n    oid = hashlib.sha256(data).hexdigest()\n    longoid = \"sha256:%s\" % oid\n    size = len(data)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b3c3ab1110f3f933:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/thirdparty/attr/_make.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 555,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 553,
+            "endLine" : 557,
+            "snippet" : {
+              "text" : "\n    # We cache the generated init methods for the same kinds of attributes.\n    sha1 = hashlib.sha1()\n    sha1.update(repr(attrs).encode(\"utf-8\"))\n    unique_filename = \"<attrs generated init {0}>\".format(sha1.hexdigest())\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6491628a2a0d8938:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/blobstore.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 29,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 27,
+            "endLine" : 31,
+            "snippet" : {
+              "text" : "    def write(self, oid, data):\n        \"\"\"Write blob to local blobstore.\"\"\"\n        contentsha256 = hashlib.sha256(data).hexdigest()\n        if contentsha256 != oid:\n            raise error.Abort(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7f99eec9c1719c02:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "addons/build-tar.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 27,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 25,
+            "endLine" : 29,
+            "snippet" : {
+              "text" : "# used to detect if files are changed.\ndef hash_path_contents(paths: List[str]):\n    h = hashlib.sha1()\n    sorted_paths = sorted(paths)\n    for path in sorted_paths:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9db631e2061f44be:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/infinitepush/bundlestore.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 44,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 42,
+            "endLine" : 46,
+            "snippet" : {
+              "text" : "\n    def write(self, data):\n        filename = hashlib.sha1(data).hexdigest()\n        dirpath = self._dirpath(filename)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6873812a5ff9ac2e:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/fs/cli/doctor/check_filesystems.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 662,
+            "startColumn" : 14,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 660,
+            "endLine" : 664,
+            "snippet" : {
+              "text" : "\ndef _compute_file_sha1(path: Path) -> bytes:\n    hasher = hashlib.sha1()\n    with open(path, \"rb\") as f:\n        while True:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b16cd351381b5f78:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/context.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 891,
+            "startColumn" : 16,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 889,
+            "endLine" : 893,
+            "snippet" : {
+              "text" : "                [(self.path(), self.filenode())]\n            )[0][1]\n        return hashlib.sha256(self.data()).digest()\n\n    def isbinary(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2c9ae5b9288829db:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/context.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 2148,
+            "startColumn" : 16,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 2146,
+            "endLine" : 2150,
+            "snippet" : {
+              "text" : "\n    def content_sha256(self):\n        return hashlib.sha256(self.data()).digest()\n\n    def renamed(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4b65d86dd659b7c7:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/context.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 3262,
+            "startColumn" : 16,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 3260,
+            "endLine" : 3264,
+            "snippet" : {
+              "text" : "\n    def content_sha256(self):\n        return hashlib.sha256(self.data()).digest()\n\n    def remove(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e73adcea405d54bb:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/remotefilelog/debugcommands.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 59,
+            "startColumn" : 15,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 57,
+            "endLine" : 61,
+            "snippet" : {
+              "text" : "def buildtemprevlog(repo, file):\n    # get filename key\n    filekey = hashlib.sha1(file).hexdigest()\n    filedir = os.path.join(repo.path, \"store/data\", filekey)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "66399cfbed6b0cc3:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/remotefilelog/debugcommands.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 434,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 432,
+            "endLine" : 436,
+            "snippet" : {
+              "text" : "                hashformatter(node),\n                hashformatter(deltabasenode),\n                hashlib.sha1(delta).hexdigest(),\n                len(delta),\n            )\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9a93fc9f9af2505f:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/fs/py/eden/dirstate.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 64,
+            "endLine" : 68,
+            "snippet" : {
+              "text" : "    #   - Because we use SHA-256 as the hash algorithm for the checksum, the\n    #     remaining 32 bytes are used for the hash.\n    sha = hashlib.sha256()\n\n    def hashing_write(data: bytes) -> None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9fff39cc391dfd32:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/fs/py/eden/dirstate.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 105,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 103,
+            "endLine" : 107,
+            "snippet" : {
+              "text" : "    copymap = {}\n\n    sha = hashlib.sha256()\n\n    def hashing_read(num):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2d6951a1ee6c4f83:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/eden_dirstate_serializer.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 64,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 62,
+            "endLine" : 66,
+            "snippet" : {
+              "text" : "    #   - Because we use SHA-256 as the hash algorithm for the checksum, the\n    #     remaining 32 bytes are used for the hash.\n    sha = hashlib.sha256()\n\n    def hashing_write(data: bytes) -> None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9fff39cc391dfd32:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/exchange.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 2153,
+            "startColumn" : 18,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 2151,
+            "endLine" : 2155,
+            "snippet" : {
+              "text" : "    \"\"\"\n    heads = repo.heads()\n    heads_hash = hashlib.sha1(b\"\".join(sorted(heads))).digest()\n    if not (\n        their_heads == [b\"force\"]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a469f9258f03ea46:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/tests/f",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 97,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 95,
+            "endLine" : 99,
+            "snippet" : {
+              "text" : "            facts.append(\"md5=%s\" % h.hexdigest()[: opts.bytes])\n        if opts.sha1 and content is not None:\n            h = hashlib.sha1(content)\n            facts.append(\"sha1=%s\" % h.hexdigest()[: opts.bytes])\n        if isstdin:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "236eb2ec82405215:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/tests/f",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 94,
+            "startColumn" : 17,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 92,
+            "endLine" : 96,
+            "snippet" : {
+              "text" : "                    facts.append(\"older than %s\" % opts.newer)\n        if opts.md5 and content is not None:\n            h = hashlib.md5(content)\n            facts.append(\"md5=%s\" % h.hexdigest()[: opts.bytes])\n        if opts.sha1 and content is not None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3a7685b75b5257ba:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "build/fbcode_builder/getdeps/fetcher.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 199,
+            "startColumn" : 20,
+            "endColumn" : 34
+          },
+          "contextRegion" : {
+            "startLine" : 197,
+            "endLine" : 201,
+            "snippet" : {
+              "text" : "    def hash(self) -> str:\n        if self.packages_are_installed():\n            return hashlib.sha256(self.installed).hexdigest()\n        else:\n            return \"0\" * 40\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8ec0793c0d7af109:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "build/fbcode_builder/getdeps/fetcher.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 749,
+            "startColumn" : 13,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 747,
+            "endLine" : 751,
+            "snippet" : {
+              "text" : "\n    def _verify_hash(self) -> None:\n        h = hashlib.sha256()\n        with open(self.file_name, \"rb\") as f:\n            while True:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e2ac2fcb996b42e7:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/gen_version.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 47,
+            "startColumn" : 39,
+            "endColumn" : 51
+          },
+          "contextRegion" : {
+            "startLine" : 45,
+            "endLine" : 49,
+            "snippet" : {
+              "text" : "    version = \"%s_%s\" % (MAIN_VERSION, sub_version)\n    versionb = version.encode(\"ascii\")\n    versionhash = struct.unpack(\">Q\", hashlib.sha1(versionb).digest()[:8])[0]\n\n    if args.output_path.endswith(\"py\"):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3d41058607644503:1",
+        "primaryLocationStartColumnFingerprint" : "34"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/git.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 768,
+            "startColumn" : 21,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 766,
+            "endLine" : 770,
+            "snippet" : {
+              "text" : "        <parent repo>/.hg/store/gitmodules/<escaped submodule name>\n        \"\"\"\n        urldigest = hashlib.sha1(self.url.encode(\"utf-8\")).hexdigest()\n        repopath = self.gitmodulesvfs.join(\"gitmodules\", urldigest)\n        ident = identity.sniffdir(repopath)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e50666b5d3f391dd:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/git.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 1007,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 1005,
+            "endLine" : 1009,
+            "snippet" : {
+              "text" : "    \"\"\"(bytes, bytes) -> bytes. obtain git SHA1 hash\"\"\"\n    # git blob format: kind + \" \" + str(size) + \"\\0\" + text\n    return hashlib.sha1(b\"%s %d\\0%s\" % (kind, len(text), text)).digest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "62634fdfeba24d69:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/hgsql.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 922,
+            "startColumn" : 23,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 920,
+            "endLine" : 924,
+            "snippet" : {
+              "text" : "                if k != \"tip\":\n                    v = hex(v)\n                sha = hashlib.sha1(encodeutf8(\"%s%s%s\" % (sha, k, v))).hexdigest()\n            return sha\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "42dce10db7662408:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/hgsql.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 946,
+            "startColumn" : 24,
+            "endColumn" : 36
+          },
+          "contextRegion" : {
+            "startLine" : 944,
+            "endLine" : 948,
+            "snippet" : {
+              "text" : "            # is it a new repo with empty references?\n            if sqlresults == [[]]:\n                return hashlib.sha1(encodeutf8(\"%s%s\" % (\"tip\", -1))).hexdigest()\n            # sqlresults looks like [[('59237a7416a6a1764ea088f0bc1189ea58d5b592',)]]\n            sqlsynchash = sqlresults[0][0][0]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9c445b1741eaae91:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/keepalive.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 17
+          },
+          "region" : {
+            "startLine" : 638,
+            "startColumn" : 11,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 636,
+            "endLine" : 640,
+            "snippet" : {
+              "text" : "\ndef continuity(url):\n    md5 = hashlib.md5\n    format = \"%25s: %s\"\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3a0d1240e676b90:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "build/fbcode_builder/getdeps/load.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 270,
+            "startColumn" : 18,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 268,
+            "endLine" : 272,
+            "snippet" : {
+              "text" : "        ctx = self.ctx_gen.get_context(manifest.name)\n\n        hasher = hashlib.sha256()\n        # Some environmental and configuration things matter\n        env = {}\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d6387f4cc118a3b0:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/localrepo.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 1777,
+            "startColumn" : 18,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 1775,
+            "endLine" : 1779,
+            "snippet" : {
+              "text" : "\n        idbase = b\"%.40f#%f\" % (random.random(), time.time())\n        ha = hex(hashlib.sha1(idbase).digest())\n        txnid = \"TXN:\" + ha\n        self.hook(\"pretxnopen\", throw=True, txnname=desc, txnid=txnid)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9f2daf9a1f6e0e0e:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/contrib/long-branch-gca.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 75,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 73,
+            "endLine" : 77,
+            "snippet" : {
+              "text" : "            pnode = nodes[prev + 1]\n            msg = hexlify(nullid) + f\"\\nuser\\n{i+1} 0\\n\\n{i+1}\".encode()\n            node = hashlib.sha1(nullid + pnode + msg).digest()\n            ddata = b\"u\" + msg\n            idata = ipack(dlen << 16, len(ddata), len(msg), i, i, prev, -1, node)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7d15e2d0446d65ff:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/mdiff.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 19,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 17,
+            "endLine" : 21,
+            "snippet" : {
+              "text" : "import struct\nimport zlib\nfrom hashlib import sha1\nfrom typing import Iterator, List, Optional, Pattern, Sized, Tuple, TYPE_CHECKING, Union\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ca360dfeb1dad3cc:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/merge.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 229,
+            "startColumn" : 24,
+            "endColumn" : 36
+          },
+          "contextRegion" : {
+            "startLine" : 227,
+            "endLine" : 231,
+            "snippet" : {
+              "text" : "            hash = nullhex\n        else:\n            hash = hex(hashlib.sha1(encodeutf8(fcl.path())).digest())\n            self._repo.localvfs.write(\"merge/\" + hash, fcl.data())\n        self._rust_ms.insert(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3821fdb057ecde4d:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/github/mock_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 23
+          },
+          "region" : {
+            "startLine" : 636,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 634,
+            "endLine" : 636,
+            "snippet" : {
+              "text" : "def gen_hash_hexdigest(s: str) -> str:\n    \"\"\"generate sha1 digit hex string for input `s`\"\"\"\n    return hashlib.sha1(s.encode()).hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1fcbbb3f19940ab8:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/patch.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 24
+          },
+          "region" : {
+            "startLine" : 3033,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 3031,
+            "endLine" : 3035,
+            "snippet" : {
+              "text" : "            text = b\"\"\n        l = len(text)\n        s = hashlib.sha1(b\"blob %d\\0\" % l)\n        s.update(text)\n        return encodeutf8(s.hexdigest())\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a7ae778575e25195:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/integration/readdir_test.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 25
+          },
+          "region" : {
+            "startLine" : 681,
+            "startColumn" : 21,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 679,
+            "endLine" : 683,
+            "snippet" : {
+              "text" : "        ifile = open(fullpath, \"rb\")\n        file_contents = ifile.read()\n        sha1_hash = hashlib.sha1(file_contents).digest()\n        ifile.close()\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ab77daa7ef0f1dd8:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/repair.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 26
+          },
+          "region" : {
+            "startLine" : 36,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 34,
+            "endLine" : 38,
+            "snippet" : {
+              "text" : "    allcommits = repo.set(\"%ln::%ln\", bases, heads)\n    allhashes = sorted(c.hex() for c in allcommits)\n    totalhash = hashlib.sha1(encodeutf8(\"\".join(allhashes))).digest()\n    name = \"%s/%s-%s-%s.hg\" % (backupdir, short(node), hex(totalhash[:4]), suffix)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "126e8f1e0c130dbf:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/revlog.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 148,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 146,
+            "endLine" : 150,
+            "snippet" : {
+              "text" : "            a = p2\n            b = p1\n        s = hashlib.sha1(a)\n        s.update(b)\n    s.update(text)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1763ce3717d9e0d9:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/revlog.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 125,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 123,
+            "endLine" : 127,
+            "snippet" : {
+              "text" : "\n\n_nullhash = hashlib.sha1(nullid)\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ee907c6539aa55c3:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/revlog2.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 458,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 456,
+            "endLine" : 460,
+            "snippet" : {
+              "text" : "        blob = textwithheader(rawtext, p1, p2)\n\n        if hashlib.sha1(blob).digest() != node:\n            assert flags != 0\n            self._store.add_arbitrary_blob(node, blob)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1d6f73d11d45fd0:1",
+        "primaryLocationStartColumnFingerprint" : "3"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/tests/run-tests.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 29
+          },
+          "region" : {
+            "startLine" : 1163,
+            "startColumn" : 25,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 1161,
+            "endLine" : 1165,
+            "snippet" : {
+              "text" : "\n        if self._watchman:\n            shortname = hashlib.sha1(_bytespath(\"%s\" % name)).hexdigest()[:6]\n            self._watchmandir = os.path.join(self._threadtmp, \"%s.watchman\" % shortname)\n            os.mkdir(self._watchmandir)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ecb94cd762671955:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/slides/201904-segmented-changelog/segmented-changelog.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 30
+          },
+          "region" : {
+            "startLine" : 341,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 339,
+            "endLine" : 343,
+            "snippet" : {
+              "text" : "    if isinstance(s, str):\n        s = s.encode(\"utf-8\")\n    h = hashlib.sha1()\n    h.update(s)\n    return h.hexdigest()[:5]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b9142c989924ca0a:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/setup.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 31
+          },
+          "region" : {
+            "startLine" : 454,
+            "startColumn" : 25,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 452,
+            "endLine" : 456,
+            "snippet" : {
+              "text" : "# connects to a compatible server.\nsapling_versionhash = str(\n    struct.unpack(\">Q\", hashlib.sha1(sapling_versionb).digest()[:8])[0]\n)\nsapling_versionhashb = sapling_versionhash.encode(\"ascii\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "171472fadebb285:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/simplecache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 32
+          },
+          "region" : {
+            "startLine" : 398,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 396,
+            "endLine" : 400,
+            "snippet" : {
+              "text" : "def checksum(key, value):\n    key = pycompat.encodeutf8(key)\n    s = hashlib.sha1(key)\n    s.update(value)\n    return pycompat.encodeutf8(node.hex(s.digest()))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1e32923312037a50:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/simplemerge.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 33
+          },
+          "region" : {
+            "startLine" : 547,
+            "startColumn" : 13,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 545,
+            "endLine" : 549,
+            "snippet" : {
+              "text" : "):\n    def automerge_cache_key(conflict_group_lines):\n        m = hashlib.sha256()\n        for lines in conflict_group_lines:\n            for line in lines:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2de64a8c498176e:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/sparse.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 1011,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 1009,
+            "endLine" : 1013,
+            "snippet" : {
+              "text" : "\n        def _cachekey(self, revs, includetemp=False):\n            sha1 = hashlib.sha1()\n            for rev in revs:\n                sha1.update(self[rev].hex().encode(\"utf8\"))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7946cf764275b365:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/sparse.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 3036,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 3034,
+            "endLine" : 3038,
+            "snippet" : {
+              "text" : "\n    def hash(self):\n        sha1 = hashlib.sha1()\n        sha1.update(_hashmatcher(self._matcher))\n        for include in sorted(self._includes):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a793029a01f6bc11:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/sparse.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 3045,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 3043,
+            "endLine" : 3047,
+            "snippet" : {
+              "text" : "class unionmatcher(matchmod.unionmatcher):\n    def hash(self):\n        sha1 = hashlib.sha1()\n        for m in self._matchers:\n            sha1.update(_hashmatcher(m))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e335a5b7dd3778a0:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/sparse.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 3089,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 3087,
+            "endLine" : 3091,
+            "snippet" : {
+              "text" : "\n    def hash(self):\n        sha1 = hashlib.sha1()\n        sha1.update(\"negate\")\n        sha1.update(_hashmatcher(self._matcher))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "733330df015b49bc:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/sparse.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 3099,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 3097,
+            "endLine" : 3101,
+            "snippet" : {
+              "text" : "        return matcher.hash()\n\n    sha1 = hashlib.sha1()\n    sha1.update(repr(matcher))\n    return sha1.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3deb39de2a88f81c:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/sslutil.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 35
+          },
+          "region" : {
+            "startLine" : 892,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 890,
+            "endLine" : 894,
+            "snippet" : {
+              "text" : "    # validate the remote cert.\n    peerfingerprints = {\n        \"sha1\": hashlib.sha1(peercert).hexdigest(),\n        \"sha256\": hashlib.sha256(peercert).hexdigest(),\n        \"sha512\": hashlib.sha512(peercert).hexdigest(),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "743539fc5a7bf762:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/sslutil.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 35
+          },
+          "region" : {
+            "startLine" : 893,
+            "startColumn" : 19,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 891,
+            "endLine" : 895,
+            "snippet" : {
+              "text" : "    peerfingerprints = {\n        \"sha1\": hashlib.sha1(peercert).hexdigest(),\n        \"sha256\": hashlib.sha256(peercert).hexdigest(),\n        \"sha512\": hashlib.sha512(peercert).hexdigest(),\n    }\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "27407c8710e8f22a:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/sslutil.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 35
+          },
+          "region" : {
+            "startLine" : 894,
+            "startColumn" : 19,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 892,
+            "endLine" : 896,
+            "snippet" : {
+              "text" : "        \"sha1\": hashlib.sha1(peercert).hexdigest(),\n        \"sha256\": hashlib.sha256(peercert).hexdigest(),\n        \"sha512\": hashlib.sha512(peercert).hexdigest(),\n    }\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d24ae23bab3679c3:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/store.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 36
+          },
+          "region" : {
+            "startLine" : 308,
+            "startColumn" : 14,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 306,
+            "endLine" : 310,
+            "snippet" : {
+              "text" : "\ndef _hashencode(path, dotencode) -> str:\n    digest = hashlib.sha1(encodeutf8(path)).hexdigest()\n    le = lowerencode(path[5:]).split(\"/\")  # skips prefix 'data/' or 'meta/'\n    parts = _auxencode(le, dotencode)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "341c61b2f76c5224:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/commitcloud/subscription.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 37
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 12,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 18,
+            "endLine" : 22,
+            "snippet" : {
+              "text" : "\ndef _uniquefilename(reporoot, reponame, workspacename):\n    hash = hashlib.sha256(\n        encodeutf8(\"\\0\".join([reporoot, reponame, workspacename]))\n    ).hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ddf46a65bc7e2f55:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/commitcloud/sync.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 38
+          },
+          "region" : {
+            "startLine" : 139,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 137,
+            "endLine" : 141,
+            "snippet" : {
+              "text" : "    for key in [\"bookmarks\", \"remotenames\", \"visibleheads\"]:\n        buf.append(ml.get(key) or b\"\")\n    return hashlib.sha1(b\"\".join(buf)).digest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "386dcd3043f52ded:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/tests/test-fb-ext-remotefilelog-histpack.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 39
+          },
+          "region" : {
+            "startLine" : 52,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 50,
+            "endLine" : 54,
+            "snippet" : {
+              "text" : "\n    def getHash(self, content):\n        return hashlib.sha1(content).digest()\n\n    def getFakeHash(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a50b9c3707984b47:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/integration/thrift_test.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 40
+          },
+          "region" : {
+            "startLine" : 169,
+            "startColumn" : 35,
+            "endColumn" : 47
+          },
+          "contextRegion" : {
+            "startLine" : 167,
+            "endLine" : 171,
+            "snippet" : {
+              "text" : "\n    def test_get_sha1(self) -> None:\n        expected_sha1_for_hello = hashlib.sha1(b\"hola\\n\").digest()\n        result_for_hello = SHA1Result(expected_sha1_for_hello)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "26ad9f05b8354e34:1",
+        "primaryLocationStartColumnFingerprint" : "26"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/integration/thrift_test.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 40
+          },
+          "region" : {
+            "startLine" : 172,
+            "startColumn" : 39,
+            "endColumn" : 51
+          },
+          "contextRegion" : {
+            "startLine" : 170,
+            "endLine" : 174,
+            "snippet" : {
+              "text" : "        result_for_hello = SHA1Result(expected_sha1_for_hello)\n\n        expected_sha1_for_adir_file = hashlib.sha1(b\"foo!\\n\").digest()\n        result_for_adir_file = SHA1Result(expected_sha1_for_adir_file)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "aadb9bd357d0592:1",
+        "primaryLocationStartColumnFingerprint" : "30"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifestserver.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 41
+          },
+          "region" : {
+            "startLine" : 2830,
+            "startColumn" : 15,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 2828,
+            "endLine" : 2832,
+            "snippet" : {
+              "text" : "\n    def serialize(self, value):\n        sha = hashlib.sha1(value).digest()\n        return sha + struct.pack(\"!I\", len(self.key)) + self.key + value\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b33d7281c5498efe:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifestserver.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 41
+          },
+          "region" : {
+            "startLine" : 2845,
+            "startColumn" : 19,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 2843,
+            "endLine" : 2847,
+            "snippet" : {
+              "text" : "            )\n        value = raw[24 + keylen :]\n        realsha = hashlib.sha1(value).digest()\n        if sha != realsha:\n            raise IOError(\"invalid content for the key in the cache: %s\" % key)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5946f4c0812abc82:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/treemanifestserver.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 41
+          },
+          "region" : {
+            "startLine" : 2859,
+            "startColumn" : 22,
+            "endColumn" : 34
+          },
+          "contextRegion" : {
+            "startLine" : 2857,
+            "endLine" : 2861,
+            "snippet" : {
+              "text" : "\n    def _key(self, name, node, category):\n        shakey = hex(hashlib.sha1(pycompat.encodeutf8(name) + node).digest())\n        return os.path.join(\n            \"trees\", \"v\" + str(self.version), category, shakey[:2], shakey[2:]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b6dded3214911b5f:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/util.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 42
+          },
+          "region" : {
+            "startLine" : 326,
+            "startColumn" : 19,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 324,
+            "endLine" : 328,
+            "snippet" : {
+              "text" : "\n\nDIGESTS = {\"md5\": hashlib.md5, \"sha1\": hashlib.sha1, \"sha512\": hashlib.sha512}\n# List of digest types from strongest to weakest\nDIGESTS_BY_STRENGTH = [\"sha512\", \"sha1\", \"md5\"]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f01204b588e2887b:1",
+        "primaryLocationStartColumnFingerprint" : "18"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/util.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 42
+          },
+          "region" : {
+            "startLine" : 326,
+            "startColumn" : 40,
+            "endColumn" : 52
+          },
+          "contextRegion" : {
+            "startLine" : 324,
+            "endLine" : 328,
+            "snippet" : {
+              "text" : "\n\nDIGESTS = {\"md5\": hashlib.md5, \"sha1\": hashlib.sha1, \"sha512\": hashlib.sha512}\n# List of digest types from strongest to weakest\nDIGESTS_BY_STRENGTH = [\"sha512\", \"sha1\", \"md5\"]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f01204b588e2887b:1",
+        "primaryLocationStartColumnFingerprint" : "39"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/util.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 42
+          },
+          "region" : {
+            "startLine" : 326,
+            "startColumn" : 64,
+            "endColumn" : 78
+          },
+          "contextRegion" : {
+            "startLine" : 324,
+            "endLine" : 328,
+            "snippet" : {
+              "text" : "\n\nDIGESTS = {\"md5\": hashlib.md5, \"sha1\": hashlib.sha1, \"sha512\": hashlib.sha512}\n# List of digest types from strongest to weakest\nDIGESTS_BY_STRENGTH = [\"sha512\", \"sha1\", \"md5\"]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f01204b588e2887b:1",
+        "primaryLocationStartColumnFingerprint" : "63"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/wireproto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 43
+          },
+          "region" : {
+            "startLine" : 449,
+            "startColumn" : 29,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 447,
+            "endLine" : 451,
+            "snippet" : {
+              "text" : "        if heads != [b\"force\"] and self.capable(\"unbundlehash\"):\n            heads = encodelist(\n                [b\"hashed\", hashlib.sha1(b\"\".join(sorted(heads))).digest()]\n            )\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3e948ab19e29d541:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/wireproto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 43
+          },
+          "region" : {
+            "startLine" : 488,
+            "startColumn" : 29,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 486,
+            "endLine" : 490,
+            "snippet" : {
+              "text" : "        if heads != [b\"force\"] and self.capable(\"unbundlehash\"):\n            heads = encodelist(\n                [b\"hashed\", hashlib.sha1(b\"\".join(sorted(heads))).digest()]\n            )\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3e948b7821caa2ec:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/scm/sapling/ext/lfs/wrapper.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 44
+          },
+          "region" : {
+            "startLine" : 69,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 67,
+            "endLine" : 71,
+            "snippet" : {
+              "text" : "\n    # git-lfs only supports sha256\n    oid = hashlib.sha256(text).hexdigest()\n    self.opener.lfslocalblobstore.write(oid, text)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9269af15ee126e46:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "eden/integration/xattr_test.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 45
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 20,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "\ndef sha1(value: bytes) -> bytes:\n    return hashlib.sha1(value).hexdigest().encode(\"ascii\")\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "46c5fa789a410641:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    } ],
+    "automationDetails" : {
+      "id" : "CBOM:facebook/sapling/python/"
+    },
+    "columnKind" : "unicodeCodePoints",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
