@@ -1,0 +1,5241 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.15.2",
+        "notifications" : [ {
+          "id" : "py/baseline/expected-extracted-files",
+          "name" : "py/baseline/expected-extracted-files",
+          "shortDescription" : {
+            "text" : "Expected extracted files"
+          },
+          "fullDescription" : {
+            "text" : "Files appearing in the source archive that are expected to be extracted."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true
+          },
+          "properties" : {
+            "tags" : [ "expected-extracted-files", "telemetry" ]
+          }
+        } ],
+        "rules" : [ {
+          "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "name" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "shortDescription" : {
+            "text" : "Unknown Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+            "kind" : "problem",
+            "name" : "Unknown Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "shortDescription" : {
+            "text" : "All Cryptographic Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+            "kind" : "problem",
+            "name" : "All Cryptographic Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Symmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with symmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with symmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Symmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/iv-sources",
+          "name" : "py/quantum-readiness/cbom/iv-sources",
+          "shortDescription" : {
+            "text" : "Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/iv-sources",
+            "kind" : "problem",
+            "name" : "Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "shortDescription" : {
+            "text" : "All Asymmetric Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "description" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+            "kind" : "problem",
+            "name" : "All Asymmetric Algorithms",
+            "preci" : "cbom\n       cryptography",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-exchange",
+          "name" : "py/quantum-readiness/cbom/key-exchange",
+          "shortDescription" : {
+            "text" : "Key Exchange Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-exchange",
+            "kind" : "problem",
+            "name" : "Key Exchange Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/hash-algorithms",
+          "name" : "py/quantum-readiness/cbom/hash-algorithms",
+          "shortDescription" : {
+            "text" : "Hash Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/hash-algorithms",
+            "kind" : "problem",
+            "name" : "Hash Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Symmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Symmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "name" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "shortDescription" : {
+            "text" : "Known asymmetric key source generation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all known potential sources for asymmetric key generation while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all known potential sources for asymmetric key generation while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+            "kind" : "problem",
+            "name" : "Known asymmetric key source generation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Asymmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with asymmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with asymmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Asymmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-derivation",
+          "name" : "py/quantum-readiness/cbom/key-derivation",
+          "shortDescription" : {
+            "text" : "Key Derivation Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key derivation using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key derivation using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-derivation",
+            "kind" : "problem",
+            "name" : "Key Derivation Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/signing-algorithms",
+          "name" : "py/quantum-readiness/cbom/signing-algorithms",
+          "shortDescription" : {
+            "text" : "Signing Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of signing algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of signing algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/signing-algorithms",
+            "kind" : "problem",
+            "name" : "Signing Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Authenticated Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of authenticated encryption schemes using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of authenticated encryption schemes using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Authenticated Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Asymmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Asymmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "name" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "shortDescription" : {
+            "text" : "Block cipher mode of operation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential block cipher modes of operations using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential block cipher modes of operations using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+            "kind" : "problem",
+            "name" : "Block cipher mode of operation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "name" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "shortDescription" : {
+            "text" : "Elliptic Curve Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of elliptic curve algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of elliptic curve algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+            "kind" : "problem",
+            "name" : "Elliptic Curve Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql/python-queries",
+        "semanticVersion" : "0.9.2+78fcbd07d654881d9d3395efc0ea371c392529de",
+        "locations" : [ {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.2/x64/codeql/qlpacks/codeql/python-queries/0.9.2/",
+          "description" : {
+            "text" : "The QL pack root directory."
+          }
+        }, {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.2/x64/codeql/qlpacks/codeql/python-queries/0.9.2/qlpack.yml",
+          "description" : {
+            "text" : "The QL pack definition file."
+          }
+        } ]
+      } ]
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "electrum/crypto.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/bip32.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/plugins/digitalbitbox/digitalbitbox.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/ecc.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 3
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/plugins/revealer/hmac_drbg.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 4
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/interface.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 5
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/plugins/jade/jadepy/jade.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 6
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/keystore.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 7
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/plugins/labels/labels.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 8
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/plugins/ledger/ledger.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 9
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/lnaddr.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 10
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/lnonion.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 11
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/lntransport.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 12
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/mnemonic.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 13
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/paymentrequest.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 14
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/plugins/coldcard/qt.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 15
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/plugins/revealer/revealer.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 16
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/rsakey.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 17
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/slip39.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 18
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/storage.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 19
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/synchronizer.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 20
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/tests/test_bolt11.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 21
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/plugins/trustedcoin/trustedcoin.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 22
+      }
+    }, {
+      "location" : {
+        "uri" : "electrum/x509.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 23
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 375,
+            "startColumn" : 13,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 373,
+            "endLine" : 377,
+            "snippet" : {
+              "text" : "        return ciphertext + mac\n    if HAS_CRYPTOGRAPHY:\n        a = CG_aead.ChaCha20Poly1305(key)\n        return a.encrypt(nonce, data, associated_data)\n    raise Exception(\"no chacha20 backend found\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5e676e55fff87552:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 400,
+            "startColumn" : 13,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 398,
+            "endLine" : 402,
+            "snippet" : {
+              "text" : "        return cipher.decrypt_and_verify(ciphertext=data[:-16], received_mac_tag=data[-16:])\n    if HAS_CRYPTOGRAPHY:\n        a = CG_aead.ChaCha20Poly1305(key)\n        try:\n            return a.decrypt(nonce, data, associated_data)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "991c4ffbb370a19c:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/bip32.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 67,
+            "startColumn" : 46,
+            "endColumn" : 60
+          },
+          "contextRegion" : {
+            "startLine" : 65,
+            "endLine" : 69,
+            "snippet" : {
+              "text" : "    else:\n        data = parent_pubkey + child_index\n    I = hmac_oneshot(parent_chaincode, data, hashlib.sha512)\n    I_left = ecc.string_to_number(I[0:32])\n    child_privkey = (I_left + ecc.string_to_number(parent_privkey)) % ecc.CURVE_ORDER\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "de4802bd917e7558:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/bip32.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 94,
+            "startColumn" : 69,
+            "endColumn" : 83
+          },
+          "contextRegion" : {
+            "startLine" : 92,
+            "endLine" : 96,
+            "snippet" : {
+              "text" : "# i.e.: 'child_index' does not need to fit into 32 bits here! (c.f. trustedcoin billing)\ndef _CKD_pub(parent_pubkey: bytes, parent_chaincode: bytes, child_index: bytes) -> Tuple[bytes, bytes]:\n    I = hmac_oneshot(parent_chaincode, parent_pubkey + child_index, hashlib.sha512)\n    pubkey = ecc.ECPrivkey(I[0:32]) + ecc.ECPubkey(parent_pubkey)\n    if pubkey.is_at_infinity():\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9b5995f62c53b7f9:1",
+        "primaryLocationStartColumnFingerprint" : "64"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/bip32.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 169,
+            "startColumn" : 49,
+            "endColumn" : 63
+          },
+          "contextRegion" : {
+            "startLine" : 167,
+            "endLine" : 171,
+            "snippet" : {
+              "text" : "    @classmethod\n    def from_rootseed(cls, seed: bytes, *, xtype: str) -> 'BIP32Node':\n        I = hmac_oneshot(b\"Bitcoin seed\", seed, hashlib.sha512)\n        master_k = I[0:32]\n        master_c = I[32:]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "79d78fd202988632:1",
+        "primaryLocationStartColumnFingerprint" : "40"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 142,
+            "startColumn" : 28,
+            "endColumn" : 50
+          },
+          "contextRegion" : {
+            "startLine" : 140,
+            "endLine" : 144,
+            "snippet" : {
+              "text" : "        e = CD_AES.new(key, CD_AES.MODE_CBC, iv).encrypt(data)\n    elif HAS_CRYPTOGRAPHY:\n        cipher = CG_Cipher(CG_algorithms.AES(key), CG_modes.CBC(iv), backend=CG_default_backend())\n        encryptor = cipher.encryptor()\n        e = encryptor.update(data) + encryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cbf15b0465933a5c:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 142,
+            "startColumn" : 52,
+            "endColumn" : 68
+          },
+          "contextRegion" : {
+            "startLine" : 140,
+            "endLine" : 144,
+            "snippet" : {
+              "text" : "        e = CD_AES.new(key, CD_AES.MODE_CBC, iv).encrypt(data)\n    elif HAS_CRYPTOGRAPHY:\n        cipher = CG_Cipher(CG_algorithms.AES(key), CG_modes.CBC(iv), backend=CG_default_backend())\n        encryptor = cipher.encryptor()\n        e = encryptor.update(data) + encryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cbf15b0465933a5c:1",
+        "primaryLocationStartColumnFingerprint" : "43"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 160,
+            "startColumn" : 28,
+            "endColumn" : 50
+          },
+          "contextRegion" : {
+            "startLine" : 158,
+            "endLine" : 162,
+            "snippet" : {
+              "text" : "        data = cipher.decrypt(data)\n    elif HAS_CRYPTOGRAPHY:\n        cipher = CG_Cipher(CG_algorithms.AES(key), CG_modes.CBC(iv), backend=CG_default_backend())\n        decryptor = cipher.decryptor()\n        data = decryptor.update(data) + decryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5a5d32d62b02e166:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 160,
+            "startColumn" : 52,
+            "endColumn" : 68
+          },
+          "contextRegion" : {
+            "startLine" : 158,
+            "endLine" : 162,
+            "snippet" : {
+              "text" : "        data = cipher.decrypt(data)\n    elif HAS_CRYPTOGRAPHY:\n        cipher = CG_Cipher(CG_algorithms.AES(key), CG_modes.CBC(iv), backend=CG_default_backend())\n        decryptor = cipher.decryptor()\n        data = decryptor.update(data) + decryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5a5d32d62b02e166:1",
+        "primaryLocationStartColumnFingerprint" : "43"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 321,
+            "startColumn" : 18,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 319,
+            "endLine" : 323,
+            "snippet" : {
+              "text" : "def sha256(x: Union[bytes, str]) -> bytes:\n    x = to_bytes(x, 'utf8')\n    return bytes(hashlib.sha256(x).digest())\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "57d1b392191131c9:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RIPEMD160"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 335,
+            "startColumn" : 26,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 333,
+            "endLine" : 337,
+            "snippet" : {
+              "text" : "def ripemd(x: bytes) -> bytes:\n    try:\n        md = hashlib.new('ripemd160')\n        md.update(x)\n        return md.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7d07a3db0a58f204:1",
+        "primaryLocationStartColumnFingerprint" : "17"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CHACHA20POLY1305"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 375,
+            "startColumn" : 13,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 373,
+            "endLine" : 377,
+            "snippet" : {
+              "text" : "        return ciphertext + mac\n    if HAS_CRYPTOGRAPHY:\n        a = CG_aead.ChaCha20Poly1305(key)\n        return a.encrypt(nonce, data, associated_data)\n    raise Exception(\"no chacha20 backend found\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5e676e55fff87552:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CHACHA20POLY1305"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 400,
+            "startColumn" : 13,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 398,
+            "endLine" : 402,
+            "snippet" : {
+              "text" : "        return cipher.decrypt_and_verify(ciphertext=data[:-16], received_mac_tag=data[-16:])\n    if HAS_CRYPTOGRAPHY:\n        a = CG_aead.ChaCha20Poly1305(key)\n        try:\n            return a.decrypt(nonce, data, associated_data)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "991c4ffbb370a19c:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CHACHA20"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 419,
+            "startColumn" : 16,
+            "endColumn" : 60
+          },
+          "contextRegion" : {
+            "startLine" : 417,
+            "endLine" : 421,
+            "snippet" : {
+              "text" : "    if HAS_CRYPTOGRAPHY:\n        nonce = bytes(16 - len(nonce)) + nonce  # cryptography wants 16 byte nonces\n        algo = CG_algorithms.ChaCha20(key=key, nonce=nonce)\n        cipher = CG_Cipher(algo, mode=None, backend=CG_default_backend())\n        encryptor = cipher.encryptor()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ca221fa5d3951cbf:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CHACHA20"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 437,
+            "startColumn" : 16,
+            "endColumn" : 60
+          },
+          "contextRegion" : {
+            "startLine" : 435,
+            "endLine" : 439,
+            "snippet" : {
+              "text" : "    if HAS_CRYPTOGRAPHY:\n        nonce = bytes(16 - len(nonce)) + nonce  # cryptography wants 16 byte nonces\n        algo = CG_algorithms.ChaCha20(key=key, nonce=nonce)\n        cipher = CG_Cipher(algo, mode=None, backend=CG_default_backend())\n        decryptor = cipher.decryptor()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ca221fa5d3951cbf:2",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/digitalbitbox/digitalbitbox.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 68,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 66,
+            "endLine" : 70,
+            "snippet" : {
+              "text" : "def derive_keys(x):\n    h = sha256d(x)\n    h = hashlib.sha512(h).digest()\n    return (h[:32],h[32:])\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5c9c4492ea5dfe3f:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/digitalbitbox/digitalbitbox.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 152,
+            "startColumn" : 46,
+            "endColumn" : 54
+          },
+          "contextRegion" : {
+            "startLine" : 150,
+            "endLine" : 154,
+            "snippet" : {
+              "text" : "\n    def stretch_key(self, key: bytes):\n        return to_hexstr(hashlib.pbkdf2_hmac('sha512', key, b'Digital Bitbox', iterations = 20480))\n\n    def backup_password_dialog(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7acca17824b556ad:1",
+        "primaryLocationStartColumnFingerprint" : "37"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/digitalbitbox/digitalbitbox.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 152,
+            "startColumn" : 26,
+            "endColumn" : 99
+          },
+          "contextRegion" : {
+            "startLine" : 150,
+            "endLine" : 154,
+            "snippet" : {
+              "text" : "\n    def stretch_key(self, key: bytes):\n        return to_hexstr(hashlib.pbkdf2_hmac('sha512', key, b'Digital Bitbox', iterations = 20480))\n\n    def backup_password_dialog(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7acca17824b556ad:1",
+        "primaryLocationStartColumnFingerprint" : "17"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/digitalbitbox/digitalbitbox.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 427,
+            "startColumn" : 65,
+            "endColumn" : 79
+          },
+          "contextRegion" : {
+            "startLine" : 425,
+            "endLine" : 429,
+            "snippet" : {
+              "text" : "            encryption_key, authentication_key = derive_keys(self.password)\n            msg = EncodeAES_bytes(encryption_key, msg)\n            hmac_digest = hmac_oneshot(authentication_key, msg, hashlib.sha256)\n            authenticated_msg = base64.b64encode(msg + hmac_digest)\n            reply = self.hid_send_plain(authenticated_msg)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c4be33eedde474dd:1",
+        "primaryLocationStartColumnFingerprint" : "52"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/digitalbitbox/digitalbitbox.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 433,
+            "startColumn" : 102,
+            "endColumn" : 116
+          },
+          "contextRegion" : {
+            "startLine" : 431,
+            "endLine" : 435,
+            "snippet" : {
+              "text" : "                b64_unencoded = bytes(base64.b64decode(''.join(reply[\"ciphertext\"])))\n                reply_hmac = b64_unencoded[-sha256_byte_len:]\n                hmac_calculated = hmac_oneshot(authentication_key, b64_unencoded[:-sha256_byte_len], hashlib.sha256)\n                if not hmac.compare_digest(reply_hmac, hmac_calculated):\n                    raise Exception(\"Failed to validate HMAC\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5df2274c8f6dbc1e:1",
+        "primaryLocationStartColumnFingerprint" : "85"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/ecc.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 352,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 350,
+            "endLine" : 354,
+            "snippet" : {
+              "text" : "        ephemeral = ECPrivkey.generate_random_key()\n        ecdh_key = (self * ephemeral.secret_scalar).get_public_key_bytes(compressed=True)\n        key = hashlib.sha512(ecdh_key).digest()\n        iv, key_e, key_m = key[0:16], key[16:32], key[32:]\n        ciphertext = aes_encrypt_with_iv(key_e, iv, message)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "97fbc9548be1e052:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/ecc.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 357,
+            "startColumn" : 46,
+            "endColumn" : 60
+          },
+          "contextRegion" : {
+            "startLine" : 355,
+            "endLine" : 359,
+            "snippet" : {
+              "text" : "        ephemeral_pubkey = ephemeral.get_public_key_bytes(compressed=True)\n        encrypted = magic + ephemeral_pubkey + ciphertext\n        mac = hmac_oneshot(key_m, encrypted, hashlib.sha256)\n\n        return base64.b64encode(encrypted + mac)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2403676066ef08ff:1",
+        "primaryLocationStartColumnFingerprint" : "37"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/ecc.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 543,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 541,
+            "endLine" : 545,
+            "snippet" : {
+              "text" : "            raise Exception('invalid ciphertext: invalid ephemeral pubkey') from e\n        ecdh_key = (ephemeral_pubkey * self.secret_scalar).get_public_key_bytes(compressed=True)\n        key = hashlib.sha512(ecdh_key).digest()\n        iv, key_e, key_m = key[0:16], key[16:32], key[32:]\n        if mac != hmac_oneshot(key_m, encrypted[:-32], hashlib.sha256):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b6a53b7d963e203d:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/ecc.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 545,
+            "startColumn" : 56,
+            "endColumn" : 70
+          },
+          "contextRegion" : {
+            "startLine" : 543,
+            "endLine" : 547,
+            "snippet" : {
+              "text" : "        key = hashlib.sha512(ecdh_key).digest()\n        iv, key_e, key_m = key[0:16], key[16:32], key[32:]\n        if mac != hmac_oneshot(key_m, encrypted[:-32], hashlib.sha256):\n            raise InvalidPassword()\n        return aes_decrypt_with_iv(key_e, iv, ciphertext)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cdedfc934d1fa67f:1",
+        "primaryLocationStartColumnFingerprint" : "47"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/revealer/hmac_drbg.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 33,
+            "startColumn" : 35,
+            "endColumn" : 49
+          },
+          "contextRegion" : {
+            "startLine" : 31,
+            "endLine" : 35,
+            "snippet" : {
+              "text" : "\n    def hmac(self, key, val):\n        return hmac.new(key, val, hashlib.sha512).digest()\n\n    def reseed(self, data=b''):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ea5add0ab534eae9:1",
+        "primaryLocationStartColumnFingerprint" : "26"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/interface.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 611,
+            "startColumn" : 23,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 609,
+            "endLine" : 613,
+            "snippet" : {
+              "text" : "        if not expected_fingerprint:\n            return\n        fingerprint = hashlib.sha256(certificate).hexdigest()\n        fingerprints_match = fingerprint.lower() == expected_fingerprint.lower()\n        if not fingerprints_match:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4f9c5333820daef9:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/jade/jadepy/jade.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 426,
+            "startColumn" : 21,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 424,
+            "endLine" : 428,
+            "snippet" : {
+              "text" : "\n        # Compute the sha256 hash of the compressed file being uploaded\n        cmphasher = hashlib.sha256()\n        cmphasher.update(fwcmp)\n        cmphash = cmphasher.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "197a43399c3861d1:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/keystore.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 770,
+            "startColumn" : 17,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 768,
+            "endLine" : 772,
+            "snippet" : {
+              "text" : "        x = seed\n        for i in range(100000):\n            x = hashlib.sha256(x + seed).digest()\n        return string_to_number(x)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "aea697375c32e1b7:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/keystore.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 982,
+            "startColumn" : 32,
+            "endColumn" : 40
+          },
+          "contextRegion" : {
+            "startLine" : 980,
+            "endLine" : 984,
+            "snippet" : {
+              "text" : "    mnemonic = normalize('NFKD', ' '.join(mnemonic.split()))\n    passphrase = bip39_normalize_passphrase(passphrase)\n    return hashlib.pbkdf2_hmac('sha512', mnemonic.encode('utf-8'),\n        b'mnemonic' + passphrase.encode('utf-8'), iterations = PBKDF2_ROUNDS)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8cb22f0df9f7489d:1",
+        "primaryLocationStartColumnFingerprint" : "27"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/keystore.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 982,
+            "startColumn" : 12,
+            "endLine" : 983,
+            "endColumn" : 78
+          },
+          "contextRegion" : {
+            "startLine" : 980,
+            "endLine" : 985,
+            "snippet" : {
+              "text" : "    mnemonic = normalize('NFKD', ' '.join(mnemonic.split()))\n    passphrase = bip39_normalize_passphrase(passphrase)\n    return hashlib.pbkdf2_hmac('sha512', mnemonic.encode('utf-8'),\n        b'mnemonic' + passphrase.encode('utf-8'), iterations = PBKDF2_ROUNDS)\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8cb22f0df9f7489d:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/labels/labels.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 193,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 191,
+            "endLine" : 195,
+            "snippet" : {
+              "text" : "            return\n        mpk = mpk.encode('ascii')\n        password = hashlib.sha1(mpk).hexdigest()[:32].encode('ascii')\n        iv = hashlib.sha256(password).digest()[:16]\n        wallet_id = hashlib.sha256(mpk).hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "97c1110ccb39b921:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/labels/labels.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 194,
+            "startColumn" : 14,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 192,
+            "endLine" : 196,
+            "snippet" : {
+              "text" : "        mpk = mpk.encode('ascii')\n        password = hashlib.sha1(mpk).hexdigest()[:32].encode('ascii')\n        iv = hashlib.sha256(password).digest()[:16]\n        wallet_id = hashlib.sha256(mpk).hexdigest()\n        self.wallets[wallet] = (password, iv, wallet_id)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8b1b7a255efb839e:1",
+        "primaryLocationStartColumnFingerprint" : "5"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/labels/labels.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 195,
+            "startColumn" : 21,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 193,
+            "endLine" : 197,
+            "snippet" : {
+              "text" : "        password = hashlib.sha1(mpk).hexdigest()[:32].encode('ascii')\n        iv = hashlib.sha256(password).digest()[:16]\n        wallet_id = hashlib.sha256(mpk).hexdigest()\n        self.wallets[wallet] = (password, iv, wallet_id)\n        nonce = self.get_nonce(wallet)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c0423db0e34d208b:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/ledger/ledger.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 764,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 762,
+            "endLine" : 766,
+            "snippet" : {
+              "text" : "    ) -> bytes:\n        message = message.encode('utf8')\n        message_hash = hashlib.sha256(message).hexdigest().upper()\n\n        self.handler.show_message(\"Signing message ...\\r\\nMessage hash: \" + message_hash)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3f53bb17e5595a61:1",
+        "primaryLocationStartColumnFingerprint" : "15"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/ledger/ledger.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 1271,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 1269,
+            "endLine" : 1273,
+            "snippet" : {
+              "text" : "    ) -> bytes:\n        message = message.encode('utf8')\n        message_hash = hashlib.sha256(message).hexdigest().upper()\n        # prompt for the PIN before displaying the dialog if necessary\n        self.handler.show_message(\"Signing message ...\\r\\nMessage hash: \" + message_hash)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fdc37367f7e19fcd:1",
+        "primaryLocationStartColumnFingerprint" : "15"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnaddr.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 6,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 4,
+            "endLine" : 8,
+            "snippet" : {
+              "text" : "import re\nimport time\nfrom hashlib import sha256\nfrom binascii import hexlify\nfrom decimal import Decimal\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ec39a6501e770168:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnonion.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 150,
+            "startColumn" : 53,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 148,
+            "endLine" : 152,
+            "snippet" : {
+              "text" : "    if key_type not in (b'rho', b'mu', b'um', b'ammag', b'pad'):\n        raise Exception('invalid key_type {}'.format(key_type))\n    key = hmac_oneshot(key_type, msg=secret, digest=hashlib.sha256)\n    return key\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c0b313385e1d6fcb:1",
+        "primaryLocationStartColumnFingerprint" : "48"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnonion.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 205,
+            "startColumn" : 61,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 203,
+            "endLine" : 207,
+            "snippet" : {
+              "text" : "            mix_header = mix_header[:-len(filler)] + filler\n        packet = mix_header + associated_data\n        next_hmac = hmac_oneshot(mu_key, msg=packet, digest=hashlib.sha256)\n\n    return OnionPacket(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cbb81a8eefcfeb09:1",
+        "primaryLocationStartColumnFingerprint" : "52"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnonion.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 311,
+            "startColumn" : 16,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 309,
+            "endLine" : 313,
+            "snippet" : {
+              "text" : "    calculated_mac = hmac_oneshot(\n        mu_key, msg=onion_packet.hops_data+associated_data,\n        digest=hashlib.sha256)\n    if onion_packet.hmac != calculated_mac:\n        raise InvalidOnionMac()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "31a589e845e405c8:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnonion.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 409,
+            "startColumn" : 59,
+            "endColumn" : 73
+          },
+          "contextRegion" : {
+            "startLine" : 407,
+            "endLine" : 411,
+            "snippet" : {
+              "text" : "    shared_secret = get_ecdh(our_onion_private_key, their_public_key)\n    um_key = get_bolt04_onion_key(b'um', shared_secret)\n    hmac_ = hmac_oneshot(um_key, msg=error_packet, digest=hashlib.sha256)\n    error_packet = hmac_ + error_packet\n    return error_packet\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c99130cfef2981c1:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnonion.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 431,
+            "startColumn" : 76,
+            "endColumn" : 90
+          },
+          "contextRegion" : {
+            "startLine" : 429,
+            "endLine" : 433,
+            "snippet" : {
+              "text" : "        stream_bytes = generate_cipher_stream(ammag_key, len(error_packet))\n        error_packet = xor_bytes(error_packet, stream_bytes)\n        hmac_computed = hmac_oneshot(um_key, msg=error_packet[32:], digest=hashlib.sha256)\n        hmac_found = error_packet[:32]\n        if hmac_computed == hmac_found:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "636929538859397b:1",
+        "primaryLocationStartColumnFingerprint" : "67"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lntransport.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 65,
+            "startColumn" : 46,
+            "endColumn" : 60
+          },
+          "contextRegion" : {
+            "startLine" : 63,
+            "endLine" : 67,
+            "snippet" : {
+              "text" : "    \"\"\"\n    #Extract\n    prk = hmac_oneshot(salt, msg=ikm, digest=hashlib.sha256)\n    assert len(prk) == 32\n    #Expand\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7755a9263ab6e5aa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lntransport.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 70,
+            "startColumn" : 56,
+            "endColumn" : 70
+          },
+          "contextRegion" : {
+            "startLine" : 68,
+            "endLine" : 72,
+            "snippet" : {
+              "text" : "    info = b\"\"\n    T0 = b\"\"\n    T1 = hmac_oneshot(prk, T0 + info + b\"\\x01\", digest=hashlib.sha256)\n    T2 = hmac_oneshot(prk, T1 + info + b\"\\x02\", digest=hashlib.sha256)\n    assert len(T1 + T2) == 64\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5448a6a179f20d29:1",
+        "primaryLocationStartColumnFingerprint" : "51"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lntransport.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 71,
+            "startColumn" : 56,
+            "endColumn" : 70
+          },
+          "contextRegion" : {
+            "startLine" : 69,
+            "endLine" : 73,
+            "snippet" : {
+              "text" : "    T0 = b\"\"\n    T1 = hmac_oneshot(prk, T0 + info + b\"\\x01\", digest=hashlib.sha256)\n    T2 = hmac_oneshot(prk, T1 + info + b\"\\x02\", digest=hashlib.sha256)\n    assert len(T1 + T2) == 64\n    return T1, T2\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fbfb8067894bd562:1",
+        "primaryLocationStartColumnFingerprint" : "51"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/mnemonic.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 174,
+            "startColumn" : 36,
+            "endColumn" : 44
+          },
+          "contextRegion" : {
+            "startLine" : 172,
+            "endLine" : 176,
+            "snippet" : {
+              "text" : "        passphrase = passphrase or ''\n        passphrase = normalize_text(passphrase)\n        return hashlib.pbkdf2_hmac('sha512', mnemonic.encode('utf-8'), b'electrum' + passphrase.encode('utf-8'), iterations = PBKDF2_ROUNDS)\n\n    def mnemonic_encode(self, i):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6260094a15ee664b:1",
+        "primaryLocationStartColumnFingerprint" : "27"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/mnemonic.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 174,
+            "startColumn" : 16,
+            "endColumn" : 141
+          },
+          "contextRegion" : {
+            "startLine" : 172,
+            "endLine" : 176,
+            "snippet" : {
+              "text" : "        passphrase = passphrase or ''\n        passphrase = normalize_text(passphrase)\n        return hashlib.pbkdf2_hmac('sha512', mnemonic.encode('utf-8'), b'electrum' + passphrase.encode('utf-8'), iterations = PBKDF2_ROUNDS)\n\n    def mnemonic_encode(self, i):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6260094a15ee664b:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/mnemonic.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 237,
+            "startColumn" : 57,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 235,
+            "endLine" : 239,
+            "snippet" : {
+              "text" : "def is_new_seed(x: str, prefix=version.SEED_PREFIX) -> bool:\n    x = normalize_text(x)\n    s = hmac_oneshot(b\"Seed version\", x.encode('utf8'), hashlib.sha512).hex()\n    return s.startswith(prefix)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "71c4181856bbd62f:1",
+        "primaryLocationStartColumnFingerprint" : "52"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/paymentrequest.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 211,
+            "startColumn" : 35,
+            "endColumn" : 49
+          },
+          "contextRegion" : {
+            "startLine" : 209,
+            "endLine" : 213,
+            "snippet" : {
+              "text" : "        msgBytes = bytearray(s)\n        if paymntreq.pki_type == \"x509+sha256\":\n            hashBytes = bytearray(hashlib.sha256(msgBytes).digest())\n            verify = pubkey0.verify(sigBytes, x509.PREFIX_RSA_SHA256 + hashBytes)\n        elif paymntreq.pki_type == \"x509+sha1\":\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b5e3309df1187743:1",
+        "primaryLocationStartColumnFingerprint" : "22"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/paymentrequest.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 399,
+            "startColumn" : 35,
+            "endColumn" : 49
+          },
+          "contextRegion" : {
+            "startLine" : 397,
+            "endLine" : 401,
+            "snippet" : {
+              "text" : "            verify = pubkey.hashAndVerify(sig, data)\n        elif algo == x509.ALGO_RSA_SHA256:\n            hashBytes = bytearray(hashlib.sha256(data).digest())\n            verify = pubkey.verify(sig, x509.PREFIX_RSA_SHA256 + hashBytes)\n        elif algo == x509.ALGO_RSA_SHA384:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c397921fce81a3c4:1",
+        "primaryLocationStartColumnFingerprint" : "22"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/paymentrequest.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 402,
+            "startColumn" : 35,
+            "endColumn" : 49
+          },
+          "contextRegion" : {
+            "startLine" : 400,
+            "endLine" : 404,
+            "snippet" : {
+              "text" : "            verify = pubkey.verify(sig, x509.PREFIX_RSA_SHA256 + hashBytes)\n        elif algo == x509.ALGO_RSA_SHA384:\n            hashBytes = bytearray(hashlib.sha384(data).digest())\n            verify = pubkey.verify(sig, x509.PREFIX_RSA_SHA384 + hashBytes)\n        elif algo == x509.ALGO_RSA_SHA512:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "84ca15d156163d70:1",
+        "primaryLocationStartColumnFingerprint" : "22"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/paymentrequest.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 405,
+            "startColumn" : 35,
+            "endColumn" : 49
+          },
+          "contextRegion" : {
+            "startLine" : 403,
+            "endLine" : 407,
+            "snippet" : {
+              "text" : "            verify = pubkey.verify(sig, x509.PREFIX_RSA_SHA384 + hashBytes)\n        elif algo == x509.ALGO_RSA_SHA512:\n            hashBytes = bytearray(hashlib.sha512(data).digest())\n            verify = pubkey.verify(sig, x509.PREFIX_RSA_SHA512 + hashBytes)\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "483997123e54bcba:1",
+        "primaryLocationStartColumnFingerprint" : "22"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/paymentrequest.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 450,
+            "startColumn" : 27,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 448,
+            "endLine" : 452,
+            "snippet" : {
+              "text" : "    pr.pki_data = certificates.SerializeToString()\n    msgBytes = bytearray(pr.SerializeToString())\n    hashBytes = bytearray(hashlib.sha256(msgBytes).digest())\n    sig = privkey.sign(x509.PREFIX_RSA_SHA256 + hashBytes)\n    pr.signature = bytes(sig)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d1a494ef53d5ac33:1",
+        "primaryLocationStartColumnFingerprint" : "22"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/coldcard/qt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 223,
+            "startColumn" : 29,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 221,
+            "endLine" : 225,
+            "snippet" : {
+              "text" : "        from ckcc.sigheader import FW_HEADER_SIZE, FW_HEADER_OFFSET, FW_HEADER_MAGIC\n        from ckcc.protocol import CCProtocolPacker\n        from hashlib import sha256\n        import struct\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2d13b8d2d6d17ac0:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/revealer/revealer.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 5,
+            "snippet" : {
+              "text" : "import random\nimport os\nfrom hashlib import sha256\nfrom typing import NamedTuple, Optional, Dict, Tuple\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5a62aa158fe81eb1:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/rsakey.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 17
+          },
+          "region" : {
+            "startLine" : 42,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 40,
+            "endLine" : 44,
+            "snippet" : {
+              "text" : "\ndef SHA1(x):\n    return hashlib.sha1(x).digest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fcc69915ae12043:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/slip39.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 527,
+            "startColumn" : 9,
+            "endColumn" : 17
+          },
+          "contextRegion" : {
+            "startLine" : 525,
+            "endLine" : 529,
+            "snippet" : {
+              "text" : "    \"\"\"The round function used internally by the Feistel cipher.\"\"\"\n    return pbkdf2_hmac(\n        \"sha256\",\n        bytes([i]) + passphrase,\n        salt + r,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8365248acd62e837:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/slip39.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 526,
+            "startColumn" : 12,
+            "endLine" : 532,
+            "endColumn" : 6
+          },
+          "contextRegion" : {
+            "startLine" : 524,
+            "endLine" : 534,
+            "snippet" : {
+              "text" : "def _round_function(i: int, passphrase: bytes, e: int, salt: bytes, r: bytes) -> bytes:\n    \"\"\"The round function used internally by the Feistel cipher.\"\"\"\n    return pbkdf2_hmac(\n        \"sha256\",\n        bytes([i]) + passphrase,\n        salt + r,\n        (_BASE_ITERATION_COUNT << e) // _ROUND_COUNT,\n        dklen=len(r),\n    )\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6a059b3c34dbb9f4:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/slip39.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 542,
+            "startColumn" : 49,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 540,
+            "endLine" : 544,
+            "snippet" : {
+              "text" : "\ndef _create_digest(random_data: bytes, shared_secret: bytes) -> bytes:\n    return hmac.new(random_data, shared_secret, \"sha256\").digest()[:_DIGEST_LENGTH_BYTES]\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "47ddfe112781f1e0:1",
+        "primaryLocationStartColumnFingerprint" : "44"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/storage.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 169,
+            "startColumn" : 38,
+            "endColumn" : 46
+          },
+          "contextRegion" : {
+            "startLine" : 167,
+            "endLine" : 171,
+            "snippet" : {
+              "text" : "        if password is None:\n            password = \"\"\n        secret = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'), b'', iterations=1024)\n        ec_key = ecc.ECPrivkey.from_arbitrary_size_secret(secret)\n        return ec_key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ef9c8d9f2a345cbc:1",
+        "primaryLocationStartColumnFingerprint" : "29"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/storage.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 169,
+            "startColumn" : 18,
+            "endColumn" : 95
+          },
+          "contextRegion" : {
+            "startLine" : 167,
+            "endLine" : 171,
+            "snippet" : {
+              "text" : "        if password is None:\n            password = \"\"\n        secret = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'), b'', iterations=1024)\n        ec_key = ecc.ECPrivkey.from_arbitrary_size_secret(secret)\n        return ec_key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ef9c8d9f2a345cbc:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/synchronizer.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 54,
+            "startColumn" : 12,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 52,
+            "endLine" : 56,
+            "snippet" : {
+              "text" : "    for tx_hash, height in h:\n        status += tx_hash + ':%d:' % height\n    return hashlib.sha256(status.encode('ascii')).digest().hex()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "62c7ff3f360b235d:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/tests/test_bolt11.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 1,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 3,
+            "snippet" : {
+              "text" : "from hashlib import sha256\nfrom decimal import Decimal\nfrom binascii import unhexlify, hexlify\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bde6304577881ba4:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/trustedcoin/trustedcoin.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 411,
+            "startColumn" : 16,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 409,
+            "endLine" : 413,
+            "snippet" : {
+              "text" : "    xpub2 = db.get('x2')['xpub']\n    long_id = make_long_id(xpub1, xpub2)\n    short_id = hashlib.sha256(long_id).hexdigest()\n    return long_id, short_id\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "93dbf91ced15b486:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/x509.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 23
+          },
+          "region" : {
+            "startLine" : 314,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 312,
+            "endLine" : 316,
+            "snippet" : {
+              "text" : "\n    def getFingerprint(self):\n        return hashlib.sha1(self.bytes).digest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "78a39c776d3ac94e:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/iv-sources",
+      "ruleIndex" : 3,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/iv-sources",
+        "index" : 3
+      },
+      "message" : {
+        "text" : "Block mode IV/Nonce source"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 177,
+            "startColumn" : 10,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 175,
+            "endLine" : 179,
+            "snippet" : {
+              "text" : "def EncodeAES_bytes(secret: bytes, msg: bytes) -> bytes:\n    assert_bytes(msg)\n    iv = bytes(os.urandom(16))\n    ct = aes_encrypt_with_iv(secret, iv, msg)\n    return iv + ct\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bd9a391d93f70a93:1",
+        "primaryLocationStartColumnFingerprint" : "5"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/iv-sources",
+      "ruleIndex" : 3,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/iv-sources",
+        "index" : 3
+      },
+      "message" : {
+        "text" : "Block mode IV/Nonce source"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 184,
+            "startColumn" : 13,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 182,
+            "endLine" : 186,
+            "snippet" : {
+              "text" : "def DecodeAES_bytes(secret: bytes, ciphertext: bytes) -> bytes:\n    assert_bytes(ciphertext)\n    iv, e = ciphertext[:16], ciphertext[16:]\n    s = aes_decrypt_with_iv(secret, iv, e)\n    return s\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b90697300b87de96:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/iv-sources",
+      "ruleIndex" : 3,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/iv-sources",
+        "index" : 3
+      },
+      "message" : {
+        "text" : "Block mode IV/Nonce source"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/ecc.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 353,
+            "startColumn" : 28,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 351,
+            "endLine" : 355,
+            "snippet" : {
+              "text" : "        ecdh_key = (self * ephemeral.secret_scalar).get_public_key_bytes(compressed=True)\n        key = hashlib.sha512(ecdh_key).digest()\n        iv, key_e, key_m = key[0:16], key[16:32], key[32:]\n        ciphertext = aes_encrypt_with_iv(key_e, iv, message)\n        ephemeral_pubkey = ephemeral.get_public_key_bytes(compressed=True)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e5b564619594e784:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/iv-sources",
+      "ruleIndex" : 3,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/iv-sources",
+        "index" : 3
+      },
+      "message" : {
+        "text" : "Block mode IV/Nonce source"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/ecc.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 544,
+            "startColumn" : 28,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 542,
+            "endLine" : 546,
+            "snippet" : {
+              "text" : "        ecdh_key = (ephemeral_pubkey * self.secret_scalar).get_public_key_bytes(compressed=True)\n        key = hashlib.sha512(ecdh_key).digest()\n        iv, key_e, key_m = key[0:16], key[16:32], key[32:]\n        if mac != hmac_oneshot(key_m, encrypted[:-32], hashlib.sha256):\n            raise InvalidPassword()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b08591ac3636c9a2:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/bip32.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 67,
+            "startColumn" : 46,
+            "endColumn" : 60
+          },
+          "contextRegion" : {
+            "startLine" : 65,
+            "endLine" : 69,
+            "snippet" : {
+              "text" : "    else:\n        data = parent_pubkey + child_index\n    I = hmac_oneshot(parent_chaincode, data, hashlib.sha512)\n    I_left = ecc.string_to_number(I[0:32])\n    child_privkey = (I_left + ecc.string_to_number(parent_privkey)) % ecc.CURVE_ORDER\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "de4802bd917e7558:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/bip32.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 94,
+            "startColumn" : 69,
+            "endColumn" : 83
+          },
+          "contextRegion" : {
+            "startLine" : 92,
+            "endLine" : 96,
+            "snippet" : {
+              "text" : "# i.e.: 'child_index' does not need to fit into 32 bits here! (c.f. trustedcoin billing)\ndef _CKD_pub(parent_pubkey: bytes, parent_chaincode: bytes, child_index: bytes) -> Tuple[bytes, bytes]:\n    I = hmac_oneshot(parent_chaincode, parent_pubkey + child_index, hashlib.sha512)\n    pubkey = ecc.ECPrivkey(I[0:32]) + ecc.ECPubkey(parent_pubkey)\n    if pubkey.is_at_infinity():\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9b5995f62c53b7f9:1",
+        "primaryLocationStartColumnFingerprint" : "64"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/bip32.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 169,
+            "startColumn" : 49,
+            "endColumn" : 63
+          },
+          "contextRegion" : {
+            "startLine" : 167,
+            "endLine" : 171,
+            "snippet" : {
+              "text" : "    @classmethod\n    def from_rootseed(cls, seed: bytes, *, xtype: str) -> 'BIP32Node':\n        I = hmac_oneshot(b\"Bitcoin seed\", seed, hashlib.sha512)\n        master_k = I[0:32]\n        master_c = I[32:]\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "79d78fd202988632:1",
+        "primaryLocationStartColumnFingerprint" : "40"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 321,
+            "startColumn" : 18,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 319,
+            "endLine" : 323,
+            "snippet" : {
+              "text" : "def sha256(x: Union[bytes, str]) -> bytes:\n    x = to_bytes(x, 'utf8')\n    return bytes(hashlib.sha256(x).digest())\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "57d1b392191131c9:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm RIPEMD160"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 335,
+            "startColumn" : 26,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 333,
+            "endLine" : 337,
+            "snippet" : {
+              "text" : "def ripemd(x: bytes) -> bytes:\n    try:\n        md = hashlib.new('ripemd160')\n        md.update(x)\n        return md.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7d07a3db0a58f204:1",
+        "primaryLocationStartColumnFingerprint" : "17"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/digitalbitbox/digitalbitbox.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 68,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 66,
+            "endLine" : 70,
+            "snippet" : {
+              "text" : "def derive_keys(x):\n    h = sha256d(x)\n    h = hashlib.sha512(h).digest()\n    return (h[:32],h[32:])\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5c9c4492ea5dfe3f:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/digitalbitbox/digitalbitbox.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 152,
+            "startColumn" : 46,
+            "endColumn" : 54
+          },
+          "contextRegion" : {
+            "startLine" : 150,
+            "endLine" : 154,
+            "snippet" : {
+              "text" : "\n    def stretch_key(self, key: bytes):\n        return to_hexstr(hashlib.pbkdf2_hmac('sha512', key, b'Digital Bitbox', iterations = 20480))\n\n    def backup_password_dialog(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7acca17824b556ad:1",
+        "primaryLocationStartColumnFingerprint" : "37"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/digitalbitbox/digitalbitbox.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 427,
+            "startColumn" : 65,
+            "endColumn" : 79
+          },
+          "contextRegion" : {
+            "startLine" : 425,
+            "endLine" : 429,
+            "snippet" : {
+              "text" : "            encryption_key, authentication_key = derive_keys(self.password)\n            msg = EncodeAES_bytes(encryption_key, msg)\n            hmac_digest = hmac_oneshot(authentication_key, msg, hashlib.sha256)\n            authenticated_msg = base64.b64encode(msg + hmac_digest)\n            reply = self.hid_send_plain(authenticated_msg)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c4be33eedde474dd:1",
+        "primaryLocationStartColumnFingerprint" : "52"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/digitalbitbox/digitalbitbox.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 433,
+            "startColumn" : 102,
+            "endColumn" : 116
+          },
+          "contextRegion" : {
+            "startLine" : 431,
+            "endLine" : 435,
+            "snippet" : {
+              "text" : "                b64_unencoded = bytes(base64.b64decode(''.join(reply[\"ciphertext\"])))\n                reply_hmac = b64_unencoded[-sha256_byte_len:]\n                hmac_calculated = hmac_oneshot(authentication_key, b64_unencoded[:-sha256_byte_len], hashlib.sha256)\n                if not hmac.compare_digest(reply_hmac, hmac_calculated):\n                    raise Exception(\"Failed to validate HMAC\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5df2274c8f6dbc1e:1",
+        "primaryLocationStartColumnFingerprint" : "85"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/ecc.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 352,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 350,
+            "endLine" : 354,
+            "snippet" : {
+              "text" : "        ephemeral = ECPrivkey.generate_random_key()\n        ecdh_key = (self * ephemeral.secret_scalar).get_public_key_bytes(compressed=True)\n        key = hashlib.sha512(ecdh_key).digest()\n        iv, key_e, key_m = key[0:16], key[16:32], key[32:]\n        ciphertext = aes_encrypt_with_iv(key_e, iv, message)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "97fbc9548be1e052:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/ecc.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 357,
+            "startColumn" : 46,
+            "endColumn" : 60
+          },
+          "contextRegion" : {
+            "startLine" : 355,
+            "endLine" : 359,
+            "snippet" : {
+              "text" : "        ephemeral_pubkey = ephemeral.get_public_key_bytes(compressed=True)\n        encrypted = magic + ephemeral_pubkey + ciphertext\n        mac = hmac_oneshot(key_m, encrypted, hashlib.sha256)\n\n        return base64.b64encode(encrypted + mac)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2403676066ef08ff:1",
+        "primaryLocationStartColumnFingerprint" : "37"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/ecc.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 543,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 541,
+            "endLine" : 545,
+            "snippet" : {
+              "text" : "            raise Exception('invalid ciphertext: invalid ephemeral pubkey') from e\n        ecdh_key = (ephemeral_pubkey * self.secret_scalar).get_public_key_bytes(compressed=True)\n        key = hashlib.sha512(ecdh_key).digest()\n        iv, key_e, key_m = key[0:16], key[16:32], key[32:]\n        if mac != hmac_oneshot(key_m, encrypted[:-32], hashlib.sha256):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b6a53b7d963e203d:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/ecc.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 545,
+            "startColumn" : 56,
+            "endColumn" : 70
+          },
+          "contextRegion" : {
+            "startLine" : 543,
+            "endLine" : 547,
+            "snippet" : {
+              "text" : "        key = hashlib.sha512(ecdh_key).digest()\n        iv, key_e, key_m = key[0:16], key[16:32], key[32:]\n        if mac != hmac_oneshot(key_m, encrypted[:-32], hashlib.sha256):\n            raise InvalidPassword()\n        return aes_decrypt_with_iv(key_e, iv, ciphertext)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cdedfc934d1fa67f:1",
+        "primaryLocationStartColumnFingerprint" : "47"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/revealer/hmac_drbg.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 33,
+            "startColumn" : 35,
+            "endColumn" : 49
+          },
+          "contextRegion" : {
+            "startLine" : 31,
+            "endLine" : 35,
+            "snippet" : {
+              "text" : "\n    def hmac(self, key, val):\n        return hmac.new(key, val, hashlib.sha512).digest()\n\n    def reseed(self, data=b''):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ea5add0ab534eae9:1",
+        "primaryLocationStartColumnFingerprint" : "26"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/interface.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 611,
+            "startColumn" : 23,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 609,
+            "endLine" : 613,
+            "snippet" : {
+              "text" : "        if not expected_fingerprint:\n            return\n        fingerprint = hashlib.sha256(certificate).hexdigest()\n        fingerprints_match = fingerprint.lower() == expected_fingerprint.lower()\n        if not fingerprints_match:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4f9c5333820daef9:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/jade/jadepy/jade.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 426,
+            "startColumn" : 21,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 424,
+            "endLine" : 428,
+            "snippet" : {
+              "text" : "\n        # Compute the sha256 hash of the compressed file being uploaded\n        cmphasher = hashlib.sha256()\n        cmphasher.update(fwcmp)\n        cmphash = cmphasher.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "197a43399c3861d1:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/keystore.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 770,
+            "startColumn" : 17,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 768,
+            "endLine" : 772,
+            "snippet" : {
+              "text" : "        x = seed\n        for i in range(100000):\n            x = hashlib.sha256(x + seed).digest()\n        return string_to_number(x)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "aea697375c32e1b7:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/keystore.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 982,
+            "startColumn" : 32,
+            "endColumn" : 40
+          },
+          "contextRegion" : {
+            "startLine" : 980,
+            "endLine" : 984,
+            "snippet" : {
+              "text" : "    mnemonic = normalize('NFKD', ' '.join(mnemonic.split()))\n    passphrase = bip39_normalize_passphrase(passphrase)\n    return hashlib.pbkdf2_hmac('sha512', mnemonic.encode('utf-8'),\n        b'mnemonic' + passphrase.encode('utf-8'), iterations = PBKDF2_ROUNDS)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8cb22f0df9f7489d:1",
+        "primaryLocationStartColumnFingerprint" : "27"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/labels/labels.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 193,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 191,
+            "endLine" : 195,
+            "snippet" : {
+              "text" : "            return\n        mpk = mpk.encode('ascii')\n        password = hashlib.sha1(mpk).hexdigest()[:32].encode('ascii')\n        iv = hashlib.sha256(password).digest()[:16]\n        wallet_id = hashlib.sha256(mpk).hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "97c1110ccb39b921:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/labels/labels.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 194,
+            "startColumn" : 14,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 192,
+            "endLine" : 196,
+            "snippet" : {
+              "text" : "        mpk = mpk.encode('ascii')\n        password = hashlib.sha1(mpk).hexdigest()[:32].encode('ascii')\n        iv = hashlib.sha256(password).digest()[:16]\n        wallet_id = hashlib.sha256(mpk).hexdigest()\n        self.wallets[wallet] = (password, iv, wallet_id)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8b1b7a255efb839e:1",
+        "primaryLocationStartColumnFingerprint" : "5"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/labels/labels.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 195,
+            "startColumn" : 21,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 193,
+            "endLine" : 197,
+            "snippet" : {
+              "text" : "        password = hashlib.sha1(mpk).hexdigest()[:32].encode('ascii')\n        iv = hashlib.sha256(password).digest()[:16]\n        wallet_id = hashlib.sha256(mpk).hexdigest()\n        self.wallets[wallet] = (password, iv, wallet_id)\n        nonce = self.get_nonce(wallet)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c0423db0e34d208b:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/ledger/ledger.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 764,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 762,
+            "endLine" : 766,
+            "snippet" : {
+              "text" : "    ) -> bytes:\n        message = message.encode('utf8')\n        message_hash = hashlib.sha256(message).hexdigest().upper()\n\n        self.handler.show_message(\"Signing message ...\\r\\nMessage hash: \" + message_hash)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3f53bb17e5595a61:1",
+        "primaryLocationStartColumnFingerprint" : "15"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/ledger/ledger.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 1271,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 1269,
+            "endLine" : 1273,
+            "snippet" : {
+              "text" : "    ) -> bytes:\n        message = message.encode('utf8')\n        message_hash = hashlib.sha256(message).hexdigest().upper()\n        # prompt for the PIN before displaying the dialog if necessary\n        self.handler.show_message(\"Signing message ...\\r\\nMessage hash: \" + message_hash)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fdc37367f7e19fcd:1",
+        "primaryLocationStartColumnFingerprint" : "15"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnaddr.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 6,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 4,
+            "endLine" : 8,
+            "snippet" : {
+              "text" : "import re\nimport time\nfrom hashlib import sha256\nfrom binascii import hexlify\nfrom decimal import Decimal\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ec39a6501e770168:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnonion.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 150,
+            "startColumn" : 53,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 148,
+            "endLine" : 152,
+            "snippet" : {
+              "text" : "    if key_type not in (b'rho', b'mu', b'um', b'ammag', b'pad'):\n        raise Exception('invalid key_type {}'.format(key_type))\n    key = hmac_oneshot(key_type, msg=secret, digest=hashlib.sha256)\n    return key\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c0b313385e1d6fcb:1",
+        "primaryLocationStartColumnFingerprint" : "48"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnonion.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 205,
+            "startColumn" : 61,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 203,
+            "endLine" : 207,
+            "snippet" : {
+              "text" : "            mix_header = mix_header[:-len(filler)] + filler\n        packet = mix_header + associated_data\n        next_hmac = hmac_oneshot(mu_key, msg=packet, digest=hashlib.sha256)\n\n    return OnionPacket(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cbb81a8eefcfeb09:1",
+        "primaryLocationStartColumnFingerprint" : "52"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnonion.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 311,
+            "startColumn" : 16,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 309,
+            "endLine" : 313,
+            "snippet" : {
+              "text" : "    calculated_mac = hmac_oneshot(\n        mu_key, msg=onion_packet.hops_data+associated_data,\n        digest=hashlib.sha256)\n    if onion_packet.hmac != calculated_mac:\n        raise InvalidOnionMac()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "31a589e845e405c8:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnonion.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 409,
+            "startColumn" : 59,
+            "endColumn" : 73
+          },
+          "contextRegion" : {
+            "startLine" : 407,
+            "endLine" : 411,
+            "snippet" : {
+              "text" : "    shared_secret = get_ecdh(our_onion_private_key, their_public_key)\n    um_key = get_bolt04_onion_key(b'um', shared_secret)\n    hmac_ = hmac_oneshot(um_key, msg=error_packet, digest=hashlib.sha256)\n    error_packet = hmac_ + error_packet\n    return error_packet\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c99130cfef2981c1:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lnonion.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 431,
+            "startColumn" : 76,
+            "endColumn" : 90
+          },
+          "contextRegion" : {
+            "startLine" : 429,
+            "endLine" : 433,
+            "snippet" : {
+              "text" : "        stream_bytes = generate_cipher_stream(ammag_key, len(error_packet))\n        error_packet = xor_bytes(error_packet, stream_bytes)\n        hmac_computed = hmac_oneshot(um_key, msg=error_packet[32:], digest=hashlib.sha256)\n        hmac_found = error_packet[:32]\n        if hmac_computed == hmac_found:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "636929538859397b:1",
+        "primaryLocationStartColumnFingerprint" : "67"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lntransport.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 65,
+            "startColumn" : 46,
+            "endColumn" : 60
+          },
+          "contextRegion" : {
+            "startLine" : 63,
+            "endLine" : 67,
+            "snippet" : {
+              "text" : "    \"\"\"\n    #Extract\n    prk = hmac_oneshot(salt, msg=ikm, digest=hashlib.sha256)\n    assert len(prk) == 32\n    #Expand\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7755a9263ab6e5aa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lntransport.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 70,
+            "startColumn" : 56,
+            "endColumn" : 70
+          },
+          "contextRegion" : {
+            "startLine" : 68,
+            "endLine" : 72,
+            "snippet" : {
+              "text" : "    info = b\"\"\n    T0 = b\"\"\n    T1 = hmac_oneshot(prk, T0 + info + b\"\\x01\", digest=hashlib.sha256)\n    T2 = hmac_oneshot(prk, T1 + info + b\"\\x02\", digest=hashlib.sha256)\n    assert len(T1 + T2) == 64\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5448a6a179f20d29:1",
+        "primaryLocationStartColumnFingerprint" : "51"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/lntransport.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 71,
+            "startColumn" : 56,
+            "endColumn" : 70
+          },
+          "contextRegion" : {
+            "startLine" : 69,
+            "endLine" : 73,
+            "snippet" : {
+              "text" : "    T0 = b\"\"\n    T1 = hmac_oneshot(prk, T0 + info + b\"\\x01\", digest=hashlib.sha256)\n    T2 = hmac_oneshot(prk, T1 + info + b\"\\x02\", digest=hashlib.sha256)\n    assert len(T1 + T2) == 64\n    return T1, T2\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fbfb8067894bd562:1",
+        "primaryLocationStartColumnFingerprint" : "51"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/mnemonic.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 174,
+            "startColumn" : 36,
+            "endColumn" : 44
+          },
+          "contextRegion" : {
+            "startLine" : 172,
+            "endLine" : 176,
+            "snippet" : {
+              "text" : "        passphrase = passphrase or ''\n        passphrase = normalize_text(passphrase)\n        return hashlib.pbkdf2_hmac('sha512', mnemonic.encode('utf-8'), b'electrum' + passphrase.encode('utf-8'), iterations = PBKDF2_ROUNDS)\n\n    def mnemonic_encode(self, i):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6260094a15ee664b:1",
+        "primaryLocationStartColumnFingerprint" : "27"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/mnemonic.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 237,
+            "startColumn" : 57,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 235,
+            "endLine" : 239,
+            "snippet" : {
+              "text" : "def is_new_seed(x: str, prefix=version.SEED_PREFIX) -> bool:\n    x = normalize_text(x)\n    s = hmac_oneshot(b\"Seed version\", x.encode('utf8'), hashlib.sha512).hex()\n    return s.startswith(prefix)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "71c4181856bbd62f:1",
+        "primaryLocationStartColumnFingerprint" : "52"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/paymentrequest.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 211,
+            "startColumn" : 35,
+            "endColumn" : 49
+          },
+          "contextRegion" : {
+            "startLine" : 209,
+            "endLine" : 213,
+            "snippet" : {
+              "text" : "        msgBytes = bytearray(s)\n        if paymntreq.pki_type == \"x509+sha256\":\n            hashBytes = bytearray(hashlib.sha256(msgBytes).digest())\n            verify = pubkey0.verify(sigBytes, x509.PREFIX_RSA_SHA256 + hashBytes)\n        elif paymntreq.pki_type == \"x509+sha1\":\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b5e3309df1187743:1",
+        "primaryLocationStartColumnFingerprint" : "22"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/paymentrequest.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 399,
+            "startColumn" : 35,
+            "endColumn" : 49
+          },
+          "contextRegion" : {
+            "startLine" : 397,
+            "endLine" : 401,
+            "snippet" : {
+              "text" : "            verify = pubkey.hashAndVerify(sig, data)\n        elif algo == x509.ALGO_RSA_SHA256:\n            hashBytes = bytearray(hashlib.sha256(data).digest())\n            verify = pubkey.verify(sig, x509.PREFIX_RSA_SHA256 + hashBytes)\n        elif algo == x509.ALGO_RSA_SHA384:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c397921fce81a3c4:1",
+        "primaryLocationStartColumnFingerprint" : "22"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/paymentrequest.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 402,
+            "startColumn" : 35,
+            "endColumn" : 49
+          },
+          "contextRegion" : {
+            "startLine" : 400,
+            "endLine" : 404,
+            "snippet" : {
+              "text" : "            verify = pubkey.verify(sig, x509.PREFIX_RSA_SHA256 + hashBytes)\n        elif algo == x509.ALGO_RSA_SHA384:\n            hashBytes = bytearray(hashlib.sha384(data).digest())\n            verify = pubkey.verify(sig, x509.PREFIX_RSA_SHA384 + hashBytes)\n        elif algo == x509.ALGO_RSA_SHA512:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "84ca15d156163d70:1",
+        "primaryLocationStartColumnFingerprint" : "22"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/paymentrequest.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 405,
+            "startColumn" : 35,
+            "endColumn" : 49
+          },
+          "contextRegion" : {
+            "startLine" : 403,
+            "endLine" : 407,
+            "snippet" : {
+              "text" : "            verify = pubkey.verify(sig, x509.PREFIX_RSA_SHA384 + hashBytes)\n        elif algo == x509.ALGO_RSA_SHA512:\n            hashBytes = bytearray(hashlib.sha512(data).digest())\n            verify = pubkey.verify(sig, x509.PREFIX_RSA_SHA512 + hashBytes)\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "483997123e54bcba:1",
+        "primaryLocationStartColumnFingerprint" : "22"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/paymentrequest.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 450,
+            "startColumn" : 27,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 448,
+            "endLine" : 452,
+            "snippet" : {
+              "text" : "    pr.pki_data = certificates.SerializeToString()\n    msgBytes = bytearray(pr.SerializeToString())\n    hashBytes = bytearray(hashlib.sha256(msgBytes).digest())\n    sig = privkey.sign(x509.PREFIX_RSA_SHA256 + hashBytes)\n    pr.signature = bytes(sig)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d1a494ef53d5ac33:1",
+        "primaryLocationStartColumnFingerprint" : "22"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/coldcard/qt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 223,
+            "startColumn" : 29,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 221,
+            "endLine" : 225,
+            "snippet" : {
+              "text" : "        from ckcc.sigheader import FW_HEADER_SIZE, FW_HEADER_OFFSET, FW_HEADER_MAGIC\n        from ckcc.protocol import CCProtocolPacker\n        from hashlib import sha256\n        import struct\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2d13b8d2d6d17ac0:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/revealer/revealer.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 5,
+            "snippet" : {
+              "text" : "import random\nimport os\nfrom hashlib import sha256\nfrom typing import NamedTuple, Optional, Dict, Tuple\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5a62aa158fe81eb1:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/rsakey.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 17
+          },
+          "region" : {
+            "startLine" : 42,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 40,
+            "endLine" : 44,
+            "snippet" : {
+              "text" : "\ndef SHA1(x):\n    return hashlib.sha1(x).digest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fcc69915ae12043:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/slip39.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 527,
+            "startColumn" : 9,
+            "endColumn" : 17
+          },
+          "contextRegion" : {
+            "startLine" : 525,
+            "endLine" : 529,
+            "snippet" : {
+              "text" : "    \"\"\"The round function used internally by the Feistel cipher.\"\"\"\n    return pbkdf2_hmac(\n        \"sha256\",\n        bytes([i]) + passphrase,\n        salt + r,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8365248acd62e837:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/slip39.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 542,
+            "startColumn" : 49,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 540,
+            "endLine" : 544,
+            "snippet" : {
+              "text" : "\ndef _create_digest(random_data: bytes, shared_secret: bytes) -> bytes:\n    return hmac.new(random_data, shared_secret, \"sha256\").digest()[:_DIGEST_LENGTH_BYTES]\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "47ddfe112781f1e0:1",
+        "primaryLocationStartColumnFingerprint" : "44"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/storage.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 169,
+            "startColumn" : 38,
+            "endColumn" : 46
+          },
+          "contextRegion" : {
+            "startLine" : 167,
+            "endLine" : 171,
+            "snippet" : {
+              "text" : "        if password is None:\n            password = \"\"\n        secret = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'), b'', iterations=1024)\n        ec_key = ecc.ECPrivkey.from_arbitrary_size_secret(secret)\n        return ec_key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ef9c8d9f2a345cbc:1",
+        "primaryLocationStartColumnFingerprint" : "29"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/synchronizer.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 54,
+            "startColumn" : 12,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 52,
+            "endLine" : 56,
+            "snippet" : {
+              "text" : "    for tx_hash, height in h:\n        status += tx_hash + ':%d:' % height\n    return hashlib.sha256(status.encode('ascii')).digest().hex()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "62c7ff3f360b235d:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/tests/test_bolt11.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 1,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 1,
+            "endLine" : 3,
+            "snippet" : {
+              "text" : "from hashlib import sha256\nfrom decimal import Decimal\nfrom binascii import unhexlify, hexlify\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bde6304577881ba4:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/trustedcoin/trustedcoin.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 411,
+            "startColumn" : 16,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 409,
+            "endLine" : 413,
+            "snippet" : {
+              "text" : "    xpub2 = db.get('x2')['xpub']\n    long_id = make_long_id(xpub1, xpub2)\n    short_id = hashlib.sha256(long_id).hexdigest()\n    return long_id, short_id\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "93dbf91ced15b486:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/x509.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 23
+          },
+          "region" : {
+            "startLine" : 314,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 312,
+            "endLine" : 316,
+            "snippet" : {
+              "text" : "\n    def getFingerprint(self):\n        return hashlib.sha1(self.bytes).digest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "78a39c776d3ac94e:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 142,
+            "startColumn" : 28,
+            "endColumn" : 50
+          },
+          "contextRegion" : {
+            "startLine" : 140,
+            "endLine" : 144,
+            "snippet" : {
+              "text" : "        e = CD_AES.new(key, CD_AES.MODE_CBC, iv).encrypt(data)\n    elif HAS_CRYPTOGRAPHY:\n        cipher = CG_Cipher(CG_algorithms.AES(key), CG_modes.CBC(iv), backend=CG_default_backend())\n        encryptor = cipher.encryptor()\n        e = encryptor.update(data) + encryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cbf15b0465933a5c:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 160,
+            "startColumn" : 28,
+            "endColumn" : 50
+          },
+          "contextRegion" : {
+            "startLine" : 158,
+            "endLine" : 162,
+            "snippet" : {
+              "text" : "        data = cipher.decrypt(data)\n    elif HAS_CRYPTOGRAPHY:\n        cipher = CG_Cipher(CG_algorithms.AES(key), CG_modes.CBC(iv), backend=CG_default_backend())\n        decryptor = cipher.decryptor()\n        data = decryptor.update(data) + decryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5a5d32d62b02e166:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm CHACHA20POLY1305"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 375,
+            "startColumn" : 13,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 373,
+            "endLine" : 377,
+            "snippet" : {
+              "text" : "        return ciphertext + mac\n    if HAS_CRYPTOGRAPHY:\n        a = CG_aead.ChaCha20Poly1305(key)\n        return a.encrypt(nonce, data, associated_data)\n    raise Exception(\"no chacha20 backend found\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5e676e55fff87552:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm CHACHA20POLY1305"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 400,
+            "startColumn" : 13,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 398,
+            "endLine" : 402,
+            "snippet" : {
+              "text" : "        return cipher.decrypt_and_verify(ciphertext=data[:-16], received_mac_tag=data[-16:])\n    if HAS_CRYPTOGRAPHY:\n        a = CG_aead.ChaCha20Poly1305(key)\n        try:\n            return a.decrypt(nonce, data, associated_data)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "991c4ffbb370a19c:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm CHACHA20"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 419,
+            "startColumn" : 16,
+            "endColumn" : 60
+          },
+          "contextRegion" : {
+            "startLine" : 417,
+            "endLine" : 421,
+            "snippet" : {
+              "text" : "    if HAS_CRYPTOGRAPHY:\n        nonce = bytes(16 - len(nonce)) + nonce  # cryptography wants 16 byte nonces\n        algo = CG_algorithms.ChaCha20(key=key, nonce=nonce)\n        cipher = CG_Cipher(algo, mode=None, backend=CG_default_backend())\n        encryptor = cipher.encryptor()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ca221fa5d3951cbf:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm CHACHA20"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 437,
+            "startColumn" : 16,
+            "endColumn" : 60
+          },
+          "contextRegion" : {
+            "startLine" : 435,
+            "endLine" : 439,
+            "snippet" : {
+              "text" : "    if HAS_CRYPTOGRAPHY:\n        nonce = bytes(16 - len(nonce)) + nonce  # cryptography wants 16 byte nonces\n        algo = CG_algorithms.ChaCha20(key=key, nonce=nonce)\n        cipher = CG_Cipher(algo, mode=None, backend=CG_default_backend())\n        decryptor = cipher.decryptor()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ca221fa5d3951cbf:2",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/key-derivation",
+      "ruleIndex" : 10,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/key-derivation",
+        "index" : 10
+      },
+      "message" : {
+        "text" : "Use of key derivation algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/plugins/digitalbitbox/digitalbitbox.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 152,
+            "startColumn" : 26,
+            "endColumn" : 99
+          },
+          "contextRegion" : {
+            "startLine" : 150,
+            "endLine" : 154,
+            "snippet" : {
+              "text" : "\n    def stretch_key(self, key: bytes):\n        return to_hexstr(hashlib.pbkdf2_hmac('sha512', key, b'Digital Bitbox', iterations = 20480))\n\n    def backup_password_dialog(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7acca17824b556ad:1",
+        "primaryLocationStartColumnFingerprint" : "17"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/key-derivation",
+      "ruleIndex" : 10,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/key-derivation",
+        "index" : 10
+      },
+      "message" : {
+        "text" : "Use of key derivation algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/keystore.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 982,
+            "startColumn" : 12,
+            "endLine" : 983,
+            "endColumn" : 78
+          },
+          "contextRegion" : {
+            "startLine" : 980,
+            "endLine" : 985,
+            "snippet" : {
+              "text" : "    mnemonic = normalize('NFKD', ' '.join(mnemonic.split()))\n    passphrase = bip39_normalize_passphrase(passphrase)\n    return hashlib.pbkdf2_hmac('sha512', mnemonic.encode('utf-8'),\n        b'mnemonic' + passphrase.encode('utf-8'), iterations = PBKDF2_ROUNDS)\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8cb22f0df9f7489d:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/key-derivation",
+      "ruleIndex" : 10,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/key-derivation",
+        "index" : 10
+      },
+      "message" : {
+        "text" : "Use of key derivation algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/mnemonic.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 174,
+            "startColumn" : 16,
+            "endColumn" : 141
+          },
+          "contextRegion" : {
+            "startLine" : 172,
+            "endLine" : 176,
+            "snippet" : {
+              "text" : "        passphrase = passphrase or ''\n        passphrase = normalize_text(passphrase)\n        return hashlib.pbkdf2_hmac('sha512', mnemonic.encode('utf-8'), b'electrum' + passphrase.encode('utf-8'), iterations = PBKDF2_ROUNDS)\n\n    def mnemonic_encode(self, i):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6260094a15ee664b:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/key-derivation",
+      "ruleIndex" : 10,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/key-derivation",
+        "index" : 10
+      },
+      "message" : {
+        "text" : "Use of key derivation algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/slip39.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 526,
+            "startColumn" : 12,
+            "endLine" : 532,
+            "endColumn" : 6
+          },
+          "contextRegion" : {
+            "startLine" : 524,
+            "endLine" : 534,
+            "snippet" : {
+              "text" : "def _round_function(i: int, passphrase: bytes, e: int, salt: bytes, r: bytes) -> bytes:\n    \"\"\"The round function used internally by the Feistel cipher.\"\"\"\n    return pbkdf2_hmac(\n        \"sha256\",\n        bytes([i]) + passphrase,\n        salt + r,\n        (_BASE_ITERATION_COUNT << e) // _ROUND_COUNT,\n        dklen=len(r),\n    )\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6a059b3c34dbb9f4:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/key-derivation",
+      "ruleIndex" : 10,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/key-derivation",
+        "index" : 10
+      },
+      "message" : {
+        "text" : "Use of key derivation algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/storage.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 169,
+            "startColumn" : 18,
+            "endColumn" : 95
+          },
+          "contextRegion" : {
+            "startLine" : 167,
+            "endLine" : 171,
+            "snippet" : {
+              "text" : "        if password is None:\n            password = \"\"\n        secret = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'), b'', iterations=1024)\n        ec_key = ecc.ECPrivkey.from_arbitrary_size_secret(secret)\n        return ec_key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ef9c8d9f2a345cbc:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+      "ruleIndex" : 12,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+        "index" : 12
+      },
+      "message" : {
+        "text" : "Use of algorithm CHACHA20POLY1305"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 375,
+            "startColumn" : 13,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 373,
+            "endLine" : 377,
+            "snippet" : {
+              "text" : "        return ciphertext + mac\n    if HAS_CRYPTOGRAPHY:\n        a = CG_aead.ChaCha20Poly1305(key)\n        return a.encrypt(nonce, data, associated_data)\n    raise Exception(\"no chacha20 backend found\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5e676e55fff87552:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+      "ruleIndex" : 12,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+        "index" : 12
+      },
+      "message" : {
+        "text" : "Use of algorithm CHACHA20POLY1305"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 400,
+            "startColumn" : 13,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 398,
+            "endLine" : 402,
+            "snippet" : {
+              "text" : "        return cipher.decrypt_and_verify(ciphertext=data[:-16], received_mac_tag=data[-16:])\n    if HAS_CRYPTOGRAPHY:\n        a = CG_aead.ChaCha20Poly1305(key)\n        try:\n            return a.decrypt(nonce, data, associated_data)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "991c4ffbb370a19c:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 142,
+            "startColumn" : 52,
+            "endColumn" : 68
+          },
+          "contextRegion" : {
+            "startLine" : 140,
+            "endLine" : 144,
+            "snippet" : {
+              "text" : "        e = CD_AES.new(key, CD_AES.MODE_CBC, iv).encrypt(data)\n    elif HAS_CRYPTOGRAPHY:\n        cipher = CG_Cipher(CG_algorithms.AES(key), CG_modes.CBC(iv), backend=CG_default_backend())\n        encryptor = cipher.encryptor()\n        e = encryptor.update(data) + encryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cbf15b0465933a5c:1",
+        "primaryLocationStartColumnFingerprint" : "43"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 160,
+            "startColumn" : 52,
+            "endColumn" : 68
+          },
+          "contextRegion" : {
+            "startLine" : 158,
+            "endLine" : 162,
+            "snippet" : {
+              "text" : "        data = cipher.decrypt(data)\n    elif HAS_CRYPTOGRAPHY:\n        cipher = CG_Cipher(CG_algorithms.AES(key), CG_modes.CBC(iv), backend=CG_default_backend())\n        decryptor = cipher.decryptor()\n        data = decryptor.update(data) + decryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5a5d32d62b02e166:1",
+        "primaryLocationStartColumnFingerprint" : "43"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 375,
+            "startColumn" : 13,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 373,
+            "endLine" : 377,
+            "snippet" : {
+              "text" : "        return ciphertext + mac\n    if HAS_CRYPTOGRAPHY:\n        a = CG_aead.ChaCha20Poly1305(key)\n        return a.encrypt(nonce, data, associated_data)\n    raise Exception(\"no chacha20 backend found\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5e676e55fff87552:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "electrum/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 400,
+            "startColumn" : 13,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 398,
+            "endLine" : 402,
+            "snippet" : {
+              "text" : "        return cipher.decrypt_and_verify(ciphertext=data[:-16], received_mac_tag=data[-16:])\n    if HAS_CRYPTOGRAPHY:\n        a = CG_aead.ChaCha20Poly1305(key)\n        try:\n            return a.decrypt(nonce, data, associated_data)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "991c4ffbb370a19c:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    } ],
+    "automationDetails" : {
+      "id" : "CBOM:spesmilo/electrum/python/"
+    },
+    "columnKind" : "unicodeCodePoints",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
