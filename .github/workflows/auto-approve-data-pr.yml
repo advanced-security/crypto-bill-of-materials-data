@@ -13,7 +13,7 @@ permissions:
 jobs:
   autoapproval:
     name: Auto approve data PRs
-    if: ! contains(github.event.pull_request.labels.*.name, 'auto-approved')
+    if:  ${{ !contains(github.event.pull_request.labels.*.name, 'auto-approved') }}
     runs-on: ubuntu-latest
     steps:
       - uses: dkhmelenko/autoapproval@v1.0
