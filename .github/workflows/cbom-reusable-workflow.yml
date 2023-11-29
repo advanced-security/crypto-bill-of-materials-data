@@ -14,6 +14,10 @@ on:
         type: boolean
         required: false
         default: false
+      postSummary:
+        type: boolean
+        required: false
+        default: true
 
 jobs:
   build-matrix:
@@ -72,6 +76,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   add-workflow-summary:
     name: CBOM results
+    if: inputs.postSummary == 'true'
     runs-on: ubuntu-latest
     needs: run-cbom-action
     steps:
