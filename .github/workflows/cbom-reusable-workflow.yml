@@ -64,7 +64,9 @@ jobs:
           git add ./data
           git commit -m "${{ inputs.repositoryNameWithOwner }}"
           git push --set-upstream origin "${BRANCH_NAME}"
-          gh pr create --title "${BRANCH_NAME}" --fill
+          gh pr create \
+            --title "${{ inputs.repositoryNameWithOwner }} Run #${{ github.run_id }} Attempt #${{ github.run_attempt }}" \
+            --fill --label data-pr
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   add-workflow-summary:
