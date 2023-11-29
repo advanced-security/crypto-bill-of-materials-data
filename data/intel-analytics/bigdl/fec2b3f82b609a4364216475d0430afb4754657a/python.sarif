@@ -1,0 +1,4022 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.15.2",
+        "notifications" : [ {
+          "id" : "py/baseline/expected-extracted-files",
+          "name" : "py/baseline/expected-extracted-files",
+          "shortDescription" : {
+            "text" : "Expected extracted files"
+          },
+          "fullDescription" : {
+            "text" : "Files appearing in the source archive that are expected to be extracted."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true
+          },
+          "properties" : {
+            "tags" : [ "expected-extracted-files", "telemetry" ]
+          }
+        } ],
+        "rules" : [ {
+          "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "name" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "shortDescription" : {
+            "text" : "Unknown Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+            "kind" : "problem",
+            "name" : "Unknown Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "shortDescription" : {
+            "text" : "All Cryptographic Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+            "kind" : "problem",
+            "name" : "All Cryptographic Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Symmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with symmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with symmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Symmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/iv-sources",
+          "name" : "py/quantum-readiness/cbom/iv-sources",
+          "shortDescription" : {
+            "text" : "Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/iv-sources",
+            "kind" : "problem",
+            "name" : "Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "shortDescription" : {
+            "text" : "All Asymmetric Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "description" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+            "kind" : "problem",
+            "name" : "All Asymmetric Algorithms",
+            "preci" : "cbom\n       cryptography",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-exchange",
+          "name" : "py/quantum-readiness/cbom/key-exchange",
+          "shortDescription" : {
+            "text" : "Key Exchange Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-exchange",
+            "kind" : "problem",
+            "name" : "Key Exchange Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/hash-algorithms",
+          "name" : "py/quantum-readiness/cbom/hash-algorithms",
+          "shortDescription" : {
+            "text" : "Hash Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/hash-algorithms",
+            "kind" : "problem",
+            "name" : "Hash Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Symmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Symmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "name" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "shortDescription" : {
+            "text" : "Known asymmetric key source generation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all known potential sources for asymmetric key generation while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all known potential sources for asymmetric key generation while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+            "kind" : "problem",
+            "name" : "Known asymmetric key source generation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Asymmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with asymmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with asymmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Asymmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-derivation",
+          "name" : "py/quantum-readiness/cbom/key-derivation",
+          "shortDescription" : {
+            "text" : "Key Derivation Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key derivation using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key derivation using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-derivation",
+            "kind" : "problem",
+            "name" : "Key Derivation Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/signing-algorithms",
+          "name" : "py/quantum-readiness/cbom/signing-algorithms",
+          "shortDescription" : {
+            "text" : "Signing Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of signing algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of signing algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/signing-algorithms",
+            "kind" : "problem",
+            "name" : "Signing Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Authenticated Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of authenticated encryption schemes using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of authenticated encryption schemes using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Authenticated Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Asymmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Asymmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "name" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "shortDescription" : {
+            "text" : "Block cipher mode of operation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential block cipher modes of operations using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential block cipher modes of operations using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+            "kind" : "problem",
+            "name" : "Block cipher mode of operation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "name" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "shortDescription" : {
+            "text" : "Elliptic Curve Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of elliptic curve algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of elliptic curve algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+            "kind" : "problem",
+            "name" : "Elliptic Curve Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql/python-queries",
+        "semanticVersion" : "0.9.2+78fcbd07d654881d9d3395efc0ea371c392529de",
+        "locations" : [ {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.2/x64/codeql/qlpacks/codeql/python-queries/0.9.2/",
+          "description" : {
+            "text" : "The QL pack root directory."
+          }
+        }, {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.2/x64/codeql/qlpacks/codeql/python-queries/0.9.2/qlpack.yml",
+          "description" : {
+            "text" : "The QL pack definition file."
+          }
+        } ]
+      } ]
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "python/nano/src/bigdl/nano/pytorch/encryption/encryption.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/caller.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    }, {
+      "location" : {
+        "uri" : "python/orca/src/bigdl/orca/common.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 3
+      }
+    }, {
+      "location" : {
+        "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 4
+      }
+    }, {
+      "location" : {
+        "uri" : "ppml/trusted-big-data-ml/python/docker-gramine/base/register-mrenclave.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 5
+      }
+    }, {
+      "location" : {
+        "uri" : "python/ppml/scripts/register-mrenclave.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 6
+      }
+    }, {
+      "location" : {
+        "uri" : "ppml/base/register-mrenclave.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 7
+      }
+    }, {
+      "location" : {
+        "uri" : "python/nano/src/bigdl/nano/utils/common/safepickle.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 8
+      }
+    }, {
+      "location" : {
+        "uri" : "python/friesian/src/bigdl/friesian/utils/safepickle.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 9
+      }
+    }, {
+      "location" : {
+        "uri" : "python/ppml/src/bigdl/ppml/utils/safepickle.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 10
+      }
+    }, {
+      "location" : {
+        "uri" : "python/friesian/test/bigdl/friesian/feature/test_table.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 11
+      }
+    }, {
+      "location" : {
+        "uri" : "python/chronos/src/bigdl/chronos/utils.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 12
+      }
+    }, {
+      "location" : {
+        "uri" : "python/ppml/src/bigdl/ppml/fl/psi/utils.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 13
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/nano/src/bigdl/nano/pytorch/encryption/encryption.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 37,
+            "startColumn" : 27,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 35,
+            "endLine" : 39,
+            "snippet" : {
+              "text" : "class _buf_operator(object):\n    def __init__(self, key):\n        self.secret_key = Fernet(key)\n\n    def encrypt_buffer(self, buffer, encrypted_buffer):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4510f5b844ccbb06:1",
+        "primaryLocationStartColumnFingerprint" : "18"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 32,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 30,
+            "endLine" : 34,
+            "snippet" : {
+              "text" : "def encrypt_data_file(ip, port, data_file_path, encrypted_primary_key_path, encrypted_data_key_path, save_path=None):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    encrypted = fernet.encrypt(read_data_file(data_file_path))\n    if save_path is None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "221e6392ad5ad5af:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "def decrypt_data_file(ip, port, data_file_path, encrypted_primary_key_path, encrypted_data_key_path, save_path=None):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    decrypted = fernet.decrypt(read_data_file(data_file_path))\n    if save_path is None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "650124ae80e9a80b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "def decrypt_buf(ip, port, buf: io.BytesIO, decrypted_buf: io.BytesIO, encrypted_primary_key_path, encrypted_data_key_path):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    decrypted_content = fernet.decrypt(buf.getvalue())\n    decrypted_buf.write(decrypted_content)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "649361ca1316e29e:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 63,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 61,
+            "endLine" : 65,
+            "snippet" : {
+              "text" : "        os.mkdir(save_dir)\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    for file_name in os.listdir(input_dir):\n        input_path = os.path.join(input_dir, file_name)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ad9a7bc53fbbaf5b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 74,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 72,
+            "endLine" : 76,
+            "snippet" : {
+              "text" : "def encrypt_buf_automation(ip, port, buf: io.BytesIO, encrypted_buf: io.BytesIO, encrypted_primary_key_path, encrypted_data_key_path):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    content = buf.getvalue()\n    encrypted_content = fernet.encrypt(content)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d4b8285b9c4a4542:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 89,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 87,
+            "endLine" : 91,
+            "snippet" : {
+              "text" : "                     for file in glob(os.path.join(p, EXT))]\n    data_key = retrieve_data_key_plaintext(ip, port,encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n\n    for csv_file in all_csv_files:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f2838848462c0d11:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/caller.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 45,
+            "startColumn" : 52,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 43,
+            "endLine" : 47,
+            "snippet" : {
+              "text" : "    sign = str(base64.b64encode(hmac.new(apikey.encode('utf-8'),\n                                         sign_string.encode('utf-8'),\n                                         digestmod=sha256).digest()),'utf-8')\n    params[\"payload\"] = ord_payload\n    params[\"sign\"] = sign\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "aec15c9066858b8e:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256\nUse of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/caller.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 23,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 21,
+            "endLine" : 25,
+            "snippet" : {
+              "text" : "import random\nimport hmac\nfrom hashlib import sha256\nimport os\nfrom collections import OrderedDict\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b5ddb390f949c180:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/orca/src/bigdl/orca/common.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 415,
+            "startColumn" : 55,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 413,
+            "endLine" : 417,
+            "snippet" : {
+              "text" : "            pickled_data = pickle.dumps(obj)\n            file.write(pickled_data)\n            digest = hmac.new(self.key, pickled_data, hashlib.sha1).hexdigest()\n            return digest\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7540ae22222e0929:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/orca/src/bigdl/orca/common.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 424,
+            "startColumn" : 54,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 422,
+            "endLine" : 426,
+            "snippet" : {
+              "text" : "        if digest:\n            content = file.read()\n            new_digest = hmac.new(self.key, content, hashlib.sha1).hexdigest()\n            if digest != new_digest:\n                invalidInputError(False, 'Pickle safe check failed')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ac0556592d0a16fa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm PKCS7\nUse of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/nano/src/bigdl/nano/pytorch/encryption/encryption.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 37,
+            "startColumn" : 27,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 35,
+            "endLine" : 39,
+            "snippet" : {
+              "text" : "class _buf_operator(object):\n    def __init__(self, key):\n        self.secret_key = Fernet(key)\n\n    def encrypt_buffer(self, buffer, encrypted_buffer):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4510f5b844ccbb06:1",
+        "primaryLocationStartColumnFingerprint" : "18"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 40,
+            "startColumn" : 32,
+            "endColumn" : 40
+          },
+          "contextRegion" : {
+            "startLine" : 38,
+            "endLine" : 42,
+            "snippet" : {
+              "text" : "    # 16 for 128 and 32 for 256\n    bit_len = (key_len / 128) * 16\n    return hashlib.pbkdf2_hmac('SHA256', secret_key.encode(), salt.encode(), 65536, int(bit_len))\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "39a36a9b7ed01716:1",
+        "primaryLocationStartColumnFingerprint" : "27"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 40,
+            "startColumn" : 12,
+            "endColumn" : 98
+          },
+          "contextRegion" : {
+            "startLine" : 38,
+            "endLine" : 42,
+            "snippet" : {
+              "text" : "    # 16 for 128 and 32 for 256\n    bit_len = (key_len / 128) * 16\n    return hashlib.pbkdf2_hmac('SHA256', secret_key.encode(), salt.encode(), 65536, int(bit_len))\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "39a36a9b7ed01716:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 90,
+            "startColumn" : 24,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 88,
+            "endLine" : 92,
+            "snippet" : {
+              "text" : "    data += padder.finalize()\n    # create Cipher\n    encryptor = Cipher(algorithms.AES(key),\n                       modes.CBC(iv), backend=back_end).encryptor()\n    ct = encryptor.update(data) + encryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5c9f86da4d086e1f:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 91,
+            "startColumn" : 24,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 89,
+            "endLine" : 93,
+            "snippet" : {
+              "text" : "    # create Cipher\n    encryptor = Cipher(algorithms.AES(key),\n                       modes.CBC(iv), backend=back_end).encryptor()\n    ct = encryptor.update(data) + encryptor.finalize()\n    return iv + ct\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ccdf9844c3d3712:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 109,
+            "startColumn" : 24,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 107,
+            "endLine" : 111,
+            "snippet" : {
+              "text" : "    iv = cipher_text_bytes[:block_size]\n    # create Cipher\n    decryptor = Cipher(algorithms.AES(key),\n                       modes.CBC(iv), backend=back_end).decryptor()\n    ct = decryptor.update(cipher_text_bytes[block_size:]) + decryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8b9f18c6ac7acd8d:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 110,
+            "startColumn" : 24,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 108,
+            "endLine" : 112,
+            "snippet" : {
+              "text" : "    # create Cipher\n    decryptor = Cipher(algorithms.AES(key),\n                       modes.CBC(iv), backend=back_end).decryptor()\n    ct = decryptor.update(cipher_text_bytes[block_size:]) + decryptor.finalize()\n    # unpadding\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "65c9b91281fdbb03:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 162,
+            "startColumn" : 24,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 160,
+            "endLine" : 164,
+            "snippet" : {
+              "text" : "    iv = os.urandom(block_size)\n    # create Cipher\n    encryptor = Cipher(algorithms.AES(key),\n                       modes.GCM(iv), backend=back_end).encryptor()\n    ct = encryptor.update(plain_text_bytes) + encryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c25a96cf8e98462e:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 163,
+            "startColumn" : 24,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 161,
+            "endLine" : 165,
+            "snippet" : {
+              "text" : "    # create Cipher\n    encryptor = Cipher(algorithms.AES(key),\n                       modes.GCM(iv), backend=back_end).encryptor()\n    ct = encryptor.update(plain_text_bytes) + encryptor.finalize()\n    return iv + ct + encryptor.tag\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c2fc3414134cec08:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 182,
+            "startColumn" : 24,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 180,
+            "endLine" : 184,
+            "snippet" : {
+              "text" : "    iv = cipher_text_bytes[:block_size]\n    # create Cipher\n    decryptor = Cipher(algorithms.AES(key),\n                       modes.GCM(iv, tag), backend=back_end).decryptor()\n    # 16 for tag\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "74ef1fcd7d70fccb:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 183,
+            "startColumn" : 24,
+            "endColumn" : 42
+          },
+          "contextRegion" : {
+            "startLine" : 181,
+            "endLine" : 185,
+            "snippet" : {
+              "text" : "    # create Cipher\n    decryptor = Cipher(algorithms.AES(key),\n                       modes.GCM(iv, tag), backend=back_end).decryptor()\n    # 16 for tag\n    ct = decryptor.update(cipher_text_bytes[block_size:-16]) + decryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1e5221927043c45b:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm PKCS7\nUse of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 32,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 30,
+            "endLine" : 34,
+            "snippet" : {
+              "text" : "def encrypt_data_file(ip, port, data_file_path, encrypted_primary_key_path, encrypted_data_key_path, save_path=None):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    encrypted = fernet.encrypt(read_data_file(data_file_path))\n    if save_path is None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "221e6392ad5ad5af:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm PKCS7\nUse of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "def decrypt_data_file(ip, port, data_file_path, encrypted_primary_key_path, encrypted_data_key_path, save_path=None):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    decrypted = fernet.decrypt(read_data_file(data_file_path))\n    if save_path is None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "650124ae80e9a80b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm PKCS7\nUse of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "def decrypt_buf(ip, port, buf: io.BytesIO, decrypted_buf: io.BytesIO, encrypted_primary_key_path, encrypted_data_key_path):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    decrypted_content = fernet.decrypt(buf.getvalue())\n    decrypted_buf.write(decrypted_content)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "649361ca1316e29e:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm PKCS7\nUse of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 63,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 61,
+            "endLine" : 65,
+            "snippet" : {
+              "text" : "        os.mkdir(save_dir)\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    for file_name in os.listdir(input_dir):\n        input_path = os.path.join(input_dir, file_name)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ad9a7bc53fbbaf5b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm PKCS7\nUse of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 74,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 72,
+            "endLine" : 76,
+            "snippet" : {
+              "text" : "def encrypt_buf_automation(ip, port, buf: io.BytesIO, encrypted_buf: io.BytesIO, encrypted_primary_key_path, encrypted_data_key_path):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    content = buf.getvalue()\n    encrypted_content = fernet.encrypt(content)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d4b8285b9c4a4542:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm PKCS7\nUse of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 89,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 87,
+            "endLine" : 91,
+            "snippet" : {
+              "text" : "                     for file in glob(os.path.join(p, EXT))]\n    data_key = retrieve_data_key_plaintext(ip, port,encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n\n    for csv_file in all_csv_files:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f2838848462c0d11:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "ppml/trusted-big-data-ml/python/docker-gramine/base/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 105,
+            "endColumn" : 111
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "    params[\"timestamp\"] = str(int(time.time() * 1000))\n    sign_string = urllib.parse.unquote_plus(urllib.parse.urlencode(params))\n    sign = str(base64.b64encode(hmac.new(apikey.encode('utf-8'), sign_string.encode('utf-8'), digestmod=sha256).digest()),'utf-8')\n    if payload!=False:\n        params[\"payload\"] = payload\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1808d7114ba84dcc:1",
+        "primaryLocationStartColumnFingerprint" : "100"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256\nUse of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "ppml/trusted-big-data-ml/python/docker-gramine/base/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 24,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 22,
+            "endLine" : 26,
+            "snippet" : {
+              "text" : "import random\nimport hmac\nfrom hashlib import sha256\nfrom collections import OrderedDict\nimport urllib.parse\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c97e8bbd397f29e5:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/scripts/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 48,
+            "startColumn" : 105,
+            "endColumn" : 111
+          },
+          "contextRegion" : {
+            "startLine" : 46,
+            "endLine" : 50,
+            "snippet" : {
+              "text" : "    params[\"timestamp\"] = str(int(time.time() * 1000))\n    sign_string = urllib.parse.unquote_plus(urllib.parse.urlencode(params))\n    sign = str(base64.b64encode(hmac.new(apikey.encode('utf-8'), sign_string.encode('utf-8'), digestmod=sha256).digest()),'utf-8')\n    if payload!=False:\n        params[\"payload\"] = payload\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1808d7114ba84dcc:1",
+        "primaryLocationStartColumnFingerprint" : "100"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256\nUse of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/scripts/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 24,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 22,
+            "endLine" : 26,
+            "snippet" : {
+              "text" : "import random\nimport hmac\nfrom hashlib import sha256\nfrom collections import OrderedDict\nimport urllib.parse\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9e94c9d4967abc0a:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "ppml/base/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 105,
+            "endColumn" : 111
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "    params[\"timestamp\"] = str(int(time.time() * 1000))\n    sign_string = urllib.parse.unquote_plus(urllib.parse.urlencode(params))\n    sign = str(base64.b64encode(hmac.new(apikey.encode('utf-8'), sign_string.encode('utf-8'), digestmod=sha256).digest()),'utf-8')\n    if payload!=False:\n        params[\"payload\"] = payload\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1808d7114ba84dcc:1",
+        "primaryLocationStartColumnFingerprint" : "100"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256\nUse of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "ppml/base/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 24,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 22,
+            "endLine" : 26,
+            "snippet" : {
+              "text" : "import random\nimport hmac\nfrom hashlib import sha256\nfrom collections import OrderedDict\nimport urllib.parse\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c97e8bbd397f29e5:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/nano/src/bigdl/nano/utils/common/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 55,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "            pickled_data = pickle.dumps(obj)\n            file.write(pickled_data)\n            digest = hmac.new(self.key, pickled_data, hashlib.sha1).hexdigest()\n            return digest\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7540ae22222e0929:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/nano/src/bigdl/nano/utils/common/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 54,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "        if digest:\n            content = file.read()\n            new_digest = hmac.new(self.key, content, hashlib.sha1).hexdigest()\n            if digest != new_digest:\n                invalidInputError(False, 'Pickle safe check failed')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ac0556592d0a16fa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/friesian/src/bigdl/friesian/utils/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 55,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "            pickled_data = pickle.dumps(obj)\n            file.write(pickled_data)\n            digest = hmac.new(self.key, pickled_data, hashlib.sha1).hexdigest()\n            return digest\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7540ae22222e0929:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/friesian/src/bigdl/friesian/utils/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 54,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "        if digest:\n            content = file.read()\n            new_digest = hmac.new(self.key, content, hashlib.sha1).hexdigest()\n            if digest != new_digest:\n                invalidInputError(False, 'Pickle safe check failed')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ac0556592d0a16fa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/utils/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 55,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "            pickled_data = pickle.dumps(obj)\n            file.write(pickled_data)\n            digest = hmac.new(self.key, pickled_data, hashlib.sha1).hexdigest()\n            return digest\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7540ae22222e0929:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/utils/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 54,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "        if digest:\n            content = file.read()\n            new_digest = hmac.new(self.key, content, hashlib.sha1).hexdigest()\n            if digest != new_digest:\n                invalidInputError(False, 'Pickle safe check failed')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ac0556592d0a16fa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/friesian/test/bigdl/friesian/feature/test_table.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 172,
+            "startColumn" : 42,
+            "endColumn" : 47
+          },
+          "contextRegion" : {
+            "startLine" : 170,
+            "endLine" : 174,
+            "snippet" : {
+              "text" : "        df = spark.createDataFrame(data, schema)\n        tbl = FeatureTable(df)\n        hash_str = lambda x: hashlib.new('md5', str(x).encode('utf-8', 'strict'),\n                                         usedforsecurity=False).hexdigest()\n        hash_int = lambda x: int(hash_str(x), 16) % 100\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "19fd90a55c671b09:1",
+        "primaryLocationStartColumnFingerprint" : "33"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/friesian/test/bigdl/friesian/feature/test_table.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 223,
+            "startColumn" : 48,
+            "endColumn" : 53
+          },
+          "contextRegion" : {
+            "startLine" : 221,
+            "endLine" : 225,
+            "snippet" : {
+              "text" : "            tbl.cross_hash_encode([[\"A\", \"B\", \"C\"]], [100], [0x14])\n\n        cross_hash_str = lambda x: hashlib.new('md5', str(x).encode('utf-8', 'strict'),\n                                               usedforsecurity=False).hexdigest()\n        cross_hash_int = lambda x: int(cross_hash_str(x), 16) % 100\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7640844e2d23449e:1",
+        "primaryLocationStartColumnFingerprint" : "39"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/chronos/src/bigdl/chronos/utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 117,
+            "startColumn" : 55,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 115,
+            "endLine" : 119,
+            "snippet" : {
+              "text" : "            pickled_data = pickle.dumps(obj)\n            file.write(pickled_data)\n            digest = hmac.new(self.key, pickled_data, hashlib.sha1).hexdigest()\n            return digest\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7540ae22222e0929:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/chronos/src/bigdl/chronos/utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 126,
+            "startColumn" : 54,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 124,
+            "endLine" : 128,
+            "snippet" : {
+              "text" : "        if digest:\n            content = file.read()\n            new_digest = hmac.new(self.key, content, hashlib.sha1).hexdigest()\n            if digest != new_digest:\n                invalidInputError(False, 'Pickle safe check failed')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ac0556592d0a16fa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/fl/psi/utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 21,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 19,
+            "endLine" : 23,
+            "snippet" : {
+              "text" : "\ndef to_hex_string(ids, salt, padding_size=32):\n    hashing = hashlib.sha384()\n    hex_string = []\n    for ch in ids:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b18101bdf5777163:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/nano/src/bigdl/nano/pytorch/encryption/encryption.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 37,
+            "startColumn" : 27,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 35,
+            "endLine" : 39,
+            "snippet" : {
+              "text" : "class _buf_operator(object):\n    def __init__(self, key):\n        self.secret_key = Fernet(key)\n\n    def encrypt_buffer(self, buffer, encrypted_buffer):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4510f5b844ccbb06:1",
+        "primaryLocationStartColumnFingerprint" : "18"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 32,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 30,
+            "endLine" : 34,
+            "snippet" : {
+              "text" : "def encrypt_data_file(ip, port, data_file_path, encrypted_primary_key_path, encrypted_data_key_path, save_path=None):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    encrypted = fernet.encrypt(read_data_file(data_file_path))\n    if save_path is None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "221e6392ad5ad5af:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "def decrypt_data_file(ip, port, data_file_path, encrypted_primary_key_path, encrypted_data_key_path, save_path=None):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    decrypted = fernet.decrypt(read_data_file(data_file_path))\n    if save_path is None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "650124ae80e9a80b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "def decrypt_buf(ip, port, buf: io.BytesIO, decrypted_buf: io.BytesIO, encrypted_primary_key_path, encrypted_data_key_path):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    decrypted_content = fernet.decrypt(buf.getvalue())\n    decrypted_buf.write(decrypted_content)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "649361ca1316e29e:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 63,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 61,
+            "endLine" : 65,
+            "snippet" : {
+              "text" : "        os.mkdir(save_dir)\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    for file_name in os.listdir(input_dir):\n        input_path = os.path.join(input_dir, file_name)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ad9a7bc53fbbaf5b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 74,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 72,
+            "endLine" : 76,
+            "snippet" : {
+              "text" : "def encrypt_buf_automation(ip, port, buf: io.BytesIO, encrypted_buf: io.BytesIO, encrypted_primary_key_path, encrypted_data_key_path):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    content = buf.getvalue()\n    encrypted_content = fernet.encrypt(content)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d4b8285b9c4a4542:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 89,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 87,
+            "endLine" : 91,
+            "snippet" : {
+              "text" : "                     for file in glob(os.path.join(p, EXT))]\n    data_key = retrieve_data_key_plaintext(ip, port,encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n\n    for csv_file in all_csv_files:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f2838848462c0d11:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/iv-sources",
+      "ruleIndex" : 3,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/iv-sources",
+        "index" : 3
+      },
+      "message" : {
+        "text" : "Block mode IV/Nonce source"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 84,
+            "startColumn" : 10,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 82,
+            "endLine" : 86,
+            "snippet" : {
+              "text" : "    \"\"\"\n    key = get_private_key(secret_key, salt, key_len)\n    iv = os.urandom(block_size)\n    # Align with Java AES/CBC/PKCS5PADDING\n    padder = padding.PKCS7(key_len).padder()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6b8ebf3639b5d91b:1",
+        "primaryLocationStartColumnFingerprint" : "5"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/iv-sources",
+      "ruleIndex" : 3,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/iv-sources",
+        "index" : 3
+      },
+      "message" : {
+        "text" : "Block mode IV/Nonce source"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 107,
+            "startColumn" : 10,
+            "endColumn" : 40
+          },
+          "contextRegion" : {
+            "startLine" : 105,
+            "endLine" : 109,
+            "snippet" : {
+              "text" : "    \"\"\"\n    key = get_private_key(secret_key, salt, key_len)\n    iv = cipher_text_bytes[:block_size]\n    # create Cipher\n    decryptor = Cipher(algorithms.AES(key),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5c4f9751ca11f765:1",
+        "primaryLocationStartColumnFingerprint" : "5"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/iv-sources",
+      "ruleIndex" : 3,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/iv-sources",
+        "index" : 3
+      },
+      "message" : {
+        "text" : "Block mode IV/Nonce source"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 160,
+            "startColumn" : 10,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 158,
+            "endLine" : 162,
+            "snippet" : {
+              "text" : "    \"\"\"\n    key = get_private_key(secret_key, salt, key_len)\n    iv = os.urandom(block_size)\n    # create Cipher\n    encryptor = Cipher(algorithms.AES(key),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e9e7d9e2fd65b153:1",
+        "primaryLocationStartColumnFingerprint" : "5"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/iv-sources",
+      "ruleIndex" : 3,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/iv-sources",
+        "index" : 3
+      },
+      "message" : {
+        "text" : "Block mode IV/Nonce source"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 180,
+            "startColumn" : 10,
+            "endColumn" : 40
+          },
+          "contextRegion" : {
+            "startLine" : 178,
+            "endLine" : 182,
+            "snippet" : {
+              "text" : "    key = get_private_key(secret_key, salt, key_len)\n    tag = cipher_text_bytes[-16:]\n    iv = cipher_text_bytes[:block_size]\n    # create Cipher\n    decryptor = Cipher(algorithms.AES(key),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5c4f97aaf5dad96b:1",
+        "primaryLocationStartColumnFingerprint" : "5"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/caller.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 45,
+            "startColumn" : 52,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 43,
+            "endLine" : 47,
+            "snippet" : {
+              "text" : "    sign = str(base64.b64encode(hmac.new(apikey.encode('utf-8'),\n                                         sign_string.encode('utf-8'),\n                                         digestmod=sha256).digest()),'utf-8')\n    params[\"payload\"] = ord_payload\n    params[\"sign\"] = sign\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "aec15c9066858b8e:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256\nUse of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/caller.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 23,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 21,
+            "endLine" : 25,
+            "snippet" : {
+              "text" : "import random\nimport hmac\nfrom hashlib import sha256\nimport os\nfrom collections import OrderedDict\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b5ddb390f949c180:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/orca/src/bigdl/orca/common.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 415,
+            "startColumn" : 55,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 413,
+            "endLine" : 417,
+            "snippet" : {
+              "text" : "            pickled_data = pickle.dumps(obj)\n            file.write(pickled_data)\n            digest = hmac.new(self.key, pickled_data, hashlib.sha1).hexdigest()\n            return digest\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7540ae22222e0929:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/orca/src/bigdl/orca/common.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 424,
+            "startColumn" : 54,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 422,
+            "endLine" : 426,
+            "snippet" : {
+              "text" : "        if digest:\n            content = file.read()\n            new_digest = hmac.new(self.key, content, hashlib.sha1).hexdigest()\n            if digest != new_digest:\n                invalidInputError(False, 'Pickle safe check failed')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ac0556592d0a16fa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 40,
+            "startColumn" : 32,
+            "endColumn" : 40
+          },
+          "contextRegion" : {
+            "startLine" : 38,
+            "endLine" : 42,
+            "snippet" : {
+              "text" : "    # 16 for 128 and 32 for 256\n    bit_len = (key_len / 128) * 16\n    return hashlib.pbkdf2_hmac('SHA256', secret_key.encode(), salt.encode(), 65536, int(bit_len))\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "39a36a9b7ed01716:1",
+        "primaryLocationStartColumnFingerprint" : "27"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "ppml/trusted-big-data-ml/python/docker-gramine/base/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 105,
+            "endColumn" : 111
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "    params[\"timestamp\"] = str(int(time.time() * 1000))\n    sign_string = urllib.parse.unquote_plus(urllib.parse.urlencode(params))\n    sign = str(base64.b64encode(hmac.new(apikey.encode('utf-8'), sign_string.encode('utf-8'), digestmod=sha256).digest()),'utf-8')\n    if payload!=False:\n        params[\"payload\"] = payload\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1808d7114ba84dcc:1",
+        "primaryLocationStartColumnFingerprint" : "100"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256\nUse of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "ppml/trusted-big-data-ml/python/docker-gramine/base/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 24,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 22,
+            "endLine" : 26,
+            "snippet" : {
+              "text" : "import random\nimport hmac\nfrom hashlib import sha256\nfrom collections import OrderedDict\nimport urllib.parse\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c97e8bbd397f29e5:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/scripts/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 48,
+            "startColumn" : 105,
+            "endColumn" : 111
+          },
+          "contextRegion" : {
+            "startLine" : 46,
+            "endLine" : 50,
+            "snippet" : {
+              "text" : "    params[\"timestamp\"] = str(int(time.time() * 1000))\n    sign_string = urllib.parse.unquote_plus(urllib.parse.urlencode(params))\n    sign = str(base64.b64encode(hmac.new(apikey.encode('utf-8'), sign_string.encode('utf-8'), digestmod=sha256).digest()),'utf-8')\n    if payload!=False:\n        params[\"payload\"] = payload\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1808d7114ba84dcc:1",
+        "primaryLocationStartColumnFingerprint" : "100"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256\nUse of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/scripts/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 24,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 22,
+            "endLine" : 26,
+            "snippet" : {
+              "text" : "import random\nimport hmac\nfrom hashlib import sha256\nfrom collections import OrderedDict\nimport urllib.parse\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9e94c9d4967abc0a:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "ppml/base/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 105,
+            "endColumn" : 111
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "    params[\"timestamp\"] = str(int(time.time() * 1000))\n    sign_string = urllib.parse.unquote_plus(urllib.parse.urlencode(params))\n    sign = str(base64.b64encode(hmac.new(apikey.encode('utf-8'), sign_string.encode('utf-8'), digestmod=sha256).digest()),'utf-8')\n    if payload!=False:\n        params[\"payload\"] = payload\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1808d7114ba84dcc:1",
+        "primaryLocationStartColumnFingerprint" : "100"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256\nUse of algorithm UNKNOWN"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "ppml/base/register-mrenclave.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 24,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 22,
+            "endLine" : 26,
+            "snippet" : {
+              "text" : "import random\nimport hmac\nfrom hashlib import sha256\nfrom collections import OrderedDict\nimport urllib.parse\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c97e8bbd397f29e5:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/nano/src/bigdl/nano/utils/common/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 55,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "            pickled_data = pickle.dumps(obj)\n            file.write(pickled_data)\n            digest = hmac.new(self.key, pickled_data, hashlib.sha1).hexdigest()\n            return digest\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7540ae22222e0929:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/nano/src/bigdl/nano/utils/common/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 54,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "        if digest:\n            content = file.read()\n            new_digest = hmac.new(self.key, content, hashlib.sha1).hexdigest()\n            if digest != new_digest:\n                invalidInputError(False, 'Pickle safe check failed')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ac0556592d0a16fa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/friesian/src/bigdl/friesian/utils/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 55,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "            pickled_data = pickle.dumps(obj)\n            file.write(pickled_data)\n            digest = hmac.new(self.key, pickled_data, hashlib.sha1).hexdigest()\n            return digest\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7540ae22222e0929:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/friesian/src/bigdl/friesian/utils/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 54,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "        if digest:\n            content = file.read()\n            new_digest = hmac.new(self.key, content, hashlib.sha1).hexdigest()\n            if digest != new_digest:\n                invalidInputError(False, 'Pickle safe check failed')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ac0556592d0a16fa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/utils/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 55,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "            pickled_data = pickle.dumps(obj)\n            file.write(pickled_data)\n            digest = hmac.new(self.key, pickled_data, hashlib.sha1).hexdigest()\n            return digest\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7540ae22222e0929:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/utils/safepickle.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 54,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "        if digest:\n            content = file.read()\n            new_digest = hmac.new(self.key, content, hashlib.sha1).hexdigest()\n            if digest != new_digest:\n                invalidInputError(False, 'Pickle safe check failed')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ac0556592d0a16fa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/friesian/test/bigdl/friesian/feature/test_table.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 172,
+            "startColumn" : 42,
+            "endColumn" : 47
+          },
+          "contextRegion" : {
+            "startLine" : 170,
+            "endLine" : 174,
+            "snippet" : {
+              "text" : "        df = spark.createDataFrame(data, schema)\n        tbl = FeatureTable(df)\n        hash_str = lambda x: hashlib.new('md5', str(x).encode('utf-8', 'strict'),\n                                         usedforsecurity=False).hexdigest()\n        hash_int = lambda x: int(hash_str(x), 16) % 100\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "19fd90a55c671b09:1",
+        "primaryLocationStartColumnFingerprint" : "33"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/friesian/test/bigdl/friesian/feature/test_table.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 223,
+            "startColumn" : 48,
+            "endColumn" : 53
+          },
+          "contextRegion" : {
+            "startLine" : 221,
+            "endLine" : 225,
+            "snippet" : {
+              "text" : "            tbl.cross_hash_encode([[\"A\", \"B\", \"C\"]], [100], [0x14])\n\n        cross_hash_str = lambda x: hashlib.new('md5', str(x).encode('utf-8', 'strict'),\n                                               usedforsecurity=False).hexdigest()\n        cross_hash_int = lambda x: int(cross_hash_str(x), 16) % 100\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7640844e2d23449e:1",
+        "primaryLocationStartColumnFingerprint" : "39"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/chronos/src/bigdl/chronos/utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 117,
+            "startColumn" : 55,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 115,
+            "endLine" : 119,
+            "snippet" : {
+              "text" : "            pickled_data = pickle.dumps(obj)\n            file.write(pickled_data)\n            digest = hmac.new(self.key, pickled_data, hashlib.sha1).hexdigest()\n            return digest\n        else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7540ae22222e0929:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/chronos/src/bigdl/chronos/utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 126,
+            "startColumn" : 54,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 124,
+            "endLine" : 128,
+            "snippet" : {
+              "text" : "        if digest:\n            content = file.read()\n            new_digest = hmac.new(self.key, content, hashlib.sha1).hexdigest()\n            if digest != new_digest:\n                invalidInputError(False, 'Pickle safe check failed')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ac0556592d0a16fa:1",
+        "primaryLocationStartColumnFingerprint" : "41"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/fl/psi/utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 21,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 19,
+            "endLine" : 23,
+            "snippet" : {
+              "text" : "\ndef to_hex_string(ids, salt, padding_size=32):\n    hashing = hashlib.sha384()\n    hex_string = []\n    for ch in ids:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b18101bdf5777163:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/nano/src/bigdl/nano/pytorch/encryption/encryption.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 37,
+            "startColumn" : 27,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 35,
+            "endLine" : 39,
+            "snippet" : {
+              "text" : "class _buf_operator(object):\n    def __init__(self, key):\n        self.secret_key = Fernet(key)\n\n    def encrypt_buffer(self, buffer, encrypted_buffer):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4510f5b844ccbb06:1",
+        "primaryLocationStartColumnFingerprint" : "18"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 90,
+            "startColumn" : 24,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 88,
+            "endLine" : 92,
+            "snippet" : {
+              "text" : "    data += padder.finalize()\n    # create Cipher\n    encryptor = Cipher(algorithms.AES(key),\n                       modes.CBC(iv), backend=back_end).encryptor()\n    ct = encryptor.update(data) + encryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5c9f86da4d086e1f:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 109,
+            "startColumn" : 24,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 107,
+            "endLine" : 111,
+            "snippet" : {
+              "text" : "    iv = cipher_text_bytes[:block_size]\n    # create Cipher\n    decryptor = Cipher(algorithms.AES(key),\n                       modes.CBC(iv), backend=back_end).decryptor()\n    ct = decryptor.update(cipher_text_bytes[block_size:]) + decryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8b9f18c6ac7acd8d:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 162,
+            "startColumn" : 24,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 160,
+            "endLine" : 164,
+            "snippet" : {
+              "text" : "    iv = os.urandom(block_size)\n    # create Cipher\n    encryptor = Cipher(algorithms.AES(key),\n                       modes.GCM(iv), backend=back_end).encryptor()\n    ct = encryptor.update(plain_text_bytes) + encryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c25a96cf8e98462e:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 182,
+            "startColumn" : 24,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 180,
+            "endLine" : 184,
+            "snippet" : {
+              "text" : "    iv = cipher_text_bytes[:block_size]\n    # create Cipher\n    decryptor = Cipher(algorithms.AES(key),\n                       modes.GCM(iv, tag), backend=back_end).decryptor()\n    # 16 for tag\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "74ef1fcd7d70fccb:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 32,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 30,
+            "endLine" : 34,
+            "snippet" : {
+              "text" : "def encrypt_data_file(ip, port, data_file_path, encrypted_primary_key_path, encrypted_data_key_path, save_path=None):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    encrypted = fernet.encrypt(read_data_file(data_file_path))\n    if save_path is None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "221e6392ad5ad5af:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "def decrypt_data_file(ip, port, data_file_path, encrypted_primary_key_path, encrypted_data_key_path, save_path=None):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    decrypted = fernet.decrypt(read_data_file(data_file_path))\n    if save_path is None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "650124ae80e9a80b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "def decrypt_buf(ip, port, buf: io.BytesIO, decrypted_buf: io.BytesIO, encrypted_primary_key_path, encrypted_data_key_path):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    decrypted_content = fernet.decrypt(buf.getvalue())\n    decrypted_buf.write(decrypted_content)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "649361ca1316e29e:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 63,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 61,
+            "endLine" : 65,
+            "snippet" : {
+              "text" : "        os.mkdir(save_dir)\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    for file_name in os.listdir(input_dir):\n        input_path = os.path.join(input_dir, file_name)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ad9a7bc53fbbaf5b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 74,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 72,
+            "endLine" : 76,
+            "snippet" : {
+              "text" : "def encrypt_buf_automation(ip, port, buf: io.BytesIO, encrypted_buf: io.BytesIO, encrypted_primary_key_path, encrypted_data_key_path):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    content = buf.getvalue()\n    encrypted_content = fernet.encrypt(content)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d4b8285b9c4a4542:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 89,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 87,
+            "endLine" : 91,
+            "snippet" : {
+              "text" : "                     for file in glob(os.path.join(p, EXT))]\n    data_key = retrieve_data_key_plaintext(ip, port,encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n\n    for csv_file in all_csv_files:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f2838848462c0d11:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/key-derivation",
+      "ruleIndex" : 10,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/key-derivation",
+        "index" : 10
+      },
+      "message" : {
+        "text" : "Use of key derivation algorithm PBKDF2HMAC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 40,
+            "startColumn" : 12,
+            "endColumn" : 98
+          },
+          "contextRegion" : {
+            "startLine" : 38,
+            "endLine" : 42,
+            "snippet" : {
+              "text" : "    # 16 for 128 and 32 for 256\n    bit_len = (key_len / 128) * 16\n    return hashlib.pbkdf2_hmac('SHA256', secret_key.encode(), salt.encode(), 65536, int(bit_len))\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "39a36a9b7ed01716:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/nano/src/bigdl/nano/pytorch/encryption/encryption.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 37,
+            "startColumn" : 27,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 35,
+            "endLine" : 39,
+            "snippet" : {
+              "text" : "class _buf_operator(object):\n    def __init__(self, key):\n        self.secret_key = Fernet(key)\n\n    def encrypt_buffer(self, buffer, encrypted_buffer):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4510f5b844ccbb06:1",
+        "primaryLocationStartColumnFingerprint" : "18"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 91,
+            "startColumn" : 24,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 89,
+            "endLine" : 93,
+            "snippet" : {
+              "text" : "    # create Cipher\n    encryptor = Cipher(algorithms.AES(key),\n                       modes.CBC(iv), backend=back_end).encryptor()\n    ct = encryptor.update(data) + encryptor.finalize()\n    return iv + ct\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ccdf9844c3d3712:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 110,
+            "startColumn" : 24,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 108,
+            "endLine" : 112,
+            "snippet" : {
+              "text" : "    # create Cipher\n    decryptor = Cipher(algorithms.AES(key),\n                       modes.CBC(iv), backend=back_end).decryptor()\n    ct = decryptor.update(cipher_text_bytes[block_size:]) + decryptor.finalize()\n    # unpadding\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "65c9b91281fdbb03:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 163,
+            "startColumn" : 24,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 161,
+            "endLine" : 165,
+            "snippet" : {
+              "text" : "    # create Cipher\n    encryptor = Cipher(algorithms.AES(key),\n                       modes.GCM(iv), backend=back_end).encryptor()\n    ct = encryptor.update(plain_text_bytes) + encryptor.finalize()\n    return iv + ct + encryptor.tag\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c2fc3414134cec08:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/dllib/src/bigdl/dllib/utils/encryption_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 183,
+            "startColumn" : 24,
+            "endColumn" : 42
+          },
+          "contextRegion" : {
+            "startLine" : 181,
+            "endLine" : 185,
+            "snippet" : {
+              "text" : "    # create Cipher\n    decryptor = Cipher(algorithms.AES(key),\n                       modes.GCM(iv, tag), backend=back_end).decryptor()\n    # 16 for tag\n    ct = decryptor.update(cipher_text_bytes[block_size:-16]) + decryptor.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1e5221927043c45b:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 32,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 30,
+            "endLine" : 34,
+            "snippet" : {
+              "text" : "def encrypt_data_file(ip, port, data_file_path, encrypted_primary_key_path, encrypted_data_key_path, save_path=None):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    encrypted = fernet.encrypt(read_data_file(data_file_path))\n    if save_path is None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "221e6392ad5ad5af:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "def decrypt_data_file(ip, port, data_file_path, encrypted_primary_key_path, encrypted_data_key_path, save_path=None):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    decrypted = fernet.decrypt(read_data_file(data_file_path))\n    if save_path is None:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "650124ae80e9a80b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "def decrypt_buf(ip, port, buf: io.BytesIO, decrypted_buf: io.BytesIO, encrypted_primary_key_path, encrypted_data_key_path):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    decrypted_content = fernet.decrypt(buf.getvalue())\n    decrypted_buf.write(decrypted_content)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "649361ca1316e29e:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 63,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 61,
+            "endLine" : 65,
+            "snippet" : {
+              "text" : "        os.mkdir(save_dir)\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    for file_name in os.listdir(input_dir):\n        input_path = os.path.join(input_dir, file_name)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ad9a7bc53fbbaf5b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 74,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 72,
+            "endLine" : 76,
+            "snippet" : {
+              "text" : "def encrypt_buf_automation(ip, port, buf: io.BytesIO, encrypted_buf: io.BytesIO, encrypted_primary_key_path, encrypted_data_key_path):\n    data_key = retrieve_data_key_plaintext(ip, port, encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n    content = buf.getvalue()\n    encrypted_content = fernet.encrypt(content)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d4b8285b9c4a4542:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "python/ppml/src/bigdl/ppml/kms/ehsm/file_operator.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 89,
+            "startColumn" : 14,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 87,
+            "endLine" : 91,
+            "snippet" : {
+              "text" : "                     for file in glob(os.path.join(p, EXT))]\n    data_key = retrieve_data_key_plaintext(ip, port,encrypted_primary_key_path, encrypted_data_key_path)\n    fernet = Fernet(data_key)\n\n    for csv_file in all_csv_files:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f2838848462c0d11:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    } ],
+    "automationDetails" : {
+      "id" : "CBOM:intel-analytics/bigdl/python/"
+    },
+    "columnKind" : "unicodeCodePoints",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
