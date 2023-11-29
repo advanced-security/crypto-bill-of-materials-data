@@ -7,7 +7,7 @@ on:
 
 jobs:
   enable-auto-merge:
-    if: github.event.label.name === 'auto-rebase-merge'
+    if: github.event.label.name == 'auto-rebase-merge'
     runs-on: ubuntu-latest
     steps:
       - run: gh pr merge --merge --rebase --squash --auto ${{ github.event.number }}
