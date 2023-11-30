@@ -1,8 +1,13 @@
-name: Run CBOM on top 250 Python repos
+name: Run CBOM on top 2000 Python repos
 
 on:
   workflow_dispatch:
-
+    inputs:
+      subsetRange:
+        description: The range of repositories to analyze from pqc.json
+        type: string
+        required: false
+        default: ":250"
 jobs:
   build-matrix:
     name: Build analysis matrix
@@ -14,7 +19,7 @@ jobs:
       - id: build-matrix
         run: |
           set -ex
-          REPOS=$(cat pqc.json | jq -c '.python_2000_all[550:]')
+          REPOS=$(cat pqc.json | jq -c '.python_2000_all[${{ inputs.subsetRange }}]')
           echo "repositories=${REPOS}" >> "$GITHUB_OUTPUT"
   top250:
     uses: ./.github/workflows/cbom-top250-reusable-workflow.yml
