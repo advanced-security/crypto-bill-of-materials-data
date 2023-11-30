@@ -44,9 +44,10 @@ jobs:
           BRANCH_NAME="top250-python-${{ github.run_id }}-${{ github.run_attempt }}"
           git switch -c "${BRANCH_NAME}"
           rsync -ai ./cbom-results/ ./data/
+          rm -rf ./cbom-results
           git config --global user.name 'CBOM Data Action'
           git config --global user.email 'advanced-security@users.noreply.github.com'
-          git add ./data
+          git add .
           git commit -m "top250-python-${{ github.run_id }}-${{ github.run_attempt }}"
           git push --set-upstream origin "${BRANCH_NAME}"
           gh pr create \
