@@ -1,0 +1,5437 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.15.3",
+        "notifications" : [ {
+          "id" : "py/baseline/expected-extracted-files",
+          "name" : "py/baseline/expected-extracted-files",
+          "shortDescription" : {
+            "text" : "Expected extracted files"
+          },
+          "fullDescription" : {
+            "text" : "Files appearing in the source archive that are expected to be extracted."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true
+          },
+          "properties" : {
+            "tags" : [ "expected-extracted-files", "telemetry" ]
+          }
+        } ],
+        "rules" : [ {
+          "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "name" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "shortDescription" : {
+            "text" : "Unknown Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+            "kind" : "problem",
+            "name" : "Unknown Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "shortDescription" : {
+            "text" : "All Cryptographic Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+            "kind" : "problem",
+            "name" : "All Cryptographic Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Symmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with symmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with symmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Symmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/iv-sources",
+          "name" : "py/quantum-readiness/cbom/iv-sources",
+          "shortDescription" : {
+            "text" : "Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/iv-sources",
+            "kind" : "problem",
+            "name" : "Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "shortDescription" : {
+            "text" : "All Asymmetric Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "description" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+            "kind" : "problem",
+            "name" : "All Asymmetric Algorithms",
+            "preci" : "cbom\n       cryptography",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-exchange",
+          "name" : "py/quantum-readiness/cbom/key-exchange",
+          "shortDescription" : {
+            "text" : "Key Exchange Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-exchange",
+            "kind" : "problem",
+            "name" : "Key Exchange Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/hash-algorithms",
+          "name" : "py/quantum-readiness/cbom/hash-algorithms",
+          "shortDescription" : {
+            "text" : "Hash Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/hash-algorithms",
+            "kind" : "problem",
+            "name" : "Hash Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Symmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Symmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "name" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "shortDescription" : {
+            "text" : "Known asymmetric key source generation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all known potential sources for asymmetric key generation while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all known potential sources for asymmetric key generation while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+            "kind" : "problem",
+            "name" : "Known asymmetric key source generation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Asymmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with asymmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with asymmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Asymmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-derivation",
+          "name" : "py/quantum-readiness/cbom/key-derivation",
+          "shortDescription" : {
+            "text" : "Key Derivation Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key derivation using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key derivation using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-derivation",
+            "kind" : "problem",
+            "name" : "Key Derivation Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/signing-algorithms",
+          "name" : "py/quantum-readiness/cbom/signing-algorithms",
+          "shortDescription" : {
+            "text" : "Signing Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of signing algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of signing algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/signing-algorithms",
+            "kind" : "problem",
+            "name" : "Signing Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Authenticated Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of authenticated encryption schemes using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of authenticated encryption schemes using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Authenticated Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Asymmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Asymmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "name" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "shortDescription" : {
+            "text" : "Block cipher mode of operation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential block cipher modes of operations using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential block cipher modes of operations using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+            "kind" : "problem",
+            "name" : "Block cipher mode of operation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "name" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "shortDescription" : {
+            "text" : "Elliptic Curve Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of elliptic curve algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of elliptic curve algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+            "kind" : "problem",
+            "name" : "Elliptic Curve Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql/python-queries",
+        "semanticVersion" : "0.9.3+ff65ffafb003e86bd4c18f2c031f5faaf6f1038b",
+        "locations" : [ {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/",
+          "description" : {
+            "text" : "The QL pack root directory."
+          }
+        }, {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/qlpack.yml",
+          "description" : {
+            "text" : "The QL pack definition file."
+          }
+        } ]
+      } ]
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "airflow/models/crypto.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/always/test_connection.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/models/test_variable.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    }, {
+      "location" : {
+        "uri" : "airflow/sensors/base.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 3
+      }
+    }, {
+      "location" : {
+        "uri" : "airflow/providers/google/cloud/hooks/bigquery.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 4
+      }
+    }, {
+      "location" : {
+        "uri" : "airflow/models/dagcode.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 5
+      }
+    }, {
+      "location" : {
+        "uri" : "airflow/models/dagbag.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 6
+      }
+    }, {
+      "location" : {
+        "uri" : "airflow/utils/hashlib_wrapper.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 7
+      }
+    }, {
+      "location" : {
+        "uri" : "airflow/www/extensions/init_cache.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 8
+      }
+    }, {
+      "location" : {
+        "uri" : "airflow/providers/cncf/kubernetes/utils/k8s_hashlib_wrapper.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 9
+      }
+    }, {
+      "location" : {
+        "uri" : "dev/breeze/src/airflow_breeze/utils/md5_build_check.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 10
+      }
+    }, {
+      "location" : {
+        "uri" : "dev/breeze/src/airflow_breeze/utils/path_utils.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 11
+      }
+    }, {
+      "location" : {
+        "uri" : "scripts/ci/pre_commit/pre_commit_compile_www_assets.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 12
+      }
+    }, {
+      "location" : {
+        "uri" : "scripts/ci/pre_commit/pre_commit_json_schema.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 13
+      }
+    }, {
+      "location" : {
+        "uri" : "scripts/ci/pre_commit/pre_commit_update_breeze_config_hash.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 14
+      }
+    }, {
+      "location" : {
+        "uri" : "dev/breeze/src/airflow_breeze/commands/setup_commands.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 15
+      }
+    }, {
+      "location" : {
+        "uri" : "docs/exts/sphinx_script_update.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 16
+      }
+    }, {
+      "location" : {
+        "uri" : "airflow/providers/snowflake/utils/sql_api_generate_jwt.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 17
+      }
+    }, {
+      "location" : {
+        "uri" : "airflow/models/taskinstance.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 18
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/www/test_app.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 19
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 20
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 21
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 22
+      }
+    }, {
+      "location" : {
+        "uri" : "airflow/providers/google/cloud/operators/workflows.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 23
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 86,
+            "startColumn" : 18,
+            "endColumn" : 53
+          },
+          "contextRegion" : {
+            "startLine" : 84,
+            "endLine" : 88,
+            "snippet" : {
+              "text" : "        else:\n            _fernet = MultiFernet(\n                [Fernet(fernet_part.encode(\"utf-8\")) for fernet_part in fernet_key.split(\",\")]\n            )\n            _fernet.is_encrypted = True\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "17465a63709cfe79:1",
+        "primaryLocationStartColumnFingerprint" : "1"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 85,
+            "startColumn" : 23,
+            "endLine" : 87,
+            "endColumn" : 14
+          },
+          "contextRegion" : {
+            "startLine" : 83,
+            "endLine" : 89,
+            "snippet" : {
+              "text" : "            _fernet = NullFernet()\n        else:\n            _fernet = MultiFernet(\n                [Fernet(fernet_part.encode(\"utf-8\")) for fernet_part in fernet_key.split(\",\")]\n            )\n            _fernet.is_encrypted = True\n    except (ValueError, TypeError) as value_error:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7e299fdc36fa966e:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/always/test_connection.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 103,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 101,
+            "endLine" : 105,
+            "snippet" : {
+              "text" : "            assert test_connection.is_extra_encrypted\n            assert test_connection.extra == \"testextra\"\n            assert Fernet(key1).decrypt(test_connection._extra.encode()) == b\"testextra\"\n\n        # Test decrypt of old value with new key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "249f033ba316a83b:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/always/test_connection.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 114,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 112,
+            "endLine" : 116,
+            "snippet" : {
+              "text" : "            assert test_connection.is_extra_encrypted\n            assert test_connection.extra == \"testextra\"\n            assert Fernet(key2).decrypt(test_connection._extra.encode()) == b\"testextra\"\n\n    test_from_uri_params = [\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "879e496f75955f83:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/models/test_variable.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 90,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 88,
+            "endLine" : 92,
+            "snippet" : {
+              "text" : "            assert test_var.is_encrypted\n            assert test_var.val == test_value\n            assert Fernet(key1).decrypt(test_var._val.encode()) == test_value.encode()\n\n        # Test decrypt of old value with new key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "720b5c50650b70fc:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/models/test_variable.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 101,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 99,
+            "endLine" : 103,
+            "snippet" : {
+              "text" : "            assert test_var.is_encrypted\n            assert test_var.val == test_value\n            assert Fernet(key2).decrypt(test_var._val.encode()) == test_value.encode()\n\n    def test_variable_set_get_round_trip(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b9a34a4faf44a25a:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/sensors/base.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 318,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 316,
+            "endLine" : 320,
+            "snippet" : {
+              "text" : "\n        run_hash = int(\n            hashlib.sha1(f\"{self.dag_id}#{self.task_id}#{started_at}#{try_number}\".encode()).hexdigest(),\n            16,\n        )\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "45f4c009613ccd2a:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/providers/google/cloud/hooks/bigquery.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 65,
+            "startColumn" : 25,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 63,
+            "endLine" : 67,
+            "snippet" : {
+              "text" : "except ModuleNotFoundError:\n    # Remove when Airflow providers min Airflow version is \"2.7.0\"\n    from hashlib import md5\nfrom airflow.utils.helpers import convert_camel_to_snake\nfrom airflow.utils.log.logging_mixin import LoggingMixin\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6ad991a358e52d83:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm AES128\nUse of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 86,
+            "startColumn" : 18,
+            "endColumn" : 53
+          },
+          "contextRegion" : {
+            "startLine" : 84,
+            "endLine" : 88,
+            "snippet" : {
+              "text" : "        else:\n            _fernet = MultiFernet(\n                [Fernet(fernet_part.encode(\"utf-8\")) for fernet_part in fernet_key.split(\",\")]\n            )\n            _fernet.is_encrypted = True\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "17465a63709cfe79:1",
+        "primaryLocationStartColumnFingerprint" : "1"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm AES128\nUse of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 85,
+            "startColumn" : 23,
+            "endLine" : 87,
+            "endColumn" : 14
+          },
+          "contextRegion" : {
+            "startLine" : 83,
+            "endLine" : 89,
+            "snippet" : {
+              "text" : "            _fernet = NullFernet()\n        else:\n            _fernet = MultiFernet(\n                [Fernet(fernet_part.encode(\"utf-8\")) for fernet_part in fernet_key.split(\",\")]\n            )\n            _fernet.is_encrypted = True\n    except (ValueError, TypeError) as value_error:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7e299fdc36fa966e:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/dagcode.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 215,
+            "startColumn" : 36,
+            "endColumn" : 48
+          },
+          "contextRegion" : {
+            "startLine" : 213,
+            "endLine" : 215,
+            "snippet" : {
+              "text" : "\n        # Only 7 bytes because MySQL BigInteger can hold only 8 bytes (signed).\n        return struct.unpack(\">Q\", hashlib.sha1(full_filepath.encode(\"utf-8\")).digest()[-8:])[0] >> 8\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "188800e8a1f69593:1",
+        "primaryLocationStartColumnFingerprint" : "27"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/dagbag.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 329,
+            "startColumn" : 21,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 327,
+            "endLine" : 331,
+            "snippet" : {
+              "text" : "\n        self.log.debug(\"Importing %s\", filepath)\n        path_hash = hashlib.sha1(filepath.encode(\"utf-8\")).hexdigest()\n        org_mod_name = Path(filepath).stem\n        mod_name = f\"unusual_prefix_{path_hash}_{org_mod_name}\"\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e09d3875c7579d76:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/utils/hashlib_wrapper.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 37,
+            "startColumn" : 16,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 35,
+            "endLine" : 38,
+            "snippet" : {
+              "text" : "    \"\"\"\n    if PY39:\n        return hashlib.md5(__string, usedforsecurity=False)  # type: ignore\n    return hashlib.md5(__string)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7a43f5b1e6c32f58:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/utils/hashlib_wrapper.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 38,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 36,
+            "endLine" : 38,
+            "snippet" : {
+              "text" : "    if PY39:\n        return hashlib.md5(__string, usedforsecurity=False)  # type: ignore\n    return hashlib.md5(__string)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c203c68cb0fad12:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "\nHASH_METHOD_MAPPING = {\n    \"md5\": hashlib.md5,\n    \"sha1\": hashlib.sha1,\n    \"sha224\": hashlib.sha224,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "235374d1fb4f5535:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 29,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 27,
+            "endLine" : 31,
+            "snippet" : {
+              "text" : "HASH_METHOD_MAPPING = {\n    \"md5\": hashlib.md5,\n    \"sha1\": hashlib.sha1,\n    \"sha224\": hashlib.sha224,\n    \"sha256\": hashlib.sha256,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9ca8826e52c1650c:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA224"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 30,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 28,
+            "endLine" : 32,
+            "snippet" : {
+              "text" : "    \"md5\": hashlib.md5,\n    \"sha1\": hashlib.sha1,\n    \"sha224\": hashlib.sha224,\n    \"sha256\": hashlib.sha256,\n    \"sha384\": hashlib.sha384,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bbd744f5f1684edc:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 31,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 29,
+            "endLine" : 33,
+            "snippet" : {
+              "text" : "    \"sha1\": hashlib.sha1,\n    \"sha224\": hashlib.sha224,\n    \"sha256\": hashlib.sha256,\n    \"sha384\": hashlib.sha384,\n    \"sha512\": hashlib.sha512,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "303d8955c8305421:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 32,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 30,
+            "endLine" : 34,
+            "snippet" : {
+              "text" : "    \"sha224\": hashlib.sha224,\n    \"sha256\": hashlib.sha256,\n    \"sha384\": hashlib.sha384,\n    \"sha512\": hashlib.sha512,\n}\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "36fa6ebb70a0c9e4:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 33,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 31,
+            "endLine" : 35,
+            "snippet" : {
+              "text" : "    \"sha256\": hashlib.sha256,\n    \"sha384\": hashlib.sha384,\n    \"sha512\": hashlib.sha512,\n}\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "435538042f3d873:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/providers/cncf/kubernetes/utils/k8s_hashlib_wrapper.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 40,
+            "startColumn" : 16,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 38,
+            "endLine" : 41,
+            "snippet" : {
+              "text" : "    \"\"\"\n    if PY39:\n        return hashlib.md5(__string, usedforsecurity=False)  # type: ignore\n    return hashlib.md5(__string)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7a43f5b1e6c32f58:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/providers/cncf/kubernetes/utils/k8s_hashlib_wrapper.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 41,
+            "snippet" : {
+              "text" : "    if PY39:\n        return hashlib.md5(__string, usedforsecurity=False)  # type: ignore\n    return hashlib.md5(__string)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c203c68cb0fad12:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dev/breeze/src/airflow_breeze/utils/md5_build_check.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 62,
+            "startColumn" : 16,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 60,
+            "endLine" : 64,
+            "snippet" : {
+              "text" : "def generate_md5(filename, file_size: int = 65536):\n    \"\"\"Generates md5 hash for the file.\"\"\"\n    hash_md5 = hashlib.md5()\n    with open(filename, \"rb\") as f:\n        for file_chunk in iter(lambda: f.read(file_size), b\"\"):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "61b49b05c69606d:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm BLAKE2B"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dev/breeze/src/airflow_breeze/utils/path_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 102,
+            "startColumn" : 32,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 100,
+            "endLine" : 104,
+            "snippet" : {
+              "text" : "def get_sources_setup_metadata_hash(sources: Path) -> str:\n    try:\n        the_hash = hashlib.new(\"blake2b\")\n        the_hash.update((sources / \"dev\" / \"breeze\" / \"pyproject.toml\").read_bytes())\n        return the_hash.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ba79a23dc57ab65f:1",
+        "primaryLocationStartColumnFingerprint" : "23"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "scripts/ci/pre_commit/pre_commit_compile_www_assets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "        matcher = re.compile(skip_path_regexp)\n        files = [file for file in files if not matcher.match(os.fspath(file.resolve()))]\n    sha = hashlib.sha256()\n    for file in files:\n        if file.is_file() and not file.name.startswith(\".\"):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7dc28ffa5b904a2d:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "scripts/ci/pre_commit/pre_commit_json_schema.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 49,
+            "startColumn" : 19,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 47,
+            "endLine" : 51,
+            "snippet" : {
+              "text" : "\ndef _gethash(string: str):\n    hash_object = hashlib.sha256(string.encode())\n    return hash_object.hexdigest()[:8]\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ff3e24ec3ab9afc1:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm BLAKE2B"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "scripts/ci/pre_commit/pre_commit_update_breeze_config_hash.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 43,
+            "startColumn" : 32,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 41,
+            "endLine" : 45,
+            "snippet" : {
+              "text" : "    \"\"\"\n    try:\n        the_hash = hashlib.new(\"blake2b\")\n        the_hash.update((BREEZE_SOURCES_ROOT / \"pyproject.toml\").read_bytes())\n        return the_hash.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a94fde936b8ff26a:1",
+        "primaryLocationStartColumnFingerprint" : "23"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dev/breeze/src/airflow_breeze/commands/setup_commands.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 265,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 263,
+            "endLine" : 267,
+            "snippet" : {
+              "text" : "    \"\"\"MD5 hash of a dictionary. Sorted and dumped via json to account for random sequence)\"\"\"\n    # noinspection InsecureHash\n    dhash = hashlib.md5()\n    try:\n        encoded = json.dumps(dictionary, sort_keys=True, default=vars).encode()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "88a08fbb4daed153:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docs/exts/sphinx_script_update.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 40,
+            "startColumn" : 19,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 38,
+            "endLine" : 42,
+            "snippet" : {
+              "text" : "\ndef _gethash(string: str):\n    hash_object = hashlib.sha256(string.encode())\n    return hash_object.hexdigest()\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9e8021441b1cec62:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/providers/snowflake/utils/sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 17
+          },
+          "region" : {
+            "startLine" : 168,
+            "startColumn" : 22,
+            "endColumn" : 36
+          },
+          "contextRegion" : {
+            "startLine" : 166,
+            "endLine" : 170,
+            "snippet" : {
+              "text" : "\n        # Get the sha256 hash of the raw bytes.\n        sha256hash = hashlib.sha256()\n        sha256hash.update(public_key_raw)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bb495d95cb51753b:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/taskinstance.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 2018,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 2016,
+            "endLine" : 2020,
+            "snippet" : {
+              "text" : "            # deterministic per task instance\n            ti_hash = int(\n                hashlib.sha1(\n                    f\"{self.dag_id}#{self.task_id}#{self.execution_date}#{self.try_number}\".encode()\n                ).hexdigest(),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "26c2ff82d625290d:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 267,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 265,
+            "endLine" : 269,
+            "snippet" : {
+              "text" : "        \"hash_method, result, exception\",\n        [\n            (\"sha512\", hashlib.sha512, None),\n            (\"sha384\", hashlib.sha384, None),\n            (\"sha256\", hashlib.sha256, None),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "764088b6dabc5db1:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 268,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 266,
+            "endLine" : 270,
+            "snippet" : {
+              "text" : "        [\n            (\"sha512\", hashlib.sha512, None),\n            (\"sha384\", hashlib.sha384, None),\n            (\"sha256\", hashlib.sha256, None),\n            (\"sha224\", hashlib.sha224, None),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "eb3742629568c469:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 269,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 267,
+            "endLine" : 271,
+            "snippet" : {
+              "text" : "            (\"sha512\", hashlib.sha512, None),\n            (\"sha384\", hashlib.sha384, None),\n            (\"sha256\", hashlib.sha256, None),\n            (\"sha224\", hashlib.sha224, None),\n            (\"sha1\", hashlib.sha1, None),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b20d07ce88d31fc2:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA224"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 270,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 268,
+            "endLine" : 272,
+            "snippet" : {
+              "text" : "            (\"sha384\", hashlib.sha384, None),\n            (\"sha256\", hashlib.sha256, None),\n            (\"sha224\", hashlib.sha224, None),\n            (\"sha1\", hashlib.sha1, None),\n            (\"md5\", hashlib.md5, None),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a8ff4bae9416a1b:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 271,
+            "startColumn" : 22,
+            "endColumn" : 34
+          },
+          "contextRegion" : {
+            "startLine" : 269,
+            "endLine" : 273,
+            "snippet" : {
+              "text" : "            (\"sha256\", hashlib.sha256, None),\n            (\"sha224\", hashlib.sha224, None),\n            (\"sha1\", hashlib.sha1, None),\n            (\"md5\", hashlib.md5, None),\n            (None, hashlib.md5, None),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "31f5e41da9f93f25:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 272,
+            "startColumn" : 21,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 270,
+            "endLine" : 274,
+            "snippet" : {
+              "text" : "            (\"sha224\", hashlib.sha224, None),\n            (\"sha1\", hashlib.sha1, None),\n            (\"md5\", hashlib.md5, None),\n            (None, hashlib.md5, None),\n            (\"invalid\", None, AirflowConfigException),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "eaa88b9953671f2a:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 273,
+            "startColumn" : 20,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 271,
+            "endLine" : 275,
+            "snippet" : {
+              "text" : "            (\"sha1\", hashlib.sha1, None),\n            (\"md5\", hashlib.md5, None),\n            (None, hashlib.md5, None),\n            (\"invalid\", None, AirflowConfigException),\n        ],\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c44f7f257d1d142c:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm AES128\nUse of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/always/test_connection.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 103,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 101,
+            "endLine" : 105,
+            "snippet" : {
+              "text" : "            assert test_connection.is_extra_encrypted\n            assert test_connection.extra == \"testextra\"\n            assert Fernet(key1).decrypt(test_connection._extra.encode()) == b\"testextra\"\n\n        # Test decrypt of old value with new key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "249f033ba316a83b:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm AES128\nUse of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/always/test_connection.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 114,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 112,
+            "endLine" : 116,
+            "snippet" : {
+              "text" : "            assert test_connection.is_extra_encrypted\n            assert test_connection.extra == \"testextra\"\n            assert Fernet(key2).decrypt(test_connection._extra.encode()) == b\"testextra\"\n\n    test_from_uri_params = [\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "879e496f75955f83:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 55,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 53,
+            "endLine" : 57,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef non_encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 55,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 53,
+            "endLine" : 57,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef non_encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 64,
+            "endLine" : 68,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 64,
+            "endLine" : 68,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\n\nfrom airflow.models import Connection\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "168eb3f18cb270a7:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 264,
+            "startColumn" : 15,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 262,
+            "endLine" : 266,
+            "snippet" : {
+              "text" : "    def non_encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt the pem file from the path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 264,
+            "startColumn" : 15,
+            "endColumn" : 104
+          },
+          "contextRegion" : {
+            "startLine" : 262,
+            "endLine" : 266,
+            "snippet" : {
+              "text" : "    def non_encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt the pem file from the path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 275,
+            "startColumn" : 15,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 273,
+            "endLine" : 277,
+            "snippet" : {
+              "text" : "    def encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt private key from the temp path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 275,
+            "startColumn" : 15,
+            "endColumn" : 104
+          },
+          "contextRegion" : {
+            "startLine" : 273,
+            "endLine" : 277,
+            "snippet" : {
+              "text" : "    def encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt private key from the temp path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 29,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 27,
+            "endLine" : 31,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nfrom responses import RequestsMock\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "98046976b0c73a09:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 20,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend as crypto_default_backend\nfrom cryptography.hazmat.primitives import serialization as crypto_serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\n\nfrom airflow.providers.snowflake.utils.sql_api_generate_jwt import JWTGenerator\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "24065c21e0e13947:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 7,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "_PASSWORD = \"snowflake42\"\n\nkey = rsa.generate_private_key(backend=crypto_default_backend(), public_exponent=65537, key_size=2048)\n\nprivate_key = key.private_bytes(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f21446dde605a4fe:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 7,
+            "endColumn" : 103
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "_PASSWORD = \"snowflake42\"\n\nkey = rsa.generate_private_key(backend=crypto_default_backend(), public_exponent=65537, key_size=2048)\n\nprivate_key = key.private_bytes(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f21446dde605a4fe:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm AES128\nUse of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/models/test_variable.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 90,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 88,
+            "endLine" : 92,
+            "snippet" : {
+              "text" : "            assert test_var.is_encrypted\n            assert test_var.val == test_value\n            assert Fernet(key1).decrypt(test_var._val.encode()) == test_value.encode()\n\n        # Test decrypt of old value with new key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "720b5c50650b70fc:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC\nUse of algorithm AES128\nUse of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/models/test_variable.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 101,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 99,
+            "endLine" : 103,
+            "snippet" : {
+              "text" : "            assert test_var.is_encrypted\n            assert test_var.val == test_value\n            assert Fernet(key2).decrypt(test_var._val.encode()) == test_value.encode()\n\n    def test_variable_set_get_round_trip(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b9a34a4faf44a25a:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/providers/google/cloud/operators/workflows.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 23
+          },
+          "region" : {
+            "startLine" : 47,
+            "startColumn" : 25,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 45,
+            "endLine" : 49,
+            "snippet" : {
+              "text" : "except ModuleNotFoundError:\n    # Remove when Airflow providers min Airflow version is \"2.7.0\"\n    from hashlib import md5\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c7864ec287b92730:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 86,
+            "startColumn" : 18,
+            "endColumn" : 53
+          },
+          "contextRegion" : {
+            "startLine" : 84,
+            "endLine" : 88,
+            "snippet" : {
+              "text" : "        else:\n            _fernet = MultiFernet(\n                [Fernet(fernet_part.encode(\"utf-8\")) for fernet_part in fernet_key.split(\",\")]\n            )\n            _fernet.is_encrypted = True\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "17465a63709cfe79:1",
+        "primaryLocationStartColumnFingerprint" : "1"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 85,
+            "startColumn" : 23,
+            "endLine" : 87,
+            "endColumn" : 14
+          },
+          "contextRegion" : {
+            "startLine" : 83,
+            "endLine" : 89,
+            "snippet" : {
+              "text" : "            _fernet = NullFernet()\n        else:\n            _fernet = MultiFernet(\n                [Fernet(fernet_part.encode(\"utf-8\")) for fernet_part in fernet_key.split(\",\")]\n            )\n            _fernet.is_encrypted = True\n    except (ValueError, TypeError) as value_error:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7e299fdc36fa966e:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/always/test_connection.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 103,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 101,
+            "endLine" : 105,
+            "snippet" : {
+              "text" : "            assert test_connection.is_extra_encrypted\n            assert test_connection.extra == \"testextra\"\n            assert Fernet(key1).decrypt(test_connection._extra.encode()) == b\"testextra\"\n\n        # Test decrypt of old value with new key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "249f033ba316a83b:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/always/test_connection.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 114,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 112,
+            "endLine" : 116,
+            "snippet" : {
+              "text" : "            assert test_connection.is_extra_encrypted\n            assert test_connection.extra == \"testextra\"\n            assert Fernet(key2).decrypt(test_connection._extra.encode()) == b\"testextra\"\n\n    test_from_uri_params = [\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "879e496f75955f83:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/models/test_variable.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 90,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 88,
+            "endLine" : 92,
+            "snippet" : {
+              "text" : "            assert test_var.is_encrypted\n            assert test_var.val == test_value\n            assert Fernet(key1).decrypt(test_var._val.encode()) == test_value.encode()\n\n        # Test decrypt of old value with new key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "720b5c50650b70fc:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+      "ruleIndex" : 2,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+        "index" : 2
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/models/test_variable.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 101,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 99,
+            "endLine" : 103,
+            "snippet" : {
+              "text" : "            assert test_var.is_encrypted\n            assert test_var.val == test_value\n            assert Fernet(key2).decrypt(test_var._val.encode()) == test_value.encode()\n\n    def test_variable_set_get_round_trip(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b9a34a4faf44a25a:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 55,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 53,
+            "endLine" : 57,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef non_encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 55,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 53,
+            "endLine" : 57,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef non_encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 64,
+            "endLine" : 68,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 64,
+            "endLine" : 68,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\n\nfrom airflow.models import Connection\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "168eb3f18cb270a7:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 264,
+            "startColumn" : 15,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 262,
+            "endLine" : 266,
+            "snippet" : {
+              "text" : "    def non_encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt the pem file from the path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 264,
+            "startColumn" : 15,
+            "endColumn" : 104
+          },
+          "contextRegion" : {
+            "startLine" : 262,
+            "endLine" : 266,
+            "snippet" : {
+              "text" : "    def non_encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt the pem file from the path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 275,
+            "startColumn" : 15,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 273,
+            "endLine" : 277,
+            "snippet" : {
+              "text" : "    def encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt private key from the temp path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 275,
+            "startColumn" : 15,
+            "endColumn" : 104
+          },
+          "contextRegion" : {
+            "startLine" : 273,
+            "endLine" : 277,
+            "snippet" : {
+              "text" : "    def encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt private key from the temp path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 29,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 27,
+            "endLine" : 31,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nfrom responses import RequestsMock\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "98046976b0c73a09:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 20,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend as crypto_default_backend\nfrom cryptography.hazmat.primitives import serialization as crypto_serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\n\nfrom airflow.providers.snowflake.utils.sql_api_generate_jwt import JWTGenerator\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "24065c21e0e13947:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 7,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "_PASSWORD = \"snowflake42\"\n\nkey = rsa.generate_private_key(backend=crypto_default_backend(), public_exponent=65537, key_size=2048)\n\nprivate_key = key.private_bytes(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f21446dde605a4fe:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 7,
+            "endColumn" : 103
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "_PASSWORD = \"snowflake42\"\n\nkey = rsa.generate_private_key(backend=crypto_default_backend(), public_exponent=65537, key_size=2048)\n\nprivate_key = key.private_bytes(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f21446dde605a4fe:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/sensors/base.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 318,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 316,
+            "endLine" : 320,
+            "snippet" : {
+              "text" : "\n        run_hash = int(\n            hashlib.sha1(f\"{self.dag_id}#{self.task_id}#{started_at}#{try_number}\".encode()).hexdigest(),\n            16,\n        )\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "45f4c009613ccd2a:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/providers/google/cloud/hooks/bigquery.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 65,
+            "startColumn" : 25,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 63,
+            "endLine" : 67,
+            "snippet" : {
+              "text" : "except ModuleNotFoundError:\n    # Remove when Airflow providers min Airflow version is \"2.7.0\"\n    from hashlib import md5\nfrom airflow.utils.helpers import convert_camel_to_snake\nfrom airflow.utils.log.logging_mixin import LoggingMixin\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6ad991a358e52d83:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/dagcode.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 215,
+            "startColumn" : 36,
+            "endColumn" : 48
+          },
+          "contextRegion" : {
+            "startLine" : 213,
+            "endLine" : 215,
+            "snippet" : {
+              "text" : "\n        # Only 7 bytes because MySQL BigInteger can hold only 8 bytes (signed).\n        return struct.unpack(\">Q\", hashlib.sha1(full_filepath.encode(\"utf-8\")).digest()[-8:])[0] >> 8\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "188800e8a1f69593:1",
+        "primaryLocationStartColumnFingerprint" : "27"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/dagbag.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 329,
+            "startColumn" : 21,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 327,
+            "endLine" : 331,
+            "snippet" : {
+              "text" : "\n        self.log.debug(\"Importing %s\", filepath)\n        path_hash = hashlib.sha1(filepath.encode(\"utf-8\")).hexdigest()\n        org_mod_name = Path(filepath).stem\n        mod_name = f\"unusual_prefix_{path_hash}_{org_mod_name}\"\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e09d3875c7579d76:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/utils/hashlib_wrapper.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 37,
+            "startColumn" : 16,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 35,
+            "endLine" : 38,
+            "snippet" : {
+              "text" : "    \"\"\"\n    if PY39:\n        return hashlib.md5(__string, usedforsecurity=False)  # type: ignore\n    return hashlib.md5(__string)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7a43f5b1e6c32f58:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/utils/hashlib_wrapper.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 38,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 36,
+            "endLine" : 38,
+            "snippet" : {
+              "text" : "    if PY39:\n        return hashlib.md5(__string, usedforsecurity=False)  # type: ignore\n    return hashlib.md5(__string)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c203c68cb0fad12:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "\nHASH_METHOD_MAPPING = {\n    \"md5\": hashlib.md5,\n    \"sha1\": hashlib.sha1,\n    \"sha224\": hashlib.sha224,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "235374d1fb4f5535:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 29,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 27,
+            "endLine" : 31,
+            "snippet" : {
+              "text" : "HASH_METHOD_MAPPING = {\n    \"md5\": hashlib.md5,\n    \"sha1\": hashlib.sha1,\n    \"sha224\": hashlib.sha224,\n    \"sha256\": hashlib.sha256,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9ca8826e52c1650c:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA224"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 30,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 28,
+            "endLine" : 32,
+            "snippet" : {
+              "text" : "    \"md5\": hashlib.md5,\n    \"sha1\": hashlib.sha1,\n    \"sha224\": hashlib.sha224,\n    \"sha256\": hashlib.sha256,\n    \"sha384\": hashlib.sha384,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bbd744f5f1684edc:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 31,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 29,
+            "endLine" : 33,
+            "snippet" : {
+              "text" : "    \"sha1\": hashlib.sha1,\n    \"sha224\": hashlib.sha224,\n    \"sha256\": hashlib.sha256,\n    \"sha384\": hashlib.sha384,\n    \"sha512\": hashlib.sha512,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "303d8955c8305421:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 32,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 30,
+            "endLine" : 34,
+            "snippet" : {
+              "text" : "    \"sha224\": hashlib.sha224,\n    \"sha256\": hashlib.sha256,\n    \"sha384\": hashlib.sha384,\n    \"sha512\": hashlib.sha512,\n}\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "36fa6ebb70a0c9e4:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/www/extensions/init_cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 33,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 31,
+            "endLine" : 35,
+            "snippet" : {
+              "text" : "    \"sha256\": hashlib.sha256,\n    \"sha384\": hashlib.sha384,\n    \"sha512\": hashlib.sha512,\n}\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "435538042f3d873:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/providers/cncf/kubernetes/utils/k8s_hashlib_wrapper.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 40,
+            "startColumn" : 16,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 38,
+            "endLine" : 41,
+            "snippet" : {
+              "text" : "    \"\"\"\n    if PY39:\n        return hashlib.md5(__string, usedforsecurity=False)  # type: ignore\n    return hashlib.md5(__string)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7a43f5b1e6c32f58:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/providers/cncf/kubernetes/utils/k8s_hashlib_wrapper.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 41,
+            "snippet" : {
+              "text" : "    if PY39:\n        return hashlib.md5(__string, usedforsecurity=False)  # type: ignore\n    return hashlib.md5(__string)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c203c68cb0fad12:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dev/breeze/src/airflow_breeze/utils/md5_build_check.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 62,
+            "startColumn" : 16,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 60,
+            "endLine" : 64,
+            "snippet" : {
+              "text" : "def generate_md5(filename, file_size: int = 65536):\n    \"\"\"Generates md5 hash for the file.\"\"\"\n    hash_md5 = hashlib.md5()\n    with open(filename, \"rb\") as f:\n        for file_chunk in iter(lambda: f.read(file_size), b\"\"):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "61b49b05c69606d:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm BLAKE2B"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dev/breeze/src/airflow_breeze/utils/path_utils.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 102,
+            "startColumn" : 32,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 100,
+            "endLine" : 104,
+            "snippet" : {
+              "text" : "def get_sources_setup_metadata_hash(sources: Path) -> str:\n    try:\n        the_hash = hashlib.new(\"blake2b\")\n        the_hash.update((sources / \"dev\" / \"breeze\" / \"pyproject.toml\").read_bytes())\n        return the_hash.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ba79a23dc57ab65f:1",
+        "primaryLocationStartColumnFingerprint" : "23"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "scripts/ci/pre_commit/pre_commit_compile_www_assets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 11,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 39,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "        matcher = re.compile(skip_path_regexp)\n        files = [file for file in files if not matcher.match(os.fspath(file.resolve()))]\n    sha = hashlib.sha256()\n    for file in files:\n        if file.is_file() and not file.name.startswith(\".\"):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7dc28ffa5b904a2d:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "scripts/ci/pre_commit/pre_commit_json_schema.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 49,
+            "startColumn" : 19,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 47,
+            "endLine" : 51,
+            "snippet" : {
+              "text" : "\ndef _gethash(string: str):\n    hash_object = hashlib.sha256(string.encode())\n    return hash_object.hexdigest()[:8]\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ff3e24ec3ab9afc1:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm BLAKE2B"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "scripts/ci/pre_commit/pre_commit_update_breeze_config_hash.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 43,
+            "startColumn" : 32,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 41,
+            "endLine" : 45,
+            "snippet" : {
+              "text" : "    \"\"\"\n    try:\n        the_hash = hashlib.new(\"blake2b\")\n        the_hash.update((BREEZE_SOURCES_ROOT / \"pyproject.toml\").read_bytes())\n        return the_hash.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a94fde936b8ff26a:1",
+        "primaryLocationStartColumnFingerprint" : "23"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dev/breeze/src/airflow_breeze/commands/setup_commands.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 265,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 263,
+            "endLine" : 267,
+            "snippet" : {
+              "text" : "    \"\"\"MD5 hash of a dictionary. Sorted and dumped via json to account for random sequence)\"\"\"\n    # noinspection InsecureHash\n    dhash = hashlib.md5()\n    try:\n        encoded = json.dumps(dictionary, sort_keys=True, default=vars).encode()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "88a08fbb4daed153:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docs/exts/sphinx_script_update.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 40,
+            "startColumn" : 19,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 38,
+            "endLine" : 42,
+            "snippet" : {
+              "text" : "\ndef _gethash(string: str):\n    hash_object = hashlib.sha256(string.encode())\n    return hash_object.hexdigest()\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9e8021441b1cec62:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/providers/snowflake/utils/sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 17
+          },
+          "region" : {
+            "startLine" : 168,
+            "startColumn" : 22,
+            "endColumn" : 36
+          },
+          "contextRegion" : {
+            "startLine" : 166,
+            "endLine" : 170,
+            "snippet" : {
+              "text" : "\n        # Get the sha256 hash of the raw bytes.\n        sha256hash = hashlib.sha256()\n        sha256hash.update(public_key_raw)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bb495d95cb51753b:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/taskinstance.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 2018,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 2016,
+            "endLine" : 2020,
+            "snippet" : {
+              "text" : "            # deterministic per task instance\n            ti_hash = int(\n                hashlib.sha1(\n                    f\"{self.dag_id}#{self.task_id}#{self.execution_date}#{self.try_number}\".encode()\n                ).hexdigest(),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "26c2ff82d625290d:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 267,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 265,
+            "endLine" : 269,
+            "snippet" : {
+              "text" : "        \"hash_method, result, exception\",\n        [\n            (\"sha512\", hashlib.sha512, None),\n            (\"sha384\", hashlib.sha384, None),\n            (\"sha256\", hashlib.sha256, None),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "764088b6dabc5db1:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA384"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 268,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 266,
+            "endLine" : 270,
+            "snippet" : {
+              "text" : "        [\n            (\"sha512\", hashlib.sha512, None),\n            (\"sha384\", hashlib.sha384, None),\n            (\"sha256\", hashlib.sha256, None),\n            (\"sha224\", hashlib.sha224, None),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "eb3742629568c469:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 269,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 267,
+            "endLine" : 271,
+            "snippet" : {
+              "text" : "            (\"sha512\", hashlib.sha512, None),\n            (\"sha384\", hashlib.sha384, None),\n            (\"sha256\", hashlib.sha256, None),\n            (\"sha224\", hashlib.sha224, None),\n            (\"sha1\", hashlib.sha1, None),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b20d07ce88d31fc2:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA224"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 270,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 268,
+            "endLine" : 272,
+            "snippet" : {
+              "text" : "            (\"sha384\", hashlib.sha384, None),\n            (\"sha256\", hashlib.sha256, None),\n            (\"sha224\", hashlib.sha224, None),\n            (\"sha1\", hashlib.sha1, None),\n            (\"md5\", hashlib.md5, None),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a8ff4bae9416a1b:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 271,
+            "startColumn" : 22,
+            "endColumn" : 34
+          },
+          "contextRegion" : {
+            "startLine" : 269,
+            "endLine" : 273,
+            "snippet" : {
+              "text" : "            (\"sha256\", hashlib.sha256, None),\n            (\"sha224\", hashlib.sha224, None),\n            (\"sha1\", hashlib.sha1, None),\n            (\"md5\", hashlib.md5, None),\n            (None, hashlib.md5, None),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "31f5e41da9f93f25:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 272,
+            "startColumn" : 21,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 270,
+            "endLine" : 274,
+            "snippet" : {
+              "text" : "            (\"sha224\", hashlib.sha224, None),\n            (\"sha1\", hashlib.sha1, None),\n            (\"md5\", hashlib.md5, None),\n            (None, hashlib.md5, None),\n            (\"invalid\", None, AirflowConfigException),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "eaa88b9953671f2a:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/www/test_app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 273,
+            "startColumn" : 20,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 271,
+            "endLine" : 275,
+            "snippet" : {
+              "text" : "            (\"sha1\", hashlib.sha1, None),\n            (\"md5\", hashlib.md5, None),\n            (None, hashlib.md5, None),\n            (\"invalid\", None, AirflowConfigException),\n        ],\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c44f7f257d1d142c:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/providers/google/cloud/operators/workflows.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 23
+          },
+          "region" : {
+            "startLine" : 47,
+            "startColumn" : 25,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 45,
+            "endLine" : 49,
+            "snippet" : {
+              "text" : "except ModuleNotFoundError:\n    # Remove when Airflow providers min Airflow version is \"2.7.0\"\n    from hashlib import md5\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c7864ec287b92730:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 86,
+            "startColumn" : 18,
+            "endColumn" : 53
+          },
+          "contextRegion" : {
+            "startLine" : 84,
+            "endLine" : 88,
+            "snippet" : {
+              "text" : "        else:\n            _fernet = MultiFernet(\n                [Fernet(fernet_part.encode(\"utf-8\")) for fernet_part in fernet_key.split(\",\")]\n            )\n            _fernet.is_encrypted = True\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "17465a63709cfe79:1",
+        "primaryLocationStartColumnFingerprint" : "1"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 85,
+            "startColumn" : 23,
+            "endLine" : 87,
+            "endColumn" : 14
+          },
+          "contextRegion" : {
+            "startLine" : 83,
+            "endLine" : 89,
+            "snippet" : {
+              "text" : "            _fernet = NullFernet()\n        else:\n            _fernet = MultiFernet(\n                [Fernet(fernet_part.encode(\"utf-8\")) for fernet_part in fernet_key.split(\",\")]\n            )\n            _fernet.is_encrypted = True\n    except (ValueError, TypeError) as value_error:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7e299fdc36fa966e:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/always/test_connection.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 103,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 101,
+            "endLine" : 105,
+            "snippet" : {
+              "text" : "            assert test_connection.is_extra_encrypted\n            assert test_connection.extra == \"testextra\"\n            assert Fernet(key1).decrypt(test_connection._extra.encode()) == b\"testextra\"\n\n        # Test decrypt of old value with new key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "249f033ba316a83b:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/always/test_connection.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 114,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 112,
+            "endLine" : 116,
+            "snippet" : {
+              "text" : "            assert test_connection.is_extra_encrypted\n            assert test_connection.extra == \"testextra\"\n            assert Fernet(key2).decrypt(test_connection._extra.encode()) == b\"testextra\"\n\n    test_from_uri_params = [\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "879e496f75955f83:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/models/test_variable.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 90,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 88,
+            "endLine" : 92,
+            "snippet" : {
+              "text" : "            assert test_var.is_encrypted\n            assert test_var.val == test_value\n            assert Fernet(key1).decrypt(test_var._val.encode()) == test_value.encode()\n\n        # Test decrypt of old value with new key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "720b5c50650b70fc:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES128"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/models/test_variable.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 101,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 99,
+            "endLine" : 103,
+            "snippet" : {
+              "text" : "            assert test_var.is_encrypted\n            assert test_var.val == test_value\n            assert Fernet(key2).decrypt(test_var._val.encode()) == test_value.encode()\n\n    def test_variable_set_get_round_trip(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b9a34a4faf44a25a:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+      "ruleIndex" : 8,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+        "index" : 8
+      },
+      "message" : {
+        "text" : "Asymmetric key generation for algorithm RSA with key config source [ControlFlowNode for IntegerLiteral](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 55,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 53,
+            "endLine" : 57,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef non_encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      },
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 55,
+            "startColumn" : 95,
+            "endColumn" : 99
+          },
+          "contextRegion" : {
+            "startLine" : 53,
+            "endLine" : 57,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef non_encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        },
+        "message" : {
+          "text" : "ControlFlowNode for IntegerLiteral"
+        }
+      } ]
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+      "ruleIndex" : 8,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+        "index" : 8
+      },
+      "message" : {
+        "text" : "Asymmetric key generation for algorithm RSA with key config source [ControlFlowNode for IntegerLiteral](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 64,
+            "endLine" : 68,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      },
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 95,
+            "endColumn" : 99
+          },
+          "contextRegion" : {
+            "startLine" : 64,
+            "endLine" : 68,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM,\n"
+            }
+          }
+        },
+        "message" : {
+          "text" : "ControlFlowNode for IntegerLiteral"
+        }
+      } ]
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+      "ruleIndex" : 8,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+        "index" : 8
+      },
+      "message" : {
+        "text" : "Asymmetric key generation for algorithm RSA with key config source [ControlFlowNode for IntegerLiteral](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 264,
+            "startColumn" : 15,
+            "endColumn" : 104
+          },
+          "contextRegion" : {
+            "startLine" : 262,
+            "endLine" : 266,
+            "snippet" : {
+              "text" : "    def non_encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt the pem file from the path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      },
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 264,
+            "startColumn" : 99,
+            "endColumn" : 103
+          },
+          "contextRegion" : {
+            "startLine" : 262,
+            "endLine" : 266,
+            "snippet" : {
+              "text" : "    def non_encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt the pem file from the path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        },
+        "message" : {
+          "text" : "ControlFlowNode for IntegerLiteral"
+        }
+      } ]
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+      "ruleIndex" : 8,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+        "index" : 8
+      },
+      "message" : {
+        "text" : "Asymmetric key generation for algorithm RSA with key config source [ControlFlowNode for IntegerLiteral](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 275,
+            "startColumn" : 15,
+            "endColumn" : 104
+          },
+          "contextRegion" : {
+            "startLine" : 273,
+            "endLine" : 277,
+            "snippet" : {
+              "text" : "    def encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt private key from the temp path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      },
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 275,
+            "startColumn" : 99,
+            "endColumn" : 103
+          },
+          "contextRegion" : {
+            "startLine" : 273,
+            "endLine" : 277,
+            "snippet" : {
+              "text" : "    def encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt private key from the temp path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        },
+        "message" : {
+          "text" : "ControlFlowNode for IntegerLiteral"
+        }
+      } ]
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+      "ruleIndex" : 8,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+        "index" : 8
+      },
+      "message" : {
+        "text" : "Asymmetric key generation for algorithm RSA with key config source [ControlFlowNode for IntegerLiteral](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 7,
+            "endColumn" : 103
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "_PASSWORD = \"snowflake42\"\n\nkey = rsa.generate_private_key(backend=crypto_default_backend(), public_exponent=65537, key_size=2048)\n\nprivate_key = key.private_bytes(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f21446dde605a4fe:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      },
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 98,
+            "endColumn" : 102
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "_PASSWORD = \"snowflake42\"\n\nkey = rsa.generate_private_key(backend=crypto_default_backend(), public_exponent=65537, key_size=2048)\n\nprivate_key = key.private_bytes(\n"
+            }
+          }
+        },
+        "message" : {
+          "text" : "ControlFlowNode for IntegerLiteral"
+        }
+      } ]
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 55,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 53,
+            "endLine" : 57,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef non_encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 55,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 53,
+            "endLine" : 57,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef non_encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 64,
+            "endLine" : 68,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 11,
+            "endColumn" : 100
+          },
+          "contextRegion" : {
+            "startLine" : 64,
+            "endLine" : 68,
+            "snippet" : {
+              "text" : "@pytest.fixture()\ndef encrypted_temporary_private_key(tmp_path: Path) -> Path:\n    key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n    private_key = key.private_bytes(\n        serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\n\nfrom airflow.models import Connection\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "168eb3f18cb270a7:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 264,
+            "startColumn" : 15,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 262,
+            "endLine" : 266,
+            "snippet" : {
+              "text" : "    def non_encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt the pem file from the path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 264,
+            "startColumn" : 15,
+            "endColumn" : 104
+          },
+          "contextRegion" : {
+            "startLine" : 262,
+            "endLine" : 266,
+            "snippet" : {
+              "text" : "    def non_encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt the pem file from the path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 275,
+            "startColumn" : 15,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 273,
+            "endLine" : 277,
+            "snippet" : {
+              "text" : "    def encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt private key from the temp path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 275,
+            "startColumn" : 15,
+            "endColumn" : 104
+          },
+          "contextRegion" : {
+            "startLine" : 273,
+            "endLine" : 277,
+            "snippet" : {
+              "text" : "    def encrypted_temporary_private_key(self, tmp_path: Path) -> Path:\n        \"\"\"Encrypt private key from the temp path\"\"\"\n        key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, key_size=2048)\n        private_key = key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "242ae9e51b7e7206:2",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/hooks/test_snowflake_sql_api.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 29,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 27,
+            "endLine" : 31,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives import serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nfrom responses import RequestsMock\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "98046976b0c73a09:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 20,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "from cryptography.hazmat.backends import default_backend as crypto_default_backend\nfrom cryptography.hazmat.primitives import serialization as crypto_serialization\nfrom cryptography.hazmat.primitives.asymmetric import rsa\n\nfrom airflow.providers.snowflake.utils.sql_api_generate_jwt import JWTGenerator\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "24065c21e0e13947:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 7,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "_PASSWORD = \"snowflake42\"\n\nkey = rsa.generate_private_key(backend=crypto_default_backend(), public_exponent=65537, key_size=2048)\n\nprivate_key = key.private_bytes(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f21446dde605a4fe:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/providers/snowflake/utils/test_sql_api_generate_jwt.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 7,
+            "endColumn" : 103
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "_PASSWORD = \"snowflake42\"\n\nkey = rsa.generate_private_key(backend=crypto_default_backend(), public_exponent=65537, key_size=2048)\n\nprivate_key = key.private_bytes(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f21446dde605a4fe:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 86,
+            "startColumn" : 18,
+            "endColumn" : 53
+          },
+          "contextRegion" : {
+            "startLine" : 84,
+            "endLine" : 88,
+            "snippet" : {
+              "text" : "        else:\n            _fernet = MultiFernet(\n                [Fernet(fernet_part.encode(\"utf-8\")) for fernet_part in fernet_key.split(\",\")]\n            )\n            _fernet.is_encrypted = True\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "17465a63709cfe79:1",
+        "primaryLocationStartColumnFingerprint" : "1"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "airflow/models/crypto.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 85,
+            "startColumn" : 23,
+            "endLine" : 87,
+            "endColumn" : 14
+          },
+          "contextRegion" : {
+            "startLine" : 83,
+            "endLine" : 89,
+            "snippet" : {
+              "text" : "            _fernet = NullFernet()\n        else:\n            _fernet = MultiFernet(\n                [Fernet(fernet_part.encode(\"utf-8\")) for fernet_part in fernet_key.split(\",\")]\n            )\n            _fernet.is_encrypted = True\n    except (ValueError, TypeError) as value_error:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7e299fdc36fa966e:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/always/test_connection.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 103,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 101,
+            "endLine" : 105,
+            "snippet" : {
+              "text" : "            assert test_connection.is_extra_encrypted\n            assert test_connection.extra == \"testextra\"\n            assert Fernet(key1).decrypt(test_connection._extra.encode()) == b\"testextra\"\n\n        # Test decrypt of old value with new key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "249f033ba316a83b:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/always/test_connection.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 114,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 112,
+            "endLine" : 116,
+            "snippet" : {
+              "text" : "            assert test_connection.is_extra_encrypted\n            assert test_connection.extra == \"testextra\"\n            assert Fernet(key2).decrypt(test_connection._extra.encode()) == b\"testextra\"\n\n    test_from_uri_params = [\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "879e496f75955f83:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/models/test_variable.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 90,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 88,
+            "endLine" : 92,
+            "snippet" : {
+              "text" : "            assert test_var.is_encrypted\n            assert test_var.val == test_value\n            assert Fernet(key1).decrypt(test_var._val.encode()) == test_value.encode()\n\n        # Test decrypt of old value with new key\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "720b5c50650b70fc:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/models/test_variable.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 101,
+            "startColumn" : 20,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 99,
+            "endLine" : 103,
+            "snippet" : {
+              "text" : "            assert test_var.is_encrypted\n            assert test_var.val == test_value\n            assert Fernet(key2).decrypt(test_var._val.encode()) == test_value.encode()\n\n    def test_variable_set_get_round_trip(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b9a34a4faf44a25a:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    } ],
+    "automationDetails" : {
+      "id" : "CBOM:apache/airflow/python/"
+    },
+    "columnKind" : "unicodeCodePoints",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
