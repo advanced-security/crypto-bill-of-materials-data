@@ -1,0 +1,2487 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.15.3",
+        "notifications" : [ {
+          "id" : "py/baseline/expected-extracted-files",
+          "name" : "py/baseline/expected-extracted-files",
+          "shortDescription" : {
+            "text" : "Expected extracted files"
+          },
+          "fullDescription" : {
+            "text" : "Files appearing in the source archive that are expected to be extracted."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true
+          },
+          "properties" : {
+            "tags" : [ "expected-extracted-files", "telemetry" ]
+          }
+        } ],
+        "rules" : [ {
+          "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "name" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "shortDescription" : {
+            "text" : "Unknown Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+            "kind" : "problem",
+            "name" : "Unknown Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "shortDescription" : {
+            "text" : "All Cryptographic Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+            "kind" : "problem",
+            "name" : "All Cryptographic Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Symmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with symmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with symmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Symmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/iv-sources",
+          "name" : "py/quantum-readiness/cbom/iv-sources",
+          "shortDescription" : {
+            "text" : "Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/iv-sources",
+            "kind" : "problem",
+            "name" : "Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "shortDescription" : {
+            "text" : "All Asymmetric Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "description" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+            "kind" : "problem",
+            "name" : "All Asymmetric Algorithms",
+            "preci" : "cbom\n       cryptography",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-exchange",
+          "name" : "py/quantum-readiness/cbom/key-exchange",
+          "shortDescription" : {
+            "text" : "Key Exchange Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-exchange",
+            "kind" : "problem",
+            "name" : "Key Exchange Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/hash-algorithms",
+          "name" : "py/quantum-readiness/cbom/hash-algorithms",
+          "shortDescription" : {
+            "text" : "Hash Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/hash-algorithms",
+            "kind" : "problem",
+            "name" : "Hash Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Symmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Symmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "name" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "shortDescription" : {
+            "text" : "Known asymmetric key source generation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all known potential sources for asymmetric key generation while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all known potential sources for asymmetric key generation while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+            "kind" : "problem",
+            "name" : "Known asymmetric key source generation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Asymmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with asymmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with asymmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Asymmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-derivation",
+          "name" : "py/quantum-readiness/cbom/key-derivation",
+          "shortDescription" : {
+            "text" : "Key Derivation Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key derivation using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key derivation using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-derivation",
+            "kind" : "problem",
+            "name" : "Key Derivation Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/signing-algorithms",
+          "name" : "py/quantum-readiness/cbom/signing-algorithms",
+          "shortDescription" : {
+            "text" : "Signing Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of signing algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of signing algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/signing-algorithms",
+            "kind" : "problem",
+            "name" : "Signing Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Authenticated Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of authenticated encryption schemes using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of authenticated encryption schemes using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Authenticated Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Asymmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Asymmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "name" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "shortDescription" : {
+            "text" : "Block cipher mode of operation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential block cipher modes of operations using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential block cipher modes of operations using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+            "kind" : "problem",
+            "name" : "Block cipher mode of operation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "name" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "shortDescription" : {
+            "text" : "Elliptic Curve Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of elliptic curve algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of elliptic curve algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+            "kind" : "problem",
+            "name" : "Elliptic Curve Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql/python-queries",
+        "semanticVersion" : "0.9.3+ff65ffafb003e86bd4c18f2c031f5faaf6f1038b",
+        "locations" : [ {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/",
+          "description" : {
+            "text" : "The QL pack root directory."
+          }
+        }, {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/qlpack.yml",
+          "description" : {
+            "text" : "The QL pack definition file."
+          }
+        } ]
+      } ]
+    },
+    "invocations" : [ {
+      "toolExecutionNotifications" : [ {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/test_web/run.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 2
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/replaced.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 3
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/absolute.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 4
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/tables.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 5
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/percentages.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 6
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/test_web/__init__.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 7
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/formatting_structure/__init__.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 8
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/min_max.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 9
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/test_api.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 10
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/logger.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 11
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/navigator.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 12
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/document.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 13
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/test_css_validation.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 14
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/formatting_structure/counters.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 15
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/__init__.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 16
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/preferred.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 17
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/draw.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 18
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/test_layout.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 19
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/float.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 20
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/test_css.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 21
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/inlines.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 22
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/test_boxes.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 23
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 1
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/test_draw.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 24
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/docs/conf.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 25
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/css/properties.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 26
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/test_text.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 27
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/formatting_structure/boxes.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 28
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/test_stacking.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 29
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/compat.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 30
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/css/computed_values.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 31
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/text.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 32
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/pages.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 33
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/__main__.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 34
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/css/validation.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 35
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/__init__.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 36
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/formatting_structure/build.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 37
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/__init__.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 38
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/markers.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 39
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/stacking.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 40
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/backgrounds.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 41
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/pdf.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 0
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/layout/blocks.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 42
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/html.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 43
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/tests/testing_utils.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 44
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/urls.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 45
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/images.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 46
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint/css/__init__.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 47
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/setup.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 48
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "bitdivine/weasyprint/weasyprint.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 49
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/baseline/expected-extracted-files",
+          "index" : 0
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      } ],
+      "executionSuccessful" : true
+    } ],
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/pdf.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/test_web/run.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/replaced.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 3
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/absolute.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 4
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/tables.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 5
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/percentages.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 6
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/test_web/__init__.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 7
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/formatting_structure/__init__.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 8
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/min_max.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 9
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/test_api.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 10
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/logger.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 11
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/navigator.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 12
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/document.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 13
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/test_css_validation.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 14
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/formatting_structure/counters.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 15
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/__init__.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 16
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/preferred.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 17
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/draw.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 18
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/test_layout.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 19
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/float.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 20
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/test_css.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 21
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/inlines.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 22
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/test_boxes.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 23
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/test_draw.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 24
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/docs/conf.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 25
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/css/properties.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 26
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/test_text.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 27
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/formatting_structure/boxes.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 28
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/test_stacking.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 29
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/compat.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 30
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/css/computed_values.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 31
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/text.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 32
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/pages.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 33
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/__main__.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 34
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/css/validation.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 35
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/__init__.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 36
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/formatting_structure/build.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 37
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/__init__.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 38
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/markers.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 39
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/stacking.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 40
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/backgrounds.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 41
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/layout/blocks.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 42
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/html.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 43
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/tests/testing_utils.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 44
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/urls.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 45
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/images.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 46
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint/css/__init__.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 47
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/setup.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 48
+      }
+    }, {
+      "location" : {
+        "uri" : "bitdivine/weasyprint/weasyprint.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 49
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 406,
+            "startColumn" : 11,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 404,
+            "endLine" : 408,
+            "snippet" : {
+              "text" : "    compressed_length = 0\n\n    md5 = hashlib.md5()\n    compress = zlib.compressobj()\n    for data in iter(lambda: file.read(4096), b''):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f29006475f799d9:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 380,
+            "startColumn" : 21,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 378,
+            "endLine" : 382,
+            "snippet" : {
+              "text" : "            )\n\n    assert ((b'<' + hashlib.md5(b'hi there').hexdigest().encode('ascii')\n            + b'>') in pdf_bytes)\n    assert (b'/F ()' in pdf_bytes)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d53eaaa79ac9f433:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 389,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 387,
+            "endLine" : 391,
+            "snippet" : {
+              "text" : "            b'\\x00\\xe4\\x00\\xf6\\x00\\xfc)' in pdf_bytes)\n\n    assert hashlib.md5(adata).hexdigest().encode('ascii') in pdf_bytes\n    assert (os.path.basename(absolute_tmp_file).encode('utf-16-be')\n            in pdf_bytes)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4e0774c8516d19e6:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 393,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 391,
+            "endLine" : 395,
+            "snippet" : {
+              "text" : "            in pdf_bytes)\n\n    assert hashlib.md5(rdata).hexdigest().encode('ascii') in pdf_bytes\n    assert (os.path.basename(relative_tmp_file).encode('utf-16-be')\n            in pdf_bytes)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2fdc2be065853b88:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 397,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 395,
+            "endLine" : 399,
+            "snippet" : {
+              "text" : "            in pdf_bytes)\n\n    assert (hashlib.md5(b'oob attachment').hexdigest().encode('ascii')\n            in pdf_bytes)\n    assert b'/Desc (\\xfe\\xff\\x00H\\x00e\\x00l\\x00l\\x00o)' in pdf_bytes\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "83a7eae8844d1b97:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 400,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 398,
+            "endLine" : 402,
+            "snippet" : {
+              "text" : "            in pdf_bytes)\n    assert b'/Desc (\\xfe\\xff\\x00H\\x00e\\x00l\\x00l\\x00o)' in pdf_bytes\n    assert (hashlib.md5(b'raw URL').hexdigest().encode('ascii')\n            in pdf_bytes)\n    assert (hashlib.md5(b'file like obj').hexdigest().encode('ascii')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "979dd99a1c08758e:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 402,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 400,
+            "endLine" : 404,
+            "snippet" : {
+              "text" : "    assert (hashlib.md5(b'raw URL').hexdigest().encode('ascii')\n            in pdf_bytes)\n    assert (hashlib.md5(b'file like obj').hexdigest().encode('ascii')\n            in pdf_bytes)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e8114175450d6b32:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 416,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 414,
+            "endLine" : 418,
+            "snippet" : {
+              "text" : "    ''').write_pdf()\n\n    assert hashlib.md5(b'some data').hexdigest().encode('ascii') in pdf_bytes\n    assert b'/EmbeddedFiles' in pdf_bytes\n    assert b'/Outlines' not in pdf_bytes\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "85b01cfcc7d3bbc1:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 449,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 447,
+            "endLine" : 451,
+            "snippet" : {
+              "text" : "    ''').write_pdf()\n\n    assert hashlib.md5(b'some data').hexdigest().encode('ascii') in pdf_bytes\n    assert b'/FileAttachment' in pdf_bytes\n    assert b'/EmbeddedFiles' not in pdf_bytes\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5d50ac250dc46aa7:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 406,
+            "startColumn" : 11,
+            "endColumn" : 22
+          },
+          "contextRegion" : {
+            "startLine" : 404,
+            "endLine" : 408,
+            "snippet" : {
+              "text" : "    compressed_length = 0\n\n    md5 = hashlib.md5()\n    compress = zlib.compressobj()\n    for data in iter(lambda: file.read(4096), b''):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f29006475f799d9:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 380,
+            "startColumn" : 21,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 378,
+            "endLine" : 382,
+            "snippet" : {
+              "text" : "            )\n\n    assert ((b'<' + hashlib.md5(b'hi there').hexdigest().encode('ascii')\n            + b'>') in pdf_bytes)\n    assert (b'/F ()' in pdf_bytes)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d53eaaa79ac9f433:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 389,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 387,
+            "endLine" : 391,
+            "snippet" : {
+              "text" : "            b'\\x00\\xe4\\x00\\xf6\\x00\\xfc)' in pdf_bytes)\n\n    assert hashlib.md5(adata).hexdigest().encode('ascii') in pdf_bytes\n    assert (os.path.basename(absolute_tmp_file).encode('utf-16-be')\n            in pdf_bytes)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4e0774c8516d19e6:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 393,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 391,
+            "endLine" : 395,
+            "snippet" : {
+              "text" : "            in pdf_bytes)\n\n    assert hashlib.md5(rdata).hexdigest().encode('ascii') in pdf_bytes\n    assert (os.path.basename(relative_tmp_file).encode('utf-16-be')\n            in pdf_bytes)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2fdc2be065853b88:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 397,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 395,
+            "endLine" : 399,
+            "snippet" : {
+              "text" : "            in pdf_bytes)\n\n    assert (hashlib.md5(b'oob attachment').hexdigest().encode('ascii')\n            in pdf_bytes)\n    assert b'/Desc (\\xfe\\xff\\x00H\\x00e\\x00l\\x00l\\x00o)' in pdf_bytes\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "83a7eae8844d1b97:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 400,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 398,
+            "endLine" : 402,
+            "snippet" : {
+              "text" : "            in pdf_bytes)\n    assert b'/Desc (\\xfe\\xff\\x00H\\x00e\\x00l\\x00l\\x00o)' in pdf_bytes\n    assert (hashlib.md5(b'raw URL').hexdigest().encode('ascii')\n            in pdf_bytes)\n    assert (hashlib.md5(b'file like obj').hexdigest().encode('ascii')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "979dd99a1c08758e:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 402,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 400,
+            "endLine" : 404,
+            "snippet" : {
+              "text" : "    assert (hashlib.md5(b'raw URL').hexdigest().encode('ascii')\n            in pdf_bytes)\n    assert (hashlib.md5(b'file like obj').hexdigest().encode('ascii')\n            in pdf_bytes)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e8114175450d6b32:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 416,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 414,
+            "endLine" : 418,
+            "snippet" : {
+              "text" : "    ''').write_pdf()\n\n    assert hashlib.md5(b'some data').hexdigest().encode('ascii') in pdf_bytes\n    assert b'/EmbeddedFiles' in pdf_bytes\n    assert b'/Outlines' not in pdf_bytes\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "85b01cfcc7d3bbc1:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "bitdivine/weasyprint/weasyprint/tests/test_pdf.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 449,
+            "startColumn" : 12,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 447,
+            "endLine" : 451,
+            "snippet" : {
+              "text" : "    ''').write_pdf()\n\n    assert hashlib.md5(b'some data').hexdigest().encode('ascii') in pdf_bytes\n    assert b'/FileAttachment' in pdf_bytes\n    assert b'/EmbeddedFiles' not in pdf_bytes\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5d50ac250dc46aa7:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    } ],
+    "automationDetails" : {
+      "id" : "CBOM:bitdivine/weasyprint/python/"
+    },
+    "columnKind" : "unicodeCodePoints",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}

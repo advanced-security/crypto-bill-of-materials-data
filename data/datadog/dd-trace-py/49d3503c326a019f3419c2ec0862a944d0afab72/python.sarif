@@ -1,0 +1,4220 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.15.3",
+        "notifications" : [ {
+          "id" : "py/baseline/expected-extracted-files",
+          "name" : "py/baseline/expected-extracted-files",
+          "shortDescription" : {
+            "text" : "Expected extracted files"
+          },
+          "fullDescription" : {
+            "text" : "Files appearing in the source archive that are expected to be extracted."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true
+          },
+          "properties" : {
+            "tags" : [ "expected-extracted-files", "telemetry" ]
+          }
+        } ],
+        "rules" : [ {
+          "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "name" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "shortDescription" : {
+            "text" : "Unknown Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+            "kind" : "problem",
+            "name" : "Unknown Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "shortDescription" : {
+            "text" : "All Cryptographic Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+            "kind" : "problem",
+            "name" : "All Cryptographic Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Symmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with symmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with symmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Symmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/iv-sources",
+          "name" : "py/quantum-readiness/cbom/iv-sources",
+          "shortDescription" : {
+            "text" : "Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/iv-sources",
+            "kind" : "problem",
+            "name" : "Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "shortDescription" : {
+            "text" : "All Asymmetric Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "description" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+            "kind" : "problem",
+            "name" : "All Asymmetric Algorithms",
+            "preci" : "cbom\n       cryptography",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-exchange",
+          "name" : "py/quantum-readiness/cbom/key-exchange",
+          "shortDescription" : {
+            "text" : "Key Exchange Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-exchange",
+            "kind" : "problem",
+            "name" : "Key Exchange Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/hash-algorithms",
+          "name" : "py/quantum-readiness/cbom/hash-algorithms",
+          "shortDescription" : {
+            "text" : "Hash Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/hash-algorithms",
+            "kind" : "problem",
+            "name" : "Hash Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Symmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Symmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "name" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "shortDescription" : {
+            "text" : "Known asymmetric key source generation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all known potential sources for asymmetric key generation while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all known potential sources for asymmetric key generation while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+            "kind" : "problem",
+            "name" : "Known asymmetric key source generation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Asymmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with asymmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with asymmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Asymmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-derivation",
+          "name" : "py/quantum-readiness/cbom/key-derivation",
+          "shortDescription" : {
+            "text" : "Key Derivation Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key derivation using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key derivation using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-derivation",
+            "kind" : "problem",
+            "name" : "Key Derivation Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/signing-algorithms",
+          "name" : "py/quantum-readiness/cbom/signing-algorithms",
+          "shortDescription" : {
+            "text" : "Signing Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of signing algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of signing algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/signing-algorithms",
+            "kind" : "problem",
+            "name" : "Signing Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Authenticated Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of authenticated encryption schemes using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of authenticated encryption schemes using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Authenticated Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Asymmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Asymmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "name" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "shortDescription" : {
+            "text" : "Block cipher mode of operation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential block cipher modes of operations using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential block cipher modes of operations using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+            "kind" : "problem",
+            "name" : "Block cipher mode of operation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "name" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "shortDescription" : {
+            "text" : "Elliptic Curve Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of elliptic curve algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of elliptic curve algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+            "kind" : "problem",
+            "name" : "Elliptic Curve Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql/python-queries",
+        "semanticVersion" : "0.9.3+ff65ffafb003e86bd4c18f2c031f5faaf6f1038b",
+        "locations" : [ {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/",
+          "description" : {
+            "text" : "The QL pack root directory."
+          }
+        }, {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/qlpack.yml",
+          "description" : {
+            "text" : "The QL pack definition file."
+          }
+        } ]
+      } ]
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "benchmarks/flask_simple/app.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/contrib/django/django_app/appsec_urls.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "ddtrace/internal/remoteconfig/client.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    }, {
+      "location" : {
+        "uri" : "setup.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 3
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/appsec/iast/test_overhead_control_engine.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 4
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/appsec/iast/test_processor.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 5
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/internal/remoteconfig/test_remoteconfig.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 6
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/appsec/test_remoteconfiguration_e2e.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 7
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/appsec/test_remoteconfiguration.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 8
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/appsec/iast/test_telemetry.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 9
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/appsec/iast/taint_sinks/test_weak_hash.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 10
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/appsec/iast/fixtures/taint_sinks/weak_algorithms.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 11
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "benchmarks/flask_simple/app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 14,
+            "startColumn" : 9,
+            "endColumn" : 20
+          },
+          "contextRegion" : {
+            "startLine" : 12,
+            "endLine" : 16,
+            "snippet" : {
+              "text" : "def make_index():\n    rand_numbers = [random.random() for _ in range(20)]\n    m = hashlib.md5()\n    m.update(b\"Insecure hash\")\n    rand_numbers.append(m.digest())\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ba51a450f523025a:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/contrib/django/django_app/appsec_urls.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 62,
+            "startColumn" : 9,
+            "endColumn" : 20
+          },
+          "contextRegion" : {
+            "startLine" : 60,
+            "endLine" : 64,
+            "snippet" : {
+              "text" : "\ndef weak_hash_view(request):\n    m = hashlib.md5()\n    m.update(b\"Nobody inspects\")\n    m.update(b\" the spammish repetition\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1f3c01f0955d9abe:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "ddtrace/internal/remoteconfig/client.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 299,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 297,
+            "endLine" : 301,
+            "snippet" : {
+              "text" : "            raise RemoteConfigError(\"invalid base64 target_files for {!r}\".format(target))\n\n        computed_hash = hashlib.sha256(raw).hexdigest()\n        if computed_hash != config.sha256_hash:\n            raise RemoteConfigError(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ea458cf7abb2ee7b:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 62,
+            "startColumn" : 23,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 60,
+            "endLine" : 64,
+            "snippet" : {
+              "text" : "    # sha256 File format is ``checksum`` followed by two whitespaces, then ``filename`` then ``\\n``\n    expected_checksum, expected_filename = list(filter(None, open(sha256_filename, \"r\").read().strip().split(\" \")))\n    actual_checksum = hashlib.sha256(open(filename, \"rb\").read()).hexdigest()\n    try:\n        assert expected_filename.endswith(filename)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "946db5adcd52fbea:1",
+        "primaryLocationStartColumnFingerprint" : "18"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 77,
+            "startColumn" : 23,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 75,
+            "endLine" : 79,
+            "snippet" : {
+              "text" : "def verify_checksum_from_hash(expected_checksum, filename):\n    # sha256 File format is ``checksum`` followed by two whitespaces, then ``filename`` then ``\\n``\n    actual_checksum = hashlib.sha256(open(filename, \"rb\").read()).hexdigest()\n    try:\n        assert expected_checksum == actual_checksum\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "946dabfe0b9f35c7:1",
+        "primaryLocationStartColumnFingerprint" : "18"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_overhead_control_engine.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 17,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 15,
+            "endLine" : 19,
+            "snippet" : {
+              "text" : "        import hashlib\n\n        m = hashlib.md5()\n        m.update(b\"Nobody inspects\")\n        m.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a0d355c6901f4319:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_overhead_control_engine.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "        import hashlib\n\n        m = hashlib.md5()\n        m.update(b\"Nobody inspects\")\n        m.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "645069f9b9f57ea8:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_overhead_control_engine.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 39,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 37,
+            "endLine" : 41,
+            "snippet" : {
+              "text" : "        import hashlib\n\n        m = hashlib.md5()\n        m.update(b\"Nobody inspects\")\n        m.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9fc513d8bc93ab9e:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_overhead_control_engine.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 9,
+            "endColumn" : 20
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "    import hashlib\n\n    m = hashlib.md5()\n    m.update(b\"Nobody inspects\")\n    m.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4129f6b9433a7349:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_overhead_control_engine.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 65,
+            "startColumn" : 9,
+            "endColumn" : 20
+          },
+          "contextRegion" : {
+            "startLine" : 63,
+            "endLine" : 67,
+            "snippet" : {
+              "text" : "    import hashlib\n\n    m = hashlib.md5()\n    m.update(b\"Nobody inspects\")\n    m.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "77cb38d7a60bf8d5:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_processor.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 21,
+            "startColumn" : 25,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 19,
+            "endLine" : 23,
+            "snippet" : {
+              "text" : "        import hashlib\n\n        m = hashlib.new(\"md5\")\n        m.update(b\"Nobody inspects\")\n        m.update(b\" the spammish repetition\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5aa21c07b5cfe43e:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/internal/remoteconfig/test_remoteconfig.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 69,
+            "startColumn" : 42,
+            "endColumn" : 56
+          },
+          "contextRegion" : {
+            "startLine" : 67,
+            "endLine" : 71,
+            "snippet" : {
+              "text" : "                path: {\n                    \"custom\": {\"c\": [\"\"], \"v\": 0},\n                    \"hashes\": {\"sha256\": hashlib.sha256(msg).hexdigest()},\n                    \"length\": 24,\n                }\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7f2fdac7f83aea6f:1",
+        "primaryLocationStartColumnFingerprint" : "21"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration_e2e.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 165,
+            "startColumn" : 42,
+            "endColumn" : 56
+          },
+          "contextRegion" : {
+            "startLine" : 163,
+            "endLine" : 167,
+            "snippet" : {
+              "text" : "                path_1: {\n                    \"custom\": {\"c\": [\"\"], \"v\": 0},\n                    \"hashes\": {\"sha256\": hashlib.sha256(msg_1_enc).hexdigest()},\n                    \"length\": 24,\n                },\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9fdd6a4c9bebb52c:1",
+        "primaryLocationStartColumnFingerprint" : "21"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration_e2e.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 170,
+            "startColumn" : 42,
+            "endColumn" : 56
+          },
+          "contextRegion" : {
+            "startLine" : 168,
+            "endLine" : 172,
+            "snippet" : {
+              "text" : "                path_2: {\n                    \"custom\": {\"c\": [\"\"], \"v\": 0},\n                    \"hashes\": {\"sha256\": hashlib.sha256(msg_2_enc).hexdigest()},\n                    \"length\": 24,\n                },\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "af49faee3a5c652c:1",
+        "primaryLocationStartColumnFingerprint" : "21"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 221,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 219,
+            "endLine" : 223,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 228,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 226,
+            "endLine" : 230,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c61dec2bbd9b1f9:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 263,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 261,
+            "endLine" : 265,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 270,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 268,
+            "endLine" : 272,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c61dec2bbd9b1f9:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 309,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 307,
+            "endLine" : 311,
+            "snippet" : {
+              "text" : "            id=\"\",\n            product_name=\"ASM_FEATURES\",\n            sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n            length=5,\n            tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 316,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 314,
+            "endLine" : 318,
+            "snippet" : {
+              "text" : "            id=\"\",\n            product_name=\"ASM_DATA\",\n            sha256_hash=hashlib.sha256(asm_data_data).hexdigest(),\n            length=5,\n            tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5297fb6f8bca3c4:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 368,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 366,
+            "endLine" : 370,
+            "snippet" : {
+              "text" : "            id=\"\",\n            product_name=\"ASM_FEATURES\",\n            sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n            length=5,\n            tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:4",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 375,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 373,
+            "endLine" : 377,
+            "snippet" : {
+              "text" : "            id=\"\",\n            product_name=\"ASM_DATA\",\n            sha256_hash=hashlib.sha256(asm_data_data).hexdigest(),\n            length=5,\n            tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c61dec2bbd9b1f9:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 413,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 411,
+            "endLine" : 415,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:5",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 420,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 418,
+            "endLine" : 422,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5ff830e54a71ba81:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 427,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 425,
+            "endLine" : 429,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "374ad6b6f17e3d1e:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 466,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 464,
+            "endLine" : 468,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:6",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 473,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 471,
+            "endLine" : 475,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5ff830e54a71ba81:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 480,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 478,
+            "endLine" : 482,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a964158baee00e7a:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 490,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 488,
+            "endLine" : 492,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:7",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 497,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 495,
+            "endLine" : 499,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3ebec9fb86a9c26e:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 507,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 505,
+            "endLine" : 509,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3420484e2351744f:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 557,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 555,
+            "endLine" : 559,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:8",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 564,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 562,
+            "endLine" : 566,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5ff830e54a71ba81:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 571,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 569,
+            "endLine" : 573,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a964158baee00e7a:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 581,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 579,
+            "endLine" : 583,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:9",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 588,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 586,
+            "endLine" : 590,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3ebec9fb86a9c26e:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 598,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 596,
+            "endLine" : 600,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3420484e2351744f:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 648,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 646,
+            "endLine" : 650,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5ff830e54a71ba81:4",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 655,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 653,
+            "endLine" : 657,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a964158baee00e7a:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 665,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 663,
+            "endLine" : 667,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3ebec9fb86a9c26e:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 675,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 673,
+            "endLine" : 677,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3420484e2351744f:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 722,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 720,
+            "endLine" : 724,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ec475ac8f5edf60d:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 737,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 735,
+            "endLine" : 739,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fbdb84be73cf7beb:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 747,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 745,
+            "endLine" : 749,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "77038d8b362bbad2:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 801,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 799,
+            "endLine" : 803,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:10",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 808,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 806,
+            "endLine" : 810,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5ff830e54a71ba81:5",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 815,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 813,
+            "endLine" : 817,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a964158baee00e7a:4",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 825,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 823,
+            "endLine" : 827,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:11",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 832,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 830,
+            "endLine" : 834,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data_empty).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "19964afefa9b7640:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_telemetry.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 59,
+            "startColumn" : 29,
+            "endColumn" : 34
+          },
+          "contextRegion" : {
+            "startLine" : 57,
+            "endLine" : 61,
+            "snippet" : {
+              "text" : "            import hashlib\n\n            m = hashlib.new(\"md5\")\n            m.update(b\"Nobody inspects\")\n            m.update(b\" the spammish repetition\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5aa21c07b5cfe43e:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/taint_sinks/test_weak_hash.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 246,
+            "startColumn" : 21,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 244,
+            "endLine" : 248,
+            "snippet" : {
+              "text" : "    import hashlib\n\n    m = hashlib.new(\"md5\")\n    m.update(b\"Nobody inspects\")\n    m.update(b\" the spammish repetition\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5aa21c07b5cfe43e:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/fixtures/taint_sinks/weak_algorithms.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 21,
+            "startColumn" : 21,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 19,
+            "endLine" : 23,
+            "snippet" : {
+              "text" : "    import hashlib\n\n    m = hashlib.new(\"md5\")\n    m.update(b\"Nobody inspects\")\n    m.update(b\" the spammish repetition\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "708010cdc610c7a:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/fixtures/taint_sinks/weak_algorithms.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 81,
+            "startColumn" : 12,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 79,
+            "endLine" : 83,
+            "snippet" : {
+              "text" : "    key = b\"1234567812345678\"\n    iv = os.urandom(8)\n    mode = modes.CBC(iv)\n    if algorithm == \"ARC4\":\n        mode = None\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "64570dcfcc36066b:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/iv-sources",
+      "ruleIndex" : 3,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/iv-sources",
+        "index" : 3
+      },
+      "message" : {
+        "text" : "Block mode IV/Nonce source"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/fixtures/taint_sinks/weak_algorithms.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 80,
+            "startColumn" : 10,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 78,
+            "endLine" : 82,
+            "snippet" : {
+              "text" : "\n    key = b\"1234567812345678\"\n    iv = os.urandom(8)\n    mode = modes.CBC(iv)\n    if algorithm == \"ARC4\":\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8e1ea504aa0dd710:1",
+        "primaryLocationStartColumnFingerprint" : "5"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "benchmarks/flask_simple/app.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 14,
+            "startColumn" : 9,
+            "endColumn" : 20
+          },
+          "contextRegion" : {
+            "startLine" : 12,
+            "endLine" : 16,
+            "snippet" : {
+              "text" : "def make_index():\n    rand_numbers = [random.random() for _ in range(20)]\n    m = hashlib.md5()\n    m.update(b\"Insecure hash\")\n    rand_numbers.append(m.digest())\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ba51a450f523025a:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/contrib/django/django_app/appsec_urls.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 62,
+            "startColumn" : 9,
+            "endColumn" : 20
+          },
+          "contextRegion" : {
+            "startLine" : 60,
+            "endLine" : 64,
+            "snippet" : {
+              "text" : "\ndef weak_hash_view(request):\n    m = hashlib.md5()\n    m.update(b\"Nobody inspects\")\n    m.update(b\" the spammish repetition\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1f3c01f0955d9abe:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "ddtrace/internal/remoteconfig/client.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 299,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 297,
+            "endLine" : 301,
+            "snippet" : {
+              "text" : "            raise RemoteConfigError(\"invalid base64 target_files for {!r}\".format(target))\n\n        computed_hash = hashlib.sha256(raw).hexdigest()\n        if computed_hash != config.sha256_hash:\n            raise RemoteConfigError(\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ea458cf7abb2ee7b:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 62,
+            "startColumn" : 23,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 60,
+            "endLine" : 64,
+            "snippet" : {
+              "text" : "    # sha256 File format is ``checksum`` followed by two whitespaces, then ``filename`` then ``\\n``\n    expected_checksum, expected_filename = list(filter(None, open(sha256_filename, \"r\").read().strip().split(\" \")))\n    actual_checksum = hashlib.sha256(open(filename, \"rb\").read()).hexdigest()\n    try:\n        assert expected_filename.endswith(filename)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "946db5adcd52fbea:1",
+        "primaryLocationStartColumnFingerprint" : "18"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 77,
+            "startColumn" : 23,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 75,
+            "endLine" : 79,
+            "snippet" : {
+              "text" : "def verify_checksum_from_hash(expected_checksum, filename):\n    # sha256 File format is ``checksum`` followed by two whitespaces, then ``filename`` then ``\\n``\n    actual_checksum = hashlib.sha256(open(filename, \"rb\").read()).hexdigest()\n    try:\n        assert expected_checksum == actual_checksum\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "946dabfe0b9f35c7:1",
+        "primaryLocationStartColumnFingerprint" : "18"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_overhead_control_engine.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 17,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 15,
+            "endLine" : 19,
+            "snippet" : {
+              "text" : "        import hashlib\n\n        m = hashlib.md5()\n        m.update(b\"Nobody inspects\")\n        m.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a0d355c6901f4319:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_overhead_control_engine.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 26,
+            "endLine" : 30,
+            "snippet" : {
+              "text" : "        import hashlib\n\n        m = hashlib.md5()\n        m.update(b\"Nobody inspects\")\n        m.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "645069f9b9f57ea8:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_overhead_control_engine.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 39,
+            "startColumn" : 13,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 37,
+            "endLine" : 41,
+            "snippet" : {
+              "text" : "        import hashlib\n\n        m = hashlib.md5()\n        m.update(b\"Nobody inspects\")\n        m.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9fc513d8bc93ab9e:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_overhead_control_engine.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 50,
+            "startColumn" : 9,
+            "endColumn" : 20
+          },
+          "contextRegion" : {
+            "startLine" : 48,
+            "endLine" : 52,
+            "snippet" : {
+              "text" : "    import hashlib\n\n    m = hashlib.md5()\n    m.update(b\"Nobody inspects\")\n    m.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4129f6b9433a7349:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_overhead_control_engine.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 65,
+            "startColumn" : 9,
+            "endColumn" : 20
+          },
+          "contextRegion" : {
+            "startLine" : 63,
+            "endLine" : 67,
+            "snippet" : {
+              "text" : "    import hashlib\n\n    m = hashlib.md5()\n    m.update(b\"Nobody inspects\")\n    m.digest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "77cb38d7a60bf8d5:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_processor.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 21,
+            "startColumn" : 25,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 19,
+            "endLine" : 23,
+            "snippet" : {
+              "text" : "        import hashlib\n\n        m = hashlib.new(\"md5\")\n        m.update(b\"Nobody inspects\")\n        m.update(b\" the spammish repetition\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5aa21c07b5cfe43e:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/internal/remoteconfig/test_remoteconfig.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 69,
+            "startColumn" : 42,
+            "endColumn" : 56
+          },
+          "contextRegion" : {
+            "startLine" : 67,
+            "endLine" : 71,
+            "snippet" : {
+              "text" : "                path: {\n                    \"custom\": {\"c\": [\"\"], \"v\": 0},\n                    \"hashes\": {\"sha256\": hashlib.sha256(msg).hexdigest()},\n                    \"length\": 24,\n                }\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7f2fdac7f83aea6f:1",
+        "primaryLocationStartColumnFingerprint" : "21"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration_e2e.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 165,
+            "startColumn" : 42,
+            "endColumn" : 56
+          },
+          "contextRegion" : {
+            "startLine" : 163,
+            "endLine" : 167,
+            "snippet" : {
+              "text" : "                path_1: {\n                    \"custom\": {\"c\": [\"\"], \"v\": 0},\n                    \"hashes\": {\"sha256\": hashlib.sha256(msg_1_enc).hexdigest()},\n                    \"length\": 24,\n                },\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9fdd6a4c9bebb52c:1",
+        "primaryLocationStartColumnFingerprint" : "21"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration_e2e.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 170,
+            "startColumn" : 42,
+            "endColumn" : 56
+          },
+          "contextRegion" : {
+            "startLine" : 168,
+            "endLine" : 172,
+            "snippet" : {
+              "text" : "                path_2: {\n                    \"custom\": {\"c\": [\"\"], \"v\": 0},\n                    \"hashes\": {\"sha256\": hashlib.sha256(msg_2_enc).hexdigest()},\n                    \"length\": 24,\n                },\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "af49faee3a5c652c:1",
+        "primaryLocationStartColumnFingerprint" : "21"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 221,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 219,
+            "endLine" : 223,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 228,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 226,
+            "endLine" : 230,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c61dec2bbd9b1f9:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 263,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 261,
+            "endLine" : 265,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 270,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 268,
+            "endLine" : 272,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c61dec2bbd9b1f9:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 309,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 307,
+            "endLine" : 311,
+            "snippet" : {
+              "text" : "            id=\"\",\n            product_name=\"ASM_FEATURES\",\n            sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n            length=5,\n            tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 316,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 314,
+            "endLine" : 318,
+            "snippet" : {
+              "text" : "            id=\"\",\n            product_name=\"ASM_DATA\",\n            sha256_hash=hashlib.sha256(asm_data_data).hexdigest(),\n            length=5,\n            tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5297fb6f8bca3c4:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 368,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 366,
+            "endLine" : 370,
+            "snippet" : {
+              "text" : "            id=\"\",\n            product_name=\"ASM_FEATURES\",\n            sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n            length=5,\n            tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:4",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 375,
+            "startColumn" : 25,
+            "endColumn" : 39
+          },
+          "contextRegion" : {
+            "startLine" : 373,
+            "endLine" : 377,
+            "snippet" : {
+              "text" : "            id=\"\",\n            product_name=\"ASM_DATA\",\n            sha256_hash=hashlib.sha256(asm_data_data).hexdigest(),\n            length=5,\n            tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c61dec2bbd9b1f9:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 413,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 411,
+            "endLine" : 415,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:5",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 420,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 418,
+            "endLine" : 422,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5ff830e54a71ba81:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 427,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 425,
+            "endLine" : 429,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "374ad6b6f17e3d1e:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 466,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 464,
+            "endLine" : 468,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:6",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 473,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 471,
+            "endLine" : 475,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5ff830e54a71ba81:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 480,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 478,
+            "endLine" : 482,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a964158baee00e7a:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 490,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 488,
+            "endLine" : 492,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:7",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 497,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 495,
+            "endLine" : 499,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3ebec9fb86a9c26e:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 507,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 505,
+            "endLine" : 509,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3420484e2351744f:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 557,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 555,
+            "endLine" : 559,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:8",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 564,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 562,
+            "endLine" : 566,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5ff830e54a71ba81:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 571,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 569,
+            "endLine" : 573,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a964158baee00e7a:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 581,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 579,
+            "endLine" : 583,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:9",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 588,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 586,
+            "endLine" : 590,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3ebec9fb86a9c26e:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 598,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 596,
+            "endLine" : 600,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3420484e2351744f:2",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 648,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 646,
+            "endLine" : 650,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5ff830e54a71ba81:4",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 655,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 653,
+            "endLine" : 657,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a964158baee00e7a:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 665,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 663,
+            "endLine" : 667,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3ebec9fb86a9c26e:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 675,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 673,
+            "endLine" : 677,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3420484e2351744f:3",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 722,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 720,
+            "endLine" : 724,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ec475ac8f5edf60d:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 737,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 735,
+            "endLine" : 739,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fbdb84be73cf7beb:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 747,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 745,
+            "endLine" : 749,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "77038d8b362bbad2:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 801,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 799,
+            "endLine" : 803,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:10",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 808,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 806,
+            "endLine" : 810,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data1).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5ff830e54a71ba81:5",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 815,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 813,
+            "endLine" : 817,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data2).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a964158baee00e7a:4",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 825,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 823,
+            "endLine" : 827,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_FEATURES\",\n                sha256_hash=hashlib.sha256(asm_features_data).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cce3486a46e3a7b3:11",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/test_remoteconfiguration.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 832,
+            "startColumn" : 29,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 830,
+            "endLine" : 834,
+            "snippet" : {
+              "text" : "                id=\"\",\n                product_name=\"ASM_DATA\",\n                sha256_hash=hashlib.sha256(asm_data_data_empty).hexdigest(),\n                length=5,\n                tuf_version=5,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "19964afefa9b7640:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/test_telemetry.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 59,
+            "startColumn" : 29,
+            "endColumn" : 34
+          },
+          "contextRegion" : {
+            "startLine" : 57,
+            "endLine" : 61,
+            "snippet" : {
+              "text" : "            import hashlib\n\n            m = hashlib.new(\"md5\")\n            m.update(b\"Nobody inspects\")\n            m.update(b\" the spammish repetition\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5aa21c07b5cfe43e:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/taint_sinks/test_weak_hash.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 246,
+            "startColumn" : 21,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 244,
+            "endLine" : 248,
+            "snippet" : {
+              "text" : "    import hashlib\n\n    m = hashlib.new(\"md5\")\n    m.update(b\"Nobody inspects\")\n    m.update(b\" the spammish repetition\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5aa21c07b5cfe43e:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/fixtures/taint_sinks/weak_algorithms.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 21,
+            "startColumn" : 21,
+            "endColumn" : 26
+          },
+          "contextRegion" : {
+            "startLine" : 19,
+            "endLine" : 23,
+            "snippet" : {
+              "text" : "    import hashlib\n\n    m = hashlib.new(\"md5\")\n    m.update(b\"Nobody inspects\")\n    m.update(b\" the spammish repetition\")\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "708010cdc610c7a:1",
+        "primaryLocationStartColumnFingerprint" : "16"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm CBC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/appsec/iast/fixtures/taint_sinks/weak_algorithms.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 81,
+            "startColumn" : 12,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 79,
+            "endLine" : 83,
+            "snippet" : {
+              "text" : "    key = b\"1234567812345678\"\n    iv = os.urandom(8)\n    mode = modes.CBC(iv)\n    if algorithm == \"ARC4\":\n        mode = None\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "64570dcfcc36066b:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    } ],
+    "automationDetails" : {
+      "id" : "CBOM:datadog/dd-trace-py/python/"
+    },
+    "columnKind" : "unicodeCodePoints",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
