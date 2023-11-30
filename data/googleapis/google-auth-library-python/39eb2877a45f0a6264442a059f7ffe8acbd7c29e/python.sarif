@@ -1,0 +1,2498 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.15.3",
+        "notifications" : [ {
+          "id" : "py/baseline/expected-extracted-files",
+          "name" : "py/baseline/expected-extracted-files",
+          "shortDescription" : {
+            "text" : "Expected extracted files"
+          },
+          "fullDescription" : {
+            "text" : "Files appearing in the source archive that are expected to be extracted."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true
+          },
+          "properties" : {
+            "tags" : [ "expected-extracted-files", "telemetry" ]
+          }
+        } ],
+        "rules" : [ {
+          "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "name" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "shortDescription" : {
+            "text" : "Unknown Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+            "kind" : "problem",
+            "name" : "Unknown Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "shortDescription" : {
+            "text" : "All Cryptographic Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+            "kind" : "problem",
+            "name" : "All Cryptographic Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Symmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with symmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with symmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Symmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/iv-sources",
+          "name" : "py/quantum-readiness/cbom/iv-sources",
+          "shortDescription" : {
+            "text" : "Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/iv-sources",
+            "kind" : "problem",
+            "name" : "Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "shortDescription" : {
+            "text" : "All Asymmetric Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "description" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+            "kind" : "problem",
+            "name" : "All Asymmetric Algorithms",
+            "preci" : "cbom\n       cryptography",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-exchange",
+          "name" : "py/quantum-readiness/cbom/key-exchange",
+          "shortDescription" : {
+            "text" : "Key Exchange Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-exchange",
+            "kind" : "problem",
+            "name" : "Key Exchange Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/hash-algorithms",
+          "name" : "py/quantum-readiness/cbom/hash-algorithms",
+          "shortDescription" : {
+            "text" : "Hash Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/hash-algorithms",
+            "kind" : "problem",
+            "name" : "Hash Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Symmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Symmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "name" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "shortDescription" : {
+            "text" : "Known asymmetric key source generation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all known potential sources for asymmetric key generation while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all known potential sources for asymmetric key generation while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+            "kind" : "problem",
+            "name" : "Known asymmetric key source generation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Asymmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with asymmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with asymmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Asymmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-derivation",
+          "name" : "py/quantum-readiness/cbom/key-derivation",
+          "shortDescription" : {
+            "text" : "Key Derivation Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key derivation using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key derivation using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-derivation",
+            "kind" : "problem",
+            "name" : "Key Derivation Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/signing-algorithms",
+          "name" : "py/quantum-readiness/cbom/signing-algorithms",
+          "shortDescription" : {
+            "text" : "Signing Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of signing algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of signing algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/signing-algorithms",
+            "kind" : "problem",
+            "name" : "Signing Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Authenticated Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of authenticated encryption schemes using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of authenticated encryption schemes using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Authenticated Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Asymmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Asymmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "name" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "shortDescription" : {
+            "text" : "Block cipher mode of operation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential block cipher modes of operations using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential block cipher modes of operations using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+            "kind" : "problem",
+            "name" : "Block cipher mode of operation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "name" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "shortDescription" : {
+            "text" : "Elliptic Curve Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of elliptic curve algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of elliptic curve algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+            "kind" : "problem",
+            "name" : "Elliptic Curve Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql/python-queries",
+        "semanticVersion" : "0.9.3+ff65ffafb003e86bd4c18f2c031f5faaf6f1038b",
+        "locations" : [ {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/",
+          "description" : {
+            "text" : "The QL pack root directory."
+          }
+        }, {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/qlpack.yml",
+          "description" : {
+            "text" : "The QL pack definition file."
+          }
+        } ]
+      } ]
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "google/auth/crypt/_cryptography_rsa.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "google/auth/transport/_custom_tls_signer.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "google/auth/aws.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    }, {
+      "location" : {
+        "uri" : "google/auth/crypt/es256.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 3
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/crypt/test__cryptography_rsa.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 4
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS1V15"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/crypt/_cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 34,
+            "startColumn" : 12,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 32,
+            "endLine" : 36,
+            "snippet" : {
+              "text" : "_CERTIFICATE_MARKER = b\"-----BEGIN CERTIFICATE-----\"\n_BACKEND = backends.default_backend()\n_PADDING = padding.PKCS1v15()\n_SHA256 = hashes.SHA256()\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bb667bf18edbf27a:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/crypt/_cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 35,
+            "startColumn" : 11,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 33,
+            "endLine" : 37,
+            "snippet" : {
+              "text" : "_BACKEND = backends.default_backend()\n_PADDING = padding.PKCS1v15()\n_SHA256 = hashes.SHA256()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "56d402cc3130f765:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/transport/_custom_tls_signer.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 115,
+            "startColumn" : 24,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 113,
+            "endLine" : 117,
+            "snippet" : {
+              "text" : "\n    data = ctypes.string_at(to_be_signed, to_be_signed_len)\n    hash = hashes.Hash(hashes.SHA256())\n    hash.update(data)\n    return hash.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bed80826938ee0ec:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/aws.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 206,
+            "startColumn" : 47,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 204,
+            "endLine" : 208,
+            "snippet" : {
+              "text" : "        str: The computed hash bytes.\n    \"\"\"\n    return hmac.new(key, msg.encode(\"utf-8\"), hashlib.sha256).digest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "34717d92010d004d:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/aws.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 299,
+            "startColumn" : 20,
+            "endColumn" : 34
+          },
+          "contextRegion" : {
+            "startLine" : 297,
+            "endLine" : 301,
+            "snippet" : {
+              "text" : "    signed_headers = \";\".join(header_keys)\n\n    payload_hash = hashlib.sha256((request_payload or \"\").encode(\"utf-8\")).hexdigest()\n\n    # https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4f6a0b50f96985e:1",
+        "primaryLocationStartColumnFingerprint" : "15"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/aws.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 320,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 318,
+            "endLine" : 322,
+            "snippet" : {
+              "text" : "        amz_date,\n        credential_scope,\n        hashlib.sha256(canonical_request.encode(\"utf-8\")).hexdigest(),\n    )\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "827a45881db47330:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/aws.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 326,
+            "startColumn" : 54,
+            "endColumn" : 68
+          },
+          "contextRegion" : {
+            "startLine" : 324,
+            "endLine" : 328,
+            "snippet" : {
+              "text" : "    signing_key = _get_signing_key(secret_key, date_stamp, region, service_name)\n    signature = hmac.new(\n        signing_key, string_to_sign.encode(\"utf-8\"), hashlib.sha256\n    ).hexdigest()\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fa324162e0ffc586:1",
+        "primaryLocationStartColumnFingerprint" : "45"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/crypt/es256.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 70,
+            "startColumn" : 61,
+            "endColumn" : 74
+          },
+          "contextRegion" : {
+            "startLine" : 68,
+            "endLine" : 72,
+            "snippet" : {
+              "text" : "        message = _helpers.to_bytes(message)\n        try:\n            self._pubkey.verify(asn1_sig, message, ec.ECDSA(hashes.SHA256()))\n            return True\n        except (ValueError, cryptography.exceptions.InvalidSignature):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "582276f159ed6054:1",
+        "primaryLocationStartColumnFingerprint" : "48"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/crypt/es256.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 128,
+            "startColumn" : 59,
+            "endColumn" : 72
+          },
+          "contextRegion" : {
+            "startLine" : 126,
+            "endLine" : 130,
+            "snippet" : {
+              "text" : "    def sign(self, message):\n        message = _helpers.to_bytes(message)\n        asn1_signature = self._key.sign(message, ec.ECDSA(hashes.SHA256()))\n\n        # Convert ASN1 encoded signature to (r||s) raw signature.\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2ccc543acdb98a25:1",
+        "primaryLocationStartColumnFingerprint" : "50"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS1V15"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/crypt/es256.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 35,
+            "startColumn" : 12,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 33,
+            "endLine" : 37,
+            "snippet" : {
+              "text" : "_CERTIFICATE_MARKER = b\"-----BEGIN CERTIFICATE-----\"\n_BACKEND = backends.default_backend()\n_PADDING = padding.PKCS1v15()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "372572337a835376:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 90,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 88,
+            "endLine" : 92,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(PUBLIC_KEY_BYTES)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n    def test_from_string_pub_key_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7185352070c56a7d:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 96,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 94,
+            "endLine" : 98,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(public_key)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n    def test_from_string_pub_cert(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1e321b9943f0d528:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 101,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 99,
+            "endLine" : 103,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(PUBLIC_CERT_BYTES)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n    def test_from_string_pub_cert_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "51dea0a7fb2d1b56:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 107,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 105,
+            "endLine" : 109,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(public_cert)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cfa2e90ff51ae716:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 114,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 112,
+            "endLine" : 116,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(PKCS1_KEY_BYTES)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs1_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "740c76c7a68d82ee:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 120,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 118,
+            "endLine" : 122,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(key_bytes)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs8(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "793f71c0519d496:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 125,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 123,
+            "endLine" : 127,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(PKCS8_KEY_BYTES)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs8_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "147576b0e86d49bd:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 131,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 129,
+            "endLine" : 133,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(key_bytes)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs12(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2c641e86db5f1fc4:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 148,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 146,
+            "endLine" : 150,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_service_account_info_missing_key(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b507c69111c23f2d:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 162,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 160,
+            "endLine" : 164,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_pickle(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a91b8457a73f8315:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 170,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 168,
+            "endLine" : 172,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n        pickled_signer = pickle.dumps(signer)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d1b91706f14612cd:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 176,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 174,
+            "endLine" : 176,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b874acf77b8eaf35:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 19,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 17,
+            "endLine" : 21,
+            "snippet" : {
+              "text" : "import pickle\n\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nimport pytest  # type: ignore\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "71b95dcff37ff279:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 90,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 88,
+            "endLine" : 92,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(PUBLIC_KEY_BYTES)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n    def test_from_string_pub_key_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7185352070c56a7d:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 96,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 94,
+            "endLine" : 98,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(public_key)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n    def test_from_string_pub_cert(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1e321b9943f0d528:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 101,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 99,
+            "endLine" : 103,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(PUBLIC_CERT_BYTES)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n    def test_from_string_pub_cert_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "51dea0a7fb2d1b56:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 107,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 105,
+            "endLine" : 109,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(public_cert)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cfa2e90ff51ae716:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 114,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 112,
+            "endLine" : 116,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(PKCS1_KEY_BYTES)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs1_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "740c76c7a68d82ee:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 120,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 118,
+            "endLine" : 122,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(key_bytes)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs8(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "793f71c0519d496:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 125,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 123,
+            "endLine" : 127,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(PKCS8_KEY_BYTES)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs8_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "147576b0e86d49bd:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 131,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 129,
+            "endLine" : 133,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(key_bytes)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs12(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2c641e86db5f1fc4:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 148,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 146,
+            "endLine" : 150,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_service_account_info_missing_key(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b507c69111c23f2d:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 162,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 160,
+            "endLine" : 164,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_pickle(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a91b8457a73f8315:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 170,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 168,
+            "endLine" : 172,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n        pickled_signer = pickle.dumps(signer)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d1b91706f14612cd:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 176,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 174,
+            "endLine" : 176,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b874acf77b8eaf35:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 19,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 17,
+            "endLine" : 21,
+            "snippet" : {
+              "text" : "import pickle\n\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nimport pytest  # type: ignore\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "71b95dcff37ff279:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/crypt/_cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 35,
+            "startColumn" : 11,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 33,
+            "endLine" : 37,
+            "snippet" : {
+              "text" : "_BACKEND = backends.default_backend()\n_PADDING = padding.PKCS1v15()\n_SHA256 = hashes.SHA256()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "56d402cc3130f765:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/transport/_custom_tls_signer.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 115,
+            "startColumn" : 24,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 113,
+            "endLine" : 117,
+            "snippet" : {
+              "text" : "\n    data = ctypes.string_at(to_be_signed, to_be_signed_len)\n    hash = hashes.Hash(hashes.SHA256())\n    hash.update(data)\n    return hash.finalize()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bed80826938ee0ec:1",
+        "primaryLocationStartColumnFingerprint" : "19"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/aws.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 206,
+            "startColumn" : 47,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 204,
+            "endLine" : 208,
+            "snippet" : {
+              "text" : "        str: The computed hash bytes.\n    \"\"\"\n    return hmac.new(key, msg.encode(\"utf-8\"), hashlib.sha256).digest()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "34717d92010d004d:1",
+        "primaryLocationStartColumnFingerprint" : "42"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/aws.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 299,
+            "startColumn" : 20,
+            "endColumn" : 34
+          },
+          "contextRegion" : {
+            "startLine" : 297,
+            "endLine" : 301,
+            "snippet" : {
+              "text" : "    signed_headers = \";\".join(header_keys)\n\n    payload_hash = hashlib.sha256((request_payload or \"\").encode(\"utf-8\")).hexdigest()\n\n    # https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4f6a0b50f96985e:1",
+        "primaryLocationStartColumnFingerprint" : "15"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/aws.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 320,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 318,
+            "endLine" : 322,
+            "snippet" : {
+              "text" : "        amz_date,\n        credential_scope,\n        hashlib.sha256(canonical_request.encode(\"utf-8\")).hexdigest(),\n    )\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "827a45881db47330:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/aws.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 326,
+            "startColumn" : 54,
+            "endColumn" : 68
+          },
+          "contextRegion" : {
+            "startLine" : 324,
+            "endLine" : 328,
+            "snippet" : {
+              "text" : "    signing_key = _get_signing_key(secret_key, date_stamp, region, service_name)\n    signature = hmac.new(\n        signing_key, string_to_sign.encode(\"utf-8\"), hashlib.sha256\n    ).hexdigest()\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fa324162e0ffc586:1",
+        "primaryLocationStartColumnFingerprint" : "45"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/crypt/es256.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 70,
+            "startColumn" : 61,
+            "endColumn" : 74
+          },
+          "contextRegion" : {
+            "startLine" : 68,
+            "endLine" : 72,
+            "snippet" : {
+              "text" : "        message = _helpers.to_bytes(message)\n        try:\n            self._pubkey.verify(asn1_sig, message, ec.ECDSA(hashes.SHA256()))\n            return True\n        except (ValueError, cryptography.exceptions.InvalidSignature):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "582276f159ed6054:1",
+        "primaryLocationStartColumnFingerprint" : "48"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/crypt/es256.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 128,
+            "startColumn" : 59,
+            "endColumn" : 72
+          },
+          "contextRegion" : {
+            "startLine" : 126,
+            "endLine" : 130,
+            "snippet" : {
+              "text" : "    def sign(self, message):\n        message = _helpers.to_bytes(message)\n        asn1_signature = self._key.sign(message, ec.ECDSA(hashes.SHA256()))\n\n        # Convert ASN1 encoded signature to (r||s) raw signature.\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2ccc543acdb98a25:1",
+        "primaryLocationStartColumnFingerprint" : "50"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+      "ruleIndex" : 9,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+        "index" : 9
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS1V15"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/crypt/_cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 34,
+            "startColumn" : 12,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 32,
+            "endLine" : 36,
+            "snippet" : {
+              "text" : "_CERTIFICATE_MARKER = b\"-----BEGIN CERTIFICATE-----\"\n_BACKEND = backends.default_backend()\n_PADDING = padding.PKCS1v15()\n_SHA256 = hashes.SHA256()\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bb667bf18edbf27a:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+      "ruleIndex" : 9,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+        "index" : 9
+      },
+      "message" : {
+        "text" : "Use of algorithm PKCS1V15"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "google/auth/crypt/es256.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 35,
+            "startColumn" : 12,
+            "endColumn" : 30
+          },
+          "contextRegion" : {
+            "startLine" : 33,
+            "endLine" : 37,
+            "snippet" : {
+              "text" : "_CERTIFICATE_MARKER = b\"-----BEGIN CERTIFICATE-----\"\n_BACKEND = backends.default_backend()\n_PADDING = padding.PKCS1v15()\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "372572337a835376:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 90,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 88,
+            "endLine" : 92,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(PUBLIC_KEY_BYTES)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n    def test_from_string_pub_key_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7185352070c56a7d:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 96,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 94,
+            "endLine" : 98,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(public_key)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n    def test_from_string_pub_cert(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1e321b9943f0d528:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 101,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 99,
+            "endLine" : 103,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(PUBLIC_CERT_BYTES)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n    def test_from_string_pub_cert_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "51dea0a7fb2d1b56:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 107,
+            "startColumn" : 45,
+            "endColumn" : 61
+          },
+          "contextRegion" : {
+            "startLine" : 105,
+            "endLine" : 109,
+            "snippet" : {
+              "text" : "        verifier = _cryptography_rsa.RSAVerifier.from_string(public_cert)\n        assert isinstance(verifier, _cryptography_rsa.RSAVerifier)\n        assert isinstance(verifier._pubkey, rsa.RSAPublicKey)\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "cfa2e90ff51ae716:1",
+        "primaryLocationStartColumnFingerprint" : "36"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 114,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 112,
+            "endLine" : 116,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(PKCS1_KEY_BYTES)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs1_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "740c76c7a68d82ee:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 120,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 118,
+            "endLine" : 122,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(key_bytes)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs8(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "793f71c0519d496:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 125,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 123,
+            "endLine" : 127,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(PKCS8_KEY_BYTES)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs8_unicode(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "147576b0e86d49bd:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 131,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 129,
+            "endLine" : 133,
+            "snippet" : {
+              "text" : "        signer = _cryptography_rsa.RSASigner.from_string(key_bytes)\n        assert isinstance(signer, _cryptography_rsa.RSASigner)\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_string_pkcs12(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2c641e86db5f1fc4:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 148,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 146,
+            "endLine" : 150,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_from_service_account_info_missing_key(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b507c69111c23f2d:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 162,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 160,
+            "endLine" : 164,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n    def test_pickle(self):\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a91b8457a73f8315:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 170,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 168,
+            "endLine" : 172,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n\n        pickled_signer = pickle.dumps(signer)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d1b91706f14612cd:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 176,
+            "startColumn" : 40,
+            "endColumn" : 57
+          },
+          "contextRegion" : {
+            "startLine" : 174,
+            "endLine" : 176,
+            "snippet" : {
+              "text" : "\n        assert signer.key_id == SERVICE_ACCOUNT_INFO[base._JSON_FILE_PRIVATE_KEY_ID]\n        assert isinstance(signer._key, rsa.RSAPrivateKey)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b874acf77b8eaf35:1",
+        "primaryLocationStartColumnFingerprint" : "31"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/crypt/test__cryptography_rsa.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 19,
+            "startColumn" : 55,
+            "endColumn" : 58
+          },
+          "contextRegion" : {
+            "startLine" : 17,
+            "endLine" : 21,
+            "snippet" : {
+              "text" : "import pickle\n\nfrom cryptography.hazmat.primitives.asymmetric import rsa\nimport pytest  # type: ignore\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "71b95dcff37ff279:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    } ],
+    "automationDetails" : {
+      "id" : "CBOM:googleapis/google-auth-library-python/python/"
+    },
+    "columnKind" : "unicodeCodePoints",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
