@@ -1,0 +1,3553 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.15.3",
+        "notifications" : [ {
+          "id" : "py/baseline/expected-extracted-files",
+          "name" : "py/baseline/expected-extracted-files",
+          "shortDescription" : {
+            "text" : "Expected extracted files"
+          },
+          "fullDescription" : {
+            "text" : "Files appearing in the source archive that are expected to be extracted."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true
+          },
+          "properties" : {
+            "tags" : [ "expected-extracted-files", "telemetry" ]
+          }
+        } ],
+        "rules" : [ {
+          "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "name" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "shortDescription" : {
+            "text" : "Unknown Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+            "kind" : "problem",
+            "name" : "Unknown Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "shortDescription" : {
+            "text" : "All Cryptographic Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+            "kind" : "problem",
+            "name" : "All Cryptographic Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Symmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with symmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with symmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Symmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/iv-sources",
+          "name" : "py/quantum-readiness/cbom/iv-sources",
+          "shortDescription" : {
+            "text" : "Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/iv-sources",
+            "kind" : "problem",
+            "name" : "Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "shortDescription" : {
+            "text" : "All Asymmetric Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "description" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+            "kind" : "problem",
+            "name" : "All Asymmetric Algorithms",
+            "preci" : "cbom\n       cryptography",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-exchange",
+          "name" : "py/quantum-readiness/cbom/key-exchange",
+          "shortDescription" : {
+            "text" : "Key Exchange Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-exchange",
+            "kind" : "problem",
+            "name" : "Key Exchange Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/hash-algorithms",
+          "name" : "py/quantum-readiness/cbom/hash-algorithms",
+          "shortDescription" : {
+            "text" : "Hash Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/hash-algorithms",
+            "kind" : "problem",
+            "name" : "Hash Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Symmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Symmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "name" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "shortDescription" : {
+            "text" : "Known asymmetric key source generation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all known potential sources for asymmetric key generation while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all known potential sources for asymmetric key generation while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+            "kind" : "problem",
+            "name" : "Known asymmetric key source generation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Asymmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with asymmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with asymmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Asymmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-derivation",
+          "name" : "py/quantum-readiness/cbom/key-derivation",
+          "shortDescription" : {
+            "text" : "Key Derivation Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key derivation using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key derivation using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-derivation",
+            "kind" : "problem",
+            "name" : "Key Derivation Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/signing-algorithms",
+          "name" : "py/quantum-readiness/cbom/signing-algorithms",
+          "shortDescription" : {
+            "text" : "Signing Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of signing algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of signing algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/signing-algorithms",
+            "kind" : "problem",
+            "name" : "Signing Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Authenticated Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of authenticated encryption schemes using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of authenticated encryption schemes using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Authenticated Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Asymmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Asymmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "name" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "shortDescription" : {
+            "text" : "Block cipher mode of operation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential block cipher modes of operations using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential block cipher modes of operations using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+            "kind" : "problem",
+            "name" : "Block cipher mode of operation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "name" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "shortDescription" : {
+            "text" : "Elliptic Curve Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of elliptic curve algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of elliptic curve algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+            "kind" : "problem",
+            "name" : "Elliptic Curve Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql/python-queries",
+        "semanticVersion" : "0.9.3+ff65ffafb003e86bd4c18f2c031f5faaf6f1038b",
+        "locations" : [ {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/",
+          "description" : {
+            "text" : "The QL pack root directory."
+          }
+        }, {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/qlpack.yml",
+          "description" : {
+            "text" : "The QL pack definition file."
+          }
+        } ]
+      } ]
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "setup/__init__.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/library/add_to_library.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/srv/auth.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/db/backend.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 3
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/srv/books.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 4
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/db/cache.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 5
+      }
+    }, {
+      "location" : {
+        "uri" : "setup/check.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 6
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/srv/code.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 7
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/db/fts/connect.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 8
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/ebooks/oeb/polish/container.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 9
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/gui2/viewer/convert_book.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 10
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/library/database2.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 11
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/devices/smart_device_app/driver.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 12
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/devices/kindle/driver.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 13
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/ebooks/conversion/plugins/epub_input.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 14
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/utils/exim.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 15
+      }
+    }, {
+      "location" : {
+        "uri" : "imgsrc/generate.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 16
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/ebooks/metadata/sources/google.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 17
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/srv/tests/http.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 18
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/srv/http_response.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 19
+      }
+    }, {
+      "location" : {
+        "uri" : "setup/hyphenation.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 20
+      }
+    }, {
+      "location" : {
+        "uri" : "setup/linux-installer.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 21
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/live.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 22
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/utils/localization.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 23
+      }
+    }, {
+      "location" : {
+        "uri" : "setup/mathjax.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 24
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/srv/opds.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 25
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/ebooks/pdf/render/serialize.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 26
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/utils/smtplib.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 27
+      }
+    }, {
+      "location" : {
+        "uri" : "setup/translations.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 28
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/gui2/viewer/ui.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 29
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/ebooks/metadata/sources/update.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 30
+      }
+    }, {
+      "location" : {
+        "uri" : "setup/upload.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 31
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/srv/web_socket.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 32
+      }
+    }, {
+      "location" : {
+        "uri" : "src/calibre/srv/tests/web_sockets.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 33
+      }
+    }, {
+      "location" : {
+        "uri" : "setup/wincross.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 34
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/__init__.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 83,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 81,
+            "endLine" : 85,
+            "snippet" : {
+              "text" : "    if not curl_supports_etags():\n        return subprocess.check_output(['curl', '-fsSL', url])\n    url_hash = hashlib.sha1(url.encode('utf-8')).hexdigest()\n    cache_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.cache', 'download', url_hash)\n    os.makedirs(cache_dir, exist_ok=True)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e8171cb8b9464ddc:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/library/add_to_library.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 9,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 7,
+            "endLine" : 11,
+            "snippet" : {
+              "text" : "\nimport os\nfrom hashlib import sha1\n\nfrom calibre.ebooks import BOOK_EXTENSIONS\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9b10f20d9b091428:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/auth.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 9,
+            "startColumn" : 21,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 7,
+            "endLine" : 11,
+            "snippet" : {
+              "text" : "import os, random, struct\nfrom collections import OrderedDict\nfrom hashlib import md5, sha256\nfrom itertools import permutations\nfrom threading import Lock\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a0b9bc40bda5b881:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/auth.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 9,
+            "startColumn" : 26,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 7,
+            "endLine" : 11,
+            "snippet" : {
+              "text" : "import os, random, struct\nfrom collections import OrderedDict\nfrom hashlib import md5, sha256\nfrom itertools import permutations\nfrom threading import Lock\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a0b9bc40bda5b881:1",
+        "primaryLocationStartColumnFingerprint" : "25"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/db/backend.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 1618,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 1616,
+            "endLine" : 1620,
+            "snippet" : {
+              "text" : "        if path is None:\n            raise NoSuchFormat('Record %d has no fmt: %s'%(book_id, fmt))\n        sha = hashlib.sha256()\n        with open(path, 'rb') as f:\n            while True:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1583282e2f92bf7c:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/books.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 11,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 9,
+            "endLine" : 13,
+            "snippet" : {
+              "text" : "import time\nfrom functools import partial\nfrom hashlib import sha1\nfrom threading import Lock, RLock\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "849642376bb36dc1:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/db/cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 559,
+            "startColumn" : 21,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 557,
+            "endLine" : 561,
+            "snippet" : {
+              "text" : "            with self.read_lock, open(path, 'rb') as src, PersistentTemporaryFile(suffix=f'.{fmt.lower()}') as pt:\n                sz = 0\n                h = hashlib.sha1()\n                while True:\n                    chunk = src.read(DEFAULT_BUFFER_SIZE)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7c810b2d9a5352b5:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/check.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 64,
+            "startColumn" : 41,
+            "endColumn" : 53
+          },
+          "contextRegion" : {
+            "startLine" : 62,
+            "endLine" : 66,
+            "snippet" : {
+              "text" : "            return self.fhash_cache[f]\n        except KeyError:\n            self.fhash_cache[f] = ans = hashlib.sha1(self.read_file(f)).hexdigest()\n            return ans\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "eb4dde93281c01b5:1",
+        "primaryLocationStartColumnFingerprint" : "28"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/code.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 438,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 436,
+            "endLine" : 440,
+            "snippet" : {
+              "text" : "    vl = rd.query.get('vl') or ''\n    etag = json_dumps([db.last_modified().isoformat(), rd.username, library_id, vl, list(opts)])\n    etag = hashlib.sha1(etag).hexdigest()\n\n    def generate():\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "49cb480a93f56489:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/db/fts/connect.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 129,
+            "startColumn" : 25,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 127,
+            "endLine" : 131,
+            "snippet" : {
+              "text" : "        text_hash = ''\n        if text:\n            text_hash = hashlib.sha1(text.encode('utf-8')).hexdigest()\n            for x in conn.get('SELECT id FROM fts_db.books_text WHERE book=? AND format=? AND text_hash=?', (book_id, fmt, text_hash)):\n                text = ''\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7ce5554ba349e212:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/ebooks/oeb/polish/container.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 1300,
+            "startColumn" : 24,
+            "endColumn" : 36
+          },
+          "contextRegion" : {
+            "startLine" : 1298,
+            "endLine" : 1302,
+            "snippet" : {
+              "text" : "            idpf_key = raw_unique_identifier\n            idpf_key = re.sub('[\\u0020\\u0009\\u000d\\u000a]', '', idpf_key)\n            idpf_key = hashlib.sha1(idpf_key.encode('utf-8')).digest()\n        return package_id, raw_unique_identifier, idpf_key\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "71d33a33ae40ae7:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/gui2/viewer/convert_book.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 10,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 8,
+            "endLine" : 12,
+            "snippet" : {
+              "text" : "import tempfile\nimport time\nfrom hashlib import sha1\nfrom itertools import count\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6cfae3694495d5b7:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/library/database2.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 1331,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 1329,
+            "endLine" : 1333,
+            "snippet" : {
+              "text" : "        if path is None:\n            raise NoSuchFormat('Record %d has no fmt: %s'%(id_, fmt))\n        sha = hashlib.sha256()\n        with open(path, 'rb') as f:\n            while True:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1583282e2f92bf7c:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/devices/smart_device_app/driver.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 1043,
+            "startColumn" : 26,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 1041,
+            "endLine" : 1045,
+            "snippet" : {
+              "text" : "            if password:\n                challenge = isoformat(now())\n                hasher = hashlib.sha1()\n                hasher.update(password.encode('UTF-8'))\n                hasher.update(challenge.encode('UTF-8'))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5140a611b9194c0b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/devices/kindle/driver.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 462,
+            "startColumn" : 21,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 460,
+            "endLine" : 464,
+            "snippet" : {
+              "text" : "            for book in bl:\n                path = '/mnt/us/'+book.lpath\n                h = hashlib.sha1(as_bytes(path)).hexdigest()\n                if h in path_map:\n                    book.device_collections = list(sorted(path_map[h]))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2cb3d371a87292ec:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/ebooks/conversion/plugins/epub_input.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 46,
+            "startColumn" : 24,
+            "endColumn" : 36
+          },
+          "contextRegion" : {
+            "startLine" : 44,
+            "endLine" : 48,
+            "snippet" : {
+              "text" : "        if idpf_key:\n            idpf_key = re.sub('[\\u0020\\u0009\\u000d\\u000a]', '', idpf_key)\n            idpf_key = hashlib.sha1(idpf_key.encode('utf-8')).digest()\n        key = None\n        for item in opf.identifier_iter():\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3bbed5cd8f67cb83:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/utils/exim.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 30,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 28,
+            "endLine" : 32,
+            "snippet" : {
+              "text" : "\ndef send_file(from_obj, to_obj, chunksize=1<<20):\n    m = hashlib.sha1()\n    while True:\n        raw = from_obj.read(chunksize)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "63d4245dd9f6db20:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/utils/exim.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 44,
+            "startColumn" : 23,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 42,
+            "endLine" : 46,
+            "snippet" : {
+              "text" : "    def __init__(self, key, exporter, mtime=None):\n        self.exporter, self.key = exporter, key\n        self.hasher = hashlib.sha1()\n        self.start_pos = exporter.f.tell()\n        self._discard = False\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "30e18a6940d9018f:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/utils/exim.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 229,
+            "startColumn" : 23,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 227,
+            "endLine" : 231,
+            "snippet" : {
+              "text" : "        self.start = f.tell()\n        self.end = self.start + size\n        self.hasher = hashlib.sha1()\n        self.importer = importer\n        self.check_hash = True\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8c3c28fc2b211ce3:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "imgsrc/generate.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 42,
+            "startColumn" : 32,
+            "endColumn" : 44
+          },
+          "contextRegion" : {
+            "startLine" : 40,
+            "endLine" : 44,
+            "snippet" : {
+              "text" : "        if only and name not in only:\n            continue\n        src_hashes[name] = h = hashlib.sha1(open(src, 'rb').read()).hexdigest()\n        if not only and h == hashes.get(name):\n            continue\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bd1616f497f0bfe2:1",
+        "primaryLocationStartColumnFingerprint" : "23"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/ebooks/metadata/sources/google.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 17
+          },
+          "region" : {
+            "startLine" : 327,
+            "startColumn" : 24,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 325,
+            "endLine" : 329,
+            "snippet" : {
+              "text" : "                cdata = br.open_novisit(url, timeout=timeout).read()\n                if cdata:\n                    if hashlib.md5(cdata).hexdigest() in self.DUMMY_IMAGE_MD5:\n                        log.warning('Google returned a dummy image, ignoring')\n                    else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "70a1d2a4e83f10f4:1",
+        "primaryLocationStartColumnFingerprint" : "3"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/tests/http.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 326,
+            "startColumn" : 36,
+            "endColumn" : 48
+          },
+          "contextRegion" : {
+            "startLine" : 324,
+            "endLine" : 328,
+            "snippet" : {
+              "text" : "            self.ae(r.status, http_client.OK), self.ae(r.read(), b'an_etagged_path')\n            etag = r.getheader('ETag')\n            self.ae(etag, '\"%s\"' % hashlib.sha1(b'an_etagged_path').hexdigest())\n            conn.request('GET', '/an_etagged_path', headers={'If-None-Match':etag})\n            r = conn.getresponse()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "513191ab86e4cc3b:1",
+        "primaryLocationStartColumnFingerprint" : "23"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/tests/http.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 423,
+            "startColumn" : 25,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 421,
+            "endLine" : 425,
+            "snippet" : {
+              "text" : "                rdata = r.read()\n                self.ae(len(data), len(rdata))\n                self.ae(hashlib.sha1(data).hexdigest(), hashlib.sha1(rdata).hexdigest())\n                self.ae(data, rdata)\n                time_taken = monotonic() - start_time\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "efd7492584a8cb46:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/tests/http.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 423,
+            "startColumn" : 57,
+            "endColumn" : 69
+          },
+          "contextRegion" : {
+            "startLine" : 421,
+            "endLine" : 425,
+            "snippet" : {
+              "text" : "                rdata = r.read()\n                self.ae(len(data), len(rdata))\n                self.ae(hashlib.sha1(data).hexdigest(), hashlib.sha1(rdata).hexdigest())\n                self.ae(data, rdata)\n                time_taken = monotonic() - start_time\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "efd7492584a8cb46:1",
+        "primaryLocationStartColumnFingerprint" : "40"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/http_response.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 256,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 254,
+            "endLine" : 258,
+            "snippet" : {
+              "text" : "\n    def filesystem_file_with_custom_etag(self, output, *etag_parts):\n        etag = hashlib.sha1()\n        for i in etag_parts:\n            etag.update(str(i).encode('utf-8'))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e54c1d6d44091f42:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/http_response.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 325,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 323,
+            "endLine" : 327,
+            "snippet" : {
+              "text" : "        if not isinstance(oname, string_or_bytes):\n            oname = str(oname)\n        etag = hashlib.sha1((str(stat_result.st_mtime) + force_unicode(oname)).encode('utf-8')).hexdigest()\n    else:\n        output = output.output\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "89cafffd48788d31:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/http_response.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 372,
+            "startColumn" : 30,
+            "endColumn" : 42
+          },
+          "contextRegion" : {
+            "startLine" : 370,
+            "endLine" : 374,
+            "snippet" : {
+              "text" : "            data = data.encode('utf-8')\n        self.data = data\n        self.etag = '\"%s\"' % hashlib.sha1(data).hexdigest()\n        self.content_length = len(data)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1faa0bd88d0cdd83:1",
+        "primaryLocationStartColumnFingerprint" : "21"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/hyphenation.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 97,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 95,
+            "endLine" : 99,
+            "snippet" : {
+              "text" : "            process_dictionaries(src, output_dir)\n            dics = sorted(x for x in os.listdir(output_dir) if x.endswith('.dic'))\n            m = hashlib.sha1()\n            for dic in dics:\n                with open(os.path.join(output_dir, dic), 'rb') as f:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "de052a843e0a6127:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/linux-installer.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 277,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 275,
+            "endLine" : 279,
+            "snippet" : {
+              "text" : "    if not os.path.exists(dest):\n        return None\n    m = hashlib.sha512()\n    with open(dest, 'rb') as f:\n        raw = f.read()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f5e0b3a41d7f6df1:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/live.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 282,
+            "startColumn" : 17,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 280,
+            "endLine" : 284,
+            "snippet" : {
+              "text" : "            self.fetch_counter += 1\n            data = self.live_data\n            q = hashlib.md5(data).hexdigest()\n            if etag and q == etag:\n                return None, None\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bee84c713189c92b:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/utils/localization.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 23
+          },
+          "region" : {
+            "startLine" : 165,
+            "startColumn" : 19,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 163,
+            "endLine" : 167,
+            "snippet" : {
+              "text" : "            traceback.print_exc()\n            import hashlib\n            sig = hashlib.sha1(data).hexdigest()\n            raise ValueError('Failed to load translations for: {} (size: {} and signature: {}) with error: {}'.format(\n                path, len(data), sig, e))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fe49b0753a05d54b:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/mathjax.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 24
+          },
+          "region" : {
+            "startLine" : 9,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 7,
+            "endLine" : 11,
+            "snippet" : {
+              "text" : "\nimport os, json\nfrom hashlib import sha1\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e2479d86c185cc60:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/opds.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 25
+          },
+          "region" : {
+            "startLine" : 100,
+            "startColumn" : 35,
+            "endColumn" : 47
+          },
+          "contextRegion" : {
+            "startLine" : 98,
+            "endLine" : 102,
+            "snippet" : {
+              "text" : "def NAVCATALOG_ENTRY(url_for, updated, title, description, query):\n    href = url_for('/opds/navcatalog', which=as_hex_unicode(query))\n    id_ = 'calibre-navcatalog:' + hashlib.sha1(as_bytes(href)).hexdigest()\n    return E.entry(\n        TITLE(title),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8d182c84aae8c694:1",
+        "primaryLocationStartColumnFingerprint" : "30"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/ebooks/pdf/render/serialize.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 26
+          },
+          "region" : {
+            "startLine" : 206,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 204,
+            "endLine" : 208,
+            "snippet" : {
+              "text" : "        self.f = f\n        self.tell = f.tell\n        self.hashobj = hashlib.sha256()\n        self.last_char = b''\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "768dad5f653532d0:1",
+        "primaryLocationStartColumnFingerprint" : "15"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/utils/smtplib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 595,
+            "startColumn" : 37,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 593,
+            "endLine" : 597,
+            "snippet" : {
+              "text" : "            if isinstance(password, str):  # Added by Kovid, see http://bugs.python.org/issue5285\n                password = password.encode('utf-8')\n            response = user + \" \" + hmac.HMAC(password, challenge).hexdigest()\n            return encode_base64(response, eol=\"\")\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "73102321db9b81b0:1",
+        "primaryLocationStartColumnFingerprint" : "24"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/translations.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 435,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 433,
+            "endLine" : 437,
+            "snippet" : {
+              "text" : "        with open(f, 'rb') as s:\n            data = s.read()\n        h = hashlib.sha1(data)\n        h.update(keyfunc(f).encode('utf-8'))\n        return data, h\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c82607ca0ab107be:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/gui2/viewer/ui.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 29
+          },
+          "region" : {
+            "startLine" : 10,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 8,
+            "endLine" : 12,
+            "snippet" : {
+              "text" : "import time\nfrom collections import defaultdict, namedtuple\nfrom hashlib import sha256\nfrom qt.core import (\n    QApplication, QCursor, QDockWidget, QEvent, QMainWindow, QMenu, QMimeData,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "620e4f178c5d198f:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/ebooks/metadata/sources/update.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 30
+          },
+          "region" : {
+            "startLine" : 116,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 114,
+            "endLine" : 118,
+            "snippet" : {
+              "text" : "def update_plugin(name, updated, expected_hash):\n    raw = get_https_resource_securely('https://code.calibre-ebook.com/metadata-sources/' + name)\n    h = hashlib.sha1(raw).hexdigest()\n    if h != expected_hash:\n        raise ValueError('Actual hash did not match expected hash, probably an update occurred while downloading')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2aa104554ec62b8:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/upload.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 31
+          },
+          "region" : {
+            "startLine" : 60,
+            "startColumn" : 27,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 58,
+            "endLine" : 62,
+            "snippet" : {
+              "text" : "            with open(installer, 'rb') as f:\n                raw = f.read()\n            fingerprint = hashlib.sha512(raw).hexdigest()\n            sha512 = os.path.join(tdir, os.path.basename(installer + '.sha512'))\n            with open(sha512, 'w') as f:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a6c79936ac8e7296:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/web_socket.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 32
+          },
+          "region" : {
+            "startLine" : 10,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 8,
+            "endLine" : 12,
+            "snippet" : {
+              "text" : "from calibre_extensions.speedup import utf8_decode, websocket_mask as fast_mask\nfrom collections import deque\nfrom hashlib import sha1\nfrom struct import error as struct_error, pack, unpack_from\nfrom threading import Lock\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "eb52151016171fe5:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/tests/web_sockets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 33
+          },
+          "region" : {
+            "startLine" : 8,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 6,
+            "endLine" : 10,
+            "snippet" : {
+              "text" : "from collections import deque, namedtuple\nfrom functools import partial\nfrom hashlib import sha1\n\nfrom calibre.srv.tests.base import BaseTest, TestServer\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a34de1718068123e:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/wincross.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 161,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 159,
+            "endLine" : 163,
+            "snippet" : {
+              "text" : "def download_item(dest_dir: str, file: File):\n    dest = os.path.join(dest_dir, file.filename)\n    m = hashlib.sha256()\n    with urlopen(file.url) as src, open(dest, 'wb') as d:\n        with memoryview(bytearray(shutil.COPY_BUFSIZE)) as buf:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "66dc2afa81a7c038:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/__init__.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 83,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 81,
+            "endLine" : 85,
+            "snippet" : {
+              "text" : "    if not curl_supports_etags():\n        return subprocess.check_output(['curl', '-fsSL', url])\n    url_hash = hashlib.sha1(url.encode('utf-8')).hexdigest()\n    cache_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.cache', 'download', url_hash)\n    os.makedirs(cache_dir, exist_ok=True)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e8171cb8b9464ddc:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/library/add_to_library.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 9,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 7,
+            "endLine" : 11,
+            "snippet" : {
+              "text" : "\nimport os\nfrom hashlib import sha1\n\nfrom calibre.ebooks import BOOK_EXTENSIONS\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9b10f20d9b091428:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/auth.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 9,
+            "startColumn" : 21,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 7,
+            "endLine" : 11,
+            "snippet" : {
+              "text" : "import os, random, struct\nfrom collections import OrderedDict\nfrom hashlib import md5, sha256\nfrom itertools import permutations\nfrom threading import Lock\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a0b9bc40bda5b881:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/auth.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 9,
+            "startColumn" : 26,
+            "endColumn" : 32
+          },
+          "contextRegion" : {
+            "startLine" : 7,
+            "endLine" : 11,
+            "snippet" : {
+              "text" : "import os, random, struct\nfrom collections import OrderedDict\nfrom hashlib import md5, sha256\nfrom itertools import permutations\nfrom threading import Lock\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a0b9bc40bda5b881:1",
+        "primaryLocationStartColumnFingerprint" : "25"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/db/backend.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 1618,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 1616,
+            "endLine" : 1620,
+            "snippet" : {
+              "text" : "        if path is None:\n            raise NoSuchFormat('Record %d has no fmt: %s'%(book_id, fmt))\n        sha = hashlib.sha256()\n        with open(path, 'rb') as f:\n            while True:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1583282e2f92bf7c:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/books.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 11,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 9,
+            "endLine" : 13,
+            "snippet" : {
+              "text" : "import time\nfrom functools import partial\nfrom hashlib import sha1\nfrom threading import Lock, RLock\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "849642376bb36dc1:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/db/cache.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 559,
+            "startColumn" : 21,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 557,
+            "endLine" : 561,
+            "snippet" : {
+              "text" : "            with self.read_lock, open(path, 'rb') as src, PersistentTemporaryFile(suffix=f'.{fmt.lower()}') as pt:\n                sz = 0\n                h = hashlib.sha1()\n                while True:\n                    chunk = src.read(DEFAULT_BUFFER_SIZE)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7c810b2d9a5352b5:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/check.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 64,
+            "startColumn" : 41,
+            "endColumn" : 53
+          },
+          "contextRegion" : {
+            "startLine" : 62,
+            "endLine" : 66,
+            "snippet" : {
+              "text" : "            return self.fhash_cache[f]\n        except KeyError:\n            self.fhash_cache[f] = ans = hashlib.sha1(self.read_file(f)).hexdigest()\n            return ans\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "eb4dde93281c01b5:1",
+        "primaryLocationStartColumnFingerprint" : "28"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/code.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 438,
+            "startColumn" : 12,
+            "endColumn" : 24
+          },
+          "contextRegion" : {
+            "startLine" : 436,
+            "endLine" : 440,
+            "snippet" : {
+              "text" : "    vl = rd.query.get('vl') or ''\n    etag = json_dumps([db.last_modified().isoformat(), rd.username, library_id, vl, list(opts)])\n    etag = hashlib.sha1(etag).hexdigest()\n\n    def generate():\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "49cb480a93f56489:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/db/fts/connect.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 129,
+            "startColumn" : 25,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 127,
+            "endLine" : 131,
+            "snippet" : {
+              "text" : "        text_hash = ''\n        if text:\n            text_hash = hashlib.sha1(text.encode('utf-8')).hexdigest()\n            for x in conn.get('SELECT id FROM fts_db.books_text WHERE book=? AND format=? AND text_hash=?', (book_id, fmt, text_hash)):\n                text = ''\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7ce5554ba349e212:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/ebooks/oeb/polish/container.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 9
+          },
+          "region" : {
+            "startLine" : 1300,
+            "startColumn" : 24,
+            "endColumn" : 36
+          },
+          "contextRegion" : {
+            "startLine" : 1298,
+            "endLine" : 1302,
+            "snippet" : {
+              "text" : "            idpf_key = raw_unique_identifier\n            idpf_key = re.sub('[\\u0020\\u0009\\u000d\\u000a]', '', idpf_key)\n            idpf_key = hashlib.sha1(idpf_key.encode('utf-8')).digest()\n        return package_id, raw_unique_identifier, idpf_key\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "71d33a33ae40ae7:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/gui2/viewer/convert_book.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 10
+          },
+          "region" : {
+            "startLine" : 10,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 8,
+            "endLine" : 12,
+            "snippet" : {
+              "text" : "import tempfile\nimport time\nfrom hashlib import sha1\nfrom itertools import count\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6cfae3694495d5b7:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/library/database2.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 11
+          },
+          "region" : {
+            "startLine" : 1331,
+            "startColumn" : 15,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 1329,
+            "endLine" : 1333,
+            "snippet" : {
+              "text" : "        if path is None:\n            raise NoSuchFormat('Record %d has no fmt: %s'%(id_, fmt))\n        sha = hashlib.sha256()\n        with open(path, 'rb') as f:\n            while True:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1583282e2f92bf7c:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/devices/smart_device_app/driver.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 12
+          },
+          "region" : {
+            "startLine" : 1043,
+            "startColumn" : 26,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 1041,
+            "endLine" : 1045,
+            "snippet" : {
+              "text" : "            if password:\n                challenge = isoformat(now())\n                hasher = hashlib.sha1()\n                hasher.update(password.encode('UTF-8'))\n                hasher.update(challenge.encode('UTF-8'))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5140a611b9194c0b:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/devices/kindle/driver.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 13
+          },
+          "region" : {
+            "startLine" : 462,
+            "startColumn" : 21,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 460,
+            "endLine" : 464,
+            "snippet" : {
+              "text" : "            for book in bl:\n                path = '/mnt/us/'+book.lpath\n                h = hashlib.sha1(as_bytes(path)).hexdigest()\n                if h in path_map:\n                    book.device_collections = list(sorted(path_map[h]))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2cb3d371a87292ec:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/ebooks/conversion/plugins/epub_input.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 14
+          },
+          "region" : {
+            "startLine" : 46,
+            "startColumn" : 24,
+            "endColumn" : 36
+          },
+          "contextRegion" : {
+            "startLine" : 44,
+            "endLine" : 48,
+            "snippet" : {
+              "text" : "        if idpf_key:\n            idpf_key = re.sub('[\\u0020\\u0009\\u000d\\u000a]', '', idpf_key)\n            idpf_key = hashlib.sha1(idpf_key.encode('utf-8')).digest()\n        key = None\n        for item in opf.identifier_iter():\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "3bbed5cd8f67cb83:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/utils/exim.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 30,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 28,
+            "endLine" : 32,
+            "snippet" : {
+              "text" : "\ndef send_file(from_obj, to_obj, chunksize=1<<20):\n    m = hashlib.sha1()\n    while True:\n        raw = from_obj.read(chunksize)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "63d4245dd9f6db20:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/utils/exim.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 44,
+            "startColumn" : 23,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 42,
+            "endLine" : 46,
+            "snippet" : {
+              "text" : "    def __init__(self, key, exporter, mtime=None):\n        self.exporter, self.key = exporter, key\n        self.hasher = hashlib.sha1()\n        self.start_pos = exporter.f.tell()\n        self._discard = False\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "30e18a6940d9018f:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/utils/exim.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 15
+          },
+          "region" : {
+            "startLine" : 229,
+            "startColumn" : 23,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 227,
+            "endLine" : 231,
+            "snippet" : {
+              "text" : "        self.start = f.tell()\n        self.end = self.start + size\n        self.hasher = hashlib.sha1()\n        self.importer = importer\n        self.check_hash = True\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8c3c28fc2b211ce3:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "imgsrc/generate.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 16
+          },
+          "region" : {
+            "startLine" : 42,
+            "startColumn" : 32,
+            "endColumn" : 44
+          },
+          "contextRegion" : {
+            "startLine" : 40,
+            "endLine" : 44,
+            "snippet" : {
+              "text" : "        if only and name not in only:\n            continue\n        src_hashes[name] = h = hashlib.sha1(open(src, 'rb').read()).hexdigest()\n        if not only and h == hashes.get(name):\n            continue\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bd1616f497f0bfe2:1",
+        "primaryLocationStartColumnFingerprint" : "23"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/ebooks/metadata/sources/google.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 17
+          },
+          "region" : {
+            "startLine" : 327,
+            "startColumn" : 24,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 325,
+            "endLine" : 329,
+            "snippet" : {
+              "text" : "                cdata = br.open_novisit(url, timeout=timeout).read()\n                if cdata:\n                    if hashlib.md5(cdata).hexdigest() in self.DUMMY_IMAGE_MD5:\n                        log.warning('Google returned a dummy image, ignoring')\n                    else:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "70a1d2a4e83f10f4:1",
+        "primaryLocationStartColumnFingerprint" : "3"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/tests/http.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 326,
+            "startColumn" : 36,
+            "endColumn" : 48
+          },
+          "contextRegion" : {
+            "startLine" : 324,
+            "endLine" : 328,
+            "snippet" : {
+              "text" : "            self.ae(r.status, http_client.OK), self.ae(r.read(), b'an_etagged_path')\n            etag = r.getheader('ETag')\n            self.ae(etag, '\"%s\"' % hashlib.sha1(b'an_etagged_path').hexdigest())\n            conn.request('GET', '/an_etagged_path', headers={'If-None-Match':etag})\n            r = conn.getresponse()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "513191ab86e4cc3b:1",
+        "primaryLocationStartColumnFingerprint" : "23"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/tests/http.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 423,
+            "startColumn" : 25,
+            "endColumn" : 37
+          },
+          "contextRegion" : {
+            "startLine" : 421,
+            "endLine" : 425,
+            "snippet" : {
+              "text" : "                rdata = r.read()\n                self.ae(len(data), len(rdata))\n                self.ae(hashlib.sha1(data).hexdigest(), hashlib.sha1(rdata).hexdigest())\n                self.ae(data, rdata)\n                time_taken = monotonic() - start_time\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "efd7492584a8cb46:1",
+        "primaryLocationStartColumnFingerprint" : "8"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/tests/http.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 18
+          },
+          "region" : {
+            "startLine" : 423,
+            "startColumn" : 57,
+            "endColumn" : 69
+          },
+          "contextRegion" : {
+            "startLine" : 421,
+            "endLine" : 425,
+            "snippet" : {
+              "text" : "                rdata = r.read()\n                self.ae(len(data), len(rdata))\n                self.ae(hashlib.sha1(data).hexdigest(), hashlib.sha1(rdata).hexdigest())\n                self.ae(data, rdata)\n                time_taken = monotonic() - start_time\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "efd7492584a8cb46:1",
+        "primaryLocationStartColumnFingerprint" : "40"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/http_response.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 256,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 254,
+            "endLine" : 258,
+            "snippet" : {
+              "text" : "\n    def filesystem_file_with_custom_etag(self, output, *etag_parts):\n        etag = hashlib.sha1()\n        for i in etag_parts:\n            etag.update(str(i).encode('utf-8'))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e54c1d6d44091f42:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/http_response.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 325,
+            "startColumn" : 16,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 323,
+            "endLine" : 327,
+            "snippet" : {
+              "text" : "        if not isinstance(oname, string_or_bytes):\n            oname = str(oname)\n        etag = hashlib.sha1((str(stat_result.st_mtime) + force_unicode(oname)).encode('utf-8')).hexdigest()\n    else:\n        output = output.output\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "89cafffd48788d31:1",
+        "primaryLocationStartColumnFingerprint" : "7"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/http_response.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 19
+          },
+          "region" : {
+            "startLine" : 372,
+            "startColumn" : 30,
+            "endColumn" : 42
+          },
+          "contextRegion" : {
+            "startLine" : 370,
+            "endLine" : 374,
+            "snippet" : {
+              "text" : "            data = data.encode('utf-8')\n        self.data = data\n        self.etag = '\"%s\"' % hashlib.sha1(data).hexdigest()\n        self.content_length = len(data)\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1faa0bd88d0cdd83:1",
+        "primaryLocationStartColumnFingerprint" : "21"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/hyphenation.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 20
+          },
+          "region" : {
+            "startLine" : 97,
+            "startColumn" : 17,
+            "endColumn" : 29
+          },
+          "contextRegion" : {
+            "startLine" : 95,
+            "endLine" : 99,
+            "snippet" : {
+              "text" : "            process_dictionaries(src, output_dir)\n            dics = sorted(x for x in os.listdir(output_dir) if x.endswith('.dic'))\n            m = hashlib.sha1()\n            for dic in dics:\n                with open(os.path.join(output_dir, dic), 'rb') as f:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "de052a843e0a6127:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/linux-installer.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 21
+          },
+          "region" : {
+            "startLine" : 277,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 275,
+            "endLine" : 279,
+            "snippet" : {
+              "text" : "    if not os.path.exists(dest):\n        return None\n    m = hashlib.sha512()\n    with open(dest, 'rb') as f:\n        raw = f.read()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "f5e0b3a41d7f6df1:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/live.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 22
+          },
+          "region" : {
+            "startLine" : 282,
+            "startColumn" : 17,
+            "endColumn" : 28
+          },
+          "contextRegion" : {
+            "startLine" : 280,
+            "endLine" : 284,
+            "snippet" : {
+              "text" : "            self.fetch_counter += 1\n            data = self.live_data\n            q = hashlib.md5(data).hexdigest()\n            if etag and q == etag:\n                return None, None\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bee84c713189c92b:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/utils/localization.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 23
+          },
+          "region" : {
+            "startLine" : 165,
+            "startColumn" : 19,
+            "endColumn" : 31
+          },
+          "contextRegion" : {
+            "startLine" : 163,
+            "endLine" : 167,
+            "snippet" : {
+              "text" : "            traceback.print_exc()\n            import hashlib\n            sig = hashlib.sha1(data).hexdigest()\n            raise ValueError('Failed to load translations for: {} (size: {} and signature: {}) with error: {}'.format(\n                path, len(data), sig, e))\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fe49b0753a05d54b:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/mathjax.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 24
+          },
+          "region" : {
+            "startLine" : 9,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 7,
+            "endLine" : 11,
+            "snippet" : {
+              "text" : "\nimport os, json\nfrom hashlib import sha1\n\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e2479d86c185cc60:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/opds.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 25
+          },
+          "region" : {
+            "startLine" : 100,
+            "startColumn" : 35,
+            "endColumn" : 47
+          },
+          "contextRegion" : {
+            "startLine" : 98,
+            "endLine" : 102,
+            "snippet" : {
+              "text" : "def NAVCATALOG_ENTRY(url_for, updated, title, description, query):\n    href = url_for('/opds/navcatalog', which=as_hex_unicode(query))\n    id_ = 'calibre-navcatalog:' + hashlib.sha1(as_bytes(href)).hexdigest()\n    return E.entry(\n        TITLE(title),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8d182c84aae8c694:1",
+        "primaryLocationStartColumnFingerprint" : "30"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/ebooks/pdf/render/serialize.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 26
+          },
+          "region" : {
+            "startLine" : 206,
+            "startColumn" : 24,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 204,
+            "endLine" : 208,
+            "snippet" : {
+              "text" : "        self.f = f\n        self.tell = f.tell\n        self.hashobj = hashlib.sha256()\n        self.last_char = b''\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "768dad5f653532d0:1",
+        "primaryLocationStartColumnFingerprint" : "15"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm MD5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/utils/smtplib.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 27
+          },
+          "region" : {
+            "startLine" : 595,
+            "startColumn" : 37,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 593,
+            "endLine" : 597,
+            "snippet" : {
+              "text" : "            if isinstance(password, str):  # Added by Kovid, see http://bugs.python.org/issue5285\n                password = password.encode('utf-8')\n            response = user + \" \" + hmac.HMAC(password, challenge).hexdigest()\n            return encode_base64(response, eol=\"\")\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "73102321db9b81b0:1",
+        "primaryLocationStartColumnFingerprint" : "24"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/translations.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 28
+          },
+          "region" : {
+            "startLine" : 435,
+            "startColumn" : 13,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 433,
+            "endLine" : 437,
+            "snippet" : {
+              "text" : "        with open(f, 'rb') as s:\n            data = s.read()\n        h = hashlib.sha1(data)\n        h.update(keyfunc(f).encode('utf-8'))\n        return data, h\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c82607ca0ab107be:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/gui2/viewer/ui.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 29
+          },
+          "region" : {
+            "startLine" : 10,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 8,
+            "endLine" : 12,
+            "snippet" : {
+              "text" : "import time\nfrom collections import defaultdict, namedtuple\nfrom hashlib import sha256\nfrom qt.core import (\n    QApplication, QCursor, QDockWidget, QEvent, QMainWindow, QMenu, QMimeData,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "620e4f178c5d198f:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/ebooks/metadata/sources/update.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 30
+          },
+          "region" : {
+            "startLine" : 116,
+            "startColumn" : 9,
+            "endColumn" : 21
+          },
+          "contextRegion" : {
+            "startLine" : 114,
+            "endLine" : 118,
+            "snippet" : {
+              "text" : "def update_plugin(name, updated, expected_hash):\n    raw = get_https_resource_securely('https://code.calibre-ebook.com/metadata-sources/' + name)\n    h = hashlib.sha1(raw).hexdigest()\n    if h != expected_hash:\n        raise ValueError('Actual hash did not match expected hash, probably an update occurred while downloading')\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2aa104554ec62b8:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA512"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/upload.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 31
+          },
+          "region" : {
+            "startLine" : 60,
+            "startColumn" : 27,
+            "endColumn" : 41
+          },
+          "contextRegion" : {
+            "startLine" : 58,
+            "endLine" : 62,
+            "snippet" : {
+              "text" : "            with open(installer, 'rb') as f:\n                raw = f.read()\n            fingerprint = hashlib.sha512(raw).hexdigest()\n            sha512 = os.path.join(tdir, os.path.basename(installer + '.sha512'))\n            with open(sha512, 'w') as f:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a6c79936ac8e7296:1",
+        "primaryLocationStartColumnFingerprint" : "14"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/web_socket.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 32
+          },
+          "region" : {
+            "startLine" : 10,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 8,
+            "endLine" : 12,
+            "snippet" : {
+              "text" : "from calibre_extensions.speedup import utf8_decode, websocket_mask as fast_mask\nfrom collections import deque\nfrom hashlib import sha1\nfrom struct import error as struct_error, pack, unpack_from\nfrom threading import Lock\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "eb52151016171fe5:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/calibre/srv/tests/web_sockets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 33
+          },
+          "region" : {
+            "startLine" : 8,
+            "startColumn" : 21,
+            "endColumn" : 25
+          },
+          "contextRegion" : {
+            "startLine" : 6,
+            "endLine" : 10,
+            "snippet" : {
+              "text" : "from collections import deque, namedtuple\nfrom functools import partial\nfrom hashlib import sha1\n\nfrom calibre.srv.tests.base import BaseTest, TestServer\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "a34de1718068123e:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "setup/wincross.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 34
+          },
+          "region" : {
+            "startLine" : 161,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 159,
+            "endLine" : 163,
+            "snippet" : {
+              "text" : "def download_item(dest_dir: str, file: File):\n    dest = os.path.join(dest_dir, file.filename)\n    m = hashlib.sha256()\n    with urlopen(file.url) as src, open(dest, 'wb') as d:\n        with memoryview(bytearray(shutil.COPY_BUFSIZE)) as buf:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "66dc2afa81a7c038:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    } ],
+    "automationDetails" : {
+      "id" : "CBOM:kovidgoyal/calibre/python/"
+    },
+    "columnKind" : "unicodeCodePoints",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}

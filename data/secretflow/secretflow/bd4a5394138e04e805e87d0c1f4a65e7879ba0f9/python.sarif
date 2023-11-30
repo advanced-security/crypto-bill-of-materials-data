@@ -1,0 +1,2772 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.15.3",
+        "notifications" : [ {
+          "id" : "py/baseline/expected-extracted-files",
+          "name" : "py/baseline/expected-extracted-files",
+          "shortDescription" : {
+            "text" : "Expected extracted files"
+          },
+          "fullDescription" : {
+            "text" : "Files appearing in the source archive that are expected to be extracted."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true
+          },
+          "properties" : {
+            "tags" : [ "expected-extracted-files", "telemetry" ]
+          }
+        } ],
+        "rules" : [ {
+          "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "name" : "py/quantum-readiness/cbom/unkown-iv-sources",
+          "shortDescription" : {
+            "text" : "Unknown Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potentially unknown sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+            "kind" : "problem",
+            "name" : "Unknown Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+          "shortDescription" : {
+            "text" : "All Cryptographic Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic algorithms usage using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+            "kind" : "problem",
+            "name" : "All Cryptographic Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Symmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with symmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with symmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/symmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Symmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/iv-sources",
+          "name" : "py/quantum-readiness/cbom/iv-sources",
+          "shortDescription" : {
+            "text" : "Initialization Vector (IV) or nonces"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential sources for initialization vectors (IV) or nonce used in block ciphers while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/iv-sources",
+            "kind" : "problem",
+            "name" : "Initialization Vector (IV) or nonces",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+          "shortDescription" : {
+            "text" : "All Asymmetric Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "description" : "Finds all potential usage of asymmeric keys (RSA & ECC) using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+            "kind" : "problem",
+            "name" : "All Asymmetric Algorithms",
+            "preci" : "cbom\n       cryptography",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-exchange",
+          "name" : "py/quantum-readiness/cbom/key-exchange",
+          "shortDescription" : {
+            "text" : "Key Exchange Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-exchange",
+            "kind" : "problem",
+            "name" : "Key Exchange Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/hash-algorithms",
+          "name" : "py/quantum-readiness/cbom/hash-algorithms",
+          "shortDescription" : {
+            "text" : "Hash Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of cryptographic hash algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/hash-algorithms",
+            "kind" : "problem",
+            "name" : "Hash Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Symmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of symmetric encryption algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Symmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "name" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+          "shortDescription" : {
+            "text" : "Known asymmetric key source generation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all known potential sources for asymmetric key generation while using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all known potential sources for asymmetric key generation while using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+            "kind" : "problem",
+            "name" : "Known asymmetric key source generation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "name" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+          "shortDescription" : {
+            "text" : "Asymmetric Padding Schemes"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of padding schemes used with asymmeric algorithms."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of padding schemes used with asymmeric algorithms.",
+            "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+            "kind" : "problem",
+            "name" : "Asymmetric Padding Schemes",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/key-derivation",
+          "name" : "py/quantum-readiness/cbom/key-derivation",
+          "shortDescription" : {
+            "text" : "Key Derivation Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of key derivation using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of key derivation using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/key-derivation",
+            "kind" : "problem",
+            "name" : "Key Derivation Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/signing-algorithms",
+          "name" : "py/quantum-readiness/cbom/signing-algorithms",
+          "shortDescription" : {
+            "text" : "Signing Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of signing algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of signing algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/signing-algorithms",
+            "kind" : "problem",
+            "name" : "Signing Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Authenticated Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of authenticated encryption schemes using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of authenticated encryption schemes using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Authenticated Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "name" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+          "shortDescription" : {
+            "text" : "Asymmetric Encryption Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of asymmeric keys for encryption or key exchange using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+            "kind" : "problem",
+            "name" : "Asymmetric Encryption Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "name" : "py/quantum-readiness/cbom/block-cipher-mode",
+          "shortDescription" : {
+            "text" : "Block cipher mode of operation"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential block cipher modes of operations using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential block cipher modes of operations using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+            "kind" : "problem",
+            "name" : "Block cipher mode of operation",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        }, {
+          "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "name" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+          "shortDescription" : {
+            "text" : "Elliptic Curve Algorithms"
+          },
+          "fullDescription" : {
+            "text" : "Finds all potential usage of elliptic curve algorithms using the supported libraries."
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "cbom", "cryptography" ],
+            "description" : "Finds all potential usage of elliptic curve algorithms using the supported libraries.",
+            "id" : "py/quantum-readiness/cbom/elliptic-curve-algorithms",
+            "kind" : "problem",
+            "name" : "Elliptic Curve Algorithms",
+            "precision" : "high",
+            "problem.severity" : "error"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql/python-queries",
+        "semanticVersion" : "0.9.3+ff65ffafb003e86bd4c18f2c031f5faaf6f1038b",
+        "locations" : [ {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/",
+          "description" : {
+            "text" : "The QL pack root directory."
+          }
+        }, {
+          "uri" : "file:///opt/hostedtoolcache/CodeQL/2.15.3/x64/codeql/qlpacks/codeql/python-queries/0.9.3/qlpack.yml",
+          "description" : {
+            "text" : "The QL pack definition file."
+          }
+        } ]
+      } ]
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "secretflow/device/kernels/pyu.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "secretflow/device/device/teeu.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/utils/auth_manager.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    }, {
+      "location" : {
+        "uri" : "secretflow/utils/simulation/datasets.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 3
+      }
+    }, {
+      "location" : {
+        "uri" : "secretflow/security/diffie_hellman.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 4
+      }
+    }, {
+      "location" : {
+        "uri" : "secretflow/utils/hash.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 5
+      }
+    }, {
+      "location" : {
+        "uri" : "tests/device/test_teeu.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 6
+      }
+    }, {
+      "location" : {
+        "uri" : "docker/tee/teeu/tls_cert.py",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 7
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/kernels/pyu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 179,
+            "startColumn" : 65,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 177,
+            "endLine" : 181,
+            "snippet" : {
+              "text" : "        )\n\n        from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n        aesgcm = AESGCM(data_key)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d7841d11591c1f2e:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 130,
+            "startColumn" : 65,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 128,
+            "endLine" : 132,
+            "snippet" : {
+              "text" : "\n        import ray.cloudpickle.cloudpickle as pickle\n        from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n        for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 211,
+            "startColumn" : 69,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 209,
+            "endLine" : 213,
+            "snippet" : {
+              "text" : "\n            import ray.cloudpickle.cloudpickle as pickle\n            from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n            for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:2",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/unkown-iv-sources",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/unkown-iv-sources",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "Block mode with unknown IV or Nonce configuration"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 285,
+            "startColumn" : 69,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 283,
+            "endLine" : 287,
+            "snippet" : {
+              "text" : "\n            import ray.cloudpickle.cloudpickle as pickle\n            from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n            for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:3",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 21,
+            "endColumn" : 45
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "class MockAuthServer(auth_manager_pb2_grpc.AuthManagerServicer):\n    def __init__(self):\n        self._key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n        self._pri_key = self._key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1d5982c515463a03:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 21,
+            "endColumn" : 83
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "class MockAuthServer(auth_manager_pb2_grpc.AuthManagerServicer):\n    def __init__(self):\n        self._key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n        self._pri_key = self._key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1d5982c515463a03:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 38,
+            "startColumn" : 44,
+            "endColumn" : 55
+          },
+          "contextRegion" : {
+            "startLine" : 36,
+            "endLine" : 40,
+            "snippet" : {
+              "text" : "            segment_data.encrypted_data_key,\n            padding.OAEP(\n                mgf=padding.MGF1(algorithm=hashes.SHA1()),\n                algorithm=hashes.SHA1(),\n                label=None,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "193fff28181a9f6b:1",
+        "primaryLocationStartColumnFingerprint" : "27"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 39,
+            "startColumn" : 27,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 37,
+            "endLine" : 41,
+            "snippet" : {
+              "text" : "            padding.OAEP(\n                mgf=padding.MGF1(algorithm=hashes.SHA1()),\n                algorithm=hashes.SHA1(),\n                label=None,\n            ),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "378596d3e2d4203b:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm OAEP"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 37,
+            "startColumn" : 13,
+            "endLine" : 41,
+            "endColumn" : 14
+          },
+          "contextRegion" : {
+            "startLine" : 35,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "        data_key = self._key.decrypt(\n            segment_data.encrypted_data_key,\n            padding.OAEP(\n                mgf=padding.MGF1(algorithm=hashes.SHA1()),\n                algorithm=hashes.SHA1(),\n                label=None,\n            ),\n        )\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "47f05d3f8f1559ef:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 6,
+            "startColumn" : 64,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 4,
+            "endLine" : 8,
+            "snippet" : {
+              "text" : "import grpc\nfrom cryptography.hazmat.primitives import hashes, serialization\nfrom cryptography.hazmat.primitives.asymmetric import padding, rsa\nfrom secretflowapis.v1 import status_pb2\nfrom secretflowapis.v1.sdc import core_pb2\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6ee77e15805a079d:1",
+        "primaryLocationStartColumnFingerprint" : "63"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/utils/simulation/datasets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 114,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 112,
+            "endLine" : 116,
+            "snippet" : {
+              "text" : "    Path(filepath).parent.mkdir(parents=True, exist_ok=True)\n    content = requests.get(url, stream=True).content\n    h = hashlib.sha256()\n    h.update(content)\n    actual_sha256 = h.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ed2069a8587c4729:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/security/diffie_hellman.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "\nimport secrets\nfrom hashlib import sha256\nfrom typing import Tuple\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5cc9c5c8aaddf7e2:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/utils/hash.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 20,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "\ndef sha256sum(filename: str):\n    h = hashlib.sha256()\n    global _BUF_SIZE\n    bs = bytearray(_BUF_SIZE)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9d04d66465bde487:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm AES\nUse of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/kernels/pyu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 179,
+            "startColumn" : 65,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 177,
+            "endLine" : 181,
+            "snippet" : {
+              "text" : "        )\n\n        from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n        aesgcm = AESGCM(data_key)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d7841d11591c1f2e:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm AES\nUse of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 130,
+            "startColumn" : 65,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 128,
+            "endLine" : 132,
+            "snippet" : {
+              "text" : "\n        import ray.cloudpickle.cloudpickle as pickle\n        from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n        for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm AES\nUse of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 211,
+            "startColumn" : 69,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 209,
+            "endLine" : 213,
+            "snippet" : {
+              "text" : "\n            import ray.cloudpickle.cloudpickle as pickle\n            from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n            for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:2",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm AES\nUse of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 285,
+            "startColumn" : 69,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 283,
+            "endLine" : 287,
+            "snippet" : {
+              "text" : "\n            import ray.cloudpickle.cloudpickle as pickle\n            from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n            for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:3",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/device/test_teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 19,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 51,
+            "endLine" : 55,
+            "snippet" : {
+              "text" : "\n        def gen_rsa(pub_path: str, pri_path: str):\n            key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n            key_contents = key.private_bytes(\n                encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8ca915c0a04a33c2:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/device/test_teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 19,
+            "endColumn" : 81
+          },
+          "contextRegion" : {
+            "startLine" : 51,
+            "endLine" : 55,
+            "snippet" : {
+              "text" : "\n        def gen_rsa(pub_path: str, pri_path: str):\n            key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n            key_contents = key.private_bytes(\n                encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8ca915c0a04a33c2:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/device/test_teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 46,
+            "startColumn" : 63,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 44,
+            "endLine" : 48,
+            "snippet" : {
+              "text" : "    elif self_party in ('alice', 'bob'):\n        from cryptography.hazmat.primitives import serialization\n        from cryptography.hazmat.primitives.asymmetric import rsa\n\n        _, private_key_path = tempfile.mkstemp()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "702878dbbcec0727:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 63,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "        from cryptography.hazmat.backends import default_backend\n        from cryptography.hazmat.primitives import hashes, serialization\n        from cryptography.hazmat.primitives.asymmetric import rsa\n        from cryptography.x509.oid import NameOID\n    except ImportError:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6d8ab75e378135d1:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 18,
+            "endLine" : 22,
+            "snippet" : {
+              "text" : "            \"install it using either pip or conda\"\n        )\n    key = rsa.generate_private_key(\n        public_exponent=65537, key_size=2048, backend=default_backend()\n    )\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "418c903d37aea692:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 11,
+            "endLine" : 22,
+            "endColumn" : 6
+          },
+          "contextRegion" : {
+            "startLine" : 18,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "            \"install it using either pip or conda\"\n        )\n    key = rsa.generate_private_key(\n        public_exponent=65537, key_size=2048, backend=default_backend()\n    )\n    key_contents = key.private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "418c903d37aea692:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+      "ruleIndex" : 1,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-cryptographic-algorithms",
+        "index" : 1
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 58,
+            "startColumn" : 20,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 56,
+            "endLine" : 60,
+            "snippet" : {
+              "text" : "        .not_valid_before(now)\n        .not_valid_after(now + datetime.timedelta(days=365))\n        .sign(key, hashes.SHA256(), default_backend())\n    )\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5461db7e274f251c:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 21,
+            "endColumn" : 45
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "class MockAuthServer(auth_manager_pb2_grpc.AuthManagerServicer):\n    def __init__(self):\n        self._key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n        self._pri_key = self._key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1d5982c515463a03:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 21,
+            "endColumn" : 83
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "class MockAuthServer(auth_manager_pb2_grpc.AuthManagerServicer):\n    def __init__(self):\n        self._key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n        self._pri_key = self._key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1d5982c515463a03:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 6,
+            "startColumn" : 64,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 4,
+            "endLine" : 8,
+            "snippet" : {
+              "text" : "import grpc\nfrom cryptography.hazmat.primitives import hashes, serialization\nfrom cryptography.hazmat.primitives.asymmetric import padding, rsa\nfrom secretflowapis.v1 import status_pb2\nfrom secretflowapis.v1.sdc import core_pb2\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6ee77e15805a079d:1",
+        "primaryLocationStartColumnFingerprint" : "63"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/device/test_teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 19,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 51,
+            "endLine" : 55,
+            "snippet" : {
+              "text" : "\n        def gen_rsa(pub_path: str, pri_path: str):\n            key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n            key_contents = key.private_bytes(\n                encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8ca915c0a04a33c2:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/device/test_teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 19,
+            "endColumn" : 81
+          },
+          "contextRegion" : {
+            "startLine" : 51,
+            "endLine" : 55,
+            "snippet" : {
+              "text" : "\n        def gen_rsa(pub_path: str, pri_path: str):\n            key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n            key_contents = key.private_bytes(\n                encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8ca915c0a04a33c2:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/device/test_teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 46,
+            "startColumn" : 63,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 44,
+            "endLine" : 48,
+            "snippet" : {
+              "text" : "    elif self_party in ('alice', 'bob'):\n        from cryptography.hazmat.primitives import serialization\n        from cryptography.hazmat.primitives.asymmetric import rsa\n\n        _, private_key_path = tempfile.mkstemp()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "702878dbbcec0727:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 63,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "        from cryptography.hazmat.backends import default_backend\n        from cryptography.hazmat.primitives import hashes, serialization\n        from cryptography.hazmat.primitives.asymmetric import rsa\n        from cryptography.x509.oid import NameOID\n    except ImportError:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6d8ab75e378135d1:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 18,
+            "endLine" : 22,
+            "snippet" : {
+              "text" : "            \"install it using either pip or conda\"\n        )\n    key = rsa.generate_private_key(\n        public_exponent=65537, key_size=2048, backend=default_backend()\n    )\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "418c903d37aea692:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+      "ruleIndex" : 4,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-algorithms",
+        "index" : 4
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 11,
+            "endLine" : 22,
+            "endColumn" : 6
+          },
+          "contextRegion" : {
+            "startLine" : 18,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "            \"install it using either pip or conda\"\n        )\n    key = rsa.generate_private_key(\n        public_exponent=65537, key_size=2048, backend=default_backend()\n    )\n    key_contents = key.private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "418c903d37aea692:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 38,
+            "startColumn" : 44,
+            "endColumn" : 55
+          },
+          "contextRegion" : {
+            "startLine" : 36,
+            "endLine" : 40,
+            "snippet" : {
+              "text" : "            segment_data.encrypted_data_key,\n            padding.OAEP(\n                mgf=padding.MGF1(algorithm=hashes.SHA1()),\n                algorithm=hashes.SHA1(),\n                label=None,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "193fff28181a9f6b:1",
+        "primaryLocationStartColumnFingerprint" : "27"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 39,
+            "startColumn" : 27,
+            "endColumn" : 38
+          },
+          "contextRegion" : {
+            "startLine" : 37,
+            "endLine" : 41,
+            "snippet" : {
+              "text" : "            padding.OAEP(\n                mgf=padding.MGF1(algorithm=hashes.SHA1()),\n                algorithm=hashes.SHA1(),\n                label=None,\n            ),\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "378596d3e2d4203b:1",
+        "primaryLocationStartColumnFingerprint" : "10"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/utils/simulation/datasets.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 114,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 112,
+            "endLine" : 116,
+            "snippet" : {
+              "text" : "    Path(filepath).parent.mkdir(parents=True, exist_ok=True)\n    content = requests.get(url, stream=True).content\n    h = hashlib.sha256()\n    h.update(content)\n    actual_sha256 = h.hexdigest()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ed2069a8587c4729:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/security/diffie_hellman.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 21,
+            "endColumn" : 27
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "\nimport secrets\nfrom hashlib import sha256\nfrom typing import Tuple\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5cc9c5c8aaddf7e2:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/utils/hash.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 22,
+            "startColumn" : 9,
+            "endColumn" : 23
+          },
+          "contextRegion" : {
+            "startLine" : 20,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "\ndef sha256sum(filename: str):\n    h = hashlib.sha256()\n    global _BUF_SIZE\n    bs = bytearray(_BUF_SIZE)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "9d04d66465bde487:1",
+        "primaryLocationStartColumnFingerprint" : "4"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/hash-algorithms",
+      "ruleIndex" : 6,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/hash-algorithms",
+        "index" : 6
+      },
+      "message" : {
+        "text" : "Use of algorithm SHA256"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 58,
+            "startColumn" : 20,
+            "endColumn" : 33
+          },
+          "contextRegion" : {
+            "startLine" : 56,
+            "endLine" : 60,
+            "snippet" : {
+              "text" : "        .not_valid_before(now)\n        .not_valid_after(now + datetime.timedelta(days=365))\n        .sign(key, hashes.SHA256(), default_backend())\n    )\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "5461db7e274f251c:1",
+        "primaryLocationStartColumnFingerprint" : "11"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/kernels/pyu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 179,
+            "startColumn" : 65,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 177,
+            "endLine" : 181,
+            "snippet" : {
+              "text" : "        )\n\n        from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n        aesgcm = AESGCM(data_key)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d7841d11591c1f2e:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 130,
+            "startColumn" : 65,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 128,
+            "endLine" : 132,
+            "snippet" : {
+              "text" : "\n        import ray.cloudpickle.cloudpickle as pickle\n        from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n        for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 211,
+            "startColumn" : 69,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 209,
+            "endLine" : 213,
+            "snippet" : {
+              "text" : "\n            import ray.cloudpickle.cloudpickle as pickle\n            from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n            for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:2",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+      "ruleIndex" : 7,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/symmetric-encryption-algorithms",
+        "index" : 7
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 285,
+            "startColumn" : 69,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 283,
+            "endLine" : 287,
+            "snippet" : {
+              "text" : "\n            import ray.cloudpickle.cloudpickle as pickle\n            from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n            for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:3",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+      "ruleIndex" : 8,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+        "index" : 8
+      },
+      "message" : {
+        "text" : "Asymmetric key generation for algorithm RSA with key config source [ControlFlowNode for IntegerLiteral](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 21,
+            "endColumn" : 83
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "class MockAuthServer(auth_manager_pb2_grpc.AuthManagerServicer):\n    def __init__(self):\n        self._key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n        self._pri_key = self._key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1d5982c515463a03:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      },
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 78,
+            "endColumn" : 82
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "class MockAuthServer(auth_manager_pb2_grpc.AuthManagerServicer):\n    def __init__(self):\n        self._key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n        self._pri_key = self._key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        },
+        "message" : {
+          "text" : "ControlFlowNode for IntegerLiteral"
+        }
+      } ]
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+      "ruleIndex" : 8,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+        "index" : 8
+      },
+      "message" : {
+        "text" : "Asymmetric key generation for algorithm RSA with key config source [ControlFlowNode for IntegerLiteral](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/device/test_teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 19,
+            "endColumn" : 81
+          },
+          "contextRegion" : {
+            "startLine" : 51,
+            "endLine" : 55,
+            "snippet" : {
+              "text" : "\n        def gen_rsa(pub_path: str, pri_path: str):\n            key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n            key_contents = key.private_bytes(\n                encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8ca915c0a04a33c2:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      },
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/device/test_teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 76,
+            "endColumn" : 80
+          },
+          "contextRegion" : {
+            "startLine" : 51,
+            "endLine" : 55,
+            "snippet" : {
+              "text" : "\n        def gen_rsa(pub_path: str, pri_path: str):\n            key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n            key_contents = key.private_bytes(\n                encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        },
+        "message" : {
+          "text" : "ControlFlowNode for IntegerLiteral"
+        }
+      } ]
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+      "ruleIndex" : 8,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-key-generation",
+        "index" : 8
+      },
+      "message" : {
+        "text" : "Asymmetric key generation for algorithm RSA with key config source [ControlFlowNode for IntegerLiteral](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 11,
+            "endLine" : 22,
+            "endColumn" : 6
+          },
+          "contextRegion" : {
+            "startLine" : 18,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "            \"install it using either pip or conda\"\n        )\n    key = rsa.generate_private_key(\n        public_exponent=65537, key_size=2048, backend=default_backend()\n    )\n    key_contents = key.private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "418c903d37aea692:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      },
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 21,
+            "startColumn" : 41,
+            "endColumn" : 45
+          },
+          "contextRegion" : {
+            "startLine" : 19,
+            "endLine" : 23,
+            "snippet" : {
+              "text" : "        )\n    key = rsa.generate_private_key(\n        public_exponent=65537, key_size=2048, backend=default_backend()\n    )\n    key_contents = key.private_bytes(\n"
+            }
+          }
+        },
+        "message" : {
+          "text" : "ControlFlowNode for IntegerLiteral"
+        }
+      } ]
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+      "ruleIndex" : 9,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/asymmetric-padding-schemes",
+        "index" : 9
+      },
+      "message" : {
+        "text" : "Use of algorithm OAEP"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 37,
+            "startColumn" : 13,
+            "endLine" : 41,
+            "endColumn" : 14
+          },
+          "contextRegion" : {
+            "startLine" : 35,
+            "endLine" : 43,
+            "snippet" : {
+              "text" : "        data_key = self._key.decrypt(\n            segment_data.encrypted_data_key,\n            padding.OAEP(\n                mgf=padding.MGF1(algorithm=hashes.SHA1()),\n                algorithm=hashes.SHA1(),\n                label=None,\n            ),\n        )\n\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "47f05d3f8f1559ef:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+      "ruleIndex" : 12,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+        "index" : 12
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/kernels/pyu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 179,
+            "startColumn" : 65,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 177,
+            "endLine" : 181,
+            "snippet" : {
+              "text" : "        )\n\n        from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n        aesgcm = AESGCM(data_key)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d7841d11591c1f2e:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+      "ruleIndex" : 12,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+        "index" : 12
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 130,
+            "startColumn" : 65,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 128,
+            "endLine" : 132,
+            "snippet" : {
+              "text" : "\n        import ray.cloudpickle.cloudpickle as pickle\n        from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n        for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+      "ruleIndex" : 12,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+        "index" : 12
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 211,
+            "startColumn" : 69,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 209,
+            "endLine" : 213,
+            "snippet" : {
+              "text" : "\n            import ray.cloudpickle.cloudpickle as pickle\n            from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n            for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:2",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+      "ruleIndex" : 12,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/authenticated-encryption-algorithms",
+        "index" : 12
+      },
+      "message" : {
+        "text" : "Use of algorithm AES"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 285,
+            "startColumn" : 69,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 283,
+            "endLine" : 287,
+            "snippet" : {
+              "text" : "\n            import ray.cloudpickle.cloudpickle as pickle\n            from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n            for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:3",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 21,
+            "endColumn" : 45
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "class MockAuthServer(auth_manager_pb2_grpc.AuthManagerServicer):\n    def __init__(self):\n        self._key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n        self._pri_key = self._key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1d5982c515463a03:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 16,
+            "startColumn" : 21,
+            "endColumn" : 83
+          },
+          "contextRegion" : {
+            "startLine" : 14,
+            "endLine" : 18,
+            "snippet" : {
+              "text" : "class MockAuthServer(auth_manager_pb2_grpc.AuthManagerServicer):\n    def __init__(self):\n        self._key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n        self._pri_key = self._key.private_bytes(\n            serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1d5982c515463a03:1",
+        "primaryLocationStartColumnFingerprint" : "12"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/utils/auth_manager.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 6,
+            "startColumn" : 64,
+            "endColumn" : 67
+          },
+          "contextRegion" : {
+            "startLine" : 4,
+            "endLine" : 8,
+            "snippet" : {
+              "text" : "import grpc\nfrom cryptography.hazmat.primitives import hashes, serialization\nfrom cryptography.hazmat.primitives.asymmetric import padding, rsa\nfrom secretflowapis.v1 import status_pb2\nfrom secretflowapis.v1.sdc import core_pb2\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6ee77e15805a079d:1",
+        "primaryLocationStartColumnFingerprint" : "63"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/device/test_teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 19,
+            "endColumn" : 43
+          },
+          "contextRegion" : {
+            "startLine" : 51,
+            "endLine" : 55,
+            "snippet" : {
+              "text" : "\n        def gen_rsa(pub_path: str, pri_path: str):\n            key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n            key_contents = key.private_bytes(\n                encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8ca915c0a04a33c2:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/device/test_teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 19,
+            "endColumn" : 81
+          },
+          "contextRegion" : {
+            "startLine" : 51,
+            "endLine" : 55,
+            "snippet" : {
+              "text" : "\n        def gen_rsa(pub_path: str, pri_path: str):\n            key = rsa.generate_private_key(public_exponent=65537, key_size=2048)\n            key_contents = key.private_bytes(\n                encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8ca915c0a04a33c2:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "tests/device/test_teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 46,
+            "startColumn" : 63,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 44,
+            "endLine" : 48,
+            "snippet" : {
+              "text" : "    elif self_party in ('alice', 'bob'):\n        from cryptography.hazmat.primitives import serialization\n        from cryptography.hazmat.primitives.asymmetric import rsa\n\n        _, private_key_path = tempfile.mkstemp()\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "702878dbbcec0727:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 13,
+            "startColumn" : 63,
+            "endColumn" : 66
+          },
+          "contextRegion" : {
+            "startLine" : 11,
+            "endLine" : 15,
+            "snippet" : {
+              "text" : "        from cryptography.hazmat.backends import default_backend\n        from cryptography.hazmat.primitives import hashes, serialization\n        from cryptography.hazmat.primitives.asymmetric import rsa\n        from cryptography.x509.oid import NameOID\n    except ImportError:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6d8ab75e378135d1:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 11,
+            "endColumn" : 35
+          },
+          "contextRegion" : {
+            "startLine" : 18,
+            "endLine" : 22,
+            "snippet" : {
+              "text" : "            \"install it using either pip or conda\"\n        )\n    key = rsa.generate_private_key(\n        public_exponent=65537, key_size=2048, backend=default_backend()\n    )\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "418c903d37aea692:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+      "ruleIndex" : 13,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/all-asymmetric-encryption-algorithms",
+        "index" : 13
+      },
+      "message" : {
+        "text" : "Use of algorithm RSA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker/tee/teeu/tls_cert.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 20,
+            "startColumn" : 11,
+            "endLine" : 22,
+            "endColumn" : 6
+          },
+          "contextRegion" : {
+            "startLine" : 18,
+            "endLine" : 24,
+            "snippet" : {
+              "text" : "            \"install it using either pip or conda\"\n        )\n    key = rsa.generate_private_key(\n        public_exponent=65537, key_size=2048, backend=default_backend()\n    )\n    key_contents = key.private_bytes(\n        encoding=serialization.Encoding.PEM,\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "418c903d37aea692:1",
+        "primaryLocationStartColumnFingerprint" : "6"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/kernels/pyu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 179,
+            "startColumn" : 65,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 177,
+            "endLine" : 181,
+            "snippet" : {
+              "text" : "        )\n\n        from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n        aesgcm = AESGCM(data_key)\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "d7841d11591c1f2e:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 130,
+            "startColumn" : 65,
+            "endColumn" : 71
+          },
+          "contextRegion" : {
+            "startLine" : 128,
+            "endLine" : 132,
+            "snippet" : {
+              "text" : "\n        import ray.cloudpickle.cloudpickle as pickle\n        from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n        for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:1",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 211,
+            "startColumn" : 69,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 209,
+            "endLine" : 213,
+            "snippet" : {
+              "text" : "\n            import ray.cloudpickle.cloudpickle as pickle\n            from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n            for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:2",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    }, {
+      "ruleId" : "py/quantum-readiness/cbom/block-cipher-mode",
+      "ruleIndex" : 14,
+      "rule" : {
+        "id" : "py/quantum-readiness/cbom/block-cipher-mode",
+        "index" : 14
+      },
+      "message" : {
+        "text" : "Use of algorithm GCM"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "secretflow/device/device/teeu.py",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 285,
+            "startColumn" : 69,
+            "endColumn" : 75
+          },
+          "contextRegion" : {
+            "startLine" : 283,
+            "endLine" : 287,
+            "snippet" : {
+              "text" : "\n            import ray.cloudpickle.cloudpickle as pickle\n            from cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\n            for idx, value in teeu_data:\n"
+            }
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e56b98a64c288c72:3",
+        "primaryLocationStartColumnFingerprint" : "56"
+      }
+    } ],
+    "automationDetails" : {
+      "id" : "CBOM:secretflow/secretflow/python/"
+    },
+    "columnKind" : "unicodeCodePoints",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
