@@ -17,7 +17,7 @@ jobs:
           REPOS=$(cat pqc.json | jq -c '.python_2000_all[500:750]')
           echo "repositories=${REPOS}" >> "$GITHUB_OUTPUT"
   top250:
-    uses: ./.github/workflows/cbom-reusable-workflow.yml
+    uses: ./.github/workflows/cbom-top250-reusable-workflow.yml
     needs: build-matrix
     strategy:
       fail-fast: false
@@ -27,3 +27,29 @@ jobs:
         repositoryNameWithOwner: ${{ matrix.repository }}
         postSummary: false
     secrets: inherit
+  commit-data:
+    name: Commit data back to repo
+    runs-on: ubuntu-latest
+    needs: top250
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v3
+        with:
+          name: cbom-results
+          path: ${{ github.workspace }}/cbom-results
+      - run: |
+          # Commit data to new branch and create PR
+          BRANCH_NAME="top250-python-${{ github.run_id }}-${{ github.run_attempt }}"
+          git switch -c "${BRANCH_NAME}"
+          rsync -ai ./cbom-results/ ./data/
+          git config --global user.name 'CBOM Data Action'
+          git config --global user.email 'advanced-security@users.noreply.github.com'
+          git add ./data
+          git commit -m "top250-python-${{ github.run_id }}-${{ github.run_attempt }}"
+          git push --set-upstream origin "${BRANCH_NAME}"
+          gh pr create \
+            --title "Top 250 Python Run #${{ github.run_id }} Attempt #${{ github.run_attempt }}" \
+            --fill --label data-pr
+          gh pr merge --rebase --auto 
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

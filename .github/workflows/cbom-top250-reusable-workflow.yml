@@ -1,0 +1,58 @@
+name: Run CBOM Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      repositoryNameWithOwner:
+        type: string
+        required: true
+      analyzeDependencies:
+        type: boolean
+        required: false
+        default: false
+      requestGitHubAnalysis:
+        type: boolean
+        required: false
+        default: false
+      postSummary:
+        type: boolean
+        required: false
+        default: true
+
+jobs:
+  build-matrix:
+    name: Build analysis matrix
+    runs-on: ubuntu-latest
+    outputs:
+      repositories: ${{ steps.build-matrix-action.outputs.repositories }}
+    steps:
+      - uses: advanced-security/cbom-action/build-matrix@main
+        id: build-matrix-action
+        with:
+          repositoryNameWithOwner: ${{ inputs.repositoryNameWithOwner }}
+          minimumLanguageBytes: 2000
+          analyzeDependencies: ${{ inputs.analyzeDependencies }}
+  run-cbom-action:
+    name: ${{ fromJson(matrix.repository).nameWithOwner }} - ${{ fromJson(matrix.repository).language }}
+    runs-on: ubuntu-latest
+    needs: build-matrix
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        repository: ${{ fromJSON(needs.build-matrix.outputs.repositories) }}
+    steps:
+      - uses: advanced-security/cbom-action/analyze@main
+        with:
+          repositoryNameWithOwner: ${{ fromJson(matrix.repository).nameWithOwner }}
+          language: ${{ fromJson(matrix.repository).language }}
+          createCodeQLDatabaseIfRequired: true
+          requestGitHubAnalysis: ${{ inputs.requestGitHubAnalysis }}
+  add-workflow-summary:
+    name: CBOM results
+    if: inputs.postSummary == 'true'
+    runs-on: ubuntu-latest
+    needs: run-cbom-action
+    steps:
+      - uses: advanced-security/cbom-action/workflow-summary@main
+ 
